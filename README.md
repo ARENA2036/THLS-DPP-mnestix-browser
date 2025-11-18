@@ -20,7 +20,7 @@ leadership of XITASO.
 Mnestix Browser is the perfect tool to demonstrate the power and potential of AAS (**Asset Administration Shells**) for
 the implementation of standardized digital twins. It opens the way for use cases such as the **Digital Product Passport (DPP)**.
 
-### Mnestix is also utilized for the [VWS4LS Marketplace](https://www.marketplace.arena2036.app)
+### Mnestix is also utilized for the [VWS4LS Marketplace](https://marketplace.arena2036.app)
 ### You can find a generic Mnestix demo [here](https://mnestix.xitaso.net/).
 ### Some screenshots can be found in the [screenshots folder](https://github.com/eclipse-mnestix/mnestix-browser/tree/main/screenshots).
 
