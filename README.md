@@ -1,7 +1,7 @@
 <p align="right">
   <picture>
-    <source srcset="src/assets/XitasoLogo.svg"  media="(prefers-color-scheme: dark)">
-    <img src="src/assets/XitasoLogoBlack.svg" width=20%>
+    <source srcset="https://github.com/user-attachments/assets/5fdbab7e-237a-49f2-b595-e7a0937980f1"  media="(prefers-color-scheme: dark)">
+    <img src="https://github.com/user-attachments/assets/5fdbab7e-237a-49f2-b595-e7a0937980f1" width=20%>
   </picture>
 </p>
 <p align="center">
@@ -13,6 +13,8 @@
 [![MIT License](https://img.shields.io/badge/License-MIT-005962.svg?style=flat-square)](https://choosealicense.com/licenses/mit/)
 [![Yarn License](https://img.shields.io/badge/YARN-V1.22.22-005962?style=flat-square)]()
 [![Join our Community](https://img.shields.io/badge/Join_our_Community-005962?style=flat-square)](https://xitaso.com/kompetenzen/mnestix/#support)
+
+### Mnestix is utilized for the [VWS4LS Marketplace](https://marketplace.arena2036.app)
 
 ### Welcome to the Mnestix Community!
 
