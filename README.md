@@ -1,11 +1,11 @@
 <p align="right">
   <picture>
-    <source srcset="https://github.com/user-attachments/assets/5fdbab7e-237a-49f2-b595-e7a0937980f1"  media="(prefers-color-scheme: dark)">
+    <source srcset="https://github.com/user-attachments/assets/2818fe33-dfd9-4af6-8551-33e013de4229" media="(prefers-color-scheme: dark)">
     <img src="https://github.com/user-attachments/assets/5fdbab7e-237a-49f2-b595-e7a0937980f1" width=20%>
   </picture>
 </p>
 <p align="center">
- <img src="public/android-chrome-192x192.png" alt="Mnestix Logo">
+ <img src="https://github.com/user-attachments/assets/2818fe33-dfd9-4af6-8551-33e013de4229" alt="VWS4LS Logo">
 </p>
 <h1 style="text-align: center">Mnestix</h1>
 
@@ -16,15 +16,12 @@
 
 ### Mnestix is utilized for the [VWS4LS Marketplace](https://marketplace.arena2036.app)
 
-### Welcome to the Mnestix Community!
-
 Mnestix Browser is an open source software designed to simplify the implementation of the Asset Administration Shell.
 Together
 with increasing contributions from users and developers, a growing community is working on further development under the
 leadership of XITASO, a leading high-end software development company in the engineering industry.
 Mnestix Browser is the perfect tool to demonstrate the power and potential of AAS (**Asset Administration Shells**) for
-the
-implementation of standardized digital twins. It opens the way for use cases such as the Digital Product Passport (DPP).
+theimplementation of standardized digital twins. It opens the way for use cases such as the Digital Product Passport (DPP) or the Product Catalogue.
 
 You can find a demo [here](https://mnestix-prod.azurewebsites.net/).
 Some screenshots can be found in the [screenshots folder](screenshots).
