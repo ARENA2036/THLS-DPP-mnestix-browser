@@ -228,7 +228,7 @@ jobs:
     name: Push image to registry
     needs: ['build-browser-image', 'unit-test', 'build-arm-cache']
     runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request' && startsWith(github.ref_name, 'robotik-challenge')
+    if: github.event_name != 'pull_request' && startsWith(github.ref_name, 'robotik-challenge') && github.repository_owner == 'ARENA2036'
 
     permissions:
       contents: read
