@@ -273,8 +273,12 @@ jobs:
         id: extract_branch
         run: |
           TAG=${IMAGE_TAG_VERSION//\//_}  # This uses shell parameter substitution to replace "/" with "_"
+          TAG=${TAG,,}  # Convert to lowercase
+          IMAGE_NAME_LOWER=${IMAGE_NAME,,}  # Convert IMAGE_NAME to lowercase
           echo "TAG=${TAG}" >> $GITHUB_OUTPUT
+          echo "IMAGE_NAME=${IMAGE_NAME_LOWER}" >> $GITHUB_OUTPUT
           echo "TAG=${TAG}"
+          echo "IMAGE_NAME=${IMAGE_NAME_LOWER}"
 
       - name: Build and push docker images
         uses: docker/build-push-action@v6
@@ -286,4 +290,4 @@ jobs:
             type=local,src=/tmp/buildx-amd64-cache
           target: production
           push: true
-          tags: ${{ format('{0}/{1}:{2}', env.REGISTRY, env.IMAGE_NAME, steps.extract_branch.outputs.TAG) }}
+          tags: ${{ format('{0}/{1}:{2}', env.REGISTRY, steps.extract_branch.outputs.IMAGE_NAME, steps.extract_branch.outputs.TAG) }}
