@@ -25,7 +25,7 @@ concurrency:
 
 env:
   # Update the version manually
-  IMAGE_TAG_VERSION: latest
+  IMAGE_TAG_VERSION: ${{ github.ref_name }}
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
@@ -33,7 +33,6 @@ jobs:
   build-browser-image:
     name: Build browser image
     runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request' && startsWith(github.ref_name, 'robotik-challenge')
 
     permissions:
       contents: read
@@ -229,7 +228,7 @@ jobs:
     name: Push image to registry
     needs: ['ci-success', 'build-arm-cache']
     runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request' && startsWith(github.ref, '/refs/heads/robotik-challenge')
+    if: github.event_name != 'pull_request' && startsWith(github.ref_name, 'robotik-challenge')
 
     permissions:
       contents: read
@@ -288,5 +287,4 @@ jobs:
             type=local,src=/tmp/buildx-amd64-cache
           target: production
           push: true
-          tags: |
-            ${{ github.ref == 'refs/heads/robotik-challenge-main' && format('{0}/{1}:{2}', env.REGISTRY, env.IMAGE_NAME, env.IMAGE_TAG_VERSION) || '' }}
+          tags: ${{ format('{0}/{1}:{2}', env.REGISTRY, env.IMAGE_NAME, env.IMAGE_TAG_VERSION) }}
