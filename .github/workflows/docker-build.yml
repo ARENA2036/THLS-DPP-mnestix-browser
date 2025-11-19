@@ -227,12 +227,13 @@ jobs:
     name: Push image to registry
     needs: ['ci-success', 'build-arm-cache']
     runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request' &&
-      github.repository_owner == 'ARENA2036' && 
-      startsWith(github.ref, '/refs/heads/robotik-challenge')
+    if: github.event_name != 'pull_request' && startsWith(github.ref, '/refs/heads/robotik-challenge')
+
     permissions:
       contents: read
       packages: write
+      attestations: write
+      id-token: write
 
     steps:
       - name: Restore amd64 cache
