@@ -33,7 +33,7 @@ jobs:
   build-browser-image:
     name: Build browser image
     runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request' && startsWith(github.ref, '/refs/heads/robotik-challenge')
+    if: github.event_name != 'pull_request' && startsWith(github.ref_name, 'robotik-challenge')
 
     permissions:
       contents: read
