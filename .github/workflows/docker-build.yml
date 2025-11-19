@@ -43,9 +43,10 @@ jobs:
         id: extract_branch_test
         run: |
           TAG=${IMAGE_TAG_VERSION//\//_}  # This uses shell parameter substitution to replace "/" with "_"
-          IMAGE_TAG_VERSION=${TAG}
           echo "TAG=${TAG}" >> $GITHUB_OUTPUT
-          echo "IMAGE_TAG_VERSION=${IMAGE_TAG_VERSION}" >> $GITHUB_OUTPUT
+          echo "IMAGE_TAG_VERSION=${TAG}" >> $GITHUB_OUTPUT
+          echo "TAG=${TAG}" 
+          echo "IMAGE_TAG_VERSION=${TAG}" 
 
       - name: Checkout repository
         uses: actions/checkout@v5
@@ -280,10 +281,9 @@ jobs:
       - name: Extract branch name
         id: extract_branch
         run: |
-          TAG=${${IMAGE_TAG_VERSION}//\//_}  # This uses shell parameter substitution to replace "/" with "_"
-          IMAGE_TAG_VERSION=${TAG}
+          TAG=${IMAGE_TAG_VERSION//\//_}  # This uses shell parameter substitution to replace "/" with "_"
           echo "TAG=${TAG}" >> $GITHUB_OUTPUT
-          echo "IMAGE_TAG_VERSION=${IMAGE_TAG_VERSION}" >> $GITHUB_OUTPUT
+          echo "IMAGE_TAG_VERSION=${TAG}" >> $GITHUB_OUTPUT
 
       - name: Build and push docker images
         uses: docker/build-push-action@v6
