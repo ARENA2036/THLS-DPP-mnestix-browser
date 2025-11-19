@@ -226,7 +226,7 @@ jobs:
 
   push-image:
     name: Push image to registry
-    needs: ['ci-success', 'build-arm-cache']
+    needs: ['build-browser-image', 'unit-test', 'build-arm-cache']
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request' && startsWith(github.ref_name, 'robotik-challenge')
 
