@@ -1,52 +1,28 @@
 <p align="right">
   <picture>
-    <source srcset="src/assets/XitasoLogo.svg"  media="(prefers-color-scheme: dark)">
-    <img src="src/assets/XitasoLogoBlack.svg" width=20%>
+    <source srcset="https://github.com/user-attachments/assets/5fdbab7e-237a-49f2-b595-e7a0937980f1"  media="(prefers-color-scheme: dark)">
+    <img src="https://github.com/user-attachments/assets/5fdbab7e-237a-49f2-b595-e7a0937980f1" width=20%>
   </picture>
 </p>
 <p align="center">
- <img src="public/android-chrome-192x192.png" alt="Mnestix Logo">
+ <img src="https://www.leitungssatz-hub.de/wp-content/uploads/TrafoHub-LS-Logo-1_1.svg" alt="THLS Logo">
 </p>
-<h1 style="text-align: center">Mnestix</h1>
+<h1 style="text-align: center">Mnestix for the Digital Product Passport (DPP) </h1>
 
 [![Made by XITASO](https://img.shields.io/badge/Made_by_XITASO-005962?style=flat-square)](https://xitaso.com/)
 [![MIT License](https://img.shields.io/badge/License-MIT-005962.svg?style=flat-square)](https://choosealicense.com/licenses/mit/)
 [![Yarn License](https://img.shields.io/badge/YARN-V1.22.22-005962?style=flat-square)]()
 [![Join our Community](https://img.shields.io/badge/Join_our_Community-005962?style=flat-square)](https://xitaso.com/kompetenzen/mnestix/#support)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/eclipse-mnestix/mnestix-browser)
-
-### Welcome to the Mnestix Community!
 
 Mnestix Browser is an open source software designed to simplify the implementation of the Asset Administration Shell.
-Together
-with increasing contributions from users and developers, a growing community is working on further development under the
-leadership of XITASO, a leading high-end software development company in the engineering industry.
+Together with contributions from users and developers, a growing community is working on further development under the
+leadership of XITASO.
 Mnestix Browser is the perfect tool to demonstrate the power and potential of AAS (**Asset Administration Shells**) for
-the
-implementation of standardized digital twins. It opens the way for use cases such as the Digital Product Passport (DPP).
+the implementation of standardized digital twins. It opens the way for use cases such as the **Digital Product Passport (DPP)**.
 
-You can find a demo [here](https://mnestix.xitaso.net/).
-Some screenshots can be found in the [screenshots folder](screenshots).
-
-### **If you need support feel free to contact us through our website [here](https://xitaso.com/kompetenzen/mnestix/#support).**
-
-<p align="center">
-  <a href="https://xitaso.com/en/competences/mnestix-2/#optin_form">
-    <img height="200px" alt="Subscribe to our Newsletter" src="https://github.com/user-attachments/assets/46f1de98-a756-4943-9346-6915d323637f" />
-  </a>
-</p>
-
-## Quickstart
-
-All you need to start your first Mnestix instance is the `compose.yml` (or clone the repository).
-In the root directory run the following command and open http://localhost:3000 in your web browser.
-
-```shell
-docker compose up
-```
-
-### If you want to further configure your mnestix instance, go to our [wiki](https://github.com/eclipse-mnestix/mnestix-browser/wiki).
-
+### Mnestix is also utilized for the [VWS4LS Marketplace](https://marketplace.arena2036.app)
+### You can find a generic Mnestix demo [here](https://mnestix.xitaso.net/).
+### Some screenshots can be found in the [screenshots folder](https://github.com/eclipse-mnestix/mnestix-browser/tree/main/screenshots).
 
 ## Feature Overview
 
@@ -68,3 +44,10 @@ in an extra user-friendly manner**. These are:
 - **and more!**
 
 Moreover, dedicated visualizations for submodels can be added as a further feature.
+
+### **If you need support feel free to contact us through our website [here](https://xitaso.com/kompetenzen/mnestix/#support).**
+
+### **Join our Mnestix Community Hour, register [here](https://xitaso.com/event/mnestix-open-hour/).**
+
+### If you want to further configure your mnestix instance, go to our [wiki](https://github.com/eclipse-mnestix/mnestix-browser/wiki).
+
