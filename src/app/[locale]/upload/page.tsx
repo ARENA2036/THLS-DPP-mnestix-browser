@@ -1,3 +1,4 @@
+'use client';
 import { Box, Paper } from '@mui/material';
 import { ViewHeading } from 'components/basics/ViewHeading';
 import { useTranslations } from 'next-intl';
