@@ -187,7 +187,8 @@
       "logout": "Cerrar sesión",
       "repository": "Repositorio",
       "settings": "Ajustes",
-      "templates": "Templates & Blueprints"
+      "templates": "Templates & Blueprints",
+      "uploadData": "Subir datos"
     }
   },
   "pages": {
@@ -567,6 +568,46 @@
         }
       },
       "noBlueprintsWarning": "No hay planos disponibles."
+    },
+    "uploadData": {
+      "title": "Daten-Upload",
+      "actions": {
+        "removeFile": "Eliminar archivo",
+        "viewCreatedAas": "Ver AAS creado"
+      },
+      "ariaLabel": "Subir archivo VEC de datos",
+      "cta": {
+        "clickToUpload": "Haz clic para subir",
+        "orDragAndDrop": "o arrastra y suelta"
+      },
+      "descriptions": {
+        "supportedFormats": "Formato admitido: .vec (máx. 10 MB)"
+      },
+      "fileTooLarge": "El archivo es demasiado grande. Tamaño máximo: {maxSize}.",
+      "fileTypeNotSupported": "Solo se admiten archivos VEC.",
+      "processingError": "Error al procesar. Revisa el archivo e inténtalo de nuevo.",
+      "status": {
+        "error": "Error",
+        "loading": "Procesando",
+        "success": "Completado"
+      },
+      "steps": {
+        "generateAas": "Generando AAS",
+        "processData": "Procesando datos",
+        "uploadFile": "Subiendo archivo"
+      },
+      "form": {
+        "userNameLabel": "Tu nombre",
+        "organizationNameLabel": "Organización",
+        "submitLabel": "Enviar",
+        "errors": {
+          "userNameRequired": "Introduce tu nombre.",
+          "organizationRequired": "Introduce tu organización.",
+          "fileRequired": "Selecciona un archivo VEC antes de enviar."
+        }
+      },
+      "uploadError": "Error al subir. Inténtalo de nuevo.",
+      "uploadSuccess": "Carga completada correctamente."
     },
     "transfer": {
       "aasRepository": "Repositorio AAS",
