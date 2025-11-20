@@ -24,7 +24,7 @@ export interface DataUploadProps {
  * - Error handling and workflow status management
  * - Accessibility features for all interactive elements
  */
-type UploadStatus = 'idle' | 'uploading' | 'success' | 'error';
+type UploadStatus = 'idle' | 'uploading' | 'processing' | 'success' | 'error';
 
 type StepKey = 'upload' | 'process' | 'generateAas';
 
