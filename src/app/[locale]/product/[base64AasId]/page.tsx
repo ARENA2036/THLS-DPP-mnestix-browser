@@ -12,10 +12,9 @@ export default function Page() {
     const { showError } = useShowError();
     const params = useParams<{ base64AasId: string }>();
     const base64AasId = decodeURIComponent(params.base64AasId).replace(/=+$|[%3D]+$/, '');
-    const searchParams = useSearchParams();
-    const encodedRepoUrl = searchParams.get('repoUrl');
+    const encodedRepoUrl = useSearchParams().get('repoUrl');
     const repoUrl = encodedRepoUrl ? decodeURI(encodedRepoUrl) : undefined;
-    const infrastructureName = searchParams.get('infrastructure') || undefined;
+    const infrastructureName = useSearchParams().get('infrastructure') || undefined;
     try {
         const aasIdDecoded = safeBase64Decode(base64AasId);
 

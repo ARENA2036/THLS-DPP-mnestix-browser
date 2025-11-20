@@ -1,4 +1,5 @@
 import { Box, Card, CardContent, Skeleton, Typography, Tooltip, Divider } from '@mui/material';
+import { Box, Card, CardContent, Skeleton, Typography, Tooltip, Divider } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { DataRow } from 'components/basics/DataRow';
 import { IconCircleWrapper } from 'components/basics/IconCircleWrapper';
@@ -12,10 +13,19 @@ import { SubmodelSemanticIdEnum } from 'lib/enums/SubmodelSemanticId.enum';
 import { findSubmodelByIdOrSemanticId, findSubmodelElementByIdShort } from 'lib/util/SubmodelResolverUtil';
 import { MobileAccordion } from 'components/basics/detailViewBasics/MobileAccordion';
 import { KeyFactsBox } from 'app/[locale]/product/_components/KeyFactsBox';
+import { KeyFactsBox } from 'app/[locale]/product/_components/KeyFactsBox';
 import { SubmodelElementSemanticIdEnum } from 'lib/enums/SubmodelElementSemanticId.enum';
 import { useProductImageUrl } from 'lib/hooks/UseProductImageUrl';
 import { useFindValueByIdShort } from 'lib/hooks/useFindValueByIdShort';
 import { ActionMenu } from './ProductActionMenu';
+import LinkIcon from '@mui/icons-material/Link';
+import { MnestixConnection } from '@prisma/client';
+import {
+    AssetAdministrationShell,
+    Property,
+    SubmodelElementChoice,
+    SubmodelElementCollection,
+} from 'lib/api/aas/models';
 import LinkIcon from '@mui/icons-material/Link';
 import { MnestixConnection } from '@prisma/client';
 import {
@@ -37,6 +47,8 @@ type ProductOverviewCardProps = {
     readonly displayName: string | null;
     readonly catalogConfig?: MnestixConnection;
     readonly infrastructureName?: string;
+    readonly catalogConfig?: MnestixConnection;
+    readonly infrastructureName?: string;
 };
 
 type ProductClassification = {
@@ -55,7 +67,9 @@ type OverviewData = {
     readonly manufacturerLogo: SubmodelElementChoice | null;
     readonly companyLogo: SubmodelElementChoice | null;
     readonly markings: string[] | null;
+    readonly markings: string[] | null;
     readonly productClassifications?: ProductClassification[];
+    readonly URIOfTheProduct?: string | null;
     readonly URIOfTheProduct?: string | null;
 };
 
@@ -65,6 +79,8 @@ export function ProductOverviewCard(props: ProductOverviewCardProps) {
     const t = useTranslations('pages.productViewer');
     const [overviewData, setOverviewData] = useState<OverviewData>();
     const findValue = useFindValueByIdShort();
+    const productImageUrl = useProductImageUrl(props.aas, props.repositoryURL ?? undefined, props.productImage);
+    const { addAasData } = useAasStore();
     const productImageUrl = useProductImageUrl(props.aas, props.repositoryURL ?? undefined, props.productImage);
     const { addAasData } = useAasStore();
 
@@ -170,7 +186,60 @@ export function ProductOverviewCard(props: ProductOverviewCardProps) {
                 }
             });
         }
+
+        // If ProductClassifications is a flat list, we can directly use it
+        // This is not standard conform but we support it for now.
+        if (
+            productClassifications?.value &&
+            productClassifications.value.find((element) => element.idShort === 'ProductClassificationSystem')
+        ) {
+            const classification = {
+                ProductClassificationSystem:
+                    findValue(
+                        productClassifications.value,
+                        'ProductClassificationSystem',
+                        SubmodelElementSemanticIdEnum.ProductClassificationSystem,
+                    ) || undefined,
+                ProductClassId:
+                    findValue(
+                        productClassifications.value,
+                        'ProductClassId',
+                        SubmodelElementSemanticIdEnum.ProductClassId,
+                    ) || undefined,
+            };
+            classifications.push(classification);
+        } else {
+            productClassifications?.value?.forEach((productClassification) => {
+                const submodelClassification = productClassification as SubmodelElementCollection;
+                if (submodelClassification?.value) {
+                    const classification = {
+                        ProductClassificationSystem:
+                            findValue(
+                                submodelClassification.value,
+                                'ProductClassificationSystem',
+                                SubmodelElementSemanticIdEnum.ProductClassificationSystem,
+                            ) || undefined,
+                        ProductClassId:
+                            findValue(
+                                submodelClassification.value,
+                                'ProductClassId',
+                                SubmodelElementSemanticIdEnum.ProductClassId,
+                            ) || undefined,
+                    };
+                    // Filter out classifications without a ProductClassId
+                    if (!classification.ProductClassId) {
+                        return;
+                    }
+                    classifications.push(classification);
+                }
+            });
+        }
         setOverviewData({
+            manufacturerName: !manufacturerName || manufacturerName.trim() === '' ? undefined : manufacturerName,
+            manufacturerProductDesignation:
+                !manufacturerProductDesignation || manufacturerProductDesignation.trim() === ''
+                    ? undefined
+                    : manufacturerProductDesignation,
             manufacturerName: !manufacturerName || manufacturerName.trim() === '' ? undefined : manufacturerName,
             manufacturerProductDesignation:
                 !manufacturerProductDesignation || manufacturerProductDesignation.trim() === ''
@@ -183,7 +252,14 @@ export function ProductOverviewCard(props: ProductOverviewCardProps) {
                     : manufacturerArticleNumber,
             manufacturerOrderCode:
                 !manufacturerOrderCode || manufacturerOrderCode.trim() === '' ? undefined : manufacturerOrderCode,
+            manufacturerArticleNumber:
+                !manufacturerArticleNumber || manufacturerArticleNumber.trim() === ''
+                    ? undefined
+                    : manufacturerArticleNumber,
+            manufacturerOrderCode:
+                !manufacturerOrderCode || manufacturerOrderCode.trim() === '' ? undefined : manufacturerOrderCode,
             companyLogo: null,
+            markings: null,
             markings: null,
             manufacturerLogo: manufacturerLogo,
         });
@@ -205,16 +281,42 @@ export function ProductOverviewCard(props: ProductOverviewCardProps) {
             SubmodelElementSemanticIdEnum.ManufacturerProductType,
         );
         const markingsElement = findSubmodelElementByIdShort(
+        const markingsElement = findSubmodelElementByIdShort(
             nameplateSubmodelElements,
             'Markings',
             SubmodelElementSemanticIdEnum.MarkingsV3,
         ) as SubmodelElementCollection;
 
         const markings = prepareMarkingTexts(markingsElement || null);
+
         const companyLogo = findSubmodelElementByIdShort(
             nameplateSubmodelElements,
             'CompanyLogo',
             SubmodelElementSemanticIdEnum.CompanyLogo,
+        );
+        const URIOfTheProduct = findValue(nameplateSubmodelElements, 'URIOfTheProducts', [
+            SubmodelElementSemanticIdEnum.URIOfTheProductV2,
+            SubmodelElementSemanticIdEnum.URIOfTheProductV3,
+        ]);
+        const manufacturerName = findValue(
+            nameplateSubmodelElements,
+            'ManufacturerName',
+            SubmodelElementSemanticIdEnum.ManufacturerName,
+        );
+        const manufacturerProductDesignation = findValue(
+            nameplateSubmodelElements,
+            'ManufacturerProductDesignation',
+            SubmodelElementSemanticIdEnum.ManufacturerProductDesignation,
+        );
+        const manufacturerArticleNumber = findValue(
+            nameplateSubmodelElements,
+            'ProductArticleNumberOfManufacturer',
+            SubmodelElementSemanticIdEnum.ManufacturerArticleNumber,
+        );
+        const manufacturerOrderCode = findValue(
+            nameplateSubmodelElements,
+            'OrderCodeOfManufacturer',
+            SubmodelElementSemanticIdEnum.ManufacturerOrderCode,
         );
         const URIOfTheProduct = findValue(nameplateSubmodelElements, 'URIOfTheProducts', [
             SubmodelElementSemanticIdEnum.URIOfTheProductV2,
@@ -252,12 +354,24 @@ export function ProductOverviewCard(props: ProductOverviewCardProps) {
             manufacturerOrderCode: prevData?.manufacturerOrderCode
                 ? prevData.manufacturerOrderCode
                 : (manufacturerOrderCode ?? '-'),
+            manufacturerName: prevData?.manufacturerName ? prevData.manufacturerName : (manufacturerName ?? '-'),
+            manufacturerProductDesignation: prevData?.manufacturerProductDesignation
+                ? prevData.manufacturerProductDesignation
+                : (manufacturerProductDesignation ?? '-'),
+            manufacturerArticleNumber: prevData?.manufacturerArticleNumber
+                ? prevData.manufacturerArticleNumber
+                : (manufacturerArticleNumber ?? '-'),
+            manufacturerOrderCode: prevData?.manufacturerOrderCode
+                ? prevData.manufacturerOrderCode
+                : (manufacturerOrderCode ?? '-'),
             manufacturerProductRoot: manufacturerProductRoot ?? '-',
             manufacturerProductFamily: manufacturerProductFamily ?? '-',
             manufacturerProductType: manufacturerProductType ?? '-',
             markings: markings,
+            markings: markings,
             manufacturerLogo: prevData?.manufacturerLogo || null,
             companyLogo: companyLogo || null,
+            URIOfTheProduct: URIOfTheProduct || null,
             URIOfTheProduct: URIOfTheProduct || null,
         }));
     };
@@ -267,9 +381,8 @@ export function ProductOverviewCard(props: ProductOverviewCardProps) {
      * @param markings
      */
     const prepareMarkingTexts = (markings: SubmodelElementCollection | null): string[] => {
-        if (!(markings?.value && Array.isArray(markings.value))) {
-            return [];
-        }
+        if (!markings?.value) return [];
+
         const result: string[] = [];
         markings.value.forEach((el) => {
             Object.values(el || {}).forEach((marking) => {
@@ -312,8 +425,24 @@ export function ProductOverviewCard(props: ProductOverviewCardProps) {
                     infrastructureName: props.infrastructureName,
                 },
             });
+        if (props.imageLinksToDetail && props.aas && props.infrastructureName) {
+            addAasData({
+                aas: props.aas,
+                aasData: {
+                    aasRepositoryOrigin: props.repositoryURL,
+                    submodelDescriptors: undefined,
+                    infrastructureName: props.infrastructureName,
+                },
+            });
             const url = `/product/${encodeBase64(props.aas.id)}`;
             navigate.push(url);
+        }
+    };
+
+    const navigateToProduct = () => {
+        if (overviewData?.URIOfTheProduct) {
+            const url = overviewData.URIOfTheProduct;
+            window.open(url, '_blank', 'noopener,noreferrer');
         }
     };
 
@@ -359,6 +488,10 @@ export function ProductOverviewCard(props: ProductOverviewCardProps) {
             </Box>
         </Box>
     );
+
+    const showKeyFactsBox =
+        (overviewData?.productClassifications && overviewData.productClassifications.length > 0) ||
+        (overviewData?.markings && overviewData.markings.length > 0);
 
     const showKeyFactsBox =
         (overviewData?.productClassifications && overviewData.productClassifications.length > 0) ||
@@ -486,9 +619,21 @@ export function ProductOverviewCard(props: ProductOverviewCardProps) {
                                                     />
                                                 </Tooltip>
                                             )}
+                                            {overviewData?.URIOfTheProduct && (
+                                                <Tooltip title={overviewData.URIOfTheProduct}>
+                                                    <LinkIcon
+                                                        sx={{ ml: 1, cursor: 'pointer' }}
+                                                        fontSize="small"
+                                                        role="button"
+                                                        onClick={navigateToProduct}
+                                                        data-testid="product-uri-link"
+                                                    />
+                                                </Tooltip>
+                                            )}
                                         </Typography>
                                         <ActionMenu
                                             aas={props.aas}
+                                            infrastructureName={props.infrastructureName}
                                             infrastructureName={props.infrastructureName}
                                             submodels={props.submodels}
                                             className="product-action-menu"
@@ -496,12 +641,18 @@ export function ProductOverviewCard(props: ProductOverviewCardProps) {
                                     </Box>
                                     <Divider sx={{ mb: 2 }} />
                                     <Box sx={{ display: 'flex', flexDirection: 'row', gap: '40px' }}>{productInfo}</Box>
+                                    <Box sx={{ display: 'flex', flexDirection: 'row', gap: '40px' }}>{productInfo}</Box>
                                 </Box>
                             </>
                         )}
                     </>
                 )}
             </CardContent>
+            {showKeyFactsBox && (
+                <KeyFactsBox
+                    productClassifications={overviewData.productClassifications ?? []}
+                    markings={overviewData.markings ?? []}
+                />
             {showKeyFactsBox && (
                 <KeyFactsBox
                     productClassifications={overviewData.productClassifications ?? []}
