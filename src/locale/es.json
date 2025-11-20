@@ -570,7 +570,7 @@
       "noBlueprintsWarning": "No hay planos disponibles."
     },
     "uploadData": {
-      "title": "Daten-Upload",
+      "title": "Subida de datos",
       "actions": {
         "removeFile": "Eliminar archivo",
         "viewCreatedAas": "Ver AAS creado"

@@ -15,7 +15,14 @@ export interface DataUploadProps {
 }
 
 /**
- * Renders an accessible drag-and-drop area for uploading data VEC files.
+ * Main data upload component for VEC files.
+ * 
+ * Renders the full upload workflow, including:
+ * - Form fields for user and organization information
+ * - Accessible drag-and-drop and file input for selecting VEC files
+ * - File handling, upload, processing, and AAS generation logic
+ * - Error handling and workflow status management
+ * - Accessibility features for all interactive elements
  */
 type UploadStatus = 'idle' | 'uploading' | 'success' | 'error';
 
@@ -218,7 +225,7 @@ export default function DataUpload(props: DataUploadProps) {
                 const stepName = name as StepKey;
 
                 if (status === 'processing') {
-                    stepStatusSetters[stepName]('uploading');
+                    stepStatusSetters[stepName]('processing');
                 } else if (status === 'completed') {
                     stepStatusSetters[stepName]('success');
                 } else if (status === 'failed') {
@@ -464,7 +471,7 @@ export default function DataUpload(props: DataUploadProps) {
                 </Button>
             ) : null}
             {errorMessage ? (
-                <Typography id={errorTextId} variant="body2" color="error" role="alert">
+                <Typography id={errorTextId} variant="body2" color="error" role="alert" aria-live="assertive">
                     {errorMessage}
                 </Typography>
             ) : null}
