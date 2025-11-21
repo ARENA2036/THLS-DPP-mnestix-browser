@@ -187,7 +187,8 @@
       "logout": "Logout",
       "repository": "Repository",
       "settings": "Settings",
-      "templates": "Templates & Blueprints"
+      "templates": "Templates & Blueprints",
+      "uploadData": "Upload Data"
     }
   },
   "pages": {
@@ -567,6 +568,46 @@
         }
       },
       "noBlueprintsWarning": "No blueprints available."
+    },
+    "uploadData": {
+      "title": "Upload Data",
+      "actions": {
+        "removeFile": "Remove file",
+        "viewCreatedAas": "View created AAS"
+      },
+      "ariaLabel": "Upload data VEC file",
+      "cta": {
+        "clickToUpload": "Click to upload",
+        "orDragAndDrop": "or drag and drop"
+      },
+      "descriptions": {
+        "supportedFormats": "Supported format: .vec (max. 10 MB)"
+      },
+      "fileTooLarge": "File is too large. Maximum size is {maxSize}.",
+      "fileTypeNotSupported": "Only VEC files are supported.",
+      "processingError": "Processing failed. Check the file and try again.",
+      "status": {
+        "error": "Failed",
+        "loading": "Processing",
+        "success": "Completed"
+      },
+      "steps": {
+        "generateAas": "Generating AAS",
+        "processData": "Processing data",
+        "uploadFile": "Uploading file"
+      },
+      "form": {
+        "userNameLabel": "Your name",
+        "organizationNameLabel": "Organization",
+        "submitLabel": "Submit",
+        "errors": {
+          "userNameRequired": "Please enter your name.",
+          "organizationRequired": "Please enter your organization.",
+          "fileRequired": "Please select a VEC file before submitting."
+        }
+      },
+      "uploadError": "Upload failed. Please try again.",
+      "uploadSuccess": "Upload completed successfully."
     },
     "transfer": {
       "aasRepository": "AAS repository",
