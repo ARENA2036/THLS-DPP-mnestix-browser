@@ -12,7 +12,7 @@ import { SubmodelElementChoice } from 'lib/api/aas/models';
  * @returns A function to find values by idShort that includes the current locale
  */
 
-//EXPERMIENTAL CODE
+//EXPERIMENTAL CODE
 export function useFindValueByIdShort() {
     const locale = useLocale();
 

@@ -268,10 +268,15 @@ export function ProductOverviewCard(props: ProductOverviewCardProps) {
      * @param markings
      */
     const prepareMarkingTexts = (markings: SubmodelElementCollection | null): string[] => {
-        if (!markings?.value) return [];
+        if (!(markings?.value && Array.isArray(markings.value))) {
+            return [];
+        }
 
         const result: string[] = [];
         markings.value.forEach((el) => {
+            if (!(el && Array.isArray(el))){
+                return;
+            }
             Object.values(el || {}).forEach((marking) => {
                 Object.values(marking || {}).forEach((markingProperty: SubmodelElementChoice) => {
                     if (markingProperty?.idShort === 'MarkingName' && (markingProperty as Property).value) {
