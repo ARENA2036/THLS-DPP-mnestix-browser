@@ -1,6 +1,6 @@
 import MenuIcon from '@mui/icons-material/Menu';
 import { alpha, Box, Divider, Drawer, IconButton, List, styled, Typography } from '@mui/material';
-import { Dashboard, OpenInNew, Settings } from '@mui/icons-material';
+import { Dashboard, OpenInNew, Settings, UploadFile } from '@mui/icons-material';
 import React, { useState } from 'react';
 import { useAuth } from 'lib/hooks/UseAuth';
 import { TemplateIcon } from 'components/custom-icons/TemplateIcon';
@@ -120,6 +120,13 @@ export default function MainMenu() {
         };
         basicMenu.push(settingsMenu);
     }
+
+    const uploadMenuItem: MenuListItemProps = {
+        label: t('uploadData'),
+        to: '/upload',
+        icon: <UploadFile />,
+    };
+    basicMenu.push(uploadMenuItem);
 
     const guestMoreMenu: MenuListItemProps[] = [
         {
