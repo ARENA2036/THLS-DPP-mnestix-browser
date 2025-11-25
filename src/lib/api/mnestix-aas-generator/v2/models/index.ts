@@ -159,6 +159,31 @@ export interface AddDataToAasResponse {
 /**
  *
  * @export
+ * @interface CreateAasRequest
+ */
+export interface CreateAasRequest {
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof CreateAasRequest
+     */
+    blueprintsIds?: Array<string>;
+    /**
+     *
+     * @type {any}
+     * @memberof CreateAasRequest
+     */
+    data?: any | null;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateAasRequest
+     */
+    language?: string;
+}
+/**
+ *
+ * @export
  * @interface CreateAasResponse
  */
 export interface CreateAasResponse {
@@ -186,6 +211,12 @@ export interface CreateAasResponse {
      * @memberof CreateAasResponse
      */
     base64EncodedAasId?: string;
+    /**
+     *
+     * @type {Array<AasGeneratorResult>}
+     * @memberof CreateAasResponse
+     */
+    submodelResults?: Array<AasGeneratorResult>;
 }
 /**
  *

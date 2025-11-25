@@ -2,6 +2,7 @@ import { mnestixFetch, mnestixFetchRaw, MnestixFetch, MnestixFetchRaw } from 'li
 import { TemplateShellApi } from 'lib/api/template-shell-api/templateShellApi';
 import { TemplatesApi } from 'lib/api/mnestix-aas-generator/v2/apis/TemplatesApi';
 import { BlueprintsApi } from 'lib/api/mnestix-aas-generator/v2/apis/BlueprintsApi';
+import { AasCreatorApi } from 'lib/api/mnestix-aas-generator/v2/apis/AasCreatorApi';
 import { Configuration as ConfigurationV1 } from 'lib/api/mnestix-aas-generator/v1';
 import { Configuration as ConfigurationV2 } from 'lib/api/mnestix-aas-generator/v2';
 import { envs } from 'lib/env/MnestixEnv';
@@ -62,6 +63,7 @@ export type VersionedAasGeneratorClients = {
     v2: {
         templatesApi: TemplatesApi;
         blueprintsApi: BlueprintsApi;
+        aasCreatorApi: AasCreatorApi;
     };
 };
 
@@ -77,6 +79,7 @@ export async function createVersionedAasGeneratorClients(): Promise<VersionedAas
         v2: {
             templatesApi: new TemplatesApi(configurationV2),
             blueprintsApi: new BlueprintsApi(configurationV2),
+            aasCreatorApi: new AasCreatorApi(configurationV2),
         },
     };
 }
