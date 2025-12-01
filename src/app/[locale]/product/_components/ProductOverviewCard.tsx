@@ -270,6 +270,7 @@ export function ProductOverviewCard(props: ProductOverviewCardProps) {
         if (!(markings?.value && Array.isArray(markings.value))) {
             return [];
         }
+
         const result: string[] = [];
         markings.value.forEach((el) => {
             Object.values(el || {}).forEach((marking) => {
