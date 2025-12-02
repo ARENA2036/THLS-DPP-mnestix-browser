@@ -308,6 +308,8 @@
       "listCardHeader": "Auswahl über Liste",
       "listBtnLabel": "Inhalt eines Repositorys sehen",
       "listBtnText": "Zur AAS Liste",
+      "uploadCardHeader": "Konfiguration hochladen",
+      "uploadBtnLabel": "Kabelbaumkonfigurationsdatei hochladen",
       "scanIdLabel": "AAS ID oder Asset ID scannen",
       "welcomeText": "Willkommen bei Mnestix",
       "enterManuallyLabel": "Manuell eingeben"
@@ -570,10 +572,21 @@
       "noBlueprintsWarning": "Keine Blueprints verfügbar."
     },
     "uploadData": {
-      "title": "Daten-Upload",
+      "title": "Kabelbaumkonfiguration hochladen",
+      "backToHome": "Zurück zur Startseite",
+      "explanation": {
+        "title": "Über VEC-Datei-Upload",
+        "paragraph1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+        "paragraph2": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "paragraph3": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+      },
       "actions": {
+        "deleteFile": "Datei löschen",
         "removeFile": "Datei entfernen",
-        "viewCreatedAas": "Erstellte AAS ansehen"
+        "seeLess": "Weniger anzeigen",
+        "seeMore": "Mehr anzeigen",
+        "uploadMore": "Mehr hochladen",
+        "viewCreatedAas": "Erstelltes AAS anzeigen"
       },
       "ariaLabel": "VEC-Datei hochladen",
       "cta": {
@@ -586,6 +599,8 @@
       "fileTooLarge": "Datei ist zu groß. Maximale Größe: {maxSize}.",
       "fileTypeNotSupported": "Es werden nur VEC-Dateien unterstützt.",
       "processingError": "Verarbeitung fehlgeschlagen. Bitte Datei prüfen und erneut versuchen.",
+      "missingFieldsError": "Erforderliche Felder in VEC-Datei fehlen",
+      "missingFieldsDetail": "Die folgenden Felder fehlen oder sind leer: {fields}. Stellen Sie sicher, dass Ihre VEC-Datei diese Werte enthält.",
       "status": {
         "error": "Fehlgeschlagen",
         "loading": "In Bearbeitung",

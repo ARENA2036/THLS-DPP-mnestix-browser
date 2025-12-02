@@ -42,27 +42,27 @@ export async function createAasWithSubmodels(
             const errorResponse = await error.response.json();
             const status = error.response.status;
 
+            // Log the full error response for debugging
+            console.error('AAS Generator Error Response:', {
+                status,
+                errorResponse,
+                url: error.response.url,
+            });
+
+            // Construct detailed error message
+            const errorMessage = errorResponse?.submodelResults?.[0].errorInfo
+                ? 'An error occurred while creating the AAS.'
+                : 'An error occurred.';
+            const errorDetail = errorResponse?.submodelResults?.[0]?.message;
             if (status === 400) {
-                return wrapErrorCode(
-                    ApiResultStatus.BAD_REQUEST,
-                    errorResponse.title || errorResponse.detail || 'Bad request',
-                );
+                return wrapErrorCode(ApiResultStatus.BAD_REQUEST, errorMessage, errorDetail);
             } else if (status === 409) {
-                return wrapErrorCode(
-                    ApiResultStatus.CONFLICT,
-                    errorResponse.title || errorResponse.detail || 'AAS already exists',
-                );
+                return wrapErrorCode(ApiResultStatus.CONFLICT, 'AAS already exists', errorDetail);
             } else if (status >= 500) {
-                return wrapErrorCode(
-                    ApiResultStatus.UNKNOWN_ERROR,
-                    errorResponse.title || errorResponse.detail || 'Server error',
-                );
+                return wrapErrorCode(ApiResultStatus.UNKNOWN_ERROR, 'Internal Server error', errorDetail);
             }
 
-            return wrapErrorCode(
-                ApiResultStatus.UNKNOWN_ERROR,
-                errorResponse.title || errorResponse.detail || 'An error occurred',
-            );
+            return wrapErrorCode(ApiResultStatus.UNKNOWN_ERROR, errorMessage, errorDetail);
         }
 
         console.error('Error creating AAS:', error);
