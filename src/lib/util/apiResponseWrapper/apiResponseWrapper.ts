@@ -30,6 +30,7 @@ export type ApiResponseWrapperError<T> = ApiResponseWrapperBase & {
     result?: T;
     errorCode: ApiResultStatus;
     message: string;
+    errorDetail?: string;
 };
 
 export function wrapSuccess<T>(
@@ -48,6 +49,7 @@ export function wrapSuccess<T>(
 export function wrapErrorCode<T>(
     error: ApiResultStatus,
     message: string,
+    errorDetail?: string,
     httpStatus?: number,
     result?: T,
 ): ApiResponseWrapperError<T> {
@@ -55,6 +57,7 @@ export function wrapErrorCode<T>(
         isSuccess: false,
         errorCode: error,
         message: message,
+        errorDetail: errorDetail,
         httpStatus: httpStatus,
         result: result,
     };

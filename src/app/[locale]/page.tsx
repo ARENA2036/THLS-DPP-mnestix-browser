@@ -2,7 +2,7 @@
 
 import { Box, Card, CardActionArea, Grid, Typography, useTheme } from '@mui/material';
 import { GoToListCard } from 'app/[locale]/_components/GoToListCard';
-import { FindOutMoreCard } from 'app/[locale]/_components/FindOutMoreCard';
+import { UploadCard } from 'app/[locale]/_components/UploadCard';
 import { QrScanner } from 'app/[locale]/_components/QrScanner';
 import { LocalizedError } from 'lib/util/LocalizedError';
 import {
@@ -94,14 +94,11 @@ export default function () {
                     <Grid size={{ md: 3, xs: 6 }}>
                         <Card sx={{ height: '100%', borderRadius: '12px' }}>
                             <CardActionArea
-                                component="a"
-                                href="https://mnestix.io"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label={`${t('findOutMoreHeader')} mnestix.io`}
+                                onClick={() => navigate.push('/upload')}
+                                aria-label={t('uploadCardHeader')}
                                 sx={{ height: '100%', display: 'flex', alignItems: 'stretch' }}
                             >
-                                <FindOutMoreCard />
+                                <UploadCard />
                             </CardActionArea>
                         </Card>
                     </Grid>

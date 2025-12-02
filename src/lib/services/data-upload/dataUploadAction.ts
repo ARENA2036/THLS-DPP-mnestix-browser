@@ -14,14 +14,11 @@ interface WorkflowStep {
         name: WorkflowStepName;
         status: WorkflowStepStatus;
         error?: string;
+        errorDetail?: string;
     };
     result?: {
         redirectUrl?: string;
     };
-}
-
-function isNamedFile(value: FormDataEntryValue): value is File {
-    return typeof value === 'object' && value !== null && 'name' in value;
 }
 
 /**
@@ -116,17 +113,10 @@ function getBlueprintIds(): string[] | undefined {
  */
 export async function processData(formData: FormData) {
     const fileEntry = formData.get('file');
-    const userNameEntry = formData.get('userName');
-    const organizationEntry = formData.get('organizationName');
 
     if (!fileEntry) {
         return wrapErrorCode<WorkflowStep[]>(ApiResultStatus.BAD_REQUEST, 'No file provided');
     }
-
-    const fileName = isNamedFile(fileEntry) ? fileEntry.name : 'data.vec';
-    const userName = typeof userNameEntry === 'string' && userNameEntry.trim() ? userNameEntry.trim() : 'user';
-    const organizationName =
-        typeof organizationEntry === 'string' && organizationEntry.trim() ? organizationEntry.trim() : 'organization';
 
     const steps: WorkflowStep[] = [];
 
@@ -146,6 +136,68 @@ export async function processData(formData: FormData) {
     try {
         const fileContent = await (fileEntry as File).text();
         vecData = parseVecXmlToJson(fileContent);
+
+        // Keep only the newest (last) DocumentVersion
+        function findAndReplaceDocumentVersions(obj: unknown): unknown {
+            if (typeof obj !== 'object' || obj === null) {
+                return obj;
+            }
+
+            if (Array.isArray(obj)) {
+                return obj.map((item) => findAndReplaceDocumentVersions(item));
+            }
+
+            const newObj: Record<string, unknown> = {};
+            for (const key in obj as Record<string, unknown>) {
+                const value = (obj as Record<string, unknown>)[key];
+                if (key.includes('DocumentVersion') && Array.isArray(value)) {
+                    // Keep only the last (newest) DocumentVersion
+                    newObj[key] = value[value.length - 1];
+                } else {
+                    newObj[key] = findAndReplaceDocumentVersions(value);
+                }
+            }
+            return newObj;
+        }
+
+        vecData = findAndReplaceDocumentVersions(vecData) as Record<string, unknown>;
+
+        // Helper function to safely get nested values from the parsed VEC data
+        function getNestedValue(obj: unknown, path: string): string | null {
+            const keys = path.split('.');
+            let current: unknown = obj;
+
+            for (const key of keys) {
+                if (typeof current === 'object' && current !== null && key in (current as Record<string, unknown>)) {
+                    current = (current as Record<string, unknown>)[key];
+                } else {
+                    return null;
+                }
+            }
+
+            return typeof current === 'string' ? current : null;
+        }
+
+        // Extract organization and part name from VEC data
+        const companyName = getNestedValue(vecData, 'DocumentVersion.CompanyName.#text');
+        const partName = getNestedValue(vecData, 'GeneratingSystemName.#text');
+
+        // Validate required fields
+        const missingFields: string[] = [];
+        if (!companyName) missingFields.push('DocumentVersion.CompanyName');
+        if (!partName) missingFields.push('GeneratingSystemName');
+
+        if (missingFields.length > 0) {
+            steps.push({
+                currentStep: {
+                    name: 'process',
+                    status: 'failed',
+                    error: 'pages.uploadData.missingFieldsError',
+                    errorDetail: `pages.uploadData.missingFieldsDetail|{"fields":"${missingFields.join(', ')}"}`,
+                },
+            });
+            return wrapSuccess(steps);
+        }
     } catch (error) {
         console.error('Failed to parse VEC file:', error);
         steps.push({
@@ -163,9 +215,26 @@ export async function processData(formData: FormData) {
     // Step 3: Generate AAS
     steps.push({ currentStep: { name: 'generateAas', status: 'processing' } });
 
-    // Create assetIdShort from file name and user info
-    const fileNameWithoutExtension = fileName.replace(/\.[^/.]+$/, '');
-    const assetIdShort = `${organizationName}-${userName}-${fileNameWithoutExtension}`.replace(/[^a-zA-Z0-9-_]/g, '-');
+    // Extract organization and part name from VEC data (already validated in processing step)
+    const getNestedValue = (obj: unknown, path: string): string | null => {
+        const keys = path.split('.');
+        let current: unknown = obj;
+        for (const key of keys) {
+            if (typeof current === 'object' && current !== null && key in (current as Record<string, unknown>)) {
+                current = (current as Record<string, unknown>)[key];
+            } else {
+                return null;
+            }
+        }
+        return typeof current === 'string' ? current : null;
+    };
+
+    const companyName = getNestedValue(vecData, 'DocumentVersion.CompanyName.#text') || 'Unknown';
+    const partName = getNestedValue(vecData, 'GeneratingSystemName.#text') || 'Unknown';
+    const timestamp = Date.now();
+
+    // Create assetIdShort: Organization-PartName-Timestamp
+    const assetIdShort = `${companyName}-${partName}-${timestamp}`.replace(/[^a-zA-Z0-9-_]/g, '-');
 
     // Get blueprint IDs from environment
     const blueprintIds = getBlueprintIds();
@@ -184,9 +253,9 @@ export async function processData(formData: FormData) {
                 name: 'generateAas',
                 status: 'failed',
                 error: aasCreationResult.message || 'Failed to create AAS',
+                errorDetail: aasCreationResult.errorDetail,
             },
         });
-        // TODO: Add detailed submodel error handling from aasCreationResult.result?.submodelResults
         return wrapSuccess(steps);
     }
 
