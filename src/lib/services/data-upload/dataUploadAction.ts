@@ -104,6 +104,24 @@ function getBlueprintIds(): string[] | undefined {
 }
 
 /**
+ * Helper function to safely get nested values from the parsed VEC data
+ */ 
+function getNestedValue(obj: unknown, path: string): string | null {
+    const keys = path.split('.');
+    let current: unknown = obj;
+
+    for (const key of keys) {
+        if (typeof current === 'object' && current !== null && key in (current as Record<string, unknown>)) {
+            current = (current as Record<string, unknown>)[key];
+        } else {
+            return null;
+        }
+    }
+
+    return typeof current === 'string' ? current : null;
+}
+
+/**
  * Processes VEC file upload and creates an AAS with the data.
  *
  * Workflow steps:
@@ -162,21 +180,7 @@ export async function processData(formData: FormData) {
 
         vecData = findAndReplaceDocumentVersions(vecData) as Record<string, unknown>;
 
-        // Helper function to safely get nested values from the parsed VEC data
-        function getNestedValue(obj: unknown, path: string): string | null {
-            const keys = path.split('.');
-            let current: unknown = obj;
 
-            for (const key of keys) {
-                if (typeof current === 'object' && current !== null && key in (current as Record<string, unknown>)) {
-                    current = (current as Record<string, unknown>)[key];
-                } else {
-                    return null;
-                }
-            }
-
-            return typeof current === 'string' ? current : null;
-        }
 
         // Extract organization and part name from VEC data
         const companyName = getNestedValue(vecData, 'DocumentVersion.CompanyName.#text');
@@ -214,20 +218,6 @@ export async function processData(formData: FormData) {
 
     // Step 3: Generate AAS
     steps.push({ currentStep: { name: 'generateAas', status: 'processing' } });
-
-    // Extract organization and part name from VEC data (already validated in processing step)
-    const getNestedValue = (obj: unknown, path: string): string | null => {
-        const keys = path.split('.');
-        let current: unknown = obj;
-        for (const key of keys) {
-            if (typeof current === 'object' && current !== null && key in (current as Record<string, unknown>)) {
-                current = (current as Record<string, unknown>)[key];
-            } else {
-                return null;
-            }
-        }
-        return typeof current === 'string' ? current : null;
-    };
 
     const companyName = getNestedValue(vecData, 'DocumentVersion.CompanyName.#text') || 'Unknown';
     const partName = getNestedValue(vecData, 'GeneratingSystemName.#text') || 'Unknown';
