@@ -74,10 +74,10 @@ export async function wrapResponse<T>(response: Response): Promise<ApiResponseWr
     if (!(response.status >= 200 && response.status < 300)) {
         const status = getStatus(response.status);
         if (response.headers.get('content-length') === '0') {
-            return wrapErrorCode(status, response.statusText, response.status);
+            return wrapErrorCode(status, response.statusText, undefined, response.status);
         }
         const result = await response.json().catch((e) => console.warn(e.message));
-        return wrapErrorCode(status, response.statusText, response.status, result);
+        return wrapErrorCode(status, response.statusText, undefined, response.status, result);
     }
 
     const contentType = response.headers.get('Content-Type');

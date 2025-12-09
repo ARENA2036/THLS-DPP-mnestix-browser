@@ -57,6 +57,7 @@ export class SubmodelRepositoryService {
         return wrapErrorCode(
             ApiResultStatus.NOT_FOUND,
             `Submodel with id '${submodelId}' not found in repository '${repoUrl}'`,
+            undefined,
             response.httpStatus,
         );
     }

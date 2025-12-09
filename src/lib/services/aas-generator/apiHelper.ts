@@ -18,6 +18,7 @@ export const handleResponseError = async <T>(error: ResponseError): Promise<ApiR
     return wrapErrorCode(
         mapStatusToResult(error.response.status),
         error.response.statusText,
+        undefined,
         error.response.status,
         parsedBody,
     );

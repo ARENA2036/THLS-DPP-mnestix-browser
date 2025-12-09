@@ -145,6 +145,7 @@ export class AasRepositoryService {
         return wrapErrorCode(
             ApiResultStatus.NOT_FOUND,
             `AAS '${aasId}' not found in repository '${repoUrl}'`,
+            undefined,
             response.httpStatus,
         );
     }

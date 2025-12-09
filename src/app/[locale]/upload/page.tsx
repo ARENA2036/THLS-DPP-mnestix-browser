@@ -38,10 +38,10 @@ export default function UploadPage() {
             </Box>
             <Paper sx={{ p: 4, mt: 3 }}>
                 <Grid container spacing={4}>
-                    <Grid item xs={12} md={6}>
+                    <Grid size={{ xs:12, md:6 }}>
                         <DataUpload />
                     </Grid>
-                    <Grid item xs={12} md={6}>
+                    <Grid size={{ xs:12, md:6 }}>
                         <Typography variant="h6" gutterBottom>
                             {t('explanation.title')}
                         </Typography>

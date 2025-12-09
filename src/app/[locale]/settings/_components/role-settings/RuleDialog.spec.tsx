@@ -209,7 +209,7 @@ describe('RoleDialog', () => {
     });
 
     it('handles conflict error', async () => {
-        const { spawn } = doMock(wrapErrorCode(ApiResultStatus.CONFLICT, 'CONFLICT', 409));
+        const { spawn } = doMock(wrapErrorCode(ApiResultStatus.CONFLICT, 'CONFLICT', undefined, 409));
         const { onClose, reloadRules } = await renderRuleDialog(conflictRule);
 
         await act(async () => {
