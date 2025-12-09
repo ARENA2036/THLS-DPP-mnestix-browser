@@ -598,9 +598,12 @@
       },
       "fileTooLarge": "El archivo es demasiado grande. Tamaño máximo: {maxSize}.",
       "fileTypeNotSupported": "Solo se admiten archivos VEC.",
-      "processingError": "Error al procesar. Revisa el archivo e inténtalo de nuevo.",
-      "missingFieldsError": "Faltan campos obligatorios en el archivo VEC",
-      "missingFieldsDetail": "Los siguientes campos faltan o están vacíos: {fields}. Asegúrese de que su archivo VEC contenga estos valores.",
+      "apiErrors": {
+        "processingError": "Error al procesar. Revisa el archivo e inténtalo de nuevo.",
+        "missingFieldsError": "Faltan campos obligatorios en el archivo VEC",
+        "missingFieldsDetail": "Los siguientes campos faltan o están vacíos: {fields}. Asegúrese de que su archivo VEC contenga estos valores.",
+        "uploadError": "Error al subir. Inténtalo de nuevo."
+      },
       "status": {
         "error": "Error",
         "loading": "Procesando",
@@ -621,7 +624,6 @@
           "fileRequired": "Selecciona un archivo VEC antes de enviar."
         }
       },
-      "uploadError": "Error al subir. Inténtalo de nuevo.",
       "uploadSuccess": "Carga completada correctamente."
     },
     "transfer": {

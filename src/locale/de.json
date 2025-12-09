@@ -598,9 +598,12 @@
       },
       "fileTooLarge": "Datei ist zu groß. Maximale Größe: {maxSize}.",
       "fileTypeNotSupported": "Es werden nur VEC-Dateien unterstützt.",
-      "processingError": "Verarbeitung fehlgeschlagen. Bitte Datei prüfen und erneut versuchen.",
-      "missingFieldsError": "Erforderliche Felder in VEC-Datei fehlen",
-      "missingFieldsDetail": "Die folgenden Felder fehlen oder sind leer: {fields}. Stellen Sie sicher, dass Ihre VEC-Datei diese Werte enthält.",
+      "apiErrors": {
+        "processingError": "Verarbeitung fehlgeschlagen. Bitte Datei prüfen und erneut versuchen.",
+        "missingFieldsError": "Erforderliche Felder in VEC-Datei fehlen",
+        "missingFieldsDetail": "Die folgenden Felder fehlen oder sind leer: {fields}. Stellen Sie sicher, dass Ihre VEC-Datei diese Werte enthält.",
+        "uploadError": "Upload fehlgeschlagen. Bitte erneut versuchen."
+      },
       "status": {
         "error": "Fehlgeschlagen",
         "loading": "In Bearbeitung",
@@ -621,7 +624,6 @@
           "fileRequired": "Bitte wählen Sie vor dem Absenden eine VEC-Datei aus."
         }
       },
-      "uploadError": "Upload fehlgeschlagen. Bitte erneut versuchen.",
       "uploadSuccess": "Upload erfolgreich abgeschlossen."
     },
     "transfer": {

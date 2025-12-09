@@ -1,7 +1,7 @@
 'use client';
 
 import { ChangeEvent, useEffect, useId, useRef, useState, useTransition } from 'react';
-import { Button, IconButton, LinearProgress, Stack, TextField, Typography } from '@mui/material';
+import { Button, IconButton, LinearProgress, Stack, Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import { processData } from 'lib/services/data-upload/dataUploadAction';
 import DragAndDrop from './DragAndDrop';
@@ -73,17 +73,37 @@ export default function DataUpload(props: DataUploadProps) {
         // Check if it's a translation key with parameters (format: "key|{json}")
         if (errorText.includes('|')) {
             const [key, paramsJson] = errorText.split('|');
+            const translationKey = key.replace('pages.uploadData.apiErrors.', '');
             try {
                 const params = JSON.parse(paramsJson);
-                return t(key.replace('pages.uploadData.', ''), params);
+                // Try to translate with parameters, fallback to original on error
+                try {
+                    // @ts-expect-error - Dynamic translation key, fallback handles invalid keys
+                    return t(`apiErrors.${translationKey}`, params);
+                } catch {
+                    return errorText;
+                }
             } catch {
-                return t(key.replace('pages.uploadData.', ''));
+                // JSON parse failed, try without parameters
+                try {
+                    // @ts-expect-error - Dynamic translation key, fallback handles invalid keys
+                    return t(`apiErrors.${translationKey}`);
+                } catch {
+                    return errorText;
+                }
             }
         }
 
         // Check if it's a simple translation key
-        if (errorText.startsWith('pages.uploadData.')) {
-            return t(errorText.replace('pages.uploadData.', ''));
+        if (errorText.startsWith('pages.uploadData.apiErrors.')) {
+            const translationKey = errorText.replace('pages.uploadData.apiErrors.', '');
+            try {
+                // @ts-expect-error - Dynamic translation key, fallback handles invalid keys
+                return t(`apiErrors.${translationKey}`);
+            } catch {
+                // Translation key doesn't exist, return generic error
+                return t('apiErrors.processingError');
+            }
         }
 
         // Return as-is if not a translation key
@@ -181,7 +201,9 @@ export default function DataUpload(props: DataUploadProps) {
                 }
 
                 if (!response.isSuccess || !response.result) {
-                    handleStepFailure('upload', response.error || t('uploadError'), response.errorDetail);
+                    const errorMessage = !response.isSuccess ? response.message : t('apiErrors.uploadError');
+                    const errorDetail = !response.isSuccess ? response.errorDetail : undefined;
+                    handleStepFailure('upload', errorMessage, errorDetail);
                     return;
                 }
 
@@ -205,7 +227,8 @@ export default function DataUpload(props: DataUploadProps) {
                         stepStatusSetters[stepName]('success');
                     } else if (status === 'failed') {
                         stepStatusSetters[stepName]('error');
-                        const translatedError = translateBackendError(update.currentStep.error) ?? t('processingError');
+                        const translatedError =
+                            translateBackendError(update.currentStep.error) ?? t('apiErrors.processingError');
                         const translatedDetail = translateBackendError(update.currentStep.errorDetail);
                         updateError(translatedError, translatedDetail);
                         return;
@@ -228,7 +251,7 @@ export default function DataUpload(props: DataUploadProps) {
                 if (currentRequestId !== requestIdRef.current) {
                     return;
                 }
-                const errorMessage = error instanceof Error ? error.message : t('uploadError');
+                const errorMessage = error instanceof Error ? error.message : t('apiErrors.uploadError');
                 handleStepFailure('upload', errorMessage);
             }
         });

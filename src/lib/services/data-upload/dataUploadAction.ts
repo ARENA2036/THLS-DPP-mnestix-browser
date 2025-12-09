@@ -105,7 +105,7 @@ function getBlueprintIds(): string[] | undefined {
 
 /**
  * Helper function to safely get nested values from the parsed VEC data
- */ 
+ */
 function getNestedValue(obj: unknown, path: string): string | null {
     const keys = path.split('.');
     let current: unknown = obj;
@@ -180,8 +180,6 @@ export async function processData(formData: FormData) {
 
         vecData = findAndReplaceDocumentVersions(vecData) as Record<string, unknown>;
 
-
-
         // Extract organization and part name from VEC data
         const companyName = getNestedValue(vecData, 'DocumentVersion.CompanyName.#text');
         const partName = getNestedValue(vecData, 'GeneratingSystemName.#text');
@@ -196,8 +194,8 @@ export async function processData(formData: FormData) {
                 currentStep: {
                     name: 'process',
                     status: 'failed',
-                    error: 'pages.uploadData.missingFieldsError',
-                    errorDetail: `pages.uploadData.missingFieldsDetail|{"fields":"${missingFields.join(', ')}"}`,
+                    error: 'pages.uploadData.apiErrors.missingFieldsError',
+                    errorDetail: `pages.uploadData.apiErrors.missingFieldsDetail|{"fields":"${missingFields.join(', ')}"}`,
                 },
             });
             return wrapSuccess(steps);
