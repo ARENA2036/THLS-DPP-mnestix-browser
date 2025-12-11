@@ -102,7 +102,7 @@ export class DiscoveryServiceApi implements IDiscoveryServiceApi {
                 response,
                 { message: response.message },
             );
-            return wrapErrorCode(response.errorCode, response.message, response.httpStatus);
+            return wrapErrorCode(response.errorCode, response.message, undefined, response.httpStatus);
         }
 
         if (response.result.result.length === 0) {
@@ -116,7 +116,7 @@ export class DiscoveryServiceApi implements IDiscoveryServiceApi {
                     Message: 'No matching Asset Administration Shells found',
                 },
             );
-            return wrapErrorCode(ApiResultStatus.NOT_FOUND, 'No AAS found for assetIds', response.httpStatus);
+            return wrapErrorCode(ApiResultStatus.NOT_FOUND, 'No AAS found for assetIds', undefined, response.httpStatus);
         }
         logResponseDebug(
             this.log,

@@ -26,10 +26,37 @@ function validateEncryptionKey(key) {
 }
 
 /**
+ * Validates that FILE_UPLOAD_BLUEPRINTS is a valid JSON array
+ * @param {string | undefined} blueprints - The blueprints configuration to validate
+ * @throws {Error} If blueprints is invalid
+ */
+function validateFileUploadBlueprints(blueprints) {
+    if (!blueprints) {
+        return; // Optional field
+    }
+
+    try {
+        const parsed = JSON.parse(blueprints);
+        if (!Array.isArray(parsed)) {
+            throw new Error('FILE_UPLOAD_BLUEPRINTS must be a JSON array');
+        }
+        if (!parsed.every((item) => typeof item === 'string')) {
+            throw new Error('FILE_UPLOAD_BLUEPRINTS must be an array of strings');
+        }
+    } catch (error) {
+        if (error.message.includes('FILE_UPLOAD_BLUEPRINTS')) {
+            throw error;
+        }
+        throw new Error('FILE_UPLOAD_BLUEPRINTS must be a valid JSON array of strings');
+    }
+}
+
+/**
  * @param {Record<string, string | undefined>} envs
  */
 export function validateEnvs(envs) {
     validateEncryptionKey(envs.SECRET_ENC_KEY);
+    validateFileUploadBlueprints(envs.FILE_UPLOAD_BLUEPRINTS);
 
     if (envs.KEYCLOAK_ENABLED === 'true') {
         for (const key of keycloakKeys) {

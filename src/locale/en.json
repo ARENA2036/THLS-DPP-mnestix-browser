@@ -308,6 +308,8 @@
       "listCardHeader": "Select via List",
       "listBtnLabel": "See what is already in your repository",
       "listBtnText": "Go to AAS List",
+      "uploadCardHeader": "Upload Configuration",
+      "uploadBtnLabel": "Upload a wiring harness configuration file",
       "scanIdLabel": "Scan AAS ID or Asset ID",
       "welcomeText": "Welcome to Mnestix",
       "enterManuallyLabel": "Enter manually"
@@ -570,9 +572,20 @@
       "noBlueprintsWarning": "No blueprints available."
     },
     "uploadData": {
-      "title": "Upload Data",
+      "title": "Upload Wiring Harness Configuration",
+      "backToHome": "Back to Home",
+      "explanation": {
+        "title": "About VEC File Upload",
+        "paragraph1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+        "paragraph2": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "paragraph3": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+      },
       "actions": {
+        "deleteFile": "Delete file",
         "removeFile": "Remove file",
+        "seeLess": "See less",
+        "seeMore": "See more",
+        "uploadMore": "Upload more",
         "viewCreatedAas": "View created AAS"
       },
       "ariaLabel": "Upload data VEC file",
@@ -585,7 +598,12 @@
       },
       "fileTooLarge": "File is too large. Maximum size is {maxSize}.",
       "fileTypeNotSupported": "Only VEC files are supported.",
-      "processingError": "Processing failed. Check the file and try again.",
+      "apiErrors": {
+        "processingError": "Processing failed. Check the file and try again.",
+        "missingFieldsError": "Missing required fields in VEC file",
+        "missingFieldsDetail": "The following fields are missing or empty: {fields}. Please ensure your VEC file contains these values.",
+        "uploadError": "Upload failed. Please try again."
+      },
       "status": {
         "error": "Failed",
         "loading": "Processing",
@@ -606,7 +624,6 @@
           "fileRequired": "Please select a VEC file before submitting."
         }
       },
-      "uploadError": "Upload failed. Please try again.",
       "uploadSuccess": "Upload completed successfully."
     },
     "transfer": {

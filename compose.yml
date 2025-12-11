@@ -68,7 +68,7 @@ services:
       - mnestix-network
 
   mnestix-aas-generator:
-    image: mnestix/mnestix-aas-generator:1.0.0
+    image: mnestix/mnestix-aas-generator:dev
     container_name: mnestix-aas-generator
     profiles: ['', 'backend', 'tests']
     environment:

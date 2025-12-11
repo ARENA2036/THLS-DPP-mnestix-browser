@@ -1,7 +1,7 @@
 'use client';
 
 import { ChangeEvent, useEffect, useId, useRef, useState, useTransition } from 'react';
-import { Button, IconButton, LinearProgress, Stack, TextField, Typography } from '@mui/material';
+import { Button, IconButton, LinearProgress, Stack, Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import { processData } from 'lib/services/data-upload/dataUploadAction';
 import DragAndDrop from './DragAndDrop';
@@ -16,7 +16,7 @@ export interface DataUploadProps {
 
 /**
  * Main data upload component for VEC files.
- * 
+ *
  * Renders the full upload workflow, including:
  * - Form fields for user and organization information
  * - Accessible drag-and-drop and file input for selecting VEC files
@@ -33,14 +33,11 @@ export default function DataUpload(props: DataUploadProps) {
     const navigate = useRouter();
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
+    const [errorDetail, setErrorDetail] = useState<string | null>(null);
     const [uploadStatus, setUploadStatus] = useState<UploadStatus>('idle');
     const [processingStatus, setProcessingStatus] = useState<UploadStatus>('idle');
     const [generateAasStatus, setGenerateAasStatus] = useState<UploadStatus>('idle');
     const [redirectUrl, setRedirectUrl] = useState<string | null>(null);
-    const [userName, setUserName] = useState('');
-    const [organizationName, setOrganizationName] = useState('');
-    const [userNameError, setUserNameError] = useState<string | null>(null);
-    const [organizationNameError, setOrganizationNameError] = useState<string | null>(null);
     const [isPending, startUploadTransition] = useTransition();
     const fileInputRef = useRef<HTMLInputElement | null>(null);
     const progressIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -50,10 +47,6 @@ export default function DataUpload(props: DataUploadProps) {
     const fileInputId = `${componentId}-input`;
     const helpTextId = `${componentId}-help`;
     const errorTextId = `${componentId}-error`;
-    const userNameId = `${componentId}-user-name`;
-    const organizationId = `${componentId}-organization-name`;
-    const userNameHelperId = `${userNameId}-helper`;
-    const organizationHelperId = `${organizationId}-helper`;
 
     const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
     const ACCEPTABLE_FILE_EXTENSIONS = ['.vec'];
@@ -66,11 +59,55 @@ export default function DataUpload(props: DataUploadProps) {
         generateAas: setGenerateAasStatus,
     };
 
-    function updateError(message: string | null) {
+    function updateError(message: string | null, detail?: string | null) {
         setErrorMessage(message);
+        setErrorDetail(detail || null);
         if (message && onError) {
             onError(message);
         }
+    }
+
+    function translateBackendError(errorText: string | null | undefined): string | null {
+        if (!errorText) return null;
+
+        // Check if it's a translation key with parameters (format: "key|{json}")
+        if (errorText.includes('|')) {
+            const [key, paramsJson] = errorText.split('|');
+            const translationKey = key.replace('pages.uploadData.apiErrors.', '');
+            try {
+                const params = JSON.parse(paramsJson);
+                // Try to translate with parameters, fallback to original on error
+                try {
+                    // @ts-expect-error - Dynamic translation key, fallback handles invalid keys
+                    return t(`apiErrors.${translationKey}`, params);
+                } catch {
+                    return errorText;
+                }
+            } catch {
+                // JSON parse failed, try without parameters
+                try {
+                    // @ts-expect-error - Dynamic translation key, fallback handles invalid keys
+                    return t(`apiErrors.${translationKey}`);
+                } catch {
+                    return errorText;
+                }
+            }
+        }
+
+        // Check if it's a simple translation key
+        if (errorText.startsWith('pages.uploadData.apiErrors.')) {
+            const translationKey = errorText.replace('pages.uploadData.apiErrors.', '');
+            try {
+                // @ts-expect-error - Dynamic translation key, fallback handles invalid keys
+                return t(`apiErrors.${translationKey}`);
+            } catch {
+                // Translation key doesn't exist, return generic error
+                return t('apiErrors.processingError');
+            }
+        }
+
+        // Return as-is if not a translation key
+        return errorText;
     }
 
     function stopProgressSimulation() {
@@ -80,13 +117,13 @@ export default function DataUpload(props: DataUploadProps) {
         }
     }
 
-    function handleStepFailure(step: StepKey, message: string) {
+    function handleStepFailure(step: StepKey, message: string, detail?: string) {
         stopProgressSimulation();
         stepStatusSetters[step]('error');
         if (fileInputRef.current) {
             fileInputRef.current.value = '';
         }
-        updateError(message);
+        updateError(message, detail);
     }
 
     function resetWorkflowState() {
@@ -99,39 +136,6 @@ export default function DataUpload(props: DataUploadProps) {
 
     useEffect(() => () => stopProgressSimulation(), []);
 
-    function validateForm() {
-        let isValid = true;
-        if (!userName.trim()) {
-            setUserNameError(t('form.errors.userNameRequired'));
-            isValid = false;
-        } else {
-            setUserNameError(null);
-        }
-
-        if (!organizationName.trim()) {
-            setOrganizationNameError(t('form.errors.organizationRequired'));
-            isValid = false;
-        } else {
-            setOrganizationNameError(null);
-        }
-
-        return isValid;
-    }
-
-    function handleUserNameChange(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
-        setUserName(event.target.value);
-        if (userNameError) {
-            setUserNameError(null);
-        }
-    }
-
-    function handleOrganizationNameChange(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
-        setOrganizationName(event.target.value);
-        if (organizationNameError) {
-            setOrganizationNameError(null);
-        }
-    }
-
     function isVecFile(file: File): boolean {
         const fileName = file.name.toLowerCase();
         const hasValidExtension = ACCEPTABLE_FILE_EXTENSIONS.some((extension) => fileName.endsWith(extension));
@@ -141,10 +145,6 @@ export default function DataUpload(props: DataUploadProps) {
     }
 
     function handleFileSelection(file: File) {
-        requestIdRef.current += 1;
-
-        stopProgressSimulation();
-        resetWorkflowState();
         updateError(null);
 
         if (!isVecFile(file)) {
@@ -174,10 +174,6 @@ export default function DataUpload(props: DataUploadProps) {
     }
 
     function submitUpload() {
-        if (!validateForm()) {
-            return;
-        }
-
         if (!selectedFile) {
             updateError(t('form.errors.fileRequired'));
             return;
@@ -190,67 +186,91 @@ export default function DataUpload(props: DataUploadProps) {
         resetWorkflowState();
         updateError(null);
 
-        // Set upload status immediately
+        // Set upload status immediately when user clicks submit
         stepStatusSetters['upload']('uploading');
 
         const formData = new FormData();
         formData.append('file', selectedFile);
-        formData.append('userName', userName.trim());
-        formData.append('organizationName', organizationName.trim());
 
         startUploadTransition(async () => {
-            const response = await processData(formData);
+            try {
+                const response = await processData(formData);
 
-            if (currentRequestId !== requestIdRef.current) {
-                return;
-            }
-
-            if (!response.isSuccess || !response.result) {
-                handleStepFailure('upload', t('uploadError'));
-                return;
-            }
-
-            // Process each update sequentially
-            for (const update of response.result) {
                 if (currentRequestId !== requestIdRef.current) {
                     return;
                 }
 
-                const { name, status } = update.currentStep;
-
-                if (!Object.prototype.hasOwnProperty.call(stepStatusSetters, name)) {
-                    continue;
-                }
-
-                const stepName = name as StepKey;
-
-                if (status === 'processing') {
-                    stepStatusSetters[stepName]('processing');
-                } else if (status === 'completed') {
-                    stepStatusSetters[stepName]('success');
-                } else if (status === 'failed') {
-                    stepStatusSetters[stepName]('error');
-                    updateError(update.currentStep.error ?? t('processingError'));
+                if (!response.isSuccess || !response.result) {
+                    const errorMessage = !response.isSuccess ? response.message : t('apiErrors.uploadError');
+                    const errorDetail = !response.isSuccess ? response.errorDetail : undefined;
+                    handleStepFailure('upload', errorMessage, errorDetail);
                     return;
                 }
 
-                // Small delay for visual feedback
-                await new Promise((resolve) => setTimeout(resolve, 100));
-            }
+                // Process each update sequentially
+                for (const update of response.result) {
+                    if (currentRequestId !== requestIdRef.current) {
+                        return;
+                    }
 
-            // Set final result
-            if (currentRequestId !== requestIdRef.current) {
-                return;
-            }
+                    const { name, status } = update.currentStep;
 
-            const finalUpdate = response.result[response.result.length - 1];
-            if (finalUpdate.result?.redirectUrl) {
-                setRedirectUrl(finalUpdate.result.redirectUrl);
+                    if (!Object.prototype.hasOwnProperty.call(stepStatusSetters, name)) {
+                        continue;
+                    }
+
+                    const stepName = name as StepKey;
+
+                    if (status === 'processing') {
+                        stepStatusSetters[stepName]('processing');
+                    } else if (status === 'completed') {
+                        stepStatusSetters[stepName]('success');
+                    } else if (status === 'failed') {
+                        stepStatusSetters[stepName]('error');
+                        const translatedError =
+                            translateBackendError(update.currentStep.error) ?? t('apiErrors.processingError');
+                        const translatedDetail = translateBackendError(update.currentStep.errorDetail);
+                        updateError(translatedError, translatedDetail);
+                        return;
+                    }
+
+                    // Small delay for visual feedback
+                    await new Promise((resolve) => setTimeout(resolve, 100));
+                }
+
+                // Set final result
+                if (currentRequestId !== requestIdRef.current) {
+                    return;
+                }
+
+                const finalUpdate = response.result[response.result.length - 1];
+                if (finalUpdate.result?.redirectUrl) {
+                    setRedirectUrl(finalUpdate.result.redirectUrl);
+                }
+            } catch (error) {
+                if (currentRequestId !== requestIdRef.current) {
+                    return;
+                }
+                const errorMessage = error instanceof Error ? error.message : t('apiErrors.uploadError');
+                handleStepFailure('upload', errorMessage);
             }
         });
     }
 
     function clearSelectedFile() {
+        requestIdRef.current += 1;
+        setSelectedFile(null);
+        updateError(null);
+        resetWorkflowState();
+        if (fileInputRef.current) {
+            fileInputRef.current.value = '';
+        }
+        if (onFileRemoved) {
+            onFileRemoved();
+        }
+    }
+
+    function clearAfterWorkflowComplete() {
         requestIdRef.current += 1;
         setSelectedFile(null);
         updateError(null);
@@ -296,8 +316,11 @@ export default function DataUpload(props: DataUploadProps) {
     }
 
     function renderWorkflowCard() {
-        // Only show the card if a file is selected
-        if (!selectedFile) {
+        // Only show the card if workflow has started
+        const hasWorkflowStarted =
+            uploadStatus !== 'idle' || processingStatus !== 'idle' || generateAasStatus !== 'idle';
+
+        if (!selectedFile || !hasWorkflowStarted) {
             return null;
         }
 
@@ -328,11 +351,7 @@ export default function DataUpload(props: DataUploadProps) {
             currentStatus = 'uploading';
         }
 
-        if (
-            uploadStatus === 'error' ||
-            processingStatus === 'error' ||
-            generateAasStatus === 'error'
-        ) {
+        if (uploadStatus === 'error' || processingStatus === 'error' || generateAasStatus === 'error') {
             isError = true;
             errorText = errorMessage;
         }
@@ -346,8 +365,6 @@ export default function DataUpload(props: DataUploadProps) {
                     ? t('status.error')
                     : null;
 
-        const hasWorkflowStarted =
-            uploadStatus !== 'idle' || processingStatus !== 'idle' || generateAasStatus !== 'idle';
         const showProgress = !isComplete && !isError && hasWorkflowStarted;
 
         return (
@@ -367,11 +384,11 @@ export default function DataUpload(props: DataUploadProps) {
                             <Typography variant="body2" fontWeight={600} noWrap title={selectedFile.name}>
                                 {selectedFile.name}
                             </Typography>
-                            {(isComplete || isError) && (
+                            {isError && (
                                 <IconButton
                                     size="small"
                                     aria-label={t('actions.removeFile')}
-                                    onClick={clearSelectedFile}
+                                    onClick={clearAfterWorkflowComplete}
                                 >
                                     <CancelIcon fontSize="small" />
                                 </IconButton>
@@ -395,6 +412,19 @@ export default function DataUpload(props: DataUploadProps) {
                         >
                             {isComplete ? t('uploadSuccess') : isError && errorText ? errorText : currentStepTitle}
                         </Typography>
+                        {isError && errorDetail && (
+                            <Typography
+                                variant="caption"
+                                color="error"
+                                sx={{
+                                    display: 'block',
+                                    whiteSpace: 'pre-wrap',
+                                    wordBreak: 'break-word',
+                                }}
+                            >
+                                {errorDetail}
+                            </Typography>
+                        )}
                     </Stack>
                 </Stack>
                 <LinearProgress
@@ -414,30 +444,6 @@ export default function DataUpload(props: DataUploadProps) {
 
     return (
         <Stack spacing={2}>
-            <Stack spacing={2}>
-                <TextField
-                    id={userNameId}
-                    label={t('form.userNameLabel')}
-                    value={userName}
-                    onChange={handleUserNameChange}
-                    required
-                    error={Boolean(userNameError)}
-                    helperText={userNameError ?? ' '}
-                    FormHelperTextProps={{ id: userNameHelperId }}
-                    autoComplete="name"
-                />
-                <TextField
-                    id={organizationId}
-                    label={t('form.organizationNameLabel')}
-                    value={organizationName}
-                    onChange={handleOrganizationNameChange}
-                    required
-                    error={Boolean(organizationNameError)}
-                    helperText={organizationNameError ?? ' '}
-                    FormHelperTextProps={{ id: organizationHelperId }}
-                    autoComplete="organization"
-                />
-            </Stack>
             <input
                 id={fileInputId}
                 ref={fileInputRef}
@@ -446,31 +452,42 @@ export default function DataUpload(props: DataUploadProps) {
                 onChange={handleInputChange}
                 hidden
             />
-            <DragAndDrop
-                onBrowse={handleBrowseClick}
-                onDropFiles={handleFilesDropped}
-                helpTextId={helpTextId}
-                errorTextId={errorTextId}
-                hasError={Boolean(errorMessage)}
-            />
-            <Button
-                variant="contained"
-                color="primary"
-                onClick={submitUpload}
-                disabled={!selectedFile || isPending}
-            >
-                {t('form.submitLabel')}
-            </Button>
+            {uploadStatus === 'idle' && processingStatus === 'idle' && generateAasStatus === 'idle' && (
+                <>
+                    <DragAndDrop
+                        onBrowse={handleBrowseClick}
+                        onDropFiles={handleFilesDropped}
+                        helpTextId={helpTextId}
+                        errorTextId={errorTextId}
+                        hasError={Boolean(errorMessage)}
+                        selectedFile={selectedFile}
+                        onDeleteFile={clearSelectedFile}
+                        formatFileSize={formatFileSize}
+                    />
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={submitUpload}
+                        disabled={!selectedFile || isPending}
+                    >
+                        {t('form.submitLabel')}
+                    </Button>
+                </>
+            )}
             {renderWorkflowCard()}
-            {redirectUrl &&
-            uploadStatus === 'success' &&
-            processingStatus === 'success' &&
-            generateAasStatus === 'success' ? (
-                <Button variant="contained" color="primary" onClick={() => navigate.push(redirectUrl)}>
-                    {t('actions.viewCreatedAas')}
-                </Button>
-            ) : null}
-            {errorMessage ? (
+            {uploadStatus === 'success' && processingStatus === 'success' && generateAasStatus === 'success' && (
+                <Stack direction="row" spacing={2}>
+                    {redirectUrl && (
+                        <Button variant="contained" color="primary" onClick={() => navigate.push(redirectUrl)}>
+                            {t('actions.viewCreatedAas')}
+                        </Button>
+                    )}
+                    <Button variant="outlined" color="primary" onClick={clearSelectedFile}>
+                        {t('actions.uploadMore')}
+                    </Button>
+                </Stack>
+            )}
+            {errorMessage && uploadStatus === 'idle' && processingStatus === 'idle' && generateAasStatus === 'idle' ? (
                 <Typography id={errorTextId} variant="body2" color="error" role="alert" aria-live="assertive">
                     {errorMessage}
                 </Typography>

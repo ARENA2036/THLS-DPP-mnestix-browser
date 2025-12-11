@@ -211,6 +211,7 @@ export function ProductOverviewCard(props: ProductOverviewCardProps) {
         ) as SubmodelElementCollection;
 
         const markings = prepareMarkingTexts(markingsElement || null);
+
         const companyLogo = findSubmodelElementByIdShort(
             nameplateSubmodelElements,
             'CompanyLogo',

@@ -30,6 +30,7 @@ export type ApiResponseWrapperError<T> = ApiResponseWrapperBase & {
     result?: T;
     errorCode: ApiResultStatus;
     message: string;
+    errorDetail?: string;
 };
 
 export function wrapSuccess<T>(
@@ -48,6 +49,7 @@ export function wrapSuccess<T>(
 export function wrapErrorCode<T>(
     error: ApiResultStatus,
     message: string,
+    errorDetail?: string,
     httpStatus?: number,
     result?: T,
 ): ApiResponseWrapperError<T> {
@@ -55,6 +57,7 @@ export function wrapErrorCode<T>(
         isSuccess: false,
         errorCode: error,
         message: message,
+        errorDetail: errorDetail,
         httpStatus: httpStatus,
         result: result,
     };
@@ -71,10 +74,10 @@ export async function wrapResponse<T>(response: Response): Promise<ApiResponseWr
     if (!(response.status >= 200 && response.status < 300)) {
         const status = getStatus(response.status);
         if (response.headers.get('content-length') === '0') {
-            return wrapErrorCode(status, response.statusText, response.status);
+            return wrapErrorCode(status, response.statusText, undefined, response.status);
         }
         const result = await response.json().catch((e) => console.warn(e.message));
-        return wrapErrorCode(status, response.statusText, response.status, result);
+        return wrapErrorCode(status, response.statusText, undefined, response.status, result);
     }
 
     const contentType = response.headers.get('Content-Type');
