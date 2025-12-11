@@ -4,86 +4,18 @@ import { wrapErrorCode, wrapSuccess } from 'lib/util/apiResponseWrapper/apiRespo
 import { ApiResultStatus } from 'lib/util/apiResponseWrapper/apiResultStatus';
 import { createAasWithSubmodels } from 'lib/services/aas-generator/aasCreatorApiActions';
 import { envs } from 'lib/env/MnestixEnv';
-import { DOMParser } from 'xmldom';
-
-type WorkflowStepName = 'upload' | 'process' | 'generateAas';
-type WorkflowStepStatus = 'processing' | 'completed' | 'failed';
-
-interface WorkflowStep {
-    currentStep: {
-        name: WorkflowStepName;
-        status: WorkflowStepStatus;
-        error?: string;
-        errorDetail?: string;
-    };
-    result?: {
-        redirectUrl?: string;
-    };
-}
-
-/**
- * Parses VEC XML content to JSON
- * @param xmlContent The XML string to parse
- * @returns Parsed JSON object
- */
-function parseVecXmlToJson(xmlContent: string): Record<string, unknown> {
-    // Using DOMParser from xmldom package
-    const parser = new DOMParser();
-    const xmlDoc = parser.parseFromString(xmlContent, 'text/xml');
-
-    // Convert XML to JSON recursively
-    function xmlToJson(node: Element): unknown {
-        const obj: Record<string, unknown> = {};
-
-        // Handle attributes
-        if (node.attributes && node.attributes.length > 0) {
-            const attributes: Record<string, string> = {};
-            for (let i = 0; i < node.attributes.length; i++) {
-                const attr = node.attributes[i];
-                attributes[attr.nodeName] = attr.nodeValue || '';
-            }
-            obj['@attributes'] = attributes;
-        }
-
-        // Handle child nodes
-        if (node.hasChildNodes()) {
-            const children = Array.from(node.childNodes);
-            for (const child of children) {
-                const childNode = child as Element;
-                if (childNode.nodeType === 1) {
-                    // Element node
-                    const nodeName = childNode.nodeName;
-                    const value = xmlToJson(childNode);
-
-                    if (obj[nodeName]) {
-                        // If property already exists, make it an array
-                        if (Array.isArray(obj[nodeName])) {
-                            (obj[nodeName] as unknown[]).push(value);
-                        } else {
-                            obj[nodeName] = [obj[nodeName], value];
-                        }
-                    } else {
-                        obj[nodeName] = value;
-                    }
-                } else if (childNode.nodeType === 3) {
-                    // Text node
-                    const text = childNode.nodeValue?.trim();
-                    if (text) {
-                        obj['#text'] = text;
-                    }
-                }
-            }
-        }
-
-        return obj;
-    }
-
-    return xmlToJson(xmlDoc.documentElement) as Record<string, unknown>;
-}
+import {
+    parseXmlToJson,
+    detectFileType,
+    extractKblMetadata,
+    extractVecMetadata,
+    processVecData,
+} from './fileHelper';
+import { WorkflowStep, ParsedFileData } from './types';
 
 /**
  * Gets blueprint IDs from environment variable
- * @returns Array of blueprint IDs or undefined
+ * @returns Array of blueprint IDs or undefined if not configured
  */
 function getBlueprintIds(): string[] | undefined {
     const blueprintsEnv = envs.FILE_UPLOAD_BLUEPRINTS;
@@ -104,30 +36,77 @@ function getBlueprintIds(): string[] | undefined {
 }
 
 /**
- * Helper function to safely get nested values from the parsed VEC data
+ * Parses and processes the uploaded file content
+ * @param fileContent The file content as string
+ * @param fileName The file name
+ * @returns Parsed file data with metadata
+ * @throws Error if file parsing fails
  */
-function getNestedValue(obj: unknown, path: string): string | null {
-    const keys = path.split('.');
-    let current: unknown = obj;
+function parseFileContent(fileContent: string, fileName: string): ParsedFileData {
+    const fileType = detectFileType(fileContent, fileName);
+    let data = parseXmlToJson(fileContent);
 
-    for (const key of keys) {
-        if (typeof current === 'object' && current !== null && key in (current as Record<string, unknown>)) {
-            current = (current as Record<string, unknown>)[key];
-        } else {
-            return null;
-        }
+    // For VEC files, keep only the newest DocumentVersion
+    if (fileType === 'vec') {
+        data = processVecData(data);
     }
 
-    return typeof current === 'string' ? current : null;
+    // Extract metadata based on file type
+    let companyName: string | null = null;
+    let partName: string | null = null;
+
+    if (fileType === 'kbl') {
+        const metadata = extractKblMetadata(data);
+        companyName = metadata.companyName;
+        partName = metadata.partName;
+    } else if (fileType === 'vec') {
+        const metadata = extractVecMetadata(data);
+        companyName = metadata.companyName;
+        partName = metadata.partName;
+    }
+
+    return { type: fileType, data, companyName, partName };
 }
 
 /**
- * Processes VEC file upload and creates an AAS with the data.
+ * Validates the parsed file data for required fields
+ * @param parsedFile The parsed file data
+ * @returns Array of missing field names, empty if all required fields are present
+ */
+function validateParsedFile(parsedFile: ParsedFileData): string[] {
+    const missingFields: string[] = [];
+
+    if (!parsedFile.companyName) {
+        missingFields.push('CompanyName');
+    }
+    if (!parsedFile.partName) {
+        missingFields.push('PartName');
+    }
+
+    return missingFields;
+}
+
+/**
+ * Generates an asset ID short name from company, part, and timestamp
+ * @param companyName The company name
+ * @param partName The part name
+ * @param timestamp The timestamp
+ * @returns Sanitized asset ID short name
+ */
+function generateAssetIdShort(companyName: string, partName: string, timestamp: number): string {
+    return `${companyName}-${partName}-${timestamp}`.replace(/[^a-zA-Z0-9-_]/g, '-');
+}
+
+/**
+ * Processes uploaded file (VEC or KBL) and creates an AAS with the data.
  *
  * Workflow steps:
  * 1. Upload - validates and receives the file
- * 2. Process - processes the VEC file data (currently simulated)
+ * 2. Process - parses and validates the file data
  * 3. Generate AAS - creates the AAS using the AAS Generator API
+ *
+ * @param formData FormData containing the file to process
+ * @returns Array of workflow steps with their status and results
  */
 export async function processData(formData: FormData) {
     const fileEntry = formData.get('file');
@@ -136,59 +115,38 @@ export async function processData(formData: FormData) {
         return wrapErrorCode<WorkflowStep[]>(ApiResultStatus.BAD_REQUEST, 'No file provided');
     }
 
+    const file = fileEntry as File;
+    const fileName = file.name;
     const steps: WorkflowStep[] = [];
 
     // Step 1: Upload
     steps.push({ currentStep: { name: 'upload', status: 'processing' } });
-
-    // Simulate file upload
     await new Promise((resolve) => setTimeout(resolve, 500));
-
     steps.push({ currentStep: { name: 'upload', status: 'completed' } });
 
-    // Step 2: Process VEC file
+    // Step 2: Process file
     steps.push({ currentStep: { name: 'process', status: 'processing' } });
 
-    // Read and parse the VEC file
-    let vecData: Record<string, unknown>;
+    let parsedFile: ParsedFileData;
     try {
-        const fileContent = await (fileEntry as File).text();
-        vecData = parseVecXmlToJson(fileContent);
+        const fileContent = await file.text();
+        parsedFile = parseFileContent(fileContent, fileName);
 
-        // Keep only the newest (last) DocumentVersion
-        function findAndReplaceDocumentVersions(obj: unknown): unknown {
-            if (typeof obj !== 'object' || obj === null) {
-                return obj;
-            }
-
-            if (Array.isArray(obj)) {
-                return obj.map((item) => findAndReplaceDocumentVersions(item));
-            }
-
-            const newObj: Record<string, unknown> = {};
-            for (const key in obj as Record<string, unknown>) {
-                const value = (obj as Record<string, unknown>)[key];
-                if (key.includes('DocumentVersion') && Array.isArray(value)) {
-                    // Keep only the last (newest) DocumentVersion
-                    newObj[key] = value[value.length - 1];
-                } else {
-                    newObj[key] = findAndReplaceDocumentVersions(value);
-                }
-            }
-            return newObj;
+        // Check if file type is supported
+        if (parsedFile.type === 'unknown') {
+            steps.push({
+                currentStep: {
+                    name: 'process',
+                    status: 'failed',
+                    error: 'pages.uploadData.apiErrors.unsupportedFileType',
+                    errorDetail: 'pages.uploadData.apiErrors.unsupportedFileTypeDetail',
+                },
+            });
+            return wrapSuccess(steps);
         }
 
-        vecData = findAndReplaceDocumentVersions(vecData) as Record<string, unknown>;
-
-        // Extract organization and part name from VEC data
-        const companyName = getNestedValue(vecData, 'DocumentVersion.CompanyName.#text');
-        const partName = getNestedValue(vecData, 'GeneratingSystemName.#text');
-
         // Validate required fields
-        const missingFields: string[] = [];
-        if (!companyName) missingFields.push('DocumentVersion.CompanyName');
-        if (!partName) missingFields.push('GeneratingSystemName');
-
+        const missingFields = validateParsedFile(parsedFile);
         if (missingFields.length > 0) {
             steps.push({
                 currentStep: {
@@ -201,12 +159,12 @@ export async function processData(formData: FormData) {
             return wrapSuccess(steps);
         }
     } catch (error) {
-        console.error('Failed to parse VEC file:', error);
+        console.error('Failed to parse file:', error);
         steps.push({
             currentStep: {
                 name: 'process',
                 status: 'failed',
-                error: 'Failed to parse VEC file. Please ensure it is a valid XML file.',
+                error: 'pages.uploadData.apiErrors.parseError',
             },
         });
         return wrapSuccess(steps);
@@ -217,21 +175,17 @@ export async function processData(formData: FormData) {
     // Step 3: Generate AAS
     steps.push({ currentStep: { name: 'generateAas', status: 'processing' } });
 
-    const companyName = getNestedValue(vecData, 'DocumentVersion.CompanyName.#text') || 'Unknown';
-    const partName = getNestedValue(vecData, 'GeneratingSystemName.#text') || 'Unknown';
+    const companyName = parsedFile.companyName || 'Unknown';
+    const partName = parsedFile.partName || 'Unknown';
     const timestamp = Date.now();
-
-    // Create assetIdShort: Organization-PartName-Timestamp
-    const assetIdShort = `${companyName}-${partName}-${timestamp}`.replace(/[^a-zA-Z0-9-_]/g, '-');
-
-    // Get blueprint IDs from environment
+    const assetIdShort = generateAssetIdShort(companyName, partName, timestamp);
     const blueprintIds = getBlueprintIds();
 
     // Call the AAS Creator API
     const aasCreationResult = await createAasWithSubmodels(
         assetIdShort,
         blueprintIds,
-        vecData,
+        parsedFile.data,
         'en', // TODO: get from user preference
     );
 
@@ -248,8 +202,6 @@ export async function processData(formData: FormData) {
     }
 
     const response = aasCreationResult.result;
-
-    // Generate redirect URL using the base64 encoded AAS ID
     const redirectUrl = response.base64EncodedAasId
         ? `/viewer/${response.base64EncodedAasId}`
         : `/viewer/${encodeURIComponent(response.aasId || '')}`;

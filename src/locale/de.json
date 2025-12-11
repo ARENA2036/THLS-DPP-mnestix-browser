@@ -575,7 +575,7 @@
       "title": "Kabelbaumkonfiguration hochladen",
       "backToHome": "Zurück zur Startseite",
       "explanation": {
-        "title": "Über VEC-Datei-Upload",
+        "title": "Über Datei-Upload",
         "paragraph1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
         "paragraph2": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         "paragraph3": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
@@ -594,14 +594,14 @@
         "orDragAndDrop": "oder per Drag & Drop ablegen"
       },
       "descriptions": {
-        "supportedFormats": "Unterstütztes Format: .vec (max. 10 MB)"
+        "supportedFormats": "Unterstütztes Format: .vec, .kbl (max. 10 MB)"
       },
       "fileTooLarge": "Datei ist zu groß. Maximale Größe: {maxSize}.",
-      "fileTypeNotSupported": "Es werden nur VEC-Dateien unterstützt.",
+      "fileTypeNotSupported": "Es werden nur VEC- und KBL-Dateien unterstützt.",
       "apiErrors": {
         "processingError": "Verarbeitung fehlgeschlagen. Bitte Datei prüfen und erneut versuchen.",
-        "missingFieldsError": "Erforderliche Felder in VEC-Datei fehlen",
-        "missingFieldsDetail": "Die folgenden Felder fehlen oder sind leer: {fields}. Stellen Sie sicher, dass Ihre VEC-Datei diese Werte enthält.",
+        "missingFieldsError": "Erforderliche Felder fehlen in der Datei",
+        "missingFieldsDetail": "Die folgenden Felder fehlen oder sind leer: {fields}. Stellen Sie sicher, dass Ihre VEC- oder KBL-Datei diese Werte enthält.",
         "uploadError": "Upload fehlgeschlagen. Bitte erneut versuchen."
       },
       "status": {

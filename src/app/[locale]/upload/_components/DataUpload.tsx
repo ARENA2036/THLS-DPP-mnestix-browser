@@ -49,7 +49,7 @@ export default function DataUpload(props: DataUploadProps) {
     const errorTextId = `${componentId}-error`;
 
     const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
-    const ACCEPTABLE_FILE_EXTENSIONS = ['.vec'];
+    const ACCEPTABLE_FILE_EXTENSIONS = ['.vec', '.kbl'];
     const ACCEPTABLE_MIME_TYPES = ['application/octet-stream', 'text/plain'];
     const ACCEPTABLE_FILE_TYPES = [...ACCEPTABLE_FILE_EXTENSIONS, ...ACCEPTABLE_MIME_TYPES].join(',');
 

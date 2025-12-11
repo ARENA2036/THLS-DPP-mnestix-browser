@@ -575,7 +575,7 @@
       "title": "Upload Wiring Harness Configuration",
       "backToHome": "Back to Home",
       "explanation": {
-        "title": "About VEC File Upload",
+        "title": "About File Upload",
         "paragraph1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
         "paragraph2": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         "paragraph3": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
@@ -594,14 +594,14 @@
         "orDragAndDrop": "or drag and drop"
       },
       "descriptions": {
-        "supportedFormats": "Supported format: .vec (max. 10 MB)"
+        "supportedFormats": "Supported format: .vec, .kbl (max. 10 MB)"
       },
       "fileTooLarge": "File is too large. Maximum size is {maxSize}.",
-      "fileTypeNotSupported": "Only VEC files are supported.",
+      "fileTypeNotSupported": "Only VEC and KBL files are supported.",
       "apiErrors": {
         "processingError": "Processing failed. Check the file and try again.",
-        "missingFieldsError": "Missing required fields in VEC file",
-        "missingFieldsDetail": "The following fields are missing or empty: {fields}. Please ensure your VEC file contains these values.",
+        "missingFieldsError": "Missing required fields in uploaded file",
+        "missingFieldsDetail": "The following fields are missing or empty: {fields}. Please ensure your VEC or KBL file contains these values.",
         "uploadError": "Upload failed. Please try again."
       },
       "status": {
