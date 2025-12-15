@@ -175,11 +175,3 @@ export function processVecData(data: Record<string, unknown>): Record<string, un
 
     return findAndReplaceDocumentVersions(data) as Record<string, unknown>;
 }
-
-/**
- * Gets the accepted file extensions for upload
- * @returns Comma-separated list of accepted extensions
- */
-export function getAcceptedFileExtensions(): string {
-    return '.vec,.kbl';
-}

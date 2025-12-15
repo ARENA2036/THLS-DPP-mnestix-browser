@@ -14,11 +14,13 @@ import {
 import { WorkflowStep, ParsedFileData } from './types';
 
 /**
- * Gets blueprint IDs from environment variable
+ * Gets blueprint IDs from environment variable based on file type
+ * @param fileType The type of file ('kbl' or 'vec')
  * @returns Array of blueprint IDs or undefined if not configured
  */
-function getBlueprintIds(): string[] | undefined {
-    const blueprintsEnv = envs.FILE_UPLOAD_BLUEPRINTS;
+function getBlueprintIds(fileType: 'kbl' | 'vec'): string[] | undefined {
+    const blueprintsEnv =
+        fileType === 'kbl' ? envs.FILE_UPLOAD_BLUEPRINTS_KBL : envs.FILE_UPLOAD_BLUEPRINTS_VEC;
     if (!blueprintsEnv) {
         return undefined;
     }
@@ -29,7 +31,7 @@ function getBlueprintIds(): string[] | undefined {
             return parsed;
         }
     } catch (error) {
-        console.error('Failed to parse FILE_UPLOAD_BLUEPRINTS:', error);
+        console.error(`Failed to parse FILE_UPLOAD_BLUEPRINTS_${fileType.toUpperCase()}:`, error);
     }
 
     return undefined;
@@ -179,7 +181,7 @@ export async function processData(formData: FormData) {
     const partName = parsedFile.partName || 'Unknown';
     const timestamp = Date.now();
     const assetIdShort = generateAssetIdShort(companyName, partName, timestamp);
-    const blueprintIds = getBlueprintIds();
+    const blueprintIds = getBlueprintIds(parsedFile.type);
 
     // Call the AAS Creator API
     const aasCreationResult = await createAasWithSubmodels(
