@@ -602,7 +602,10 @@
         "processingError": "Processing failed. Check the file and try again.",
         "missingFieldsError": "Missing required fields in uploaded file",
         "missingFieldsDetail": "The following fields are missing or empty: {fields}. Please ensure your VEC or KBL file contains these values.",
-        "uploadError": "Upload failed. Please try again."
+        "uploadError": "Upload failed. Please try again.",
+        "unsupportedFileType": "Unsupported file type",
+        "unsupportedFileTypeDetail": "The uploaded file is neither a valid VEC nor a KBL file. Please only upload .vec or .kbl files.",
+        "parseError": "Failed to parse file. Please ensure the file is a valid XML format."
       },
       "status": {
         "error": "Failed",

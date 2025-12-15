@@ -602,7 +602,10 @@
         "processingError": "Error al procesar. Revisa el archivo e inténtalo de nuevo.",
         "missingFieldsError": "Faltan campos obligatorios en el archivo",
         "missingFieldsDetail": "Los siguientes campos faltan o están vacíos: {fields}. Asegúrese de que su archivo VEC o KBL contenga estos valores.",
-        "uploadError": "Error al subir. Inténtalo de nuevo."
+        "uploadError": "Error al subir. Inténtalo de nuevo.",
+        "unsupportedFileType": "Tipo de archivo no compatible",
+        "unsupportedFileTypeDetail": "El archivo cargado no es un archivo VEC ni KBL válido. Por favor, suba solo archivos .vec o .kbl.",
+        "parseError": "Error al analizar el archivo. Asegúrese de que el archivo tenga un formato XML válido."
       },
       "status": {
         "error": "Error",

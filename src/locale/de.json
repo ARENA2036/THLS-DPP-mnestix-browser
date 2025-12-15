@@ -602,7 +602,10 @@
         "processingError": "Verarbeitung fehlgeschlagen. Bitte Datei prüfen und erneut versuchen.",
         "missingFieldsError": "Erforderliche Felder fehlen in der Datei",
         "missingFieldsDetail": "Die folgenden Felder fehlen oder sind leer: {fields}. Stellen Sie sicher, dass Ihre VEC- oder KBL-Datei diese Werte enthält.",
-        "uploadError": "Upload fehlgeschlagen. Bitte erneut versuchen."
+        "uploadError": "Upload fehlgeschlagen. Bitte erneut versuchen.",
+        "unsupportedFileType": "Nicht unterstützter Dateityp",
+        "unsupportedFileTypeDetail": "Die hochgeladene Datei ist weder eine gültige VEC- noch eine KBL-Datei. Bitte laden Sie nur .vec oder .kbl Dateien hoch.",
+        "parseError": "Fehler beim Parsen der Datei. Bitte stellen Sie sicher, dass die Datei ein gültiges XML-Format hat."
       },
       "status": {
         "error": "Fehlgeschlagen",
