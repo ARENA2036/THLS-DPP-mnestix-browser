@@ -188,7 +188,7 @@
       "repository": "Repository",
       "settings": "Settings",
       "templates": "Templates & Blueprints",
-      "uploadData": "Upload Data"
+      "uploadData": "Generate DPP"
     }
   },
   "pages": {
@@ -308,11 +308,11 @@
       "listCardHeader": "Select via List",
       "listBtnLabel": "See what is already in your repository",
       "listBtnText": "Go to AAS List",
-      "uploadCardHeader": "Upload Configuration",
-      "uploadBtnLabel": "Upload a wiring harness configuration file",
+      "uploadCardHeader": "Generate DPP",
+      "uploadBtnLabel": "Upload files to generate a DPP",
       "scanIdLabel": "Scan AAS ID or Asset ID",
-      "welcomeText": "Welcome to Mnestix",
-      "enterManuallyLabel": "Enter manually"
+      "welcomeText": "Digital Product Passport",
+      "enterManuallyLabel": "Search asset"
     },
     "discoveryList": {
       "errors": {
@@ -572,7 +572,7 @@
       "noBlueprintsWarning": "No blueprints available."
     },
     "uploadData": {
-      "title": "Upload Wiring Harness Configuration",
+      "title": "Generate DPP",
       "backToHome": "Back to Home",
       "explanation": {
         "title": "About File Upload",
@@ -585,8 +585,8 @@
         "removeFile": "Remove file",
         "seeLess": "See less",
         "seeMore": "See more",
-        "uploadMore": "Upload more",
-        "viewCreatedAas": "View created AAS"
+        "uploadMore": "Generate another DPP",
+        "viewCreatedAas": "View created DPP"
       },
       "ariaLabel": "Upload data VEC file",
       "cta": {

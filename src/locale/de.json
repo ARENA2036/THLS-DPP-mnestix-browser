@@ -188,7 +188,7 @@
       "repository": "Repository",
       "settings": "Einstellungen",
       "templates": "Templates & Blueprints",
-      "uploadData": "Daten hochladen"
+      "uploadData": "DPP erzeugen"
     }
   },
   "pages": {
@@ -308,11 +308,11 @@
       "listCardHeader": "Auswahl über Liste",
       "listBtnLabel": "Inhalt eines Repositorys sehen",
       "listBtnText": "Zur AAS Liste",
-      "uploadCardHeader": "Konfiguration hochladen",
-      "uploadBtnLabel": "Kabelbaumkonfigurationsdatei hochladen",
+      "uploadCardHeader": "DPP erzeugen",
+      "uploadBtnLabel": "Dateien hochladen, um einen DPP zu erzeugen",
       "scanIdLabel": "AAS ID oder Asset ID scannen",
-      "welcomeText": "Willkommen bei Mnestix",
-      "enterManuallyLabel": "Manuell eingeben"
+      "welcomeText": "Digitaler Produktpass",
+      "enterManuallyLabel": "Asset suchen"
     },
     "discoveryList": {
       "errors": {
@@ -572,7 +572,7 @@
       "noBlueprintsWarning": "Keine Blueprints verfügbar."
     },
     "uploadData": {
-      "title": "Kabelbaumkonfiguration hochladen",
+      "title": "DPP erzeugen",
       "backToHome": "Zurück zur Startseite",
       "explanation": {
         "title": "Über Datei-Upload",
@@ -585,8 +585,8 @@
         "removeFile": "Datei entfernen",
         "seeLess": "Weniger anzeigen",
         "seeMore": "Mehr anzeigen",
-        "uploadMore": "Mehr hochladen",
-        "viewCreatedAas": "Erstelltes AAS anzeigen"
+        "uploadMore": "weiteren DPP erzeugen",
+        "viewCreatedAas": "Erstellten DPP anzeigen"
       },
       "ariaLabel": "VEC-Datei hochladen",
       "cta": {

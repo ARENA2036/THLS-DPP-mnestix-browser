@@ -188,7 +188,7 @@
       "repository": "Repositorio",
       "settings": "Ajustes",
       "templates": "Templates & Blueprints",
-      "uploadData": "Subir datos"
+      "uploadData": "Generar DPP"
     }
   },
   "pages": {
@@ -308,11 +308,11 @@
       "listCardHeader": "Seleccionar mediante lista",
       "listBtnLabel": "Vea lo que ya hay en su repositorio.",
       "listBtnText": "Ir a lista de AAS",
-      "uploadCardHeader": "Subir configuración",
-      "uploadBtnLabel": "Suba un archivo de configuración de arnés de cableado",
+      "uploadCardHeader": "Generar DPP",
+      "uploadBtnLabel": "Suba archivos para generar un DPP",
       "scanIdLabel": "Escanear ID del AAS o Asset",
-      "welcomeText": "Bienvenido/a a Mnestix",
-      "enterManuallyLabel": "Introducir manualmente"
+      "welcomeText": "Pasaporte Digital de Producto",
+      "enterManuallyLabel": "Buscar activo"
     },
     "discoveryList": {
       "errors": {
@@ -572,7 +572,7 @@
       "noBlueprintsWarning": "No hay planos disponibles."
     },
     "uploadData": {
-      "title": "Subir Configuración de Cableado",
+      "title": "Generar DPP",
       "backToHome": "Volver al Inicio",
       "explanation": {
         "title": "Acerca de la Carga de Archivos",
@@ -585,8 +585,8 @@
         "removeFile": "Quitar archivo",
         "seeLess": "Ver menos",
         "seeMore": "Ver más",
-        "uploadMore": "Subir más",
-        "viewCreatedAas": "Ver AAS creado"
+        "uploadMore": "Generar otro DPP",
+        "viewCreatedAas": "Ver DPP creado"
       },
       "ariaLabel": "Subir archivo VEC de datos",
       "cta": {
