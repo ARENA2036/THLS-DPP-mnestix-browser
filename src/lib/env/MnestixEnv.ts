@@ -92,7 +92,8 @@ const otherVariables = {
     // Strong typing and parsing have been neglected here as this is a temporary feature.
     // Validation is also not implemented.
     SUBMODEL_WHITELIST: process_env.SUBMODEL_WHITELIST,
-    FILE_UPLOAD_BLUEPRINTS: process_env.FILE_UPLOAD_BLUEPRINTS,
+    FILE_UPLOAD_BLUEPRINTS_KBL: process_env.FILE_UPLOAD_BLUEPRINTS_KBL,
+    FILE_UPLOAD_BLUEPRINTS_VEC: process_env.FILE_UPLOAD_BLUEPRINTS_VEC,
 };
 
 const themingVariables = mapEnvVariables([

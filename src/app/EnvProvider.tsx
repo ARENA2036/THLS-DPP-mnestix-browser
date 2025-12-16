@@ -40,7 +40,8 @@ export const initialEnvValues: EnvironmentalVariables = {
     SERIALIZATION_API_URL: undefined,
     EXPERIMENTAL_HIGHLIGHT_DATA_FLAG: false,
     EXTERNAL_LINKS: [],
-    FILE_UPLOAD_BLUEPRINTS: undefined,
+    FILE_UPLOAD_BLUEPRINTS_KBL: undefined,
+    FILE_UPLOAD_BLUEPRINTS_VEC: undefined,
 };
 
 const EnvContext = createContext(initialEnvValues);

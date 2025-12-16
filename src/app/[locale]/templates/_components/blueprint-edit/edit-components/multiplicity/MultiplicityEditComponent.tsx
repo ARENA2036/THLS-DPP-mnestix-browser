@@ -5,7 +5,6 @@ import { BlueprintEditSectionHeading } from 'app/[locale]/templates/_components/
 import multiplicityDataJson from './multiplicity-data.json';
 import { MultiplicityEnum } from 'lib/enums/Multiplicity.enum';
 import { MultiplicityData } from 'lib/types/MultiplicityData';
-import { LockedTextField } from 'components/basics/LockedTextField';
 import { useTranslations } from 'next-intl';
 import { Qualifier, Submodel, SubmodelElementChoice } from 'lib/api/aas/models';
 
@@ -81,7 +80,6 @@ export function MultiplicityEditComponent(props: MultiplicityEditComponentProps)
             <BlueprintEditSectionHeading type="multiplicity" />
             {valueEnabled ? (
                 <>
-                    {allowMultiplicityToBeSet ? (
                         <Box display="flex" alignContent="center">
                             <FormControl variant="filled" fullWidth sx={{ mt: 1 }}>
                                 <InputLabel id="multiplicity-select-label">Multiplicity</InputLabel>
@@ -105,9 +103,6 @@ export function MultiplicityEditComponent(props: MultiplicityEditComponentProps)
                                 <RemoveCircleOutline />
                             </IconButton>
                         </Box>
-                    ) : (
-                        <LockedTextField label="Multiplicity" fullWidth value={multiplicity} />
-                    )}
                 </>
             ) : (
                 <Button
