@@ -81,7 +81,6 @@ export function MultiplicityEditComponent(props: MultiplicityEditComponentProps)
             <BlueprintEditSectionHeading type="multiplicity" />
             {valueEnabled ? (
                 <>
-                    {allowMultiplicityToBeSet ? (
                         <Box display="flex" alignContent="center">
                             <FormControl variant="filled" fullWidth sx={{ mt: 1 }}>
                                 <InputLabel id="multiplicity-select-label">Multiplicity</InputLabel>
@@ -105,9 +104,6 @@ export function MultiplicityEditComponent(props: MultiplicityEditComponentProps)
                                 <RemoveCircleOutline />
                             </IconButton>
                         </Box>
-                    ) : (
-                        <LockedTextField label="Multiplicity" fullWidth value={multiplicity} />
-                    )}
                 </>
             ) : (
                 <Button
