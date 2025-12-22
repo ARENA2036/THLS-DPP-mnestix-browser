@@ -178,33 +178,16 @@ export default function ThumbnailUpload(props: ThumbnailUploadProps) {
             <Typography variant="h6" fontWeight={600}>
                 {t('thumbnail.sectionTitle')}
             </Typography>
-            <Stack
-                spacing={2}
-                border="1px solid"
-                borderColor="divider"
-                borderRadius={2}
-                padding={2}
-                bgcolor="background.paper"
-            >
-                {thumbnailUploadStatus !== 'success' && (
-                    <Typography variant="caption" color="text.secondary">
-                        {t('thumbnail.description')}
-                    </Typography>
-                )}
-                {thumbnailUploadStatus === 'success' && thumbnailFile && (
-                    <Typography variant="body2" fontWeight={600} noWrap title={thumbnailFile.name}>
-                        {thumbnailFile.name}
-                    </Typography>
-                )}
-                <input
-                    id={fileInputId}
-                    ref={fileInputRef}
-                    type="file"
-                    accept="image/jpeg,image/jpg,image/png,image/gif,image/webp"
-                    onChange={handleInputChange}
-                    hidden
-                />
-                {thumbnailUploadStatus === 'idle' && (
+            <input
+                id={fileInputId}
+                ref={fileInputRef}
+                type="file"
+                accept="image/jpeg,image/jpg,image/png,image/gif,image/webp"
+                onChange={handleInputChange}
+                hidden
+            />
+            {thumbnailUploadStatus === 'idle' && (
+                <>
                     <DragAndDrop
                         onBrowse={handleBrowseClick}
                         onDropFiles={handleFilesDropped}
@@ -217,13 +200,32 @@ export default function ThumbnailUpload(props: ThumbnailUploadProps) {
                         supportedFileTypes={ACCEPTABLE_FILE_EXTENSIONS.join(', ')}
                         maxSizeMB={MAX_THUMBNAIL_SIZE_MB}
                     />
-                )}
-                {thumbnailFile && thumbnailUploadStatus === 'idle' && (
-                    <Button variant="contained" onClick={handleThumbnailUpload} disabled={isThumbnailPending}>
-                        {t('thumbnail.upload')}
-                    </Button>
-                )}
-                {(thumbnailUploadStatus === 'uploading' || thumbnailUploadStatus === 'success') && (
+                    {thumbnailFile && (
+                        <Button variant="contained" onClick={handleThumbnailUpload} disabled={isThumbnailPending}>
+                            {t('thumbnail.upload')}
+                        </Button>
+                    )}
+                    {thumbnailError && (
+                        <Typography id={errorTextId} variant="caption" color="error" role="alert" aria-live="assertive">
+                            {thumbnailError}
+                        </Typography>
+                    )}
+                </>
+            )}
+            {(thumbnailUploadStatus === 'uploading' || thumbnailUploadStatus === 'success') && (
+                <Stack
+                    spacing={2}
+                    border="1px solid"
+                    borderColor="divider"
+                    borderRadius={2}
+                    padding={2}
+                    bgcolor="background.paper"
+                >
+                    {thumbnailFile && (
+                        <Typography variant="body2" fontWeight={600} noWrap title={thumbnailFile.name}>
+                            {thumbnailFile.name}
+                        </Typography>
+                    )}
                     <Stack spacing={1}>
                         <Typography variant="caption" color={thumbnailUploadStatus === 'success' ? 'success.main' : 'text.primary'} fontWeight={thumbnailUploadStatus === 'success' ? 600 : 400}>
                             {thumbnailUploadStatus === 'uploading' ? t('thumbnail.uploading') : t('thumbnail.uploadSuccess')}
@@ -244,13 +246,8 @@ export default function ThumbnailUpload(props: ThumbnailUploadProps) {
                             )}
                         </Stack>
                     </Stack>
-                )}
-                {thumbnailError && thumbnailUploadStatus === 'idle' && (
-                    <Typography id={errorTextId} variant="caption" color="error" role="alert" aria-live="assertive">
-                        {thumbnailError}
-                    </Typography>
-                )}
-            </Stack>
+                </Stack>
+            )}
         </Stack>
     );
 }

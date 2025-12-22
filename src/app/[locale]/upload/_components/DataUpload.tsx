@@ -485,7 +485,8 @@ export default function DataUpload(props: DataUploadProps) {
     }
 
     return (
-        <Stack spacing={2}>
+        <Stack spacing={4}>
+                    <Stack spacing={2}>
             <Typography variant="h6" fontWeight={600}>
                 {t('uploadSection.title')}
             </Typography>            
@@ -499,7 +500,6 @@ export default function DataUpload(props: DataUploadProps) {
             />  
             {uploadStatus === 'idle' && processingStatus === 'idle' && generateAasStatus === 'idle' && (
                 <Stack spacing={2}>
-
                     <DragAndDrop
                         onBrowse={handleBrowseClick}
                         onDropFiles={handleFilesDropped}
@@ -522,7 +522,7 @@ export default function DataUpload(props: DataUploadProps) {
                     </Button>
                 </Stack>
             )}
-            {renderWorkflowCard()}
+            {renderWorkflowCard()}</Stack>
             {uploadStatus === 'success' && processingStatus === 'success' && generateAasStatus === 'success' && (
                 <Stack spacing={2}>
                     {aasId && envs.AAS_REPO_API_URL && (
