@@ -22,6 +22,19 @@ export interface Aas {
 /**
  *
  * @export
+ * @interface AasGeneratorDebugInfo
+ */
+export interface AasGeneratorDebugInfo {
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof AasGeneratorDebugInfo
+     */
+    logs?: Array<string>;
+}
+/**
+ *
+ * @export
  * @interface AasGeneratorErrorInfo
  */
 export interface AasGeneratorErrorInfo {
@@ -80,7 +93,19 @@ export interface AasGeneratorResult {
      * @memberof AasGeneratorResult
      */
     errorInfo?: AasGeneratorResultErrorInfo;
+    /**
+     *
+     * @type {AasGeneratorResultDebugInfo}
+     * @memberof AasGeneratorResult
+     */
+    debugInfo?: AasGeneratorResultDebugInfo;
 }
+/**
+ * @type AasGeneratorResultDebugInfo
+ *
+ * @export
+ */
+export type AasGeneratorResultDebugInfo = AasGeneratorDebugInfo;
 /**
  * @type AasGeneratorResultErrorInfo
  *
@@ -142,6 +167,12 @@ export interface AddDataToAasRequest {
      * @memberof AddDataToAasRequest
      */
     blueprintsIds: Array<string>;
+    /**
+     *
+     * @type {boolean}
+     * @memberof AddDataToAasRequest
+     */
+    debug?: boolean;
 }
 /**
  *
@@ -155,6 +186,37 @@ export interface AddDataToAasResponse {
      * @memberof AddDataToAasResponse
      */
     results?: Array<AasGeneratorResult>;
+}
+/**
+ *
+ * @export
+ * @interface CreateAasRequest
+ */
+export interface CreateAasRequest {
+    /**
+     *
+     * @type {string}
+     * @memberof CreateAasRequest
+     */
+    language?: string;
+    /**
+     *
+     * @type {any}
+     * @memberof CreateAasRequest
+     */
+    data?: any;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof CreateAasRequest
+     */
+    blueprintsIds?: Array<string>;
+    /**
+     *
+     * @type {boolean}
+     * @memberof CreateAasRequest
+     */
+    debug?: boolean;
 }
 /**
  *
@@ -186,6 +248,12 @@ export interface CreateAasResponse {
      * @memberof CreateAasResponse
      */
     base64EncodedAasId?: string;
+    /**
+     *
+     * @type {Array<AasGeneratorResult>}
+     * @memberof CreateAasResponse
+     */
+    submodelResults?: Array<AasGeneratorResult>;
 }
 /**
  *

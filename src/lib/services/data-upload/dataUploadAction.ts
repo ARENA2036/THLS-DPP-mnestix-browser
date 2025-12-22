@@ -208,9 +208,19 @@ export async function processData(formData: FormData) {
         ? `/viewer/${response.base64EncodedAasId}`
         : `/viewer/${encodeURIComponent(response.aasId || '')}`;
 
+    // Extract warnings from all submodel results
+    const warnings: string[] = [];
+    if (response.submodelResults) {
+        for (const submodelResult of response.submodelResults) {
+            const logs = submodelResult.debugInfo?.logs || [];
+            const warningLogs = logs.filter((log) => log.startsWith('WARNING'));
+            warnings.push(...warningLogs);
+        }
+    }
+
     steps.push({
         currentStep: { name: 'generateAas', status: 'completed' },
-        result: { redirectUrl },
+        result: { redirectUrl, warnings: warnings.length > 0 ? warnings : undefined },
     });
 
     return wrapSuccess(steps);

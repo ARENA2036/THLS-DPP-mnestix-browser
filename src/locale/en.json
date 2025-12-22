@@ -627,7 +627,8 @@
           "fileRequired": "Please select a VEC file before submitting."
         }
       },
-      "uploadSuccess": "Upload completed successfully."
+      "uploadSuccess": "Upload completed successfully.",
+      "warningsEncountered": "Warnings:"
     },
     "transfer": {
       "aasRepository": "AAS repository",

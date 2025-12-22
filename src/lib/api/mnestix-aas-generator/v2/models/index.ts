@@ -22,6 +22,19 @@ export interface Aas {
 /**
  *
  * @export
+ * @interface AasGeneratorDebugInfo
+ */
+export interface AasGeneratorDebugInfo {
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof AasGeneratorDebugInfo
+     */
+    logs?: Array<string>;
+}
+/**
+ *
+ * @export
  * @interface AasGeneratorErrorInfo
  */
 export interface AasGeneratorErrorInfo {
@@ -80,7 +93,19 @@ export interface AasGeneratorResult {
      * @memberof AasGeneratorResult
      */
     errorInfo?: AasGeneratorResultErrorInfo;
+    /**
+     *
+     * @type {AasGeneratorResultDebugInfo}
+     * @memberof AasGeneratorResult
+     */
+    debugInfo?: AasGeneratorResultDebugInfo;
 }
+/**
+ * @type AasGeneratorResultDebugInfo
+ *
+ * @export
+ */
+export type AasGeneratorResultDebugInfo = AasGeneratorDebugInfo;
 /**
  * @type AasGeneratorResultErrorInfo
  *
@@ -142,6 +167,12 @@ export interface AddDataToAasRequest {
      * @memberof AddDataToAasRequest
      */
     blueprintsIds: Array<string>;
+    /**
+     *
+     * @type {boolean}
+     * @memberof AddDataToAasRequest
+     */
+    debug?: boolean;
 }
 /**
  *
@@ -164,22 +195,28 @@ export interface AddDataToAasResponse {
 export interface CreateAasRequest {
     /**
      *
+     * @type {string}
+     * @memberof CreateAasRequest
+     */
+    language?: string;
+    /**
+     *
+     * @type {any}
+     * @memberof CreateAasRequest
+     */
+    data?: any;
+    /**
+     *
      * @type {Array<string>}
      * @memberof CreateAasRequest
      */
     blueprintsIds?: Array<string>;
     /**
      *
-     * @type {any}
+     * @type {boolean}
      * @memberof CreateAasRequest
      */
-    data?: any | null;
-    /**
-     *
-     * @type {string}
-     * @memberof CreateAasRequest
-     */
-    language?: string;
+    debug?: boolean;
 }
 /**
  *

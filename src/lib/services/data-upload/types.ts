@@ -11,6 +11,7 @@ export interface WorkflowStep {
     };
     result?: {
         redirectUrl?: string;
+        warnings?: string[];
     };
 }
 

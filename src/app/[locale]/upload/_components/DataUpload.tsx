@@ -38,6 +38,7 @@ export default function DataUpload(props: DataUploadProps) {
     const [processingStatus, setProcessingStatus] = useState<UploadStatus>('idle');
     const [generateAasStatus, setGenerateAasStatus] = useState<UploadStatus>('idle');
     const [redirectUrl, setRedirectUrl] = useState<string | null>(null);
+    const [warnings, setWarnings] = useState<string[]>([]);
     const [isPending, startUploadTransition] = useTransition();
     const fileInputRef = useRef<HTMLInputElement | null>(null);
     const progressIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -132,6 +133,7 @@ export default function DataUpload(props: DataUploadProps) {
             stepStatusSetters[step]('idle');
         });
         setRedirectUrl(null);
+        setWarnings([]);
     }
 
     useEffect(() => () => stopProgressSimulation(), []);
@@ -246,6 +248,9 @@ export default function DataUpload(props: DataUploadProps) {
                 const finalUpdate = response.result[response.result.length - 1];
                 if (finalUpdate.result?.redirectUrl) {
                     setRedirectUrl(finalUpdate.result.redirectUrl);
+                }
+                if (finalUpdate.result?.warnings) {
+                    setWarnings(finalUpdate.result.warnings);
                 }
             } catch (error) {
                 if (currentRequestId !== requestIdRef.current) {
@@ -424,6 +429,28 @@ export default function DataUpload(props: DataUploadProps) {
                             >
                                 {errorDetail}
                             </Typography>
+                        )}
+                        {isComplete && warnings.length > 0 && (
+                            <Stack spacing={0.5} mt={1}>
+                                <Typography variant="caption" color="warning.main" fontWeight={600}>
+                                    {t('warningsEncountered')}
+                                </Typography>
+                                {warnings.map((warning, index) => (
+                                    <Typography
+                                        key={index}
+                                        variant="caption"
+                                        color="warning.dark"
+                                        sx={{
+                                            display: 'block',
+                                            whiteSpace: 'pre-wrap',
+                                            wordBreak: 'break-word',
+                                            pl: 1,
+                                        }}
+                                    >
+                                        • {warning}
+                                    </Typography>
+                                ))}
+                            </Stack>
                         )}
                     </Stack>
                 </Stack>
