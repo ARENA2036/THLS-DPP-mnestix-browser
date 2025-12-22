@@ -12,6 +12,7 @@ export interface WorkflowStep {
     result?: {
         redirectUrl?: string;
         warnings?: string[];
+        aasId?: string;
     };
 }
 

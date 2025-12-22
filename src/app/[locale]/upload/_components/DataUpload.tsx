@@ -5,8 +5,10 @@ import { Button, IconButton, LinearProgress, Stack, Typography } from '@mui/mate
 import { useTranslations } from 'next-intl';
 import { processData } from 'lib/services/data-upload/dataUploadAction';
 import DragAndDrop from './DragAndDrop';
+import ThumbnailUpload from './ThumbnailUpload';
 import { useRouter } from 'next/navigation';
 import CancelIcon from '@mui/icons-material/Cancel';
+import { useEnv } from 'app/EnvProvider';
 
 export interface DataUploadProps {
     onFileSelected?: (file: File) => void;
@@ -39,12 +41,14 @@ export default function DataUpload(props: DataUploadProps) {
     const [generateAasStatus, setGenerateAasStatus] = useState<UploadStatus>('idle');
     const [redirectUrl, setRedirectUrl] = useState<string | null>(null);
     const [warnings, setWarnings] = useState<string[]>([]);
+    const [aasId, setAasId] = useState<string | null>(null);
     const [isPending, startUploadTransition] = useTransition();
     const fileInputRef = useRef<HTMLInputElement | null>(null);
     const progressIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
     const requestIdRef = useRef(0);
     const t = useTranslations('pages.uploadData');
     const componentId = useId();
+    const envs = useEnv();
     const fileInputId = `${componentId}-input`;
     const helpTextId = `${componentId}-help`;
     const errorTextId = `${componentId}-error`;
@@ -134,6 +138,7 @@ export default function DataUpload(props: DataUploadProps) {
         });
         setRedirectUrl(null);
         setWarnings([]);
+        setAasId(null);
     }
 
     useEffect(() => () => stopProgressSimulation(), []);
@@ -251,6 +256,9 @@ export default function DataUpload(props: DataUploadProps) {
                 }
                 if (finalUpdate.result?.warnings) {
                     setWarnings(finalUpdate.result.warnings);
+                }
+                if (finalUpdate.result?.aasId) {
+                    setAasId(finalUpdate.result.aasId);
                 }
             } catch (error) {
                 if (currentRequestId !== requestIdRef.current) {
@@ -478,9 +486,13 @@ export default function DataUpload(props: DataUploadProps) {
                 accept={ACCEPTABLE_FILE_TYPES}
                 onChange={handleInputChange}
                 hidden
-            />
+            />      
+            <Typography variant="h6" fontWeight={600}>
+                {t('uploadSection.title')}
+            </Typography>
             {uploadStatus === 'idle' && processingStatus === 'idle' && generateAasStatus === 'idle' && (
-                <>
+                <Stack spacing={2}>
+
                     <DragAndDrop
                         onBrowse={handleBrowseClick}
                         onDropFiles={handleFilesDropped}
@@ -499,19 +511,24 @@ export default function DataUpload(props: DataUploadProps) {
                     >
                         {t('form.submitLabel')}
                     </Button>
-                </>
+                </Stack>
             )}
             {renderWorkflowCard()}
             {uploadStatus === 'success' && processingStatus === 'success' && generateAasStatus === 'success' && (
-                <Stack direction="row" spacing={2}>
-                    {redirectUrl && (
-                        <Button variant="contained" color="primary" onClick={() => navigate.push(redirectUrl)}>
-                            {t('actions.viewCreatedAas')}
-                        </Button>
+                <Stack spacing={2}>
+                    {aasId && envs.AAS_REPO_API_URL && (
+                        <ThumbnailUpload aasId={aasId} aasRepoUrl={envs.AAS_REPO_API_URL} />
                     )}
-                    <Button variant="outlined" color="primary" onClick={clearSelectedFile}>
-                        {t('actions.uploadMore')}
-                    </Button>
+                    <Stack direction="row" spacing={2}>
+                        {redirectUrl && (
+                            <Button variant="contained" color="primary" onClick={() => navigate.push(redirectUrl)}>
+                                {t('actions.viewCreatedAas')}
+                            </Button>
+                        )}
+                        <Button variant="outlined" color="primary" onClick={clearSelectedFile}>
+                            {t('actions.uploadMore')}
+                        </Button>
+                    </Stack>
                 </Stack>
             )}
             {errorMessage && uploadStatus === 'idle' && processingStatus === 'idle' && generateAasStatus === 'idle' ? (

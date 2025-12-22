@@ -628,7 +628,23 @@
         }
       },
       "uploadSuccess": "Upload completed successfully.",
-      "warningsEncountered": "Warnings:"
+      "warningsEncountered": "Warnings:",
+      "uploadSection": {
+        "title": "Upload VEC or KBL File"
+      },
+      "thumbnail": {
+        "sectionTitle": "Add Thumbnail to AAS",
+        "title": "Add Thumbnail (Optional)",
+        "description": "Upload a thumbnail image for your Asset Administration Shell.",
+        "selectFile": "Select Image",
+        "changeFile": "Change Image",
+        "upload": "Upload Thumbnail",
+        "uploading": "Uploading thumbnail...",
+        "uploadSuccess": "Thumbnail uploaded successfully!",
+        "uploadError": "Failed to upload thumbnail. Please try again.",
+        "invalidFileType": "Please select a valid image file (JPEG, PNG, GIF, or WebP).",
+        "fileTooLarge": "Thumbnail file is too large. Maximum size is {maxSize}."
+      }
     },
     "transfer": {
       "aasRepository": "AAS repository",

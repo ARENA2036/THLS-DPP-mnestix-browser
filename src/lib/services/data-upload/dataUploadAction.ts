@@ -220,7 +220,11 @@ export async function processData(formData: FormData) {
 
     steps.push({
         currentStep: { name: 'generateAas', status: 'completed' },
-        result: { redirectUrl, warnings: warnings.length > 0 ? warnings : undefined },
+        result: { 
+            redirectUrl, 
+            warnings: warnings.length > 0 ? warnings : undefined,
+            aasId: response.aasId,
+        },
     });
 
     return wrapSuccess(steps);

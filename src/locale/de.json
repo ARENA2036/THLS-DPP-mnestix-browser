@@ -628,7 +628,23 @@
         }
       },
       "uploadSuccess": "Upload erfolgreich abgeschlossen.",
-      "warningsEncountered": "Warnungen:"
+      "warningsEncountered": "Warnungen:",
+      "uploadSection": {
+        "title": "VEC oder KBL Datei hochladen"
+      },
+      "thumbnail": {
+        "sectionTitle": "Thumbnail zur AAS hinzufügen",
+        "title": "Thumbnail hinzufügen (Optional)",
+        "description": "Laden Sie ein Thumbnail für Ihre Asset Administration Shell hoch.",
+        "selectFile": "Bild auswählen",
+        "changeFile": "Bild ändern",
+        "upload": "Thumbnail hochladen",
+        "uploading": "Thumbnail wird hochgeladen...",
+        "uploadSuccess": "Thumbnail erfolgreich hochgeladen!",
+        "uploadError": "Fehler beim Hochladen des Thumbnails. Bitte versuchen Sie es erneut.",
+        "invalidFileType": "Bitte wählen Sie eine gültige Bilddatei (JPEG, PNG, GIF oder WebP).",
+        "fileTooLarge": "Thumbnail ist zu groß. Maximale Größe: {maxSize}."
+      }
     },
     "transfer": {
       "aasRepository": "AAS Repository",
