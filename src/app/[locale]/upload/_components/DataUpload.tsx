@@ -2,6 +2,7 @@
 
 import { ChangeEvent, useEffect, useId, useRef, useState, useTransition } from 'react';
 import { Button, IconButton, LinearProgress, Stack, Typography } from '@mui/material';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useTranslations } from 'next-intl';
 import { processData } from 'lib/services/data-upload/dataUploadAction';
 import DragAndDrop from './DragAndDrop';
@@ -463,17 +464,22 @@ export default function DataUpload(props: DataUploadProps) {
                         )}
                     </Stack>
                 </Stack>
-                <LinearProgress
-                    variant={showProgress ? 'indeterminate' : 'determinate'}
-                    value={100}
-                    color={isError ? 'error' : isComplete ? 'success' : 'primary'}
-                    sx={{
-                        height: 6,
-                        borderRadius: 3,
-                        maxWidth: '100px',
-                        visibility: showProgress || isComplete ? 'visible' : 'hidden',
-                    }}
-                />
+                <Stack direction="row" spacing={1} alignItems="center">
+                    <LinearProgress
+                        variant={showProgress ? 'indeterminate' : 'determinate'}
+                        value={100}
+                        color={isError ? 'error' : isComplete ? 'success' : 'primary'}
+                        sx={{
+                            height: 6,
+                            borderRadius: 3,
+                            width: '100px',
+                            visibility: showProgress || isComplete || isError ? 'visible' : 'hidden',
+                        }}
+                    />
+                    {isComplete && (
+                        <CheckCircleIcon sx={{ color: 'success.main', fontSize: 20 }} />
+                    )}
+                </Stack>
             </Stack>
         );
     }

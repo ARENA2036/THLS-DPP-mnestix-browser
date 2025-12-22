@@ -2,6 +2,7 @@
 
 import { useId, useRef, useState, useTransition } from 'react';
 import { Button, LinearProgress, Stack, Typography } from '@mui/material';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useTranslations } from 'next-intl';
 import { uploadThumbnail } from 'lib/services/data-upload/thumbnailUploadAction';
 import DragAndDrop from './DragAndDrop';
@@ -222,16 +223,27 @@ export default function ThumbnailUpload(props: ThumbnailUploadProps) {
                         {t('thumbnail.upload')}
                     </Button>
                 )}
-                {thumbnailUploadStatus === 'uploading' && (
+                {(thumbnailUploadStatus === 'uploading' || thumbnailUploadStatus === 'success') && (
                     <Stack spacing={1}>
-                        <Typography variant="caption">{t('thumbnail.uploading')}</Typography>
-                        <LinearProgress />
+                        <Typography variant="caption" color={thumbnailUploadStatus === 'success' ? 'success.main' : 'text.primary'} fontWeight={thumbnailUploadStatus === 'success' ? 600 : 400}>
+                            {thumbnailUploadStatus === 'uploading' ? t('thumbnail.uploading') : t('thumbnail.uploadSuccess')}
+                        </Typography>
+                        <Stack direction="row" spacing={1} alignItems="center">
+                            <LinearProgress
+                                variant={thumbnailUploadStatus === 'uploading' ? 'indeterminate' : 'determinate'}
+                                value={100}
+                                color="success"
+                                sx={{
+                                    height: 6,
+                                    borderRadius: 3,
+                                    width: '100px',
+                                }}
+                            />
+                            {thumbnailUploadStatus === 'success' && (
+                                <CheckCircleIcon sx={{ color: 'success.main', fontSize: 20 }} />
+                            )}
+                        </Stack>
                     </Stack>
-                )}
-                {thumbnailUploadStatus === 'success' && (
-                    <Typography variant="caption" color="success.main" fontWeight={600}>
-                        {t('thumbnail.uploadSuccess')}
-                    </Typography>
                 )}
                 {thumbnailError && thumbnailUploadStatus === 'idle' && (
                     <Typography id={errorTextId} variant="caption" color="error" role="alert" aria-live="assertive">
