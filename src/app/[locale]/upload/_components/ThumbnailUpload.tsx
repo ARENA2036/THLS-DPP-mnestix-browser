@@ -1,10 +1,10 @@
 'use client';
 
-import { ChangeEvent, useId, useRef, useState, useTransition } from 'react';
-import { Button, IconButton, LinearProgress, Stack, Typography } from '@mui/material';
+import { useId, useRef, useState, useTransition } from 'react';
+import { Button, LinearProgress, Stack, Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import { uploadThumbnail } from 'lib/services/data-upload/thumbnailUploadAction';
-import CancelIcon from '@mui/icons-material/Cancel';
+import DragAndDrop from './DragAndDrop';
 
 export interface ThumbnailUploadProps {
     aasId: string;
@@ -26,10 +26,16 @@ export default function ThumbnailUpload(props: ThumbnailUploadProps) {
     >('idle');
     const [thumbnailError, setThumbnailError] = useState<string | null>(null);
     const [isThumbnailPending, startThumbnailTransition] = useTransition();
-    const thumbnailInputRef = useRef<HTMLInputElement | null>(null);
+    const fileInputRef = useRef<HTMLInputElement | null>(null);
     const t = useTranslations('pages.uploadData');
     const componentId = useId();
-    const thumbnailInputId = `${componentId}-thumbnail-input`;
+    const fileInputId = `${componentId}-thumbnail-input`;
+    const helpTextId = `${componentId}-help`;
+    const errorTextId = `${componentId}-error`;
+
+    const MAX_THUMBNAIL_SIZE_MB = 5;
+    const ACCEPTABLE_FILE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
+
 
     function formatFileSize(bytes: number) {
         if (bytes === 0) {
@@ -81,24 +87,20 @@ export default function ThumbnailUpload(props: ThumbnailUploadProps) {
         return errorText;
     }
 
-    function handleThumbnailSelection(event: ChangeEvent<HTMLInputElement>) {
-        const { files } = event.target;
-        if (!files || files.length === 0) {
-            return;
-        }
-        const file = files[0];
-
+    function handleThumbnailSelection(file: File) {
         // Validate file type
         const validImageTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
         if (!validImageTypes.includes(file.type)) {
             setThumbnailError(t('thumbnail.invalidFileType'));
+            setThumbnailFile(null);
             return;
         }
 
         // Validate file size (max 5MB)
-        const maxSize = 5 * 1024 * 1024;
+        const maxSize = MAX_THUMBNAIL_SIZE_MB * 1024 * 1024;
         if (file.size > maxSize) {
             setThumbnailError(t('thumbnail.fileTooLarge', { maxSize: formatFileSize(maxSize) }));
+            setThumbnailFile(null);
             return;
         }
 
@@ -106,10 +108,25 @@ export default function ThumbnailUpload(props: ThumbnailUploadProps) {
         setThumbnailError(null);
     }
 
-    function handleThumbnailBrowseClick() {
-        if (thumbnailInputRef.current) {
-            thumbnailInputRef.current.click();
+    function handleBrowseClick() {
+        if (fileInputRef.current) {
+            fileInputRef.current.click();
         }
+    }
+
+    function handleFilesDropped(files: FileList) {
+        if (!files || files.length === 0) {
+            return;
+        }
+        handleThumbnailSelection(files[0]);
+    }
+
+    function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+        const { files } = event.target;
+        if (!files || files.length === 0) {
+            return;
+        }
+        handleThumbnailSelection(files[0]);
     }
 
     function handleThumbnailUpload() {
@@ -150,8 +167,8 @@ export default function ThumbnailUpload(props: ThumbnailUploadProps) {
         setThumbnailFile(null);
         setThumbnailError(null);
         setThumbnailUploadStatus('idle');
-        if (thumbnailInputRef.current) {
-            thumbnailInputRef.current.value = '';
+        if (fileInputRef.current) {
+            fileInputRef.current.value = '';
         }
     }
 
@@ -172,51 +189,45 @@ export default function ThumbnailUpload(props: ThumbnailUploadProps) {
                     {t('thumbnail.description')}
                 </Typography>
                 <input
-                    id={thumbnailInputId}
-                    ref={thumbnailInputRef}
+                    id={fileInputId}
+                    ref={fileInputRef}
                     type="file"
                     accept="image/jpeg,image/jpg,image/png,image/gif,image/webp"
-                    onChange={handleThumbnailSelection}
+                    onChange={handleInputChange}
                     hidden
                 />
-                {!thumbnailFile && thumbnailUploadStatus === 'idle' && (
-                    <Button variant="contained" onClick={handleThumbnailBrowseClick} sx={{ width: '50%' }}>
-                        {t('thumbnail.selectFile')}
-                    </Button>
+                {thumbnailUploadStatus === 'idle' && (
+                    <DragAndDrop
+                        onBrowse={handleBrowseClick}
+                        onDropFiles={handleFilesDropped}
+                        helpTextId={helpTextId}
+                        errorTextId={errorTextId}
+                        hasError={Boolean(thumbnailError)}
+                        selectedFile={thumbnailFile}
+                        onDeleteFile={removeThumbnailFile}
+                        formatFileSize={formatFileSize}
+                        supportedFileTypes={ACCEPTABLE_FILE_EXTENSIONS.join(', ')}
+                        maxSizeMB={MAX_THUMBNAIL_SIZE_MB}
+                    />
                 )}
                 {thumbnailFile && thumbnailUploadStatus === 'idle' && (
-                    <Stack spacing={1}>
-                        <Stack direction="row" alignItems="center" justifyContent="space-between">
-                            <Typography variant="body2" noWrap title={thumbnailFile.name}>
-                                {thumbnailFile.name}
-                            </Typography>
-                            <IconButton size="small" onClick={removeThumbnailFile}>
-                                <CancelIcon fontSize="small" />
-                            </IconButton>
-                        </Stack>
-                        <Typography variant="caption" color="text.secondary">
-                            {formatFileSize(thumbnailFile.size)}
-                        </Typography>
-                        <Stack direction="row" spacing={1}>
-                            <Button variant="contained" onClick={handleThumbnailUpload} disabled={isThumbnailPending}>
-                                {t('thumbnail.upload')}
-                            </Button>
-                        </Stack>
-                    </Stack>
+                    <Button variant="contained" onClick={handleThumbnailUpload} disabled={isThumbnailPending}>
+                        {t('thumbnail.upload')}
+                    </Button>
                 )}
                 {thumbnailUploadStatus === 'uploading' && (
                     <Stack spacing={1}>
-                        <Typography variant="body2">{t('thumbnail.uploading')}</Typography>
+                        <Typography variant="caption">{t('thumbnail.uploading')}</Typography>
                         <LinearProgress />
                     </Stack>
                 )}
                 {thumbnailUploadStatus === 'success' && (
-                    <Typography variant="body2" color="success.main" fontWeight={600}>
+                    <Typography variant="caption" color="success.main" fontWeight={600}>
                         {t('thumbnail.uploadSuccess')}
                     </Typography>
                 )}
-                {thumbnailError && (
-                    <Typography variant="body2" color="error">
+                {thumbnailError && thumbnailUploadStatus === 'idle' && (
+                    <Typography id={errorTextId} variant="caption" color="error" role="alert" aria-live="assertive">
                         {thumbnailError}
                     </Typography>
                 )}

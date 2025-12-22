@@ -16,6 +16,8 @@ export interface DragAndDropProps {
     selectedFile?: File | null;
     onDeleteFile?: () => void;
     formatFileSize?: (bytes: number) => string;
+    supportedFileTypes?: string;
+    maxSizeMB?: number;
 }
 
 /**
@@ -31,6 +33,8 @@ export default function DragAndDrop({
     selectedFile,
     onDeleteFile,
     formatFileSize,
+    supportedFileTypes,
+    maxSizeMB,
 }: DragAndDropProps) {
     const theme = useTheme();
     const t = useTranslations('pages.uploadData');
@@ -169,7 +173,7 @@ export default function DragAndDrop({
                             {t('cta.orDragAndDrop')}
                         </Typography>
                         <Typography component="p" variant="body2" color="text.secondary">
-                            {t('descriptions.supportedFormats')}
+                           {t('cta.supportedFiles', { formats: supportedFileTypes || '', maxSize: maxSizeMB || '' })}
                         </Typography>
                     </Stack>
                 </Stack>

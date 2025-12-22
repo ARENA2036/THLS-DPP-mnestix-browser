@@ -53,7 +53,8 @@ export default function DataUpload(props: DataUploadProps) {
     const helpTextId = `${componentId}-help`;
     const errorTextId = `${componentId}-error`;
 
-    const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
+    const MAX_FILE_SIZE_MB = 10;
+    const MAX_FILE_SIZE = MAX_FILE_SIZE_MB * 1024 * 1024; // 10 MB
     const ACCEPTABLE_FILE_EXTENSIONS = ['.vec', '.kbl'];
     const ACCEPTABLE_MIME_TYPES = ['application/octet-stream', 'text/plain'];
     const ACCEPTABLE_FILE_TYPES = [...ACCEPTABLE_FILE_EXTENSIONS, ...ACCEPTABLE_MIME_TYPES].join(',');
@@ -502,6 +503,8 @@ export default function DataUpload(props: DataUploadProps) {
                         selectedFile={selectedFile}
                         onDeleteFile={clearSelectedFile}
                         formatFileSize={formatFileSize}
+                        supportedFileTypes={ACCEPTABLE_FILE_EXTENSIONS.join(', ')}
+                        maxSizeMB={MAX_FILE_SIZE_MB}
                     />
                     <Button
                         variant="contained"

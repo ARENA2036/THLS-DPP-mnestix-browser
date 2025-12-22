@@ -591,7 +591,8 @@
       "ariaLabel": "Subir archivo VEC de datos",
       "cta": {
         "clickToUpload": "Haz clic para subir",
-        "orDragAndDrop": "o arrastra y suelta"
+        "orDragAndDrop": "o arrastra y suelta",
+        "supportedFiles": "Archivos soportados: {formats} (máx. {maxSize} MB)"
       },
       "descriptions": {
         "supportedFormats": "Formato admitido: .vec, .kbl (máx. 10 MB)"
@@ -640,7 +641,7 @@
         "changeFile": "Cambiar imagen",
         "upload": "Subir Thumbnail",
         "uploading": "Subiendo Thumbnail...",
-        "uploadSuccess": "¡Thumbnail subido correctamente!",
+        "uploadSuccess": "¡Thumbnail subido correctamente.",
         "uploadError": "Error al cargar el Thumbnail. Inténtalo de nuevo.",
         "invalidFileType": "Seleccione un archivo de imagen válido (JPEG, PNG, GIF o WebP).",
         "fileTooLarge": "El Thumbnail es demasiado grande. Tamaño máximo: {maxSize}."
