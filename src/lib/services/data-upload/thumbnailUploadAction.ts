@@ -9,12 +9,15 @@ import { createSecurityHeaders } from 'lib/util/securityHelpers/SecurityConfigur
 
 /**
  * Uploads a thumbnail to an Asset Administration Shell
+ * @param aasRepositoryUrl The URL of the AAS Repository
  * @param aasId The ID of the AAS to upload the thumbnail to
  * @param formData FormData containing the thumbnail image file
  * @returns ApiResponseWrapper indicating success or failure
  */
 export async function uploadThumbnail(aasRepositoryUrl: string, aasId: string, formData: FormData) {
     const fileEntry = formData.get('thumbnail');
+    const VALID_IMAGE_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
+    const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024; // 5MB
 
     if (!fileEntry) {
         return wrapErrorCode(ApiResultStatus.BAD_REQUEST, 'No thumbnail file provided');
@@ -24,17 +27,15 @@ export async function uploadThumbnail(aasRepositoryUrl: string, aasId: string, f
     const fileName = file.name;
 
     // Validate file type
-    const validImageTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
-    if (!validImageTypes.includes(file.type)) {
+    if (!VALID_IMAGE_TYPES.includes(file.type)) {
         return wrapErrorCode(
             ApiResultStatus.BAD_REQUEST,
             'pages.uploadData.thumbnail.invalidFileType',
         );
     }
 
-    // Validate file size (max 5MB)
-    const maxSize = 5 * 1024 * 1024;
-    if (file.size > maxSize) {
+    // Validate file size
+    if (file.size > MAX_FILE_SIZE_BYTES) {
         return wrapErrorCode(
             ApiResultStatus.BAD_REQUEST,
             'pages.uploadData.thumbnail.fileTooLarge',
@@ -43,8 +44,7 @@ export async function uploadThumbnail(aasRepositoryUrl: string, aasId: string, f
     
     const defaultInfrastructure = await getDefaultInfrastructure();
     const securityHeaders = await createSecurityHeaders(defaultInfrastructure);
-    const apiUrl = aasRepositoryUrl;
-    if (!apiUrl) {
+    if (!aasRepositoryUrl) {
         return wrapErrorCode(
             ApiResultStatus.BAD_REQUEST,
             'pages.uploadData.thumbnail.uploadError',
@@ -53,9 +53,9 @@ export async function uploadThumbnail(aasRepositoryUrl: string, aasId: string, f
     
     try {
         const aasRepositoryApi = AssetAdministrationShellRepositoryApi.create(
-            apiUrl,
+            aasRepositoryUrl,
             mnestixFetch(securityHeaders),
-        )        
+        );  
         
         const blob = new Blob([await file.arrayBuffer()], { type: file.type });
 

@@ -4,6 +4,7 @@ import { ChangeEvent, useId, useRef, useState } from 'react';
 import { Button, Stack, Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import DragAndDrop from './DragAndDrop';
+import { formatFileSize } from './DataUploadUtils';
 
 export interface FileUploadFormProps {
     onSubmit: (file: File) => void;
@@ -37,17 +38,6 @@ export default function FileUploadForm(props: FileUploadFormProps) {
         const hasValidMimeType = acceptableMimeTypes.includes(file.type);
 
         return hasValidExtension || hasValidMimeType;
-    }
-
-    function formatFileSize(bytes: number) {
-        if (bytes === 0) {
-            return '0 B';
-        }
-        const k = 1024;
-        const sizes = ['B', 'KB', 'MB', 'GB'];
-        const i = Math.floor(Math.log(bytes) / Math.log(k));
-        const value = bytes / Math.pow(k, i);
-        return `${value >= 10 || i === 0 ? value.toFixed(0) : value.toFixed(1)} ${sizes[i]}`;
     }
 
     function handleFileSelection(file: File) {
@@ -131,7 +121,6 @@ export default function FileUploadForm(props: FileUploadFormProps) {
                 hasError={Boolean(errorMessage)}
                 selectedFile={selectedFile}
                 onDeleteFile={clearSelectedFile}
-                formatFileSize={formatFileSize}
                 supportedFileTypes={acceptableExtensions.join(', ')}
                 maxSizeMB={maxFileSizeMB}
             />

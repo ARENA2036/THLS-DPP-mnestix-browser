@@ -4,6 +4,7 @@ import { IconButton, LinearProgress, Stack, Typography } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import { useTranslations } from 'next-intl';
+import { formatFileSize } from './DataUploadUtils';
 
 type UploadStatus = 'idle' | 'uploading' | 'processing' | 'success' | 'error';
 
@@ -34,17 +35,6 @@ export default function UploadWorkflowCard(props: UploadWorkflowCardProps) {
         onRemove,
     } = props;
     const t = useTranslations('pages.uploadData');
-
-    function formatFileSize(bytes: number) {
-        if (bytes === 0) {
-            return '0 B';
-        }
-        const k = 1024;
-        const sizes = ['B', 'KB', 'MB', 'GB'];
-        const i = Math.floor(Math.log(bytes) / Math.log(k));
-        const value = bytes / Math.pow(k, i);
-        return `${value >= 10 || i === 0 ? value.toFixed(0) : value.toFixed(1)} ${sizes[i]}`;
-    }
 
     // Determine current step and status
     let currentStepTitle = '';

@@ -641,7 +641,7 @@
         "changeFile": "Cambiar imagen",
         "upload": "Subir Thumbnail",
         "uploading": "Subiendo Thumbnail...",
-        "uploadSuccess": "¡Thumbnail subido correctamente.",
+        "uploadSuccess": "Thumbnail subido correctamente.",
         "uploadError": "Error al cargar el Thumbnail. Inténtalo de nuevo.",
         "invalidFileType": "Seleccione un archivo de imagen válido (JPEG, PNG, GIF o WebP).",
         "fileTooLarge": "El Thumbnail es demasiado grande. Tamaño máximo: {maxSize}."

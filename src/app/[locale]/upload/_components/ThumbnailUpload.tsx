@@ -6,6 +6,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useTranslations } from 'next-intl';
 import { uploadThumbnail } from 'lib/services/data-upload/thumbnailUploadAction';
 import DragAndDrop from './DragAndDrop';
+import { formatFileSize } from './DataUploadUtils';
 
 export interface ThumbnailUploadProps {
     aasId: string;
@@ -36,18 +37,6 @@ export default function ThumbnailUpload(props: ThumbnailUploadProps) {
 
     const MAX_THUMBNAIL_SIZE_MB = 5;
     const ACCEPTABLE_FILE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
-
-
-    function formatFileSize(bytes: number) {
-        if (bytes === 0) {
-            return '0 B';
-        }
-        const k = 1024;
-        const sizes = ['B', 'KB', 'MB', 'GB'];
-        const i = Math.floor(Math.log(bytes) / Math.log(k));
-        const value = bytes / Math.pow(k, i);
-        return `${value >= 10 || i === 0 ? value.toFixed(0) : value.toFixed(1)} ${sizes[i]}`;
-    }
 
     function translateBackendError(errorText: string | null | undefined): string | null {
         if (!errorText) return null;
@@ -196,7 +185,6 @@ export default function ThumbnailUpload(props: ThumbnailUploadProps) {
                         hasError={Boolean(thumbnailError)}
                         selectedFile={thumbnailFile}
                         onDeleteFile={removeThumbnailFile}
-                        formatFileSize={formatFileSize}
                         supportedFileTypes={ACCEPTABLE_FILE_EXTENSIONS.join(', ')}
                         maxSizeMB={MAX_THUMBNAIL_SIZE_MB}
                     />
