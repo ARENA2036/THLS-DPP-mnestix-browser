@@ -628,7 +628,7 @@
           "fileRequired": "Selecciona un archivo VEC antes de enviar."
         }
       },
-      "uploadSuccess": "Carga completada correctamente.",
+      "uploadSuccess": "DPP creado correctamente.",
       "warningsEncountered": "Advertencias:",
       "uploadSection": {
         "title": "Cargar archivo VEC o KBL"

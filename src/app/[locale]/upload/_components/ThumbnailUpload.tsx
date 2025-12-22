@@ -185,9 +185,16 @@ export default function ThumbnailUpload(props: ThumbnailUploadProps) {
                 padding={2}
                 bgcolor="background.paper"
             >
-                <Typography variant="caption" color="text.secondary">
-                    {t('thumbnail.description')}
-                </Typography>
+                {thumbnailUploadStatus !== 'success' && (
+                    <Typography variant="caption" color="text.secondary">
+                        {t('thumbnail.description')}
+                    </Typography>
+                )}
+                {thumbnailUploadStatus === 'success' && thumbnailFile && (
+                    <Typography variant="body2" fontWeight={600} noWrap title={thumbnailFile.name}>
+                        {thumbnailFile.name}
+                    </Typography>
+                )}
                 <input
                     id={fileInputId}
                     ref={fileInputRef}

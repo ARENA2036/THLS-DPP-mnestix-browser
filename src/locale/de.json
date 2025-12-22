@@ -628,7 +628,7 @@
           "fileRequired": "Bitte wählen Sie vor dem Absenden eine VEC-Datei aus."
         }
       },
-      "uploadSuccess": "Upload erfolgreich abgeschlossen.",
+      "uploadSuccess": "DPP erfolgreich erstellt.",
       "warningsEncountered": "Warnungen:",
       "uploadSection": {
         "title": "VEC oder KBL Datei hochladen"

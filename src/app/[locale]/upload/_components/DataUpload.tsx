@@ -480,6 +480,9 @@ export default function DataUpload(props: DataUploadProps) {
 
     return (
         <Stack spacing={2}>
+            <Typography variant="h6" fontWeight={600}>
+                {t('uploadSection.title')}
+            </Typography>            
             <input
                 id={fileInputId}
                 ref={fileInputRef}
@@ -487,10 +490,7 @@ export default function DataUpload(props: DataUploadProps) {
                 accept={ACCEPTABLE_FILE_TYPES}
                 onChange={handleInputChange}
                 hidden
-            />      
-            <Typography variant="h6" fontWeight={600}>
-                {t('uploadSection.title')}
-            </Typography>
+            />  
             {uploadStatus === 'idle' && processingStatus === 'idle' && generateAasStatus === 'idle' && (
                 <Stack spacing={2}>
 
