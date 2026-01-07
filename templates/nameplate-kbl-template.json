@@ -105,7 +105,7 @@
                     },
                     "kind": "TemplateQualifier",
                     "type": "SMT/Cardinality",
-                    "value": "One",
+                    "value": "ZeroToOne",
                     "valueType": "xs:string"
                 },
                 {
@@ -156,7 +156,7 @@
                     },
                     "kind": "TemplateQualifier",
                     "type": "SMT/Cardinality",
-                    "value": "One",
+                    "value": "ZeroToOne",
                     "valueType": "xs:string"
                 },
                 {
@@ -943,7 +943,7 @@
                                 "keys": [
                                     {
                                         "type": "ConceptDescription",
-                                        "value": "https://admin-shell.io/zvei/nameplate/1/0/ ContactInformations/ContactInformation/IPCommunication/TypeOfCommunication"
+                                        "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/IPCommunication/TypeOfCommunication"
                                     }
                                 ],
                                 "type": "ExternalReference"
@@ -1870,7 +1870,7 @@
                 "keys": [
                     {
                         "type": "ConceptDescription",
-                        "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/CompanyLogo "
+                        "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/CompanyLogo"
                     }
                 ],
                 "type": "ExternalReference"

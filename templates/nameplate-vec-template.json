@@ -171,7 +171,7 @@
                     },
                     "kind": "TemplateQualifier",
                     "type": "SMT/MappingInfo",
-                    "value": "DocumentVersion.description.#text",
+                    "value": "DocumentVersion.CompanyName.#text",
                     "valueType": "xs:string"
                 }
             ],
@@ -943,12 +943,12 @@
                                 "keys": [
                                     {
                                         "type": "ConceptDescription",
-                                        "value": "https://admin-shell.io/zvei/nameplate/1/0/ ContactInformations/ContactInformation/IPCommunication/TypeOfCommunication"
+                                        "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/IPCommunication/TypeOfCommunication"
                                     }
                                 ],
                                 "type": "ExternalReference"
                             },
-                            "value": "Chat",
+                            "value": "",
                             "valueType": "xs:string",
                             "qualifiers": [
                                 {
@@ -1876,7 +1876,7 @@
                 "keys": [
                     {
                         "type": "ConceptDescription",
-                        "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/CompanyLogo "
+                        "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/CompanyLogo"
                     }
                 ],
                 "type": "ExternalReference"
