@@ -41,22 +41,22 @@ export async function uploadThumbnail(aasRepositoryUrl: string, aasId: string, f
             'pages.uploadData.thumbnail.fileTooLarge',
         );
     }
-    
-    const defaultInfrastructure = await getDefaultInfrastructure();
-    const securityHeaders = await createSecurityHeaders(defaultInfrastructure);
+
     if (!aasRepositoryUrl) {
         return wrapErrorCode(
             ApiResultStatus.BAD_REQUEST,
             'pages.uploadData.thumbnail.uploadError',
         );
     }
+
+    const defaultInfrastructure = await getDefaultInfrastructure();
+    const securityHeaders = await createSecurityHeaders(defaultInfrastructure);
     
     try {
         const aasRepositoryApi = AssetAdministrationShellRepositoryApi.create(
             aasRepositoryUrl,
             mnestixFetch(securityHeaders),
-        );  
-        
+        );
         const blob = new Blob([await file.arrayBuffer()], { type: file.type });
 
         const response = await aasRepositoryApi.putThumbnailToShell(aasId, blob, fileName);
