@@ -77,7 +77,7 @@ export class DefaultTemplatesApi extends runtime.BaseAPI implements DefaultTempl
 
         const response = await this.request(
             {
-                path: `/api/DefaultTemplates`,
+                path: `/api/v1/DefaultTemplates`,
                 method: 'POST',
                 headers: headerParameters,
                 query: queryParameters,

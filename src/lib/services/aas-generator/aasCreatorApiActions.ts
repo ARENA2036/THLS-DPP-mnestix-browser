@@ -32,6 +32,7 @@ export async function createAasWithSubmodels(
                           blueprintsIds,
                           data,
                           language,
+                          debug: true
                       }
                     : undefined,
         });

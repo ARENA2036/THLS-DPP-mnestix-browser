@@ -6,6 +6,7 @@ import { Box, IconButton, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { DragEvent, KeyboardEvent, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { formatFileSize } from './DataUploadUtils';
 
 export interface DragAndDropProps {
     onBrowse: () => void;
@@ -15,7 +16,8 @@ export interface DragAndDropProps {
     hasError: boolean;
     selectedFile?: File | null;
     onDeleteFile?: () => void;
-    formatFileSize?: (bytes: number) => string;
+    supportedFileTypes?: string;
+    maxSizeMB?: number;
 }
 
 /**
@@ -30,23 +32,13 @@ export default function DragAndDrop({
     hasError,
     selectedFile,
     onDeleteFile,
-    formatFileSize,
+    supportedFileTypes,
+    maxSizeMB,
 }: DragAndDropProps) {
     const theme = useTheme();
     const t = useTranslations('pages.uploadData');
     const describedBy = hasError ? `${helpTextId} ${errorTextId}` : helpTextId;
     const [isDragActive, setIsDragActive] = useState(false);
-
-    const defaultFormatFileSize = (bytes: number) => {
-        if (bytes === 0) return '0 B';
-        const k = 1024;
-        const sizes = ['B', 'KB', 'MB', 'GB'];
-        const i = Math.floor(Math.log(bytes) / Math.log(k));
-        const value = bytes / Math.pow(k, i);
-        return `${value >= 10 || i === 0 ? value.toFixed(0) : value.toFixed(1)} ${sizes[i]}`;
-    };
-
-    const fileSizeFormatter = formatFileSize || defaultFormatFileSize;
 
     function handleDragOver(event: DragEvent<HTMLDivElement>) {
         event.preventDefault();
@@ -137,7 +129,7 @@ export default function DragAndDrop({
                             {selectedFile.name}
                         </Typography>
                         <Typography variant="caption" color="text.secondary">
-                            {fileSizeFormatter(selectedFile.size)}
+                            {formatFileSize(selectedFile.size)}
                         </Typography>
                     </Stack>
                     {onDeleteFile && (
@@ -169,7 +161,7 @@ export default function DragAndDrop({
                             {t('cta.orDragAndDrop')}
                         </Typography>
                         <Typography component="p" variant="body2" color="text.secondary">
-                            {t('descriptions.supportedFormats')}
+                           {t('cta.supportedFiles', { formats: supportedFileTypes || '', maxSize: maxSizeMB || '' })}
                         </Typography>
                     </Stack>
                 </Stack>

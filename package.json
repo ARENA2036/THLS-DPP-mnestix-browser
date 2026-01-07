@@ -94,6 +94,7 @@
     "typecheck": "tsc --noEmit",
     "generate-aas-apis": "node src/lib/api/aas/openapi-generate.js",
     "generate-mnestix-apis": "node src/lib/api/mnestix-aas-generator/openapi-generate.js",
+    "setup-blueprints": "node scripts/setup-blueprints.js",
     "typecheck:e2e": "tsc --noEmit -p cypress",
     "test": "cypress open",
     "test:headless": "cypress run",

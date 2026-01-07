@@ -591,7 +591,8 @@
       "ariaLabel": "VEC-Datei hochladen",
       "cta": {
         "clickToUpload": "Zum Hochladen klicken",
-        "orDragAndDrop": "oder per Drag & Drop ablegen"
+        "orDragAndDrop": "oder per Drag & Drop ablegen",
+        "supportedFiles": "Unterstützte Dateien: {formats} (max. {maxSize} MB)"
       },
       "descriptions": {
         "supportedFormats": "Unterstütztes Format: .vec, .kbl (max. 10 MB)"
@@ -627,7 +628,24 @@
           "fileRequired": "Bitte wählen Sie vor dem Absenden eine VEC-Datei aus."
         }
       },
-      "uploadSuccess": "Upload erfolgreich abgeschlossen."
+      "uploadSuccess": "DPP erfolgreich erstellt.",
+      "warningsEncountered": "Warnungen:",
+      "uploadSection": {
+        "title": "VEC oder KBL Datei hochladen"
+      },
+      "thumbnail": {
+        "sectionTitle": "Thumbnail zur AAS hinzufügen",
+        "title": "Thumbnail hinzufügen (Optional)",
+        "description": "Laden Sie ein Thumbnail für Ihre Asset Administration Shell hoch.",
+        "selectFile": "Bild auswählen",
+        "changeFile": "Bild ändern",
+        "upload": "Thumbnail hochladen",
+        "uploading": "Thumbnail wird hochgeladen...",
+        "uploadSuccess": "Thumbnail erfolgreich hochgeladen.",
+        "uploadError": "Fehler beim Hochladen des Thumbnails. Bitte versuchen Sie es erneut.",
+        "invalidFileType": "Bitte wählen Sie eine gültige Bilddatei (JPEG, PNG, GIF oder WebP).",
+        "fileTooLarge": "Thumbnail ist zu groß. Maximale Größe: {maxSize}."
+      }
     },
     "transfer": {
       "aasRepository": "AAS Repository",
