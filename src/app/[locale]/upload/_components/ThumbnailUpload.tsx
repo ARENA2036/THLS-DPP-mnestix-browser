@@ -1,18 +1,19 @@
 'use client';
 
-import { useId, useRef, useState, useTransition } from 'react';
-import { Button, LinearProgress, Stack, Typography } from '@mui/material';
+import { useState, useTransition } from 'react';
+import { LinearProgress, Stack, Typography } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useTranslations } from 'next-intl';
 import { uploadThumbnail } from 'lib/services/data-upload/thumbnailUploadAction';
-import DragAndDrop from './DragAndDrop';
-import { formatFileSize } from './DataUploadUtils';
+import FileUploadForm from './FileUploadForm';
 
 export interface ThumbnailUploadProps {
     aasId: string;
     aasRepoUrl: string;
     onUploadSuccess?: () => void;
 }
+
+type UploadStatus = 'idle' | 'uploading' | 'success' | 'error';
 
 /**
  * Thumbnail upload component for adding images to AAS.
@@ -22,21 +23,15 @@ export interface ThumbnailUploadProps {
  */
 export default function ThumbnailUpload(props: ThumbnailUploadProps) {
     const { aasId, aasRepoUrl, onUploadSuccess } = props;
-    const [thumbnailFile, setThumbnailFile] = useState<File | null>(null);
-    const [thumbnailUploadStatus, setThumbnailUploadStatus] = useState<
-        'idle' | 'uploading' | 'success' | 'error'
-    >('idle');
-    const [thumbnailError, setThumbnailError] = useState<string | null>(null);
-    const [isThumbnailPending, startThumbnailTransition] = useTransition();
-    const fileInputRef = useRef<HTMLInputElement | null>(null);
+    const [selectedFile, setSelectedFile] = useState<File | null>(null);
+    const [uploadStatus, setUploadStatus] = useState<UploadStatus>('idle');
+    const [errorMessage, setErrorMessage] = useState<string | null>(null);
+    const [isPending, startThumbnailTransition] = useTransition();
     const t = useTranslations('pages.uploadData');
-    const componentId = useId();
-    const fileInputId = `${componentId}-thumbnail-input`;
-    const helpTextId = `${componentId}-help`;
-    const errorTextId = `${componentId}-error`;
 
     const MAX_THUMBNAIL_SIZE_MB = 5;
     const ACCEPTABLE_FILE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
+    const ACCEPTABLE_MIME_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
 
     function translateBackendError(errorText: string | null | undefined): string | null {
         if (!errorText) return null;
@@ -77,58 +72,13 @@ export default function ThumbnailUpload(props: ThumbnailUploadProps) {
         return errorText;
     }
 
-    function handleThumbnailSelection(file: File) {
-        // Validate file type
-        const validImageTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
-        if (!validImageTypes.includes(file.type)) {
-            setThumbnailError(t('thumbnail.invalidFileType'));
-            setThumbnailFile(null);
-            return;
-        }
-
-        // Validate file size (max 5MB)
-        const maxSize = MAX_THUMBNAIL_SIZE_MB * 1024 * 1024;
-        if (file.size > maxSize) {
-            setThumbnailError(t('thumbnail.fileTooLarge', { maxSize: formatFileSize(maxSize) }));
-            setThumbnailFile(null);
-            return;
-        }
-
-        setThumbnailFile(file);
-        setThumbnailError(null);
-    }
-
-    function handleBrowseClick() {
-        if (fileInputRef.current) {
-            fileInputRef.current.click();
-        }
-    }
-
-    function handleFilesDropped(files: FileList) {
-        if (!files || files.length === 0) {
-            return;
-        }
-        handleThumbnailSelection(files[0]);
-    }
-
-    function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
-        const { files } = event.target;
-        if (!files || files.length === 0) {
-            return;
-        }
-        handleThumbnailSelection(files[0]);
-    }
-
-    function handleThumbnailUpload() {
-        if (!thumbnailFile || !aasId) {
-            return;
-        }
-
-        setThumbnailUploadStatus('uploading');
-        setThumbnailError(null);
+    function handleFileSubmit(file: File) {
+        setSelectedFile(file);
+        setUploadStatus('uploading');
+        setErrorMessage(null);
 
         const formData = new FormData();
-        formData.append('thumbnail', thumbnailFile);
+        formData.append('thumbnail', file);
 
         startThumbnailTransition(async () => {
             try {
@@ -136,30 +86,21 @@ export default function ThumbnailUpload(props: ThumbnailUploadProps) {
 
                 if (!response.isSuccess) {
                     const errorMessage = translateBackendError(response.message) || t('thumbnail.uploadError');
-                    setThumbnailError(errorMessage);
-                    setThumbnailUploadStatus('error');
+                    setErrorMessage(errorMessage);
+                    setUploadStatus('error');
                     return;
                 }
 
-                setThumbnailUploadStatus('success');
+                setUploadStatus('success');
                 if (onUploadSuccess) {
                     onUploadSuccess();
                 }
             } catch (error) {
                 const errorMessage = error instanceof Error ? error.message : t('thumbnail.uploadError');
-                setThumbnailError(errorMessage);
-                setThumbnailUploadStatus('error');
+                setErrorMessage(errorMessage);
+                setUploadStatus('error');
             }
         });
-    }
-
-    function removeThumbnailFile() {
-        setThumbnailFile(null);
-        setThumbnailError(null);
-        setThumbnailUploadStatus('idle');
-        if (fileInputRef.current) {
-            fileInputRef.current.value = '';
-        }
     }
 
     return (
@@ -167,75 +108,68 @@ export default function ThumbnailUpload(props: ThumbnailUploadProps) {
             <Typography variant="h6" fontWeight={600}>
                 {t('thumbnail.sectionTitle')}
             </Typography>
-            <input
-                id={fileInputId}
-                ref={fileInputRef}
-                type="file"
-                accept="image/jpeg,image/jpg,image/png,image/gif,image/webp"
-                onChange={handleInputChange}
-                hidden
-            />
-            {thumbnailUploadStatus === 'idle' && (
-                <>
-                    <DragAndDrop
-                        onBrowse={handleBrowseClick}
-                        onDropFiles={handleFilesDropped}
-                        helpTextId={helpTextId}
-                        errorTextId={errorTextId}
-                        hasError={Boolean(thumbnailError)}
-                        selectedFile={thumbnailFile}
-                        onDeleteFile={removeThumbnailFile}
-                        supportedFileTypes={ACCEPTABLE_FILE_EXTENSIONS.join(', ')}
-                        maxSizeMB={MAX_THUMBNAIL_SIZE_MB}
-                    />
-                    {thumbnailFile && (
-                        <Button variant="contained" onClick={handleThumbnailUpload} disabled={isThumbnailPending}>
-                            {t('thumbnail.upload')}
-                        </Button>
-                    )}
-                    {thumbnailError && (
-                        <Typography id={errorTextId} variant="caption" color="error" role="alert" aria-live="assertive">
-                            {thumbnailError}
-                        </Typography>
-                    )}
-                </>
+            {uploadStatus === 'idle' && (
+                <FileUploadForm
+                    onSubmit={handleFileSubmit}
+                    maxFileSizeMB={MAX_THUMBNAIL_SIZE_MB}
+                    acceptableExtensions={ACCEPTABLE_FILE_EXTENSIONS}
+                    acceptableMimeTypes={ACCEPTABLE_MIME_TYPES}
+                    disabled={isPending}
+                />
             )}
-            {(thumbnailUploadStatus === 'uploading' || thumbnailUploadStatus === 'success') && (
-                <Stack
-                    spacing={2}
-                    border="1px solid"
-                    borderColor="divider"
-                    borderRadius={2}
-                    padding={2}
-                    bgcolor="background.paper"
-                >
-                    {thumbnailFile && (
-                        <Typography variant="body2" fontWeight={600} noWrap title={thumbnailFile.name}>
-                            {thumbnailFile.name}
+            {selectedFile &&
+                (uploadStatus === 'uploading' || uploadStatus === 'success' || uploadStatus === 'error') && (
+                    <Stack
+                        spacing={2}
+                        border="1px solid"
+                        borderColor="divider"
+                        borderRadius={2}
+                        padding={2}
+                        bgcolor="background.paper"
+                        aria-live="polite"
+                        role="status"
+                    >
+                        <Typography variant="body2" fontWeight={600} noWrap title={selectedFile.name}>
+                            {selectedFile.name}
                         </Typography>
-                    )}
-                    <Stack spacing={1}>
-                        <Typography variant="caption" color={thumbnailUploadStatus === 'success' ? 'success.main' : 'text.primary'} fontWeight={thumbnailUploadStatus === 'success' ? 600 : 400}>
-                            {thumbnailUploadStatus === 'uploading' ? t('thumbnail.uploading') : t('thumbnail.uploadSuccess')}
-                        </Typography>
-                        <Stack direction="row" spacing={1} alignItems="center">
-                            <LinearProgress
-                                variant={thumbnailUploadStatus === 'uploading' ? 'indeterminate' : 'determinate'}
-                                value={100}
-                                color="success"
-                                sx={{
-                                    height: 6,
-                                    borderRadius: 3,
-                                    width: '100px',
-                                }}
-                            />
-                            {thumbnailUploadStatus === 'success' && (
-                                <CheckCircleIcon sx={{ color: 'success.main', fontSize: 20 }} />
+                        <Stack spacing={1}>
+                            <Typography
+                                variant="caption"
+                                color={
+                                    uploadStatus === 'success'
+                                        ? 'success.main'
+                                        : uploadStatus === 'error'
+                                          ? 'error'
+                                          : 'text.primary'
+                                }
+                                fontWeight={uploadStatus === 'success' || uploadStatus === 'error' ? 600 : 400}
+                            >
+                                {uploadStatus === 'uploading'
+                                    ? t('thumbnail.uploading')
+                                    : uploadStatus === 'success'
+                                      ? t('thumbnail.uploadSuccess')
+                                      : errorMessage}
+                            </Typography>
+                            {uploadStatus !== 'error' && (
+                                <Stack direction="row" spacing={1} alignItems="center">
+                                    <LinearProgress
+                                        variant={uploadStatus === 'uploading' ? 'indeterminate' : 'determinate'}
+                                        value={100}
+                                        color="success"
+                                        sx={{
+                                            height: 6,
+                                            borderRadius: 3,
+                                            width: '100px',
+                                        }}
+                                    />
+                                    {uploadStatus === 'success' && (
+                                        <CheckCircleIcon sx={{ color: 'success.main', fontSize: 20 }} />
+                                    )}
+                                </Stack>
                             )}
                         </Stack>
                     </Stack>
-                </Stack>
-            )}
+                )}
         </Stack>
     );
 }
