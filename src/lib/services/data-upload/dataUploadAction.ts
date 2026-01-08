@@ -224,6 +224,7 @@ export async function processData(formData: FormData) {
             redirectUrl, 
             warnings: warnings.length > 0 ? warnings : undefined,
             aasId: response.aasId,
+            aasRepoUrl: response.aasRepoUrl,
         },
     });
 

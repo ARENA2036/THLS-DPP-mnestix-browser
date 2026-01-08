@@ -8,7 +8,6 @@ import FileUploadForm from './FileUploadForm';
 import UploadWorkflowCard from './UploadWorkflowCard';
 import ThumbnailUpload from './ThumbnailUpload';
 import { useRouter } from 'next/navigation';
-import { useEnv } from 'app/EnvProvider';
 
 export interface DataUploadProps {
     onFileSelected?: (file: File) => void;
@@ -36,10 +35,10 @@ export default function DataUpload(props: DataUploadProps) {
     const [redirectUrl, setRedirectUrl] = useState<string | null>(null);
     const [warnings, setWarnings] = useState<string[]>([]);
     const [aasId, setAasId] = useState<string | null>(null);
+    const [aasRepoUrl, setAasRepoUrl] = useState<string | null>(null);
     const [isPending, startUploadTransition] = useTransition();
     const requestIdRef = useRef(0);
     const t = useTranslations('pages.uploadData');
-    const envs = useEnv();
 
     const MAX_FILE_SIZE_MB = 10;
     const ACCEPTABLE_FILE_EXTENSIONS = ['.vec', '.kbl'];
@@ -114,6 +113,7 @@ export default function DataUpload(props: DataUploadProps) {
         setRedirectUrl(null);
         setWarnings([]);
         setAasId(null);
+        setAasRepoUrl(null);
     }
 
     function handleFileSubmit(file: File) {
@@ -195,6 +195,9 @@ export default function DataUpload(props: DataUploadProps) {
                 if (finalUpdate.result?.aasId) {
                     setAasId(finalUpdate.result.aasId);
                 }
+                if (finalUpdate.result?.aasRepoUrl) {
+                    setAasRepoUrl(finalUpdate.result.aasRepoUrl);
+                }
             } catch (error) {
                 if (currentRequestId !== requestIdRef.current) {
                     return;
@@ -245,8 +248,8 @@ export default function DataUpload(props: DataUploadProps) {
             </Stack>
             {uploadStatus === 'success' && processingStatus === 'success' && generateAasStatus === 'success' && (
                 <Stack spacing={4}>
-                    {aasId && envs.AAS_REPO_API_URL && (
-                        <ThumbnailUpload aasId={aasId} aasRepoUrl={envs.AAS_REPO_API_URL} />
+                    {aasId && aasRepoUrl && (
+                        <ThumbnailUpload aasId={aasId} aasRepoUrl={aasRepoUrl} />
                     )}
                     <Stack direction="row" spacing={2}>
                         {redirectUrl && (
