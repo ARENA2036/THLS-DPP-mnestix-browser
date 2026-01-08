@@ -17,7 +17,15 @@ const TEMPLATES = [
         envVarName: 'FILE_UPLOAD_BLUEPRINTS_VEC',
     },
     {
+        filePath: path.join(__dirname, '../templates/handover-docs-vec-template.json'),
+        envVarName: 'FILE_UPLOAD_BLUEPRINTS_VEC',
+    },
+    {
         filePath: path.join(__dirname, '../templates/nameplate-kbl-template.json'),
+        envVarName: 'FILE_UPLOAD_BLUEPRINTS_KBL',
+    },
+    {
+        filePath: path.join(__dirname, '../templates/handover-docs-kbl-template.json'),
         envVarName: 'FILE_UPLOAD_BLUEPRINTS_KBL',
     },
 ];
@@ -103,7 +111,7 @@ async function main() {
 
     console.log(`📡 Using API URL: ${apiUrl}\n`);
 
-    const updates = {};
+    const blueprintIdsByEnvVar = {};
 
     for (const template of TEMPLATES) {
         try {
@@ -121,12 +129,20 @@ async function main() {
             const blueprintId = await createBlueprint(templateData, apiUrl, apiKey);
             console.log(`   ✅ Blueprint created with ID: ${blueprintId}`);
 
-            updates[template.envVarName] = `["${blueprintId}"]`;
+            if (!blueprintIdsByEnvVar[template.envVarName]) {
+                blueprintIdsByEnvVar[template.envVarName] = [];
+            }
+            blueprintIdsByEnvVar[template.envVarName].push(blueprintId);
         } catch (error) {
             console.error(`   ❌ Error processing ${template.filePath}:`, error.message);
             throw error;
         }
     }
+
+    const updates = {};
+    Object.entries(blueprintIdsByEnvVar).forEach(([envVarName, ids]) => {
+        updates[envVarName] = `[${ids.map((id) => `"${id}"`).join(',')}]`;
+    });
 
     if (Object.keys(updates).length > 0) {
         console.log(`\n📝 Updating ${ENV_FILE_PATH}...`);

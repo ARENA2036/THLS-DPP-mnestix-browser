@@ -94,7 +94,7 @@ export function useFileViewObject(submodelElement: SubmodelElementCollection | S
             DocumentSpecificSemanticIdIrdi.OrganizationName,
             DocumentSpecificSemanticIdIrdiV2.OrganizationShortName,
         ]);
-        fileViewObject.organizationName = (organization as Property).value || '';
+        fileViewObject.organizationName = organization ? (organization as Property).value || '' : '';
 
         return fileViewObject;
     }
