@@ -1,4 +1,4 @@
-export type WorkflowStepName = 'upload' | 'process' | 'generateAas';
+export type WorkflowStepName = 'upload' | 'process' | 'generateAas' | 'uploadHandoverDocs';
 export type WorkflowStepStatus = 'processing' | 'completed' | 'failed';
 export type FileType = 'vec' | 'kbl' | 'unknown';
 

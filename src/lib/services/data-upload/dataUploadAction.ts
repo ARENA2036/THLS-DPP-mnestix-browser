@@ -3,6 +3,7 @@
 import { wrapErrorCode, wrapSuccess } from 'lib/util/apiResponseWrapper/apiResponseWrapper';
 import { ApiResultStatus } from 'lib/util/apiResponseWrapper/apiResultStatus';
 import { createAasWithSubmodels } from 'lib/services/aas-generator/aasCreatorApiActions';
+import { uploadFileToSubmodelInDefaultInfrastructure } from './uploadFileToSubmodelAction';
 import { envs } from 'lib/env/MnestixEnv';
 import {
     parseXmlToJson,
@@ -105,7 +106,7 @@ function generateAssetIdShort(companyName: string, partName: string, timestamp: 
  * Workflow steps:
  * 1. Upload - validates and receives the file
  * 2. Process - parses and validates the file data
- * 3. Generate AAS - creates the AAS using the AAS Generator API
+ * 3. Generate AAS - creates the AAS using the AAS Generator API and uploads the file to the submodel
  *
  * @param formData FormData containing the file to process
  * @returns Array of workflow steps with their status and results
@@ -218,10 +219,43 @@ export async function processData(formData: FormData) {
         }
     }
 
+    // Upload file to submodel as part of the generation step
+    // TODO: Checking for a string in the Blueprint ID is a temporary solution! Find a better way to identify the correct submodel!
+    const submodelId = response.submodelResults?.find(sm => sm.blueprintId?.startsWith('Handover'))?.generatedSubmodelId;
+
+    const submodelElementIdShort = submodelId ? `Document.DocumentVersion.DigitalFile` : null;
+
+    console.log(response.aasId, submodelId, submodelElementIdShort, response.aasRepoUrl);
+
+    if (response.aasId && submodelId && submodelElementIdShort && response.aasRepoUrl) {
+        const uploadResult = await uploadFileToSubmodelInDefaultInfrastructure(
+            submodelId,
+            submodelElementIdShort,
+            file,
+            fileName,
+            response.aasRepoUrl,
+        );
+
+        if (!uploadResult.isSuccess) {
+            steps.push({
+                currentStep: {
+                    name: 'generateAas',
+                    status: 'failed',
+                    error: uploadResult.message || 'Failed to upload file to submodel',
+                    errorDetail: uploadResult.errorDetail,
+                },
+            });
+            return wrapErrorCode(uploadResult.errorCode, 'Failed to upload file to submodel');
+        }
+    } else {
+        // Skip file upload if submodel path is not configured
+        console.warn('Submodel path not configured, skipping file upload');
+    }
+
     steps.push({
         currentStep: { name: 'generateAas', status: 'completed' },
-        result: { 
-            redirectUrl, 
+        result: {
+            redirectUrl,
             warnings: warnings.length > 0 ? warnings : undefined,
             aasId: response.aasId,
             aasRepoUrl: response.aasRepoUrl,
