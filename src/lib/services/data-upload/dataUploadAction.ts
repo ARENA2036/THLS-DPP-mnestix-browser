@@ -13,6 +13,8 @@ import {
     processVecData,
 } from './fileHelper';
 import { WorkflowStep, ParsedFileData } from './types';
+import { createRequestLogger, logInfo, logWarn } from 'lib/util/Logger';
+import { headers } from 'next/headers';
 
 /**
  * Gets blueprint IDs from environment variable based on file type
@@ -112,6 +114,8 @@ function generateAssetIdShort(companyName: string, partName: string, timestamp: 
  * @returns Array of workflow steps with their status and results
  */
 export async function processData(formData: FormData) {
+    const logger = createRequestLogger(await headers());
+
     const fileEntry = formData.get('file');
 
     if (!fileEntry) {
@@ -247,7 +251,7 @@ export async function processData(formData: FormData) {
         }
     } else {
         // Skip file upload if submodel path is not configured
-        console.warn('Submodel path not configured, skipping file upload');
+        logWarn(logger, 'dataUploadAction', 'Submodel path not configured, skipping file upload');
     }
 
     steps.push({
