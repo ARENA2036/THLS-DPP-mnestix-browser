@@ -3,7 +3,7 @@
 import { wrapErrorCode, wrapSuccess } from 'lib/util/apiResponseWrapper/apiResponseWrapper';
 import { ApiResultStatus } from 'lib/util/apiResponseWrapper/apiResultStatus';
 import { createAasWithSubmodels } from 'lib/services/aas-generator/aasCreatorApiActions';
-import { uploadFileToSubmodelInDefaultInfrastructure } from './uploadFileToSubmodelAction';
+import { uploadFileToSubmodel } from './uploadFileToSubmodelAction';
 import { envs } from 'lib/env/MnestixEnv';
 import {
     parseXmlToJson,
@@ -226,7 +226,7 @@ export async function processData(formData: FormData) {
     const submodelElementIdShort = `Document.DocumentVersion.DigitalFile`;
 
     if (response.aasId && submodelId && response.aasRepoUrl) {
-        const uploadResult = await uploadFileToSubmodelInDefaultInfrastructure(
+        const uploadResult = await uploadFileToSubmodel(
             submodelId,
             submodelElementIdShort,
             file,

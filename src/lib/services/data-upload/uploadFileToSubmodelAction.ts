@@ -2,15 +2,22 @@ import { putAttachmentToSubmodelElement } from 'lib/services/submodel-repository
 import { RepositoryWithInfrastructure } from '../database/InfrastructureMappedTypes';
 import { ApiResultStatus } from 'lib/util/apiResponseWrapper/apiResultStatus';
 import { wrapErrorCode, wrapSuccess } from 'lib/util/apiResponseWrapper/apiResponseWrapper';
-import { getDefaultInfrastructureName } from '../database/infrastructureDatabaseActions';
+import { getInfrastructureBySubmodelRepositoryUrl } from '../database/infrastructureDatabaseActions';
 
 
-export async function uploadFileToSubmodelInDefaultInfrastructure(submodelId: string, idShortPath: string,
+export async function uploadFileToSubmodel(submodelId: string, idShortPath: string,
     file: File,
     fileName: string, repository: string
 ) {
     try {
-        const infrastructure = await getDefaultInfrastructureName();
+        const infrastructure = await getInfrastructureBySubmodelRepositoryUrl(repository);
+        if (!infrastructure) {
+            return wrapErrorCode(
+                ApiResultStatus.NOT_FOUND,
+                `No infrastructure found for repository URL: ${repository}`,
+            );
+        }
+
         const result = await putAttachmentToSubmodelElement(submodelId, {
             idShortPath,
             file,
