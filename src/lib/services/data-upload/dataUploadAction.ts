@@ -223,7 +223,7 @@ export async function processData(formData: FormData) {
     // For now, we assume the submodel for file upload is identified by blueprint ID starting with 'Handover'.
     const submodelId = response.submodelResults?.find(sm => sm.blueprintId?.startsWith('Handover'))?.generatedSubmodelId;
 
-    const submodelElementIdShort = `Document.DocumentVersion.DigitalFile`;
+    const submodelElementIdShort = 'Document.DocumentVersion.DigitalFile';
 
     if (response.aasId && submodelId && response.aasRepoUrl) {
         const uploadResult = await uploadFileToSubmodel(

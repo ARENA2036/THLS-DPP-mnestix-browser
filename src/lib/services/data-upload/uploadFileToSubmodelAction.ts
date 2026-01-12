@@ -3,18 +3,22 @@ import { RepositoryWithInfrastructure } from '../database/InfrastructureMappedTy
 import { ApiResultStatus } from 'lib/util/apiResponseWrapper/apiResultStatus';
 import { wrapErrorCode, wrapSuccess } from 'lib/util/apiResponseWrapper/apiResponseWrapper';
 import { getInfrastructureBySubmodelRepositoryUrl } from '../database/infrastructureDatabaseActions';
+import { createRequestLogger, logInfo } from 'lib/util/Logger';
+import { headers } from 'next/headers';
 
 
 export async function uploadFileToSubmodel(submodelId: string, idShortPath: string,
     file: File,
     fileName: string, repository: string
 ) {
+    const logger = createRequestLogger(await headers());
     try {
         const infrastructure = await getInfrastructureBySubmodelRepositoryUrl(repository);
         if (!infrastructure) {
+            logInfo(logger, 'uploadFileToSubmodel', 'No infrastructure found for repository URL', { repository });
             return wrapErrorCode(
                 ApiResultStatus.NOT_FOUND,
-                `No infrastructure found for repository URL: ${repository}`,
+                'pages.uploadData.handoverDocs.infrastructureNotFound',
             );
         }
 
@@ -25,10 +29,10 @@ export async function uploadFileToSubmodel(submodelId: string, idShortPath: stri
         }, { url: repository, infrastructureName: infrastructure } as RepositoryWithInfrastructure);
         return wrapSuccess(result);
     } catch (error) {
-        console.error('Failed to upload file to submodel:', error);
+        logInfo(logger, 'uploadFileToSubmodel', 'Upload file to submodel failed', { error });
         return wrapErrorCode(
             ApiResultStatus.UNKNOWN_ERROR,
-            'Failed to upload file to submodel',
+            'pages.uploadData.handoverDocs.uploadError',
         );
     }
 }

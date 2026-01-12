@@ -608,6 +608,10 @@
         "unsupportedFileTypeDetail": "Die hochgeladene Datei ist weder eine gültige VEC- noch eine KBL-Datei. Bitte laden Sie nur .vec oder .kbl Dateien hoch.",
         "parseError": "Fehler beim Parsen der Datei. Bitte stellen Sie sicher, dass die Datei ein gültiges XML-Format hat."
       },
+      "handoverDocs": {
+        "uploadError": "Fehler beim Hochladen der Datei in das Submodel. Bitte versuchen Sie es erneut.",
+        "infrastructureNotFound": "Keine Infrastruktur für Repository-URL gefunden"
+      },
       "status": {
         "error": "Fehlgeschlagen",
         "loading": "In Bearbeitung",
