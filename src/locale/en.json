@@ -583,8 +583,6 @@
       "actions": {
         "copyDetailedLogs": "Copy detailed logs",
         "deleteFile": "Delete file",
-        "logsCopied": "Logs copied to clipboard",
-        "logsCopyFailed": "Failed to copy logs to clipboard",
         "removeFile": "Remove file",
         "seeLess": "See less",
         "seeMore": "See more",

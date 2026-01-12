@@ -583,8 +583,6 @@
       "actions": {
         "copyDetailedLogs": "Copiar registros detallados",
         "deleteFile": "Eliminar archivo",
-        "logsCopied": "Registros copiados al portapapeles",
-        "logsCopyFailed": "Error al copiar registros al portapapeles",
         "removeFile": "Quitar archivo",
         "seeLess": "Ver menos",
         "seeMore": "Ver más",

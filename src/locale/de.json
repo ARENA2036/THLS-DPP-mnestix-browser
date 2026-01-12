@@ -583,13 +583,11 @@
       "actions": {
         "copyDetailedLogs": "Detaillierte Logs kopieren",
         "deleteFile": "Datei löschen",
-        "logsCopied": "Logs in Zwischenablage kopiert",
-        "logsCopyFailed": "Fehler beim Kopieren der Logs in die Zwischenablage",
         "removeFile": "Datei entfernen",
         "seeLess": "Weniger anzeigen",
         "seeMore": "Mehr anzeigen",
-        "uploadMore": "Weitere DPP generieren",
-        "viewCreatedAas": "Erstellte DPP anzeigen"
+        "uploadMore": "Weiteren DPP generieren",
+        "viewCreatedAas": "Erstellten DPP anzeigen"
       },
       "ariaLabel": "VEC-Datei hochladen",
       "cta": {
