@@ -13,7 +13,7 @@ import {
     processVecData,
 } from './fileHelper';
 import { WorkflowStep, ParsedFileData } from './types';
-import { createRequestLogger, logInfo, logWarn } from 'lib/util/Logger';
+import { createRequestLogger, logWarn } from 'lib/util/Logger';
 import { headers } from 'next/headers';
 
 /**
