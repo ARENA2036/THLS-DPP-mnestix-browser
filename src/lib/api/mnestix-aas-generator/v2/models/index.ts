@@ -250,6 +250,12 @@ export interface CreateAasResponse {
     base64EncodedAasId?: string;
     /**
      *
+     * @type {string}
+     * @memberof CreateAasResponse
+     */
+    aasRepoUrl?: string;
+    /**
+     *
      * @type {Array<AasGeneratorResult>}
      * @memberof CreateAasResponse
      */
