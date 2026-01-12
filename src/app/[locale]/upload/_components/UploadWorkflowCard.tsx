@@ -1,11 +1,11 @@
 'use client';
 
-import { Button, IconButton, LinearProgress, Stack, Typography } from '@mui/material';
+import { IconButton, LinearProgress, Stack, Typography } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { useTranslations } from 'next-intl';
 import { formatFileSize } from './DataUploadUtils';
+import { CopyButton } from 'components/basics/CopyButton';
 
 type UploadStatus = 'idle' | 'uploading' | 'processing' | 'success' | 'error';
 
@@ -81,11 +81,6 @@ export default function UploadWorkflowCard(props: UploadWorkflowCardProps) {
     const showProgress = !isComplete && !isError;
     const shouldShowCopyButton = (isError || warnings.length > 0) && rawDebugInfo.length > 0;
 
-    function handleCopyLogs() {
-        if (rawDebugInfo.length > 0) {
-            navigator.clipboard.writeText(rawDebugInfo.join('\n'));
-        }
-    }
     return (
         <Stack
             spacing={1.5}
@@ -163,15 +158,16 @@ export default function UploadWorkflowCard(props: UploadWorkflowCardProps) {
                         </Stack>
                     )}
                     {shouldShowCopyButton && (
-                        <Button
-                            size="small"
-                            variant="outlined"
-                            startIcon={<ContentCopyIcon />}
-                            onClick={handleCopyLogs}
-                            sx={{ alignSelf: 'flex-start', mt: 1 }}
-                        >
-                            {t('actions.copyDetailedLogs')}
-                        </Button>
+                        <Stack direction="row" alignItems="center" sx={{ mt: 1 }}>
+                            <Typography variant="caption" sx={{ mr: 0.5 }}>
+                                {t('actions.copyDetailedLogs')}
+                            </Typography>
+                            <CopyButton
+                                value={rawDebugInfo.join('\n')}
+                                size="small"
+                                dataTestId="copy-debug-logs-button"
+                            />
+                        </Stack>
                     )}
                 </Stack>
             </Stack>
