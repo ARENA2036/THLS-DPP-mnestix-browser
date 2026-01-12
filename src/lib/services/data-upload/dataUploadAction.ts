@@ -220,14 +220,12 @@ export async function processData(formData: FormData) {
     }
 
     // Upload file to submodel as part of the generation step
-    // TODO: Checking for a string in the Blueprint ID is a temporary solution! Find a better way to identify the correct submodel!
+    // For now, we assume the submodel for file upload is identified by blueprint ID starting with 'Handover'.
     const submodelId = response.submodelResults?.find(sm => sm.blueprintId?.startsWith('Handover'))?.generatedSubmodelId;
 
-    const submodelElementIdShort = submodelId ? `Document.DocumentVersion.DigitalFile` : null;
+    const submodelElementIdShort = `Document.DocumentVersion.DigitalFile`;
 
-    console.log(response.aasId, submodelId, submodelElementIdShort, response.aasRepoUrl);
-
-    if (response.aasId && submodelId && submodelElementIdShort && response.aasRepoUrl) {
+    if (response.aasId && submodelId && response.aasRepoUrl) {
         const uploadResult = await uploadFileToSubmodelInDefaultInfrastructure(
             submodelId,
             submodelElementIdShort,
