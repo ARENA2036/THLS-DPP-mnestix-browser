@@ -1,8 +1,9 @@
 'use client';
 
-import { IconButton, LinearProgress, Stack, Typography } from '@mui/material';
+import { Button, IconButton, LinearProgress, Stack, Typography } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { useTranslations } from 'next-intl';
 import { formatFileSize } from './DataUploadUtils';
 
@@ -16,6 +17,7 @@ export interface UploadWorkflowCardProps {
     errorMessage: string | null;
     errorDetail: string | null;
     warnings: string[];
+    rawDebugInfo: string[];
     onRemove: () => void;
 }
 
@@ -32,6 +34,7 @@ export default function UploadWorkflowCard(props: UploadWorkflowCardProps) {
         errorMessage,
         errorDetail,
         warnings,
+        rawDebugInfo,
         onRemove,
     } = props;
     const t = useTranslations('pages.uploadData');
@@ -76,7 +79,13 @@ export default function UploadWorkflowCard(props: UploadWorkflowCardProps) {
                 : null;
 
     const showProgress = !isComplete && !isError;
+    const shouldShowCopyButton = (isError || warnings.length > 0) && rawDebugInfo.length > 0;
 
+    function handleCopyLogs() {
+        if (rawDebugInfo.length > 0) {
+            navigator.clipboard.writeText(rawDebugInfo.join('\n'));
+        }
+    }
     return (
         <Stack
             spacing={1.5}
@@ -152,6 +161,17 @@ export default function UploadWorkflowCard(props: UploadWorkflowCardProps) {
                                 </Typography>
                             ))}
                         </Stack>
+                    )}
+                    {shouldShowCopyButton && (
+                        <Button
+                            size="small"
+                            variant="outlined"
+                            startIcon={<ContentCopyIcon />}
+                            onClick={handleCopyLogs}
+                            sx={{ alignSelf: 'flex-start', mt: 1 }}
+                        >
+                            {t('actions.copyDetailedLogs')}
+                        </Button>
                     )}
                 </Stack>
             </Stack>

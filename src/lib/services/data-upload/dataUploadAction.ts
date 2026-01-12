@@ -4,13 +4,7 @@ import { wrapErrorCode, wrapSuccess } from 'lib/util/apiResponseWrapper/apiRespo
 import { ApiResultStatus } from 'lib/util/apiResponseWrapper/apiResultStatus';
 import { createAasWithSubmodels } from 'lib/services/aas-generator/aasCreatorApiActions';
 import { envs } from 'lib/env/MnestixEnv';
-import {
-    parseXmlToJson,
-    detectFileType,
-    extractKblMetadata,
-    extractVecMetadata,
-    processVecData,
-} from './fileHelper';
+import { parseXmlToJson, detectFileType, extractKblMetadata, extractVecMetadata, processVecData } from './fileHelper';
 import { WorkflowStep, ParsedFileData } from './types';
 
 /**
@@ -19,8 +13,7 @@ import { WorkflowStep, ParsedFileData } from './types';
  * @returns Array of blueprint IDs or undefined if not configured
  */
 function getBlueprintIds(fileType: 'kbl' | 'vec'): string[] | undefined {
-    const blueprintsEnv =
-        fileType === 'kbl' ? envs.FILE_UPLOAD_BLUEPRINTS_KBL : envs.FILE_UPLOAD_BLUEPRINTS_VEC;
+    const blueprintsEnv = fileType === 'kbl' ? envs.FILE_UPLOAD_BLUEPRINTS_KBL : envs.FILE_UPLOAD_BLUEPRINTS_VEC;
     if (!blueprintsEnv) {
         return undefined;
     }
@@ -208,11 +201,13 @@ export async function processData(formData: FormData) {
         ? `/viewer/${response.base64EncodedAasId}`
         : `/viewer/${encodeURIComponent(response.aasId || '')}`;
 
-    // Extract warnings from all submodel results
+    // Extract warnings and all debug logs from all submodel results
     const warnings: string[] = [];
+    const allDebugLogs: string[] = [];
     if (response.submodelResults) {
         for (const submodelResult of response.submodelResults) {
             const logs = submodelResult.debugInfo?.logs || [];
+            allDebugLogs.push(...logs);
             const warningLogs = logs.filter((log) => log.startsWith('WARNING'));
             warnings.push(...warningLogs);
         }
@@ -220,11 +215,12 @@ export async function processData(formData: FormData) {
 
     steps.push({
         currentStep: { name: 'generateAas', status: 'completed' },
-        result: { 
-            redirectUrl, 
+        result: {
+            redirectUrl,
             warnings: warnings.length > 0 ? warnings : undefined,
             aasId: response.aasId,
             aasRepoUrl: response.aasRepoUrl,
+            rawDebugInfo: allDebugLogs.length > 0 ? allDebugLogs : undefined,
         },
     });
 

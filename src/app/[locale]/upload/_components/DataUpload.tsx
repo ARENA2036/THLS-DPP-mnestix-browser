@@ -36,6 +36,7 @@ export default function DataUpload(props: DataUploadProps) {
     const [warnings, setWarnings] = useState<string[]>([]);
     const [aasId, setAasId] = useState<string | null>(null);
     const [aasRepoUrl, setAasRepoUrl] = useState<string | null>(null);
+    const [rawDebugInfo, setRawDebugInfo] = useState<string[]>([]);
     const [isPending, startUploadTransition] = useTransition();
     const requestIdRef = useRef(0);
     const t = useTranslations('pages.uploadData');
@@ -114,6 +115,7 @@ export default function DataUpload(props: DataUploadProps) {
         setWarnings([]);
         setAasId(null);
         setAasRepoUrl(null);
+        setRawDebugInfo([]);
     }
 
     function handleFileSubmit(file: File) {
@@ -198,6 +200,9 @@ export default function DataUpload(props: DataUploadProps) {
                 if (finalUpdate.result?.aasRepoUrl) {
                     setAasRepoUrl(finalUpdate.result.aasRepoUrl);
                 }
+                if (finalUpdate.result?.rawDebugInfo) {
+                    setRawDebugInfo(finalUpdate.result.rawDebugInfo);
+                }
             } catch (error) {
                 if (currentRequestId !== requestIdRef.current) {
                     return;
@@ -233,24 +238,24 @@ export default function DataUpload(props: DataUploadProps) {
                         disabled={isPending}
                     />
                 )}
-                {selectedFile && (uploadStatus !== 'idle' || processingStatus !== 'idle' || generateAasStatus !== 'idle') && (
-                    <UploadWorkflowCard
-                        file={selectedFile}
-                        uploadStatus={uploadStatus}
-                        processingStatus={processingStatus}
-                        generateAasStatus={generateAasStatus}
-                        errorMessage={errorMessage}
-                        errorDetail={errorDetail}
-                        warnings={warnings}
-                        onRemove={clearAfterWorkflowComplete}
-                    />
-                )}
+                {selectedFile &&
+                    (uploadStatus !== 'idle' || processingStatus !== 'idle' || generateAasStatus !== 'idle') && (
+                        <UploadWorkflowCard
+                            file={selectedFile}
+                            uploadStatus={uploadStatus}
+                            processingStatus={processingStatus}
+                            generateAasStatus={generateAasStatus}
+                            errorMessage={errorMessage}
+                            errorDetail={errorDetail}
+                            warnings={warnings}
+                            rawDebugInfo={rawDebugInfo}
+                            onRemove={clearAfterWorkflowComplete}
+                        />
+                    )}
             </Stack>
             {uploadStatus === 'success' && processingStatus === 'success' && generateAasStatus === 'success' && (
                 <Stack spacing={4}>
-                    {aasId && aasRepoUrl && (
-                        <ThumbnailUpload aasId={aasId} aasRepoUrl={aasRepoUrl} />
-                    )}
+                    {aasId && aasRepoUrl && <ThumbnailUpload aasId={aasId} aasRepoUrl={aasRepoUrl} />}
                     <Stack direction="row" spacing={2}>
                         {redirectUrl && (
                             <Button variant="contained" color="primary" onClick={() => navigate.push(redirectUrl)}>
