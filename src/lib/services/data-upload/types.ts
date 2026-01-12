@@ -14,6 +14,7 @@ export interface WorkflowStep {
         warnings?: string[];
         aasId?: string;
         aasRepoUrl?: string;
+        rawDebugInfo?: string[];
     };
 }
 

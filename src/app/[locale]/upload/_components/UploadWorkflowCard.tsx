@@ -5,6 +5,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import { useTranslations } from 'next-intl';
 import { formatFileSize } from './DataUploadUtils';
+import { CopyButton } from 'components/basics/CopyButton';
 
 type UploadStatus = 'idle' | 'uploading' | 'processing' | 'success' | 'error';
 
@@ -16,6 +17,7 @@ export interface UploadWorkflowCardProps {
     errorMessage: string | null;
     errorDetail: string | null;
     warnings: string[];
+    rawDebugInfo: string[];
     onRemove: () => void;
 }
 
@@ -32,6 +34,7 @@ export default function UploadWorkflowCard(props: UploadWorkflowCardProps) {
         errorMessage,
         errorDetail,
         warnings,
+        rawDebugInfo,
         onRemove,
     } = props;
     const t = useTranslations('pages.uploadData');
@@ -76,6 +79,7 @@ export default function UploadWorkflowCard(props: UploadWorkflowCardProps) {
                 : null;
 
     const showProgress = !isComplete && !isError;
+    const shouldShowCopyButton = (isError || warnings.length > 0) && rawDebugInfo.length > 0;
 
     return (
         <Stack
@@ -151,6 +155,18 @@ export default function UploadWorkflowCard(props: UploadWorkflowCardProps) {
                                     • {warning}
                                 </Typography>
                             ))}
+                        </Stack>
+                    )}
+                    {shouldShowCopyButton && (
+                        <Stack direction="row" alignItems="center" sx={{ mt: 1 }}>
+                            <Typography variant="caption" sx={{ mr: 0.5 }}>
+                                {t('actions.copyDetailedLogs')}
+                            </Typography>
+                            <CopyButton
+                                value={rawDebugInfo.join('\n')}
+                                size="small"
+                                dataTestId="copy-debug-logs-button"
+                            />
                         </Stack>
                     )}
                 </Stack>
