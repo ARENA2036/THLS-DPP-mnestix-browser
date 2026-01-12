@@ -608,6 +608,10 @@
         "unsupportedFileTypeDetail": "El archivo cargado no es un archivo VEC ni KBL válido. Por favor, suba solo archivos .vec o .kbl.",
         "parseError": "Error al analizar el archivo. Asegúrese de que el archivo tenga un formato XML válido."
       },
+      "handoverDocs": {
+        "uploadError": "Error al cargar el archivo en el submodelo. Por favor, inténtelo de nuevo.",
+        "infrastructureNotFound": "No se encontró infraestructura para la URL del repositorio"
+      },
       "status": {
         "error": "Error",
         "loading": "Procesando",
