@@ -23,8 +23,6 @@ services:
     environment:
       # API key authorization
       CustomerEndpointsSecurity__ApiKey: ${MNESTIX_BACKEND_API_KEY:-verySecureApiKey}
-      # Set BlueprintRepository
-      Configuration__SubmodelBlueprintsApiUrl: 'http://mnestix-proxy-type:5065/submodels'
       # Features Configuration
       Features__UseAuthentication: 'false'
       # ASP.NET Core URLs
