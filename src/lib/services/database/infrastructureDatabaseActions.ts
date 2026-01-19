@@ -72,17 +72,20 @@ export async function getInfrastructureByName(name: string): Promise<Infrastruct
     return found_infrastructure;
 }
 
-export async function getInfrastructureBySubmodelRepositoryUrl(url: string): Promise<string | undefined> {
+export async function getInfrastructureBySubmodelRepositoryUrl(url: string): Promise<(InfrastructureConnection) | undefined> {
     const infrastructures = await getInfrastructuresIncludingDefault();
-    const normalizedUrl = url.endsWith('/') ? url.slice(0, -1) : url;
+    // If HANDOVER_DOCUMENTATION_FILES_REPO env is set, use it for matching instead of the passed URL.
+    // This is useful in local dev environments where the AAS generator and browser may use different hostnames.
+    const urlToMatch = envs.HANDOVER_DOCUMENTATION_FILES_REPO ?? url;
+    const normalizedUrl = urlToMatch.endsWith('/') ? urlToMatch.slice(0, -1) : urlToMatch;
 
     const found_infrastructure = infrastructures.find((infra) =>
         infra.submodelRepositoryUrls.some((repoUrl) => {
             const normalizedRepoUrl = repoUrl.endsWith('/') ? repoUrl.slice(0, -1) : repoUrl;
             return normalizedRepoUrl === normalizedUrl;
-        })
+        }),
     );
-    return found_infrastructure?.name;
+    return found_infrastructure;
 }
 
 export async function getAasRepositoriesIncludingDefault() {
@@ -176,18 +179,18 @@ function infrastructureMapper(infra: InfrastructureWithRelations): Infrastructur
             securityType: infra.securityType.typeName,
             securityHeader: infra.securitySettingsHeaders
                 ? {
-                    name: infra.securitySettingsHeaders.headerName,
-                    value: infra.securitySettingsHeaders.headerValue,
-                    initVector: infra.securitySettingsHeaders.initVector,
-                    authTag: infra.securitySettingsHeaders.authTag,
-                }
+                      name: infra.securitySettingsHeaders.headerName,
+                      value: infra.securitySettingsHeaders.headerValue,
+                      initVector: infra.securitySettingsHeaders.initVector,
+                      authTag: infra.securitySettingsHeaders.authTag,
+                  }
                 : undefined,
             securityProxy: infra.securitySettingsProxies
                 ? {
-                    value: infra.securitySettingsProxies.headerValue,
-                    initVector: infra.securitySettingsProxies.initVector,
-                    authTag: infra.securitySettingsProxies.authTag,
-                }
+                      value: infra.securitySettingsProxies.headerValue,
+                      initVector: infra.securitySettingsProxies.initVector,
+                      authTag: infra.securitySettingsProxies.authTag,
+                  }
                 : undefined,
         },
     };
