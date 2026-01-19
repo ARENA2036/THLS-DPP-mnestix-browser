@@ -1,0 +1,275 @@
+# Arena RC 2026 Development Compose - Standalone
+# This is a self-contained compose file for Arena development with DPP and Type repositories
+# Usage: docker compose -f docker-compose/compose.arena-rc.yml -p mnestix-arena up
+
+networks:
+  mnestix-network:
+    driver: bridge
+    name: mnestix-arena-network
+
+volumes:
+  mnestix-database:
+  mnestix-mongodb-dpp-data:
+  mnestix-mongodb-type-data:
+
+services:
+  # ==================== Shared Services ====================
+
+  mnestix-aas-generator:
+    image: mnestix/mnestix-aas-generator:dev
+    container_name: mnestix-aas-generator
+    ports:
+      - '5064:5064'
+    environment:
+      # API key authorization
+      CustomerEndpointsSecurity__ApiKey: ${MNESTIX_BACKEND_API_KEY:-verySecureApiKey}
+      # Features Configuration
+      Features__UseAuthentication: 'false'
+      # ASP.NET Core URLs
+      ASPNETCORE_URLS: 'http://+:5064'
+      # ServerUrls points to dpp repository proxy
+      ServerUrls: 'http://mnestix-proxy-dpp:5065/repo/'
+    depends_on:
+      aas-environment-type:
+        condition: service_healthy
+    logging:
+      driver: 'json-file'
+      options:
+        max-file: '5'
+        max-size: '100m'
+    networks:
+      - mnestix-network
+
+  # ==================== DPP Repository Stack ====================
+  # Ports: MongoDB 27017, AAS-Environment 8081, Discovery 8082, Proxy 5065
+
+  mnestix-proxy-dpp:
+    image: mnestix/mnestix-proxy:1.0.0
+    container_name: mnestix-proxy-dpp
+    ports:
+      - '5065:5065'
+    environment:
+      # API key authorization
+      CustomerEndpointsSecurity__ApiKey: ${MNESTIX_BACKEND_API_KEY:-verySecureApiKey}
+      # Connection to Repository Service:
+      ReverseProxy__Clusters__mnestixApiCluster__Destinations__destination1__Address: 'http://mnestix-aas-generator:5064/'
+      ReverseProxy__Clusters__aasRepoCluster__Destinations__destination1__Address: 'http://aas-environment-dpp:8081/'
+      ReverseProxy__Clusters__submodelRepoCluster__Destinations__destination1__Address: 'http://aas-environment-dpp:8081/'
+      ReverseProxy__Clusters__discoveryCluster__Destinations__destination1__Address: 'http://aas-discovery-dpp:8081/'
+      # InfluxDB Configuration
+      ReverseProxy__Clusters__influxCluster__Destinations__destination1__Address: 'http://example/'
+      ReverseProxy__Routes__InfluxRoute__Transforms__1__Set: 'Token '
+      # ASP.NET Core URLs
+      ASPNETCORE_URLS: 'http://+:5065'
+    depends_on:
+      aas-environment-dpp:
+        condition: service_healthy
+    logging:
+      driver: 'json-file'
+      options:
+        max-file: '5'
+        max-size: '100m'
+    networks:
+      - mnestix-network
+
+  mongodb-dpp:
+    image: mongo:8
+    container_name: mongodb-dpp
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongoAdmin
+      MONGO_INITDB_ROOT_PASSWORD: mongoPassword
+    healthcheck:
+      test: echo "db.runCommand("ping").ok" | mongosh mongodb-dpp:27017/test --quiet
+      interval: 3s
+      timeout: 3s
+      retries: 5
+    logging:
+      driver: 'json-file'
+      options:
+        max-file: '5'
+        max-size: '100m'
+    networks:
+      - mnestix-network
+    volumes:
+      - mnestix-mongodb-dpp-data:/data/db
+
+  aas-environment-dpp:
+    image: eclipsebasyx/aas-environment:2.0.0-milestone-08
+    container_name: aas-environment-dpp
+    ports:
+      - '8081:8081'
+    depends_on:
+      - mongodb-dpp
+    environment:
+      # MongoDb configuration for Basyx Repository
+      BASYX__BACKEND: MongoDB
+      SPRING__DATA__MONGODB__HOST: mongodb-dpp
+      SPRING__DATA__MONGODB__DATABASE: basyxdb
+      SPRING__DATA__MONGODB__authentication-database: admin
+      SPRING__DATA__MONGODB__USERNAME: mongoAdmin
+      SPRING__DATA__MONGODB__PASSWORD: mongoPassword
+      SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE: 100000KB
+      SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE: 100000KB
+      # Allow mnestix frontend and backend to call basyx
+      BASYX_CORS_ALLOWED-ORIGINS: '*'
+      BASYX_CORS_ALLOWED-METHODS: GET,POST,PATCH,DELETE,PUT,OPTIONS,HEAD
+    healthcheck:
+      test: curl -f http://localhost:8081/actuator/health
+      interval: 10s
+      timeout: 15s
+      retries: 8
+    logging:
+      driver: 'json-file'
+      options:
+        max-file: '5'
+        max-size: '100m'
+    networks:
+      - mnestix-network
+
+  aas-discovery-dpp:
+    image: eclipsebasyx/aas-discovery:2.0.0-milestone-08
+    container_name: aas-discovery-dpp
+    ports:
+      - '8082:8081'
+    depends_on:
+      - mongodb-dpp
+    environment:
+      BASYX__BACKEND: MongoDB
+      SPRING__DATA__MONGODB__HOST: mongodb-dpp
+      SPRING__DATA__MONGODB__DATABASE: basyxdb
+      SPRING__DATA__MONGODB__authentication-database: admin
+      SPRING__DATA__MONGODB__USERNAME: mongoAdmin
+      SPRING__DATA__MONGODB__PASSWORD: mongoPassword
+      BASYX__CORS__ALLOWED-ORIGINS: '*'
+      BASYX__CORS__ALLOWED-METHODS: GET,POST,PATCH,DELETE,PUT,OPTIONS,HEAD
+    healthcheck:
+      test: curl -f http://localhost:8081/actuator/health
+      interval: 30s
+      timeout: 10s
+      retries: 6
+    logging:
+      driver: 'json-file'
+      options:
+        max-file: '5'
+        max-size: '100m'
+    networks:
+      - mnestix-network
+
+  # ==================== Type Repository Stack ====================
+  # Ports: MongoDB 27018, AAS-Environment 8091, Discovery 8092, Proxy 5066
+
+  mnestix-proxy-type:
+    image: mnestix/mnestix-proxy:1.0.0
+    container_name: mnestix-proxy-type
+    ports:
+      - '5066:5065'
+    environment:
+      # API key authorization
+      CustomerEndpointsSecurity__ApiKey: ${MNESTIX_BACKEND_API_KEY:-verySecureApiKey}
+      # Connection to Repository Service:
+      ReverseProxy__Clusters__mnestixApiCluster__Destinations__destination1__Address: 'http://mnestix-aas-generator:5064/'
+      ReverseProxy__Clusters__aasRepoCluster__Destinations__destination1__Address: 'http://aas-environment-type:8081/'
+      ReverseProxy__Clusters__submodelRepoCluster__Destinations__destination1__Address: 'http://aas-environment-type:8081/'
+      ReverseProxy__Clusters__discoveryCluster__Destinations__destination1__Address: 'http://aas-discovery-type:8081/'
+      # InfluxDB Configuration
+      ReverseProxy__Clusters__influxCluster__Destinations__destination1__Address: 'http://example/'
+      ReverseProxy__Routes__InfluxRoute__Transforms__1__Set: 'Token '
+      # ASP.NET Core URLs
+      ASPNETCORE_URLS: 'http://+:5065'
+    depends_on:
+      aas-environment-type:
+        condition: service_healthy
+    logging:
+      driver: 'json-file'
+      options:
+        max-file: '5'
+        max-size: '100m'
+    networks:
+      - mnestix-network
+
+  mongodb-type:
+    image: mongo:8
+    container_name: mongodb-type
+    ports:
+      - '27018:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongoAdmin
+      MONGO_INITDB_ROOT_PASSWORD: mongoPassword
+    healthcheck:
+      test: echo "db.runCommand("ping").ok" | mongosh mongodb-type:27017/test --quiet
+      interval: 3s
+      timeout: 3s
+      retries: 5
+    logging:
+      driver: 'json-file'
+      options:
+        max-file: '5'
+        max-size: '100m'
+    networks:
+      - mnestix-network
+    volumes:
+      - mnestix-mongodb-type-data:/data/db
+
+  aas-environment-type:
+    image: eclipsebasyx/aas-environment:2.0.0-milestone-08
+    container_name: aas-environment-type
+    ports:
+      - '8091:8081'
+    depends_on:
+      - mongodb-type
+    environment:
+      # MongoDb configuration for Basyx Repository
+      BASYX__BACKEND: MongoDB
+      SPRING__DATA__MONGODB__HOST: mongodb-type
+      SPRING__DATA__MONGODB__DATABASE: basyxdb
+      SPRING__DATA__MONGODB__authentication-database: admin
+      SPRING__DATA__MONGODB__USERNAME: mongoAdmin
+      SPRING__DATA__MONGODB__PASSWORD: mongoPassword
+      SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE: 100000KB
+      SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE: 100000KB
+      # Allow mnestix frontend and backend to call basyx
+      BASYX_CORS_ALLOWED-ORIGINS: '*'
+      BASYX_CORS_ALLOWED-METHODS: GET,POST,PATCH,DELETE,PUT,OPTIONS,HEAD
+    healthcheck:
+      test: curl -f http://localhost:8081/actuator/health
+      interval: 10s
+      timeout: 15s
+      retries: 8
+    logging:
+      driver: 'json-file'
+      options:
+        max-file: '5'
+        max-size: '100m'
+    networks:
+      - mnestix-network
+
+  aas-discovery-type:
+    image: eclipsebasyx/aas-discovery:2.0.0-milestone-08
+    container_name: aas-discovery-type
+    ports:
+      - '8092:8081'
+    depends_on:
+      - mongodb-type
+    environment:
+      BASYX__BACKEND: MongoDB
+      SPRING__DATA__MONGODB__HOST: mongodb-type
+      SPRING__DATA__MONGODB__DATABASE: basyxdb
+      SPRING__DATA__MONGODB__authentication-database: admin
+      SPRING__DATA__MONGODB__USERNAME: mongoAdmin
+      SPRING__DATA__MONGODB__PASSWORD: mongoPassword
+      BASYX__CORS__ALLOWED-ORIGINS: '*'
+      BASYX__CORS__ALLOWED-METHODS: GET,POST,PATCH,DELETE,PUT,OPTIONS,HEAD
+    healthcheck:
+      test: curl -f http://localhost:8081/actuator/health
+      interval: 30s
+      timeout: 10s
+      retries: 6
+    logging:
+      driver: 'json-file'
+      options:
+        max-file: '5'
+        max-size: '100m'
+    networks:
+      - mnestix-network

@@ -18,6 +18,15 @@
         "reveal": "always",
         "panel": "new"
       }
+    },
+    {
+      "label": "docker-down-arena",
+      "type": "shell",
+      "command": "docker compose -f docker-compose/compose.arena-rc.yml -p mnestix-arena down -v",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
     }
   ]
 }
