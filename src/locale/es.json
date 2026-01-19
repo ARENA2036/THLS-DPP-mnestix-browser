@@ -306,7 +306,7 @@
       "findOutMoreHeader": "Saber más",
       "findOutMoreText": "Versión actual de Mnestix",
       "listCardHeader": "Seleccionar mediante lista",
-      "listBtnLabel": "Vea lo que ya hay en su repositorio.",
+      "listBtnLabel": "Ver DPPs existentes en la Lista",
       "listBtnText": "Ir a lista de AAS",
       "uploadCardHeader": "Generar DPP",
       "uploadBtnLabel": "Suba archivos para generar un DPP",
@@ -576,9 +576,9 @@
       "backToHome": "Volver al Inicio",
       "explanation": {
         "title": "Acerca de la Carga de Archivos",
-        "paragraph1": "Aquí puede cargar un archivo KBL o VEC para generar un modelo DPP correspondiente en formato AAS. En particular, se generan los submodelos \"Digital Nameplate\", \"HandoverDocumentation\" y \"Hierarchical Structures\" y se puede añadir una imagen del producto.",
-        "paragraph2": "Ciertos contenidos de información de los formatos de archivo KBL o VEC se traducen en una representación correspondiente de la concha de administración. Para identificar el producto del conjunto de cables y sus componentes modelados en KBL o VEC, se utilizan los contenidos respectivos de <Company_name> y <Part_number>.",
-        "paragraph3": "Basándose en esta información, se propone una dirección de identificación apta para internet, que puede corregirse manualmente en una ventana de entrada y se almacena tanto en \"globalAssetId\" como en \"URIOfTheProduct\"."
+        "paragraph1": "Aquí puede cargar un archivo KBL o VEC para generar un modelo de tipo DPP correspondiente en formato AAS. En particular, se generan los submodelos \"Digital Nameplate\", \"HandoverDocumentation\" y \"Hierarchical Structures\" y se puede almacenar una imagen del producto.",
+        "paragraph2": "Ciertos contenidos de información de los formatos de archivo KBL o VEC se traducen en una representación correspondiente de Asset Administration Shell. Para la identificación del producto de arnés de cables y sus componentes modelados en KBL o VEC, se utilizan los contenidos de Company_name y Part_number en KBL. En VEC se utilizan los contenidos de CompanyName y GeneratingSystemName. Basándose en esta información, se crea una dirección de identificación apta para internet.",
+        "paragraph3": "En el segundo paso, se puede cargar una imagen del producto que se almacena en el Asset Administration Shell. Finalmente, se pueden cargar varios archivos adjuntos que se añaden al submodelo HandoverDocumentation."
       },
       "actions": {
         "copyDetailedLogs": "Copiar registros detallados",
@@ -639,17 +639,17 @@
         "title": "Cargar archivo VEC o KBL"
       },
       "thumbnail": {
-        "sectionTitle": "Agregar Thumbnail al AAS",
-        "title": "Agregar Thumbnail (Opcional)",
-        "description": "Cargue un Thumbnail para su Asset Administration Shell.",
+        "sectionTitle": "Agregar imagen del producto al DPP",
+        "title": "Agregar imagen del producto (Opcional)",
+        "description": "Cargue una imagen del producto para su Pasaporte Digital del Producto.",
         "selectFile": "Seleccionar imagen",
         "changeFile": "Cambiar imagen",
-        "upload": "Subir Thumbnail",
-        "uploading": "Subiendo Thumbnail...",
-        "uploadSuccess": "Thumbnail subido correctamente.",
-        "uploadError": "Error al cargar el Thumbnail. Inténtalo de nuevo.",
+        "upload": "Subir imagen del producto",
+        "uploading": "Subiendo imagen del producto...",
+        "uploadSuccess": "Imagen del producto subida correctamente.",
+        "uploadError": "Error al cargar la imagen del producto. Inténtalo de nuevo.",
         "invalidFileType": "Seleccione un archivo de imagen válido (JPEG, PNG, GIF o WebP).",
-        "fileTooLarge": "El Thumbnail es demasiado grande. Tamaño máximo: {maxSize}."
+        "fileTooLarge": "La imagen del producto es demasiado grande. Tamaño máximo: {maxSize}."
       }
     },
     "transfer": {

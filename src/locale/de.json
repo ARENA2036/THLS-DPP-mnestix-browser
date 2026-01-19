@@ -306,7 +306,7 @@
       "findOutMoreHeader": "Mehr Informationen",
       "findOutMoreText": "Aktuelle Mnestix Version",
       "listCardHeader": "Auswahl über Liste",
-      "listBtnLabel": "Inhalt eines Repositorys sehen",
+      "listBtnLabel": "Bestehende DPPs in der Liste sehen",
       "listBtnText": "Zur AAS Liste",
       "uploadCardHeader": "DPP erzeugen",
       "uploadBtnLabel": "Dateien hochladen, um einen DPP zu erzeugen",
@@ -577,8 +577,8 @@
       "explanation": {
         "title": "Über Datei-Upload",
         "paragraph1": "Hier kann eine KBL oder VEC-Datei hochgeladen werden, um ein korrespondierendes DPP-Typmodell im AAS-Format zu erzeugen. Insbesondere werden die Submodelle „Digital Nameplate“, HandoverDocumentation“ und „Hierarchical Structures“ erzeugt und ein Produktbild kann hinterlegt werden.",
-        "paragraph2": "Bestimmte Informationsinhalte aus den Dateiformaten KBL bzw. VEC werden dazu in eine entsprechende Verwaltungsschale-Repräsentation übersetzt. Zur Identifikation des im KBL oder VEC modellierten Leitungssatz-Produkts und seiner Komponenten werden die jeweiligen Inhalte von <Company_name> und <Part_number> herangezogen.",
-        "paragraph3": "Basierend auf diesen Informationen wird eine internetfähige Identifikationsadresse vorgeschlagen, die in einem Eingabefenster manuell korrigiert werden kann und sowohl in „globalAssetId“ und „URIOfTheProduct“ hinterlegt wird."
+        "paragraph2": "Bestimmte Informationsinhalte aus den Dateiformaten KBL bzw. VEC werden dazu in eine entsprechende Verwaltungsschale-Repräsentation übersetzt. Zur Identifikation des im KBL oder VEC modellierten Leitungssatz-Produkts und seiner Komponenten werden bei KBL die Inhalte von Company_name und Part_number herangezogen. Bei VEC werden die Inhalte von CompanyName und GeneratingSystemName verwendet. Basierend auf diesen Informationen wird eine internetfähige Identifikationsadresse erstellt.",
+        "paragraph3": "Im zweiten Schritt kann ein Produktbild hochgeladen werden, das in der Verwaltungsschale hinterlegt wird. Abschließend können verschiedene Anhänge hochgeladen werden, die dem HandoverDocumentation Submodel angehängt werden."
       },
       "actions": {
         "copyDetailedLogs": "Detaillierte Logs kopieren",
@@ -639,17 +639,17 @@
         "title": "VEC oder KBL Datei hochladen"
       },
       "thumbnail": {
-        "sectionTitle": "Thumbnail zur AAS hinzufügen",
-        "title": "Thumbnail hinzufügen (Optional)",
-        "description": "Laden Sie ein Thumbnail für Ihre Asset Administration Shell hoch.",
+        "sectionTitle": "Produktbild zum DPP hinzufügen",
+        "title": "Produktbild hinzufügen (Optional)",
+        "description": "Laden Sie ein Produktbild für Ihren Digitalen Produktpass hoch.",
         "selectFile": "Bild auswählen",
         "changeFile": "Bild ändern",
-        "upload": "Thumbnail hochladen",
-        "uploading": "Thumbnail wird hochgeladen...",
-        "uploadSuccess": "Thumbnail erfolgreich hochgeladen.",
-        "uploadError": "Fehler beim Hochladen des Thumbnails. Bitte versuchen Sie es erneut.",
+        "upload": "Produktbild hochladen",
+        "uploading": "Produktbild wird hochgeladen...",
+        "uploadSuccess": "Produktbild erfolgreich hochgeladen.",
+        "uploadError": "Fehler beim Hochladen des Produktbilds. Bitte versuchen Sie es erneut.",
         "invalidFileType": "Bitte wählen Sie eine gültige Bilddatei (JPEG, PNG, GIF oder WebP).",
-        "fileTooLarge": "Thumbnail ist zu groß. Maximale Größe: {maxSize}."
+        "fileTooLarge": "Produktbild ist zu groß. Maximale Größe: {maxSize}."
       }
     },
     "transfer": {

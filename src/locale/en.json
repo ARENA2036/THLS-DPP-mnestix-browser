@@ -306,7 +306,7 @@
       "findOutMoreHeader": "Find out more",
       "findOutMoreText": "Mnestix' latest version",
       "listCardHeader": "Select via List",
-      "listBtnLabel": "See what is already in your repository",
+      "listBtnLabel": "View existing DPPs in the List",
       "listBtnText": "Go to AAS List",
       "uploadCardHeader": "Generate DPP",
       "uploadBtnLabel": "Upload files to generate a DPP",
@@ -576,9 +576,9 @@
       "backToHome": "Back to Home",
       "explanation": {
         "title": "About File Upload",
-        "paragraph1": "Here you can upload a KBL or VEC file to generate a corresponding DPP type model in AAS format. In particular, the submodels \"Digital Nameplate\", HandoverDocumentation\" and \"Hierarchical Structures\" are generated and a product image can be added.",
-        "paragraph2": "Certain information contents from the KBL or VEC file formats are translated into a corresponding administration shell representation. To identify the cable set product and its components modeled in KBL or VEC, the respective contents of <Company_name> and <Part_number> are used.",
-        "paragraph3": "Based on this information, an internet-capable identification address is proposed, which can be manually corrected in an input window and is stored in both \"globalAssetId\" and \"URIOfTheProduct\"."
+        "paragraph1": "Here you can upload a KBL or VEC file to generate a corresponding DPP type model in AAS format. In particular, the submodels \"Digital Nameplate\", \"HandoverDocumentation\" and \"Hierarchical Structures\" are generated and a product image can be stored.",
+        "paragraph2": "Certain information contents from the KBL or VEC file formats are translated into a corresponding Asset Administration Shell representation. For KBL, the contents of Company_name and Part_number are used to identify the wire harness product and its components modeled in KBL or VEC. For VEC, the contents of CompanyName and GeneratingSystemName are used. Based on this information, an internet-capable identification address is created.",
+        "paragraph3": "In the second step, a product image can be uploaded and stored in the Asset Administration Shell. Finally, various attachments can be uploaded that will be added to the HandoverDocumentation submodel."
       },
       "actions": {
         "copyDetailedLogs": "Copy detailed logs",
@@ -639,17 +639,17 @@
         "title": "Upload VEC or KBL File"
       },
       "thumbnail": {
-        "sectionTitle": "Add Thumbnail to AAS",
-        "title": "Add Thumbnail (Optional)",
-        "description": "Upload a thumbnail image for your Asset Administration Shell.",
+        "sectionTitle": "Add product image to DPP",
+        "title": "Add product image (Optional)",
+        "description": "Upload a product image for your Digital Product Passport.",
         "selectFile": "Select Image",
         "changeFile": "Change Image",
-        "upload": "Upload Thumbnail",
-        "uploading": "Uploading thumbnail...",
-        "uploadSuccess": "Thumbnail uploaded successfully.",
-        "uploadError": "Failed to upload thumbnail. Please try again.",
+        "upload": "Upload product image",
+        "uploading": "Uploading product image...",
+        "uploadSuccess": "Product image uploaded successfully.",
+        "uploadError": "Failed to upload product image. Please try again.",
         "invalidFileType": "Please select a valid image file (JPEG, PNG, GIF, or WebP).",
-        "fileTooLarge": "Thumbnail file is too large. Maximum size is {maxSize}."
+        "fileTooLarge": "Product image file is too large. Maximum size is {maxSize}."
       }
     },
     "transfer": {
