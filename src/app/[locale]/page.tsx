@@ -72,7 +72,7 @@ export default function () {
                     <Typography variant="h3">{t('digitalTwinMadeEasyText')}</Typography>
                 </Box>
 
-                <Grid container spacing={2} alignItems="stretch">    
+                <Grid container spacing={2} alignItems="stretch">
                     <Grid size={{ md: 6, xs: 12 }}>
                         <Card sx={{ height: '100%', borderRadius: '12px' }}>
                             <CardActionArea
@@ -83,7 +83,7 @@ export default function () {
                                 <UploadCard />
                             </CardActionArea>
                         </Card>
-                    </Grid>                    
+                    </Grid>
                     {!isMobile && env.AAS_LIST_FEATURE_FLAG && (
                         <Grid size={{ md: 6, xs: 12 }}>
                             <Card sx={{ height: '100%', borderRadius: '12px' }}>
