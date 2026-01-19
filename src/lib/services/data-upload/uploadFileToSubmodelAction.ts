@@ -5,6 +5,7 @@ import { wrapErrorCode, wrapSuccess } from 'lib/util/apiResponseWrapper/apiRespo
 import { getInfrastructureBySubmodelRepositoryUrl } from '../database/infrastructureDatabaseActions';
 import { createRequestLogger, logInfo } from 'lib/util/Logger';
 import { headers } from 'next/headers';
+import { envs } from 'lib/env/MnestixEnv';
 
 export async function uploadFileToSubmodel(
     submodelId: string,
@@ -31,7 +32,7 @@ export async function uploadFileToSubmodel(
                 fileName,
             },
             {
-                url: infrastructure.aasRegistryUrls[0] || repositoryUrl,
+                url: envs.HANDOVER_DOCUMENTATION_FILES_REPO || repositoryUrl,
                 infrastructureName: infrastructure.name,
             } as RepositoryWithInfrastructure,
         );
