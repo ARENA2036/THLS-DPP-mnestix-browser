@@ -576,9 +576,9 @@
       "backToHome": "Zurück zur Startseite",
       "explanation": {
         "title": "Über Datei-Upload",
-        "paragraph1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-        "paragraph2": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "paragraph3": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+        "paragraph1": "Hier kann eine KBL oder VEC-Datei hochgeladen werden, um ein korrespondierendes DPP-Typmodell im AAS-Format zu erzeugen. Insbesondere werden die Submodelle „Digital Nameplate“, HandoverDocumentation“ und „Hierarchical Structures“ erzeugt und ein Produktbild kann hinterlegt werden.",
+        "paragraph2": "Bestimmte Informationsinhalte aus den Dateiformaten KBL bzw. VEC werden dazu in eine entsprechende Verwaltungsschale-Repräsentation übersetzt. Zur Identifikation des im KBL oder VEC modellierten Leitungssatz-Produkts und seiner Komponenten werden die jeweiligen Inhalte von <Company_name> und <Part_number> herangezogen.",
+        "paragraph3": "Basierend auf diesen Informationen wird eine internetfähige Identifikationsadresse vorgeschlagen, die in einem Eingabefenster manuell korrigiert werden kann und sowohl in „globalAssetId“ und „URIOfTheProduct“ hinterlegt wird."
       },
       "actions": {
         "copyDetailedLogs": "Detaillierte Logs kopieren",

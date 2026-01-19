@@ -72,14 +72,20 @@ export default function () {
                     <Typography variant="h3">{t('digitalTwinMadeEasyText')}</Typography>
                 </Box>
 
-                <Grid container spacing={2} alignItems="stretch">
+                <Grid container spacing={2} alignItems="stretch">    
                     <Grid size={{ md: 6, xs: 12 }}>
-                        <Card sx={{ backgroundColor: theme.palette.primary.main, borderRadius: '12px' }}>
-                            <QrScanner searchInput={searchInput} />
+                        <Card sx={{ height: '100%', borderRadius: '12px' }}>
+                            <CardActionArea
+                                onClick={() => navigate.push('/upload')}
+                                aria-label={t('uploadCardHeader')}
+                                sx={{ height: '100%', display: 'flex', alignItems: 'stretch' }}
+                            >
+                                <UploadCard />
+                            </CardActionArea>
                         </Card>
-                    </Grid>
+                    </Grid>                    
                     {!isMobile && env.AAS_LIST_FEATURE_FLAG && (
-                        <Grid size={{ md: 3, xs: 6 }}>
+                        <Grid size={{ md: 6, xs: 12 }}>
                             <Card sx={{ height: '100%', borderRadius: '12px' }}>
                                 <CardActionArea
                                     onClick={() => navigate.push('/list')}
@@ -91,17 +97,6 @@ export default function () {
                             </Card>
                         </Grid>
                     )}
-                    <Grid size={{ md: 3, xs: 6 }}>
-                        <Card sx={{ height: '100%', borderRadius: '12px' }}>
-                            <CardActionArea
-                                onClick={() => navigate.push('/upload')}
-                                aria-label={t('uploadCardHeader')}
-                                sx={{ height: '100%', display: 'flex', alignItems: 'stretch' }}
-                            >
-                                <UploadCard />
-                            </CardActionArea>
-                        </Card>
-                    </Grid>
                     <Grid size={{ md: 12, xs: 12 }}>
                         <Card sx={{ width: '100%', borderRadius: '12px' }}>
                             <ManualAasInput searchInput={searchInput} />
