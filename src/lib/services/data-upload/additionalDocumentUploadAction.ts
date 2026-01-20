@@ -295,7 +295,7 @@ export async function uploadAdditionalDocument(
         }
 
         const securityHeaders = await createSecurityHeaders(infrastructure);
-        const effectiveRepoUrl = envs.HANDOVER_DOCUMENTATION_FILES_REPO || repositoryUrl;
+        const effectiveRepoUrl = envs.OVERRIDE_RC_ATTACHMENT_REPO || repositoryUrl;
         const submodelApi = SubmodelRepositoryApi.create(effectiveRepoUrl, mnestixFetch(securityHeaders));
 
         // Create the Document SubmodelElementCollection

@@ -55,8 +55,8 @@ export async function uploadThumbnail(aasRepositoryUrl: string, aasId: string, f
     }
 
     const securityHeaders = await createSecurityHeaders(infrastructure);
-    // Use HANDOVER_DOCUMENTATION_FILES_REPO env override if set for multi-infrastructure setups
-    const effectiveRepoUrl = envs.HANDOVER_DOCUMENTATION_FILES_REPO || aasRepositoryUrl;
+    // Use OVERRIDE_RC_ATTACHMENT_REPO env override if set for multi-infrastructure setups
+    const effectiveRepoUrl = envs.OVERRIDE_RC_ATTACHMENT_REPO || aasRepositoryUrl;
 
     try {
         const aasRepositoryApi = AssetAdministrationShellRepositoryApi.create(
