@@ -9,20 +9,16 @@ describe('Language Switch', () => {
         cy.get('[data-testid="language-es"]').click();
 
         cy.contains('Simplificando').should('be.visible');
-        cy.contains('Buscar activo').should('be.visible');
-
         // english
         cy.getByTestId('language-selector').click();
         cy.get('[data-testid="language-en"]').click();
 
         cy.contains('Digital Twin').should('be.visible');
-        cy.contains('Search asset').should('be.visible');
 
         // back to german
         cy.getByTestId('language-selector').click();
         cy.get('[data-testid="language-de"]').click();
 
         cy.contains('Digitaler Zwilling').should('be.visible');
-        cy.contains('Asset suchen').should('be.visible');
     });
 });

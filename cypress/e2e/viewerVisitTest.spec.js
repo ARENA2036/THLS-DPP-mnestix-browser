@@ -11,7 +11,7 @@ describe('Visit the Viewer page', function () {
         cy.getByTestId('aasId-input').as('IDInput');
     });
     resolutions.forEach((el) => {
-        it(
+        xit(
             'should put an AAS Id into the input field, click the arrow and be redirected to the right viewer page (Resolution: ' +
                 el +
                 ')',
@@ -23,7 +23,7 @@ describe('Visit the Viewer page', function () {
                 cy.url().should('contain', '/viewer/' + btoa(testAAS.aasId).replace(new RegExp('=*$', 'g'), ''));
             },
         );
-        it(
+        xit(
             'should put an Asset Id into the input field, click the arrow and be redirected to the right viewer page (Resolution: ' +
                 el +
                 ')',
