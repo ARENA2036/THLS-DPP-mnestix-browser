@@ -44,43 +44,6 @@
     "idShort": "HandoverDocumentation",
     "submodelElements": [
         {
-            "modelType": "Entity",
-            "entityType": "CoManagedEntity",
-            "semanticId": {
-                "keys": [
-                    {
-                        "type": "GlobalReference",
-                        "value": "https://admin-shell.io/vdi/2770/1/0/EntityForDocumentation"
-                    }
-                ],
-                "type": "ExternalReference"
-            },
-            "qualifiers": [
-                {
-                    "semanticId": {
-                        "keys": [
-                            {
-                                "type": "GlobalReference",
-                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
-                            }
-                        ],
-                        "type": "ExternalReference"
-                    },
-                    "kind": "TemplateQualifier",
-                    "type": "SMT/Cardinality",
-                    "value": "ZeroToMany",
-                    "valueType": "xs:string"
-                }
-            ],
-            "description": [
-                {
-                    "language": "en",
-                    "text": "States, that the described Entity is an important entity for documentation of the superordinate Asset of the Asset Administration Shell. Note: typically, such Entities are well-identified sub-parts of the Asset, such as supplier parts delivered to the manufacturer of the Asset."
-                }
-            ],
-            "idShort": "Entity"
-        },
-        {
             "modelType": "SubmodelElementCollection",
             "semanticId": {
                 "keys": [
@@ -363,7 +326,7 @@
                                 ],
                                 "type": "ExternalReference"
                             },
-                            "value": "",
+                            "value": "VDI 2770 Blatt 1:2020",
                             "valueType": "xs:string",
                             "qualifiers": [
                                 {
@@ -417,6 +380,12 @@
                                 ],
                                 "type": "ExternalReference"
                             },
+                            "value": [
+                                {
+                                    "language": "de",
+                                    "text": "Technische Spezifikation"
+                                }
+                            ],
                             "qualifiers": [
                                 {
                                     "semanticId": {
@@ -469,7 +438,7 @@
                                 ],
                                 "type": "ExternalReference"
                             },
-                            "value": "",
+                            "value": "02-01",
                             "valueType": "xs:string",
                             "qualifiers": [
                                 {
@@ -599,13 +568,13 @@
                                         "keys": [
                                             {
                                                 "type": "GlobalReference",
-                                                "value": "https://admin-shell.io/SubmodelTemplates/CollectionMappingInfo/1/0"
+                                                "value": "https://admin-shell.io/SubmodelTemplates/MappingInfo/1/0"
                                             }
                                         ],
                                         "type": "ExternalReference"
                                     },
                                     "kind": "TemplateQualifier",
-                                    "type": "SMT/CollectionMappingInfo",
+                                    "type": "SMT/MappingInfo",
                                     "value": "Harness.Company_name.#text",
                                     "valueType": "xs:string"
                                 }
@@ -880,7 +849,7 @@
                                     },
                                     "kind": "TemplateQualifier",
                                     "type": "SMT/MappingInfo",
-                                    "value": "DocumentVersion.DocumentVersion.#text",
+                                    "value": "Harness.Version.#text",
                                     "valueType": "xs:string"
                                 }
                             ],

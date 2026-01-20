@@ -15,6 +15,12 @@ export interface WorkflowStep {
         aasId?: string;
         aasRepoUrl?: string;
         rawDebugInfo?: string[];
+        /** ID of the HandoverDocumentation submodel for additional file uploads */
+        handoverDocSubmodelId?: string;
+        /** Organization name extracted from VEC/KBL for use in additional document metadata */
+        organizationName?: string;
+        /** Base64 encoded AAS ID */
+        base64EncodedAasId?: string;
     };
 }
 

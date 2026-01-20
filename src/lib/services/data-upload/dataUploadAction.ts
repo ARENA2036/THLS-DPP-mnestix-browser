@@ -220,7 +220,9 @@ export async function processData(formData: FormData) {
 
     // Upload file to submodel as part of the generation step
     // For now, we assume the submodel for file upload is identified by blueprint ID starting with 'Handover'.
-    const submodelId = response.submodelResults?.find(sm => sm.blueprintId?.startsWith('Handover'))?.generatedSubmodelId;
+    const submodelId = response.submodelResults?.find((sm) =>
+        sm.blueprintId?.startsWith('Handover'),
+    )?.generatedSubmodelId;
 
     const submodelElementIdShort = 'Document.DocumentVersion.DigitalFile';
 
@@ -257,6 +259,9 @@ export async function processData(formData: FormData) {
             aasId: response.aasId,
             aasRepoUrl: response.aasRepoUrl,
             rawDebugInfo: allDebugLogs.length > 0 ? allDebugLogs : undefined,
+            handoverDocSubmodelId: submodelId,
+            organizationName: companyName,
+            base64EncodedAasId: response.base64EncodedAasId,
         },
     });
 

@@ -58,7 +58,6 @@ export function DocumentComponent(props: CustomSubmodelElementComponentProps) {
 
         return result || [];
     }
-
     return (
         <DataRow hasDivider={props.hasDivider}>
             {fileViewObject && (
@@ -75,6 +74,7 @@ export function DocumentComponent(props: CustomSubmodelElementComponentProps) {
                                 <Link href={documentUrl} target="_blank">
                                     <PreviewImage
                                         previewImgUrl={fileViewObject.previewImgUrl}
+                                        isWiringHarnessConfiguration={fileViewObject.isWiringHarnessConfiguration}
                                         mimeType={fileViewObject.mimeType}
                                         repositoryUrl={props.repositoryUrl}
                                     />
@@ -82,6 +82,7 @@ export function DocumentComponent(props: CustomSubmodelElementComponentProps) {
                             ) : (
                                 <PreviewImage
                                     previewImgUrl={fileViewObject.previewImgUrl}
+                                    isWiringHarnessConfiguration={fileViewObject.isWiringHarnessConfiguration}
                                     mimeType={fileViewObject.mimeType}
                                     repositoryUrl={props.repositoryUrl}
                                 />

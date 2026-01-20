@@ -1,4 +1,5 @@
 import { PdfDocumentIcon } from 'components/custom-icons/PdfDocumentIcon';
+import CableIcon from '@mui/icons-material/Cable';
 import { InsertDriveFileOutlined } from '@mui/icons-material';
 import { Box, styled } from '@mui/material';
 import { useState } from 'react';
@@ -29,7 +30,12 @@ const StyledImageWrapper = styled(Box)(({ theme }) => ({
     },
 }));
 
-export const PreviewImage = (props: { previewImgUrl: string; mimeType: string; repositoryUrl?: string }) => {
+export const PreviewImage = (props: {
+    previewImgUrl: string;
+    mimeType: string;
+    repositoryUrl?: string;
+    isWiringHarnessConfiguration?: boolean;
+}) => {
     const [imageError, setImageError] = useState<boolean>(false);
     const [imageUrl, setImageUrl] = useState<string>();
     const { data: session } = useSession();
@@ -46,7 +52,6 @@ export const PreviewImage = (props: { previewImgUrl: string; mimeType: string; r
     const handleImageError = () => {
         setImageError(true);
     };
-
     return (
         <StyledImageWrapper>
             {!imageError && imageUrl ? (
@@ -59,6 +64,8 @@ export const PreviewImage = (props: { previewImgUrl: string; mimeType: string; r
                 />
             ) : props?.mimeType === 'application/pdf' ? (
                 <PdfDocumentIcon color="primary" />
+            ) : props?.isWiringHarnessConfiguration ? (
+                <CableIcon color="primary" />
             ) : (
                 <InsertDriveFileOutlined color="primary" />
             )}
