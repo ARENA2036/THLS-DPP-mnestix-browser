@@ -1,0 +1,1068 @@
+{
+	"idShort": "HierarchicalStructures",
+	"description": [
+		{
+			"language": "en",
+			"text": "The Submodel HierarchicalStructures identified by its semanticId. The Submodel idShort can be picked freely."
+		}
+	],
+	"id": "https://example.com/sm/cable_set_bom",
+	"kind": "Instance",
+	"semanticId": {
+		"type": "ExternalReference",
+		"keys": [
+			{
+				"type": "GlobalReference",
+				"value": "https://admin-shell.io/idta/HierarchicalStructures/1/1/Submodel"
+			}
+		]
+	},
+	"qualifiers": [
+		{
+			"semanticId": {
+				"type": "ExternalReference",
+				"keys": [
+					{
+						"type": "GlobalReference",
+						"value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+					}
+				]
+			},
+			"kind": "TemplateQualifier",
+			"type": "SMT/Cardinality",
+			"valueType": "xs:string",
+			"value": "ZeroToOne"
+		},
+		{
+			"kind": "TemplateQualifier",
+			"type": "EditIdShort",
+			"valueType": "xs:string",
+			"value": "True"
+		}
+	],
+	"submodelElements": [
+		{
+			"category": "CONSTANT",
+			"idShort": "ArcheType",
+			"description": [
+				{
+					"language": "en",
+					"text": "ArcheType of the Submodel, there are three allowed enumeration entries: 1. “Full”, 2. “OneDown” and 3. “OneUp”. "
+				}
+			],
+			"semanticId": {
+				"type": "ExternalReference",
+				"keys": [
+					{
+						"type": "GlobalReference",
+						"value": "https://admin-shell.io/idta/HierarchicalStructures/ArcheType/1/0"
+					}
+				]
+			},
+			"qualifiers": [
+				{
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+							}
+						]
+					},
+					"kind": "TemplateQualifier",
+					"type": "SMT/Cardinality",
+					"valueType": "xs:string",
+					"value": "One"
+				},
+				{
+					"kind": "TemplateQualifier",
+					"type": "FormChoices",
+					"valueType": "xs:string",
+					"value": "Full;OneDown;OneUp"
+				}
+			],
+			"valueType": "xs:string",
+			"value": "Full",
+			"modelType": "Property"
+		},
+		{
+			"idShort": "CableSet",
+			"semanticId": {
+				"type": "ExternalReference",
+				"keys": [
+					{
+						"type": "GlobalReference",
+						"value": "https://admin-shell.io/idta/HierarchicalStructures/EntryNode/1/0"
+					}
+				]
+			},
+			"statements": [
+				{
+					"idShort": "SteckerModul2",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": ""
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": ""
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "SteckerModul2"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "SteckerModul1",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "SteckerModul1"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "SteckerModul3",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "SteckerModul3"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "Umgehäuse",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "Umgehäuse"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "Cover",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "Cover"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "Stecker10pol",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "Stecker10pol"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "Stecker2pol",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "Stecker2pol"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "Stecker1pol",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "Stecker1pol"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "MQS-Kontakt0.13",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "MQS-Kontakt0.13"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "MQS-Kontakt0.35",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "MQS-Kontakt0.35"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "NanoMQS-Kontakt0.13",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "NanoMQS-Kontakt0.13"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "NanoMQS-Kontakt0.35",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "NanoMQS-Kontakt0.35"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "AMP-MCP-Kontakt",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "AMP-MCP-Kontakt"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "MATE-AX-Kontakt",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "MATE-AX-Kontakt"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "UTP-0.35",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "UTP-0.35"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "Einzelleitung0.13",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "Einzelleitung0.13"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "Einzelleitung1.5",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "Einzelleitung1.5"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "Coax-Leitung",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "Coax-Leitung"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "Tape",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "Tape"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "Fixierung",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "Fixierung"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				}
+			],
+			"entityType": "SelfManagedEntity",
+			"globalAssetId": "/ids/asset/8669_4217_8252_7728",
+			"modelType": "Entity"
+		}
+	],
+	"modelType": "Submodel"
+}
