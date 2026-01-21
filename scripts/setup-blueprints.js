@@ -21,11 +21,19 @@ const TEMPLATES = [
         envVarName: 'FILE_UPLOAD_BLUEPRINTS_VEC',
     },
     {
+        filePath: path.join(__dirname, '../templates/hierarchical-structures-template.json'),
+        envVarName: 'FILE_UPLOAD_BLUEPRINTS_VEC',
+    },
+    {
         filePath: path.join(__dirname, '../templates/nameplate-kbl-template.json'),
         envVarName: 'FILE_UPLOAD_BLUEPRINTS_KBL',
     },
     {
         filePath: path.join(__dirname, '../templates/handover-docs-kbl-template.json'),
+        envVarName: 'FILE_UPLOAD_BLUEPRINTS_KBL',
+    },
+    {
+        filePath: path.join(__dirname, '../templates/hierarchical-structures-template.json'),
         envVarName: 'FILE_UPLOAD_BLUEPRINTS_KBL',
     },
 ];
