@@ -44,7 +44,7 @@ export default function FileUploadForm(props: FileUploadFormProps) {
         setErrorMessage(null);
 
         if (!isValidFile(file)) {
-            const message = t('fileTypeNotSupported');
+            const message = t('fileTypeNotSupported', { formats: acceptableExtensions.join(', ') });
             setErrorMessage(message);
             setSelectedFile(null);
             if (fileInputRef.current) {
@@ -124,12 +124,7 @@ export default function FileUploadForm(props: FileUploadFormProps) {
                 supportedFileTypes={acceptableExtensions.join(', ')}
                 maxSizeMB={maxFileSizeMB}
             />
-            <Button
-                variant="contained"
-                color="primary"
-                onClick={handleSubmit}
-                disabled={!selectedFile || disabled}
-            >
+            <Button variant="contained" color="primary" onClick={handleSubmit} disabled={!selectedFile || disabled}>
                 {t('form.submitLabel')}
             </Button>
             {errorMessage && (

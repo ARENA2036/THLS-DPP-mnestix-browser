@@ -2,12 +2,18 @@
 import { Box, Grid, Link, Paper, Typography } from '@mui/material';
 import { ViewHeading } from 'components/basics/ViewHeading';
 import { useTranslations } from 'next-intl';
-import DataUpload from './_components/DataUpload';
+import UploadWorkflowStepper from './_components/UploadWorkflowStepper';
 import NextLink from 'next/link';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 /**
  * Page presenting the data upload workflow.
+ * Uses a multi-step stepper process:
+ * 1. Upload VEC/KBL file
+ * 2. Process and generate AAS
+ * 3. Upload thumbnail (required)
+ * 4. Upload additional documents (optional, with VDI 2770 classification)
+ * 5. Complete
  */
 export default function UploadPage() {
     const t = useTranslations('pages.uploadData');
@@ -38,10 +44,10 @@ export default function UploadPage() {
             </Box>
             <Paper sx={{ p: 4, mt: 3 }}>
                 <Grid container spacing={4}>
-                    <Grid size={{ xs:12, md:6 }}>
-                        <DataUpload />
+                    <Grid size={{ xs: 12, md: 7 }}>
+                        <UploadWorkflowStepper />
                     </Grid>
-                    <Grid size={{ xs:12, md:6 }}>
+                    <Grid size={{ xs: 12, md: 5 }}>
                         <Typography variant="h6" gutterBottom>
                             {t('explanation.title')}
                         </Typography>

@@ -583,6 +583,7 @@
       "actions": {
         "copyDetailedLogs": "Detaillierte Logs kopieren",
         "deleteFile": "Datei löschen",
+        "next": "Weiter",
         "removeFile": "Datei entfernen",
         "seeLess": "Weniger anzeigen",
         "seeMore": "Mehr anzeigen",
@@ -599,7 +600,7 @@
         "supportedFormats": "Unterstütztes Format: .vec, .kbl (max. 10 MB)"
       },
       "fileTooLarge": "Datei ist zu groß. Maximale Größe: {maxSize}.",
-      "fileTypeNotSupported": "Es werden nur VEC- und KBL-Dateien unterstützt.",
+      "fileTypeNotSupported": "Es werden nur Dateien des Typs {formats} unterstützt.",
       "apiErrors": {
         "processingError": "Verarbeitung fehlgeschlagen. Bitte Datei prüfen und erneut versuchen.",
         "missingFieldsError": "Erforderliche Felder fehlen in der Datei",
@@ -630,7 +631,7 @@
         "errors": {
           "userNameRequired": "Bitte geben Sie Ihren Namen ein.",
           "organizationRequired": "Bitte geben Sie Ihre Organisation an.",
-          "fileRequired": "Bitte wählen Sie vor dem Absenden eine VEC-Datei aus."
+          "fileRequired": "Bitte wählen Sie vor dem Absenden eine Datei aus."
         }
       },
       "uploadSuccess": "DPP erfolgreich erstellt.",
@@ -640,7 +641,7 @@
       },
       "thumbnail": {
         "sectionTitle": "Produktbild zum DPP hinzufügen",
-        "title": "Produktbild hinzufügen (Optional)",
+        "title": "Produktbild hinzufügen",
         "description": "Laden Sie ein Produktbild für Ihren Digitalen Produktpass hoch.",
         "selectFile": "Bild auswählen",
         "changeFile": "Bild ändern",
@@ -649,7 +650,56 @@
         "uploadSuccess": "Produktbild erfolgreich hochgeladen.",
         "uploadError": "Fehler beim Hochladen des Produktbilds. Bitte versuchen Sie es erneut.",
         "invalidFileType": "Bitte wählen Sie eine gültige Bilddatei (JPEG, PNG, GIF oder WebP).",
-        "fileTooLarge": "Produktbild ist zu groß. Maximale Größe: {maxSize}."
+        "fileTooLarge": "Produktbild ist zu groß. Maximale Größe: {maxSize}.",
+        "required": "Ein Produktbild ist erforderlich, um fortzufahren."
+      },
+      "stepper": {
+        "vecKbl": "VEC/KBL-Datei hochladen",
+        "processing": "DPP erzeugen",
+        "thumbnail": "Produktbild hinzufügen",
+        "additionalDocs": "Dateien hinzufügen",
+        "complete": "Fertig"
+      },
+      "additionalDocs": {
+        "title": "Zusätzliche Dateien hinzufügen (Optional)",
+        "description": "Laden Sie zusätzliche Dokumentation für Ihren Digitalen Produktpass hoch. Jede Datei wird dem HandoverDocumentation Submodel hinzugefügt.",
+        "dropzone": "Dateien hier ablegen oder klicken zum Durchsuchen",
+        "supportedFiles": "Beliebiger Dateityp (max. 10 MB pro Datei)",
+        "addMore": "Weitere Dateien hinzufügen",
+        "uploadAll": "Alle Dateien hochladen",
+        "skip": "Diesen Schritt überspringen",
+        "continue": "Weiter",
+        "titleLabel": "Dokumenttitel",
+        "descriptionLabel": "Beschreibung",
+        "classLabel": "Dokumenttyp (VDI 2770)",
+        "selectClass": "Dokumenttyp auswählen",
+        "uploading": "Wird hochgeladen...",
+        "uploadSuccess": "Erfolgreich hochgeladen",
+        "uploadError": "Hochladen fehlgeschlagen",
+        "noFiles": "Keine Dateien ausgewählt",
+        "pendingUploads": "{count} Datei(en) bereit zum Hochladen",
+        "allUploaded": "Alle Dokumente erfolgreich hochgeladen",
+        "removeFile": "Datei entfernen"
+      },
+      "vdi2770": {
+        "01-01": "Identifikation",
+        "02-01": "Technische Spezifikation",
+        "02-02": "Zeichnungen, Pläne",
+        "02-03": "Bauteile",
+        "02-04": "Zeugnisse, Zertifikate, Bescheinigungen",
+        "03-01": "Montage, Demontage",
+        "03-02": "Bedienung",
+        "03-03": "Allgemeine Sicherheit",
+        "03-04": "Inspektion, Wartung, Prüfung",
+        "03-05": "Instandsetzung",
+        "03-06": "Ersatzteile",
+        "04-01": "Vertragsunterlagen"
+      },
+      "complete": {
+        "title": "DPP erfolgreich erstellt!",
+        "message": "Ihr Digitaler Produktpass wurde erzeugt und alle Dokumente wurden hochgeladen.",
+        "viewDpp": "Erstellten DPP anzeigen",
+        "createAnother": "Weiteren DPP erzeugen"
       }
     },
     "transfer": {

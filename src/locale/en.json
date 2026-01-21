@@ -583,6 +583,7 @@
       "actions": {
         "copyDetailedLogs": "Copy detailed logs",
         "deleteFile": "Delete file",
+        "next": "Next",
         "removeFile": "Remove file",
         "seeLess": "See less",
         "seeMore": "See more",
@@ -599,7 +600,7 @@
         "supportedFormats": "Supported format: .vec, .kbl (max. 10 MB)"
       },
       "fileTooLarge": "File is too large. Maximum size is {maxSize}.",
-      "fileTypeNotSupported": "Only VEC and KBL files are supported.",
+      "fileTypeNotSupported": "Only files with the format {formats} are supported.",
       "apiErrors": {
         "processingError": "Processing failed. Check the file and try again.",
         "missingFieldsError": "Missing required fields in uploaded file",
@@ -630,7 +631,7 @@
         "errors": {
           "userNameRequired": "Please enter your name.",
           "organizationRequired": "Please enter your organization.",
-          "fileRequired": "Please select a VEC file before submitting."
+          "fileRequired": "Please select a file before submitting."
         }
       },
       "uploadSuccess": "DPP created successfully.",
@@ -640,7 +641,7 @@
       },
       "thumbnail": {
         "sectionTitle": "Add product image to DPP",
-        "title": "Add product image (Optional)",
+        "title": "Add Product Image",
         "description": "Upload a product image for your Digital Product Passport.",
         "selectFile": "Select Image",
         "changeFile": "Change Image",
@@ -649,7 +650,56 @@
         "uploadSuccess": "Product image uploaded successfully.",
         "uploadError": "Failed to upload product image. Please try again.",
         "invalidFileType": "Please select a valid image file (JPEG, PNG, GIF, or WebP).",
-        "fileTooLarge": "Product image file is too large. Maximum size is {maxSize}."
+        "fileTooLarge": "Product image file is too large. Maximum size is {maxSize}.",
+        "required": "A product image is required to continue."
+      },
+      "stepper": {
+        "vecKbl": "Upload VEC/KBL File",
+        "processing": "Generate DPP",
+        "thumbnail": "Add Product Image",
+        "additionalDocs": "Add Files",
+        "complete": "Complete"
+      },
+      "additionalDocs": {
+        "title": "Add Additional Files (Optional)",
+        "description": "Upload any additional documentation for your Digital Product Passport. Each file will be added to the HandoverDocumentation submodel.",
+        "dropzone": "Drop files here or click to browse",
+        "supportedFiles": "Any file type (max. 10 MB per file)",
+        "addMore": "Add more files",
+        "uploadAll": "Upload All Files",
+        "skip": "Skip this step",
+        "continue": "Continue",
+        "titleLabel": "Document Title",
+        "descriptionLabel": "Description",
+        "classLabel": "Document Type (VDI 2770)",
+        "selectClass": "Select document type",
+        "uploading": "Uploading...",
+        "uploadSuccess": "Uploaded successfully",
+        "uploadError": "Upload failed",
+        "noFiles": "No files selected",
+        "pendingUploads": "{count} file(s) ready to upload",
+        "allUploaded": "All files uploaded successfully",
+        "removeFile": "Remove file"
+      },
+      "vdi2770": {
+        "01-01": "Identification",
+        "02-01": "Technical specification",
+        "02-02": "Drawings, plans",
+        "02-03": "Assemblies",
+        "02-04": "Certificates, declarations",
+        "03-01": "Commissioning, de-commissioning",
+        "03-02": "Operation",
+        "03-03": "General safety",
+        "03-04": "Inspection, maintenance, testing",
+        "03-05": "Repair",
+        "03-06": "Spare parts",
+        "04-01": "Contract documents"
+      },
+      "complete": {
+        "title": "DPP Created Successfully!",
+        "message": "Your Digital Product Passport has been generated and all documents have been uploaded.",
+        "viewDpp": "View Created DPP",
+        "createAnother": "Generate Another DPP"
       }
     },
     "transfer": {

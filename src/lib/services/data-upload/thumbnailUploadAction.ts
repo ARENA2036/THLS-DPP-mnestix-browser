@@ -4,8 +4,11 @@ import { AssetAdministrationShellRepositoryApi } from 'lib/api/basyx-v3/api';
 import { mnestixFetch } from 'lib/api/infrastructure';
 import { wrapErrorCode, wrapSuccess } from 'lib/util/apiResponseWrapper/apiResponseWrapper';
 import { ApiResultStatus } from 'lib/util/apiResponseWrapper/apiResultStatus';
-import { getDefaultInfrastructure } from '../database/infrastructureDatabaseActions';
+import { getInfrastructureByAasRepositoryUrl } from '../database/infrastructureDatabaseActions';
 import { createSecurityHeaders } from 'lib/util/securityHelpers/SecurityConfiguration';
+import { createRequestLogger, logInfo, logWarn } from 'lib/util/Logger';
+import { headers } from 'next/headers';
+import { envs } from 'lib/env/MnestixEnv';
 
 /**
  * Uploads a thumbnail to an Asset Administration Shell
@@ -28,33 +31,36 @@ export async function uploadThumbnail(aasRepositoryUrl: string, aasId: string, f
 
     // Validate file type
     if (!VALID_IMAGE_TYPES.includes(file.type)) {
-        return wrapErrorCode(
-            ApiResultStatus.BAD_REQUEST,
-            'pages.uploadData.thumbnail.invalidFileType',
-        );
+        return wrapErrorCode(ApiResultStatus.BAD_REQUEST, 'pages.uploadData.thumbnail.invalidFileType');
     }
 
     // Validate file size
     if (file.size > MAX_FILE_SIZE_BYTES) {
-        return wrapErrorCode(
-            ApiResultStatus.BAD_REQUEST,
-            'pages.uploadData.thumbnail.fileTooLarge',
-        );
+        return wrapErrorCode(ApiResultStatus.BAD_REQUEST, 'pages.uploadData.thumbnail.fileTooLarge');
     }
 
     if (!aasRepositoryUrl) {
-        return wrapErrorCode(
-            ApiResultStatus.BAD_REQUEST,
-            'pages.uploadData.thumbnail.uploadError',
-        );
+        return wrapErrorCode(ApiResultStatus.BAD_REQUEST, 'pages.uploadData.thumbnail.uploadError');
     }
 
-    const defaultInfrastructure = await getDefaultInfrastructure();
-    const securityHeaders = await createSecurityHeaders(defaultInfrastructure);
-    
+    const logger = createRequestLogger(await headers());
+
+    // Get infrastructure based on the repository URL
+    const infrastructure = await getInfrastructureByAasRepositoryUrl(aasRepositoryUrl);
+    if (!infrastructure) {
+        logWarn(logger, 'uploadThumbnail', 'No infrastructure found for AAS repository URL', {
+            repository: aasRepositoryUrl,
+        });
+        return wrapErrorCode(ApiResultStatus.NOT_FOUND, 'pages.uploadData.thumbnail.uploadError');
+    }
+
+    const securityHeaders = await createSecurityHeaders(infrastructure);
+    // Use OVERRIDE_RC_ATTACHMENT_REPO env override if set for multi-infrastructure setups
+    const effectiveRepoUrl = envs.OVERRIDE_RC_ATTACHMENT_REPO || aasRepositoryUrl;
+
     try {
         const aasRepositoryApi = AssetAdministrationShellRepositoryApi.create(
-            aasRepositoryUrl,
+            effectiveRepoUrl,
             mnestixFetch(securityHeaders),
         );
         const blob = new Blob([await file.arrayBuffer()], { type: file.type });
@@ -62,18 +68,19 @@ export async function uploadThumbnail(aasRepositoryUrl: string, aasId: string, f
         const response = await aasRepositoryApi.putThumbnailToShell(aasId, blob, fileName);
 
         if (!response.isSuccess) {
-            return wrapErrorCode(
-                ApiResultStatus.UNKNOWN_ERROR,
-                'pages.uploadData.thumbnail.uploadError',
-            );
+            return wrapErrorCode(ApiResultStatus.UNKNOWN_ERROR, 'pages.uploadData.thumbnail.uploadError');
         }
+
+        logInfo(logger, 'uploadThumbnail', 'Successfully uploaded thumbnail', {
+            aasId,
+            fileName,
+        });
 
         return wrapSuccess({ success: true });
     } catch (error) {
-        console.error('Failed to upload thumbnail:', error);
-        return wrapErrorCode(
-            ApiResultStatus.UNKNOWN_ERROR,
-            'pages.uploadData.thumbnail.uploadError',
-        );
+        logWarn(logger, 'uploadThumbnail', 'Failed to upload thumbnail', {
+            error: error instanceof Error ? error.message : String(error),
+        });
+        return wrapErrorCode(ApiResultStatus.UNKNOWN_ERROR, 'pages.uploadData.thumbnail.uploadError');
     }
 }
