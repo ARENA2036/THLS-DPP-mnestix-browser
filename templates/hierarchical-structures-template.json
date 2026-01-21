@@ -341,6 +341,7 @@
 				{
 					"idShort": "Stecker10pol",
 					"entityType": "SelfManagedEntity",
+					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2302475_1",
 					"modelType": "Entity"
 				},
 				{
