@@ -583,6 +583,7 @@
       "actions": {
         "copyDetailedLogs": "Copiar registros detallados",
         "deleteFile": "Eliminar archivo",
+        "next": "Siguiente",
         "removeFile": "Quitar archivo",
         "seeLess": "Ver menos",
         "seeMore": "Ver más",
@@ -599,7 +600,7 @@
         "supportedFormats": "Formato admitido: .vec, .kbl (máx. 10 MB)"
       },
       "fileTooLarge": "El archivo es demasiado grande. Tamaño máximo: {maxSize}.",
-      "fileTypeNotSupported": "Solo se admiten archivos VEC y KBL.",
+      "fileTypeNotSupported": "Solo se admiten archivos {formats}.",
       "apiErrors": {
         "processingError": "Error al procesar. Revisa el archivo e inténtalo de nuevo.",
         "missingFieldsError": "Faltan campos obligatorios en el archivo",
@@ -630,7 +631,7 @@
         "errors": {
           "userNameRequired": "Introduce tu nombre.",
           "organizationRequired": "Introduce tu organización.",
-          "fileRequired": "Selecciona un archivo VEC antes de enviar."
+          "fileRequired": "Selecciona un archivo antes de enviar."
         }
       },
       "uploadSuccess": "DPP creado correctamente.",
@@ -640,7 +641,7 @@
       },
       "thumbnail": {
         "sectionTitle": "Agregar imagen del producto al DPP",
-        "title": "Agregar imagen del producto (Opcional)",
+        "title": "Agregar Imagen del Producto",
         "description": "Cargue una imagen del producto para su Pasaporte Digital del Producto.",
         "selectFile": "Seleccionar imagen",
         "changeFile": "Cambiar imagen",
@@ -649,7 +650,56 @@
         "uploadSuccess": "Imagen del producto subida correctamente.",
         "uploadError": "Error al cargar la imagen del producto. Inténtalo de nuevo.",
         "invalidFileType": "Seleccione un archivo de imagen válido (JPEG, PNG, GIF o WebP).",
-        "fileTooLarge": "La imagen del producto es demasiado grande. Tamaño máximo: {maxSize}."
+        "fileTooLarge": "La imagen del producto es demasiado grande. Tamaño máximo: {maxSize}.",
+        "required": "Se requiere una imagen del producto para continuar."
+      },
+      "stepper": {
+        "vecKbl": "Cargar Archivo VEC/KBL",
+        "processing": "Generar DPP",
+        "thumbnail": "Agregar Imagen del Producto",
+        "additionalDocs": "Agregar Archivos",
+        "complete": "Completado"
+      },
+      "additionalDocs": {
+        "title": "Agregar Archivos Adicionales (Opcional)",
+        "description": "Cargue documentación adicional para su Pasaporte Digital del Producto. Cada archivo se añadirá al submodelo HandoverDocumentation.",
+        "dropzone": "Suelta archivos aquí o haz clic para explorar",
+        "supportedFiles": "Cualquier tipo de archivo (máx. 10 MB por archivo)",
+        "addMore": "Agregar más archivos",
+        "uploadAll": "Subir Todos los Archivos",
+        "skip": "Omitir este paso",
+        "continue": "Continuar",
+        "titleLabel": "Título del Documento",
+        "descriptionLabel": "Descripción",
+        "classLabel": "Tipo de Documento (VDI 2770)",
+        "selectClass": "Seleccionar tipo de documento",
+        "uploading": "Subiendo...",
+        "uploadSuccess": "Subido correctamente",
+        "uploadError": "Error al subir",
+        "noFiles": "No hay archivos seleccionados",
+        "pendingUploads": "{count} archivo(s) listo(s) para subir",
+        "allUploaded": "Todos los archivos subidos correctamente",
+        "removeFile": "Quitar archivo"
+      },
+      "vdi2770": {
+        "01-01": "Identificación",
+        "02-01": "Especificación técnica",
+        "02-02": "Dibujos, planos",
+        "02-03": "Conjuntos",
+        "02-04": "Certificados, declaraciones",
+        "03-01": "Puesta en marcha, puesta fuera de servicio",
+        "03-02": "Operación",
+        "03-03": "Seguridad general",
+        "03-04": "Inspección, mantenimiento, pruebas",
+        "03-05": "Reparación",
+        "03-06": "Repuestos",
+        "04-01": "Documentos contractuales"
+      },
+      "complete": {
+        "title": "¡DPP Creado Correctamente!",
+        "message": "Su Pasaporte Digital del Producto ha sido generado y todos los documentos han sido subidos.",
+        "viewDpp": "Ver DPP Creado",
+        "createAnother": "Generar Otro DPP"
       }
     },
     "transfer": {

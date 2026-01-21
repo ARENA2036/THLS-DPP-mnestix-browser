@@ -25,6 +25,7 @@ export type FileViewObject = {
     digitalFileUrl: string;
     previewImgUrl: string;
     organizationName: string;
+    isWiringHarnessConfiguration?: boolean;
 };
 
 /**
@@ -32,7 +33,10 @@ export type FileViewObject = {
  * @param submodelElement
  * @param submodelId
  */
-export function useFileViewObject(submodelElement: SubmodelElementCollection | SubmodelElementList, submodelId: string) {
+export function useFileViewObject(
+    submodelElement: SubmodelElementCollection | SubmodelElementList,
+    submodelId: string,
+) {
     const locale = useLocale();
     const { aasOriginUrl } = useCurrentAasContext();
     const [fileViewObject, setFileViewObject] = useState<FileViewObject>();
@@ -63,7 +67,7 @@ export function useFileViewObject(submodelElement: SubmodelElementCollection | S
     }
 
     function extractDocumentVersionData(documentVersion: SubmodelElementCollection, fileViewObject: FileViewObject) {
-        const title = findSubmodelElementBySemanticIdsOrIdShort(documentVersion.value, null, [
+        const title = findSubmodelElementBySemanticIdsOrIdShort(documentVersion.value, 'Title', [
             DocumentSpecificSemanticId.Title,
             DocumentSpecificSemanticIdIrdi.Title,
             DocumentSpecificSemanticIdIrdiV2.Title,
@@ -103,8 +107,11 @@ export function useFileViewObject(submodelElement: SubmodelElementCollection | S
         const digitalFile = {
             digitalFileUrl: '',
             mimeType: '',
+            // HACK: For the robotics challenge we create a custom mimetype to display a separate icon for these files
+            isWiringHarnessConfiguration:
+                (versionSubmodelEl as ModelFile).value?.endsWith('.kbl') ||
+                (versionSubmodelEl as ModelFile).value?.endsWith('.vec'),
         };
-
         if (isValidUrl((versionSubmodelEl as ModelFile).value)) {
             digitalFile.digitalFileUrl = (versionSubmodelEl as ModelFile).value || '';
             digitalFile.mimeType = (versionSubmodelEl as ModelFile).contentType;

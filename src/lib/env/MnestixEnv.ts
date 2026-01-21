@@ -95,7 +95,7 @@ const otherVariables = {
     FILE_UPLOAD_BLUEPRINTS_KBL: process_env.FILE_UPLOAD_BLUEPRINTS_KBL,
     FILE_UPLOAD_BLUEPRINTS_VEC: process_env.FILE_UPLOAD_BLUEPRINTS_VEC,
     // Used to override the URL matching in getInfrastructureBySubmodelRepositoryUrl for local dev environments
-    HANDOVER_DOCUMENTATION_FILES_REPO: removeTrailingSlash(process_env.HANDOVER_DOCUMENTATION_FILES_REPO),
+    OVERRIDE_RC_ATTACHMENT_REPO: removeTrailingSlash(process_env.OVERRIDE_RC_ATTACHMENT_REPO),
 };
 
 const themingVariables = mapEnvVariables([

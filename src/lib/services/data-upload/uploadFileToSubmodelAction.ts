@@ -32,7 +32,7 @@ export async function uploadFileToSubmodel(
                 fileName,
             },
             {
-                url: envs.HANDOVER_DOCUMENTATION_FILES_REPO || repositoryUrl,
+                url: envs.OVERRIDE_RC_ATTACHMENT_REPO || repositoryUrl,
                 infrastructureName: infrastructure.name,
             } as RepositoryWithInfrastructure,
         );

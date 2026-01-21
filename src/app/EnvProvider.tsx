@@ -42,7 +42,7 @@ export const initialEnvValues: EnvironmentalVariables = {
     EXTERNAL_LINKS: [],
     FILE_UPLOAD_BLUEPRINTS_KBL: undefined,
     FILE_UPLOAD_BLUEPRINTS_VEC: undefined,
-    HANDOVER_DOCUMENTATION_FILES_REPO: undefined,
+    OVERRIDE_RC_ATTACHMENT_REPO: undefined,
 };
 
 const EnvContext = createContext(initialEnvValues);
