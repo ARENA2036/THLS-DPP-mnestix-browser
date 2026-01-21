@@ -288,7 +288,7 @@ export async function uploadAdditionalDocument(
         // Get infrastructure for authentication
         const infrastructure = await getInfrastructureBySubmodelRepositoryUrl(repositoryUrl);
         if (!infrastructure) {
-            logInfo(logger, 'uploadAdditionalDocument', 'No infrastructure found for repository URL', {
+            logWarn(logger, 'uploadAdditionalDocument', 'No infrastructure found for repository URL', {
                 repository: repositoryUrl,
             });
             return wrapErrorCode(ApiResultStatus.NOT_FOUND, 'pages.uploadData.handoverDocs.infrastructureNotFound');

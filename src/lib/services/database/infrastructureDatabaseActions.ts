@@ -92,7 +92,7 @@ export async function getInfrastructureBySubmodelRepositoryUrl(
 
 export async function getInfrastructureByAasRepositoryUrl(url: string): Promise<InfrastructureConnection | undefined> {
     const infrastructures = await getInfrastructuresIncludingDefault();
-    // Use AAS_REPO_API_URL env for matching if set, similar to submodel repo logic
+    // Use OVERRIDE_RC_ATTACHMENT_REPO env for matching if set, similar to submodel repo logic
     const urlToMatch = envs.OVERRIDE_RC_ATTACHMENT_REPO ?? url;
     const normalizedUrl = urlToMatch.endsWith('/') ? urlToMatch.slice(0, -1) : urlToMatch;
 

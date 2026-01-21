@@ -107,7 +107,7 @@ export default function AdditionalDocumentList(props: AdditionalDocumentListProp
                             </Box>
                         </Box>
 
-                        {/* Editable fields - only show for pending documents */}
+                        {/* Editable fields - hide for successfully uploaded documents */}
                         {doc.uploadStatus !== 'success' && (
                             <Stack spacing={2}>
                                 <TextField

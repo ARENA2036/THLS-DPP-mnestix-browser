@@ -51,7 +51,7 @@ export default function StepAdditionalDocuments(props: StepAdditionalDocumentsPr
     const allUploaded = documents.length > 0 && pendingDocuments.length === 0;
 
     function generateDocumentId(): string {
-        return `doc-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+        return `doc-${Date.now()}-${Math.random().toString(36).substring(2, 11)}`;
     }
 
     function addFiles(files: FileList | File[]) {

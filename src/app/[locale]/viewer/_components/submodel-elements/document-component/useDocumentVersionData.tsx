@@ -107,12 +107,10 @@ export function useFileViewObject(
         const digitalFile = {
             digitalFileUrl: '',
             mimeType: '',
-            // HACK: For the robotics challenge we create a custom mimetype to display a seperate icon for these files
+            // HACK: For the robotics challenge we create a custom mimetype to display a separate icon for these files
             isWiringHarnessConfiguration:
                 (versionSubmodelEl as ModelFile).value?.endsWith('.kbl') ||
-                (versionSubmodelEl as ModelFile).value?.endsWith('.vec')
-                    ? true
-                    : false,
+                (versionSubmodelEl as ModelFile).value?.endsWith('.vec'),
         };
         if (isValidUrl((versionSubmodelEl as ModelFile).value)) {
             digitalFile.digitalFileUrl = (versionSubmodelEl as ModelFile).value || '';
