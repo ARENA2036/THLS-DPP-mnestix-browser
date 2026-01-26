@@ -575,10 +575,10 @@
       "title": "DPP erzeugen",
       "backToHome": "Zurück zur Startseite",
       "explanation": {
-        "title": "Über Datei-Upload",
+        "title": "Über die DPP-Erzeugung",
         "paragraph1": "Hier kann eine KBL oder VEC-Datei hochgeladen werden, um ein korrespondierendes DPP-Typmodell im AAS-Format zu erzeugen. Insbesondere werden die Submodelle „Digital Nameplate“, „HandoverDocumentation“ und „Hierarchical Structures“ erzeugt und ein Produktbild kann hinterlegt werden.",
         "paragraph2": "Bestimmte Informationsinhalte aus den Dateiformaten KBL bzw. VEC werden dazu in eine entsprechende Verwaltungsschale-Repräsentation übersetzt. Zur Identifikation des im KBL oder VEC modellierten Leitungssatz-Produkts und seiner Komponenten werden bei KBL die Inhalte von Company_name und Part_number herangezogen. Bei VEC werden die Inhalte von CompanyName und GeneratingSystemName verwendet. Basierend auf diesen Informationen wird eine internetfähige Identifikationsadresse erstellt.",
-        "paragraph3": "Im zweiten Schritt kann ein Produktbild hochgeladen werden, das in der Verwaltungsschale hinterlegt wird. Abschließend können verschiedene Anhänge hochgeladen werden, die dem HandoverDocumentation Submodel angehängt werden."
+        "paragraph3": "Anschließend wird ein Produktbild hochgeladen und in der Verwaltungsschale hinterlegt. Als optionalen letzten Schritt können Sie weitere Anhänge zum HandoverDocumentation Submodel hinzufügen."
       },
       "actions": {
         "copyDetailedLogs": "Detaillierte Logs kopieren",

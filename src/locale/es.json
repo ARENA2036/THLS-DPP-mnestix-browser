@@ -575,10 +575,10 @@
       "title": "Generar DPP",
       "backToHome": "Volver al Inicio",
       "explanation": {
-        "title": "Acerca de la Carga de Archivos",
+        "title": "Sobre la generación de DPP",
         "paragraph1": "Aquí puede cargar un archivo KBL o VEC para generar un modelo de tipo DPP correspondiente en formato AAS. En particular, se generan los submodelos \"Digital Nameplate\", \"HandoverDocumentation\" y \"Hierarchical Structures\" y se puede almacenar una imagen del producto.",
         "paragraph2": "Ciertos contenidos de información de los formatos de archivo KBL o VEC se traducen en una representación correspondiente de Asset Administration Shell. Para la identificación del producto de arnés de cables y sus componentes modelados en KBL o VEC, se utilizan los contenidos de Company_name y Part_number en KBL. En VEC se utilizan los contenidos de CompanyName y GeneratingSystemName. Basándose en esta información, se crea una dirección de identificación apta para internet.",
-        "paragraph3": "En el segundo paso, se puede cargar una imagen del producto que se almacena en el Asset Administration Shell. Finalmente, se pueden cargar varios archivos adjuntos que se añaden al submodelo HandoverDocumentation."
+        "paragraph3": "Además, puede proporcionar su nombre y el de su organización para incluirlos en el submodelo \"HandoverDocumentation\" como información de contacto del creador del DPP."
       },
       "actions": {
         "copyDetailedLogs": "Copiar registros detallados",
