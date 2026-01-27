@@ -649,8 +649,9 @@
         "uploading": "Produktbild wird hochgeladen...",
         "uploadSuccess": "Produktbild erfolgreich hochgeladen.",
         "uploadError": "Fehler beim Hochladen des Produktbilds. Bitte versuchen Sie es erneut.",
-        "invalidFileType": "Bitte wählen Sie eine gültige Bilddatei (JPEG, PNG, GIF oder WebP).",
+        "invalidFileType": "Bitte wählen Sie eine gültige Bilddatei (JPEG, PNG, GIF, WebP oder PDF).",
         "fileTooLarge": "Produktbild ist zu groß. Maximale Größe: {maxSize}.",
+        "pdfConversionError": "PDF konnte nicht in ein Bild konvertiert werden. Bitte versuchen Sie eine andere Datei.",
         "required": "Ein Produktbild ist erforderlich, um fortzufahren."
       },
       "stepper": {

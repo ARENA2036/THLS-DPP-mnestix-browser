@@ -12,6 +12,7 @@ import { envs } from 'lib/env/MnestixEnv';
 
 /**
  * Uploads a thumbnail to an Asset Administration Shell
+ * PDFs should be converted to images on the client side before calling this action.
  * @param aasRepositoryUrl The URL of the AAS Repository
  * @param aasId The ID of the AAS to upload the thumbnail to
  * @param formData FormData containing the thumbnail image file
@@ -19,6 +20,7 @@ import { envs } from 'lib/env/MnestixEnv';
  */
 export async function uploadThumbnail(aasRepositoryUrl: string, aasId: string, formData: FormData) {
     const fileEntry = formData.get('thumbnail');
+    // PDFs are converted to PNG on client side, so we accept image types only here
     const VALID_IMAGE_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
     const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024; // 5MB
 
@@ -27,7 +29,6 @@ export async function uploadThumbnail(aasRepositoryUrl: string, aasId: string, f
     }
 
     const file = fileEntry as File;
-    const fileName = file.name;
 
     // Validate file type
     if (!VALID_IMAGE_TYPES.includes(file.type)) {
@@ -38,6 +39,8 @@ export async function uploadThumbnail(aasRepositoryUrl: string, aasId: string, f
     if (file.size > MAX_FILE_SIZE_BYTES) {
         return wrapErrorCode(ApiResultStatus.BAD_REQUEST, 'pages.uploadData.thumbnail.fileTooLarge');
     }
+
+    const fileName = file.name;
 
     if (!aasRepositoryUrl) {
         return wrapErrorCode(ApiResultStatus.BAD_REQUEST, 'pages.uploadData.thumbnail.uploadError');
