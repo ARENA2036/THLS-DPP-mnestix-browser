@@ -6,7 +6,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useTranslations } from 'next-intl';
 import { uploadThumbnail } from 'lib/services/data-upload/thumbnailUploadAction';
 import FileUploadForm from './FileUploadForm';
-import { convertPdfToImageClient } from 'lib/util/pdfToImageClient';
+import { convertPdfToImageClient } from 'lib/util/pdfToImage';
 
 export interface StepThumbnailProps {
     /** AAS ID for thumbnail upload */
@@ -53,12 +53,14 @@ export default function StepThumbnail(props: StepThumbnailProps) {
             try {
                 const params = JSON.parse(paramsJson);
                 try {
+                    // @ts-expect-error - Dynamic translation key
                     return t(`thumbnail.${translationKey}`, params);
                 } catch {
                     return errorText;
                 }
             } catch {
                 try {
+                    // @ts-expect-error - Dynamic translation key
                     return t(`thumbnail.${translationKey}`);
                 } catch {
                     return errorText;
@@ -69,6 +71,7 @@ export default function StepThumbnail(props: StepThumbnailProps) {
         if (errorText.startsWith('pages.uploadData.thumbnail.')) {
             const translationKey = errorText.replace('pages.uploadData.thumbnail.', '');
             try {
+                // @ts-expect-error - Dynamic translation key
                 return t(`thumbnail.${translationKey}`);
             } catch {
                 return t('thumbnail.uploadError');
