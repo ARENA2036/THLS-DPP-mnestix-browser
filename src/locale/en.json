@@ -578,7 +578,7 @@
         "title": "About generating DPPs",
         "paragraph1": "Here you can upload a KBL or VEC file to generate a corresponding DPP type model in AAS format. In particular, the submodels \"Digital Nameplate\", \"HandoverDocumentation\" and \"Hierarchical Structures\" are generated and a product image can be stored.",
         "paragraph2": "Certain information contents from the KBL or VEC file formats are translated into a corresponding Asset Administration Shell representation. For KBL, the contents of Company_name and Part_number are used to identify the wire harness product and its components modeled in KBL or VEC. For VEC, the contents of CompanyName and GeneratingSystemName are used. Based on this information, an internet-capable identification address is created.",
-        "paragraph3": "Additionally, you can provide your name and organization to be included in the \"HandoverDocumentation\" submodel as contact information of the DPP creator."
+        "paragraph3": "Additionally, you can upload a thumbnail image of the product and attach optional supplementary documents that will be stored together with the generated DPP."
       },
       "actions": {
         "copyDetailedLogs": "Copy detailed logs",
