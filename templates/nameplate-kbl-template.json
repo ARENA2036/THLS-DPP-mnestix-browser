@@ -1526,6 +1526,21 @@
                     "type": "SMT/Cardinality",
                     "value": "ZeroToOne",
                     "valueType": "xs:string"
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/MappingInfo/1/0"
+                            }
+                        ],
+                        "type": "ExternalReference"
+                    },
+                    "kind": "TemplateQualifier",
+                    "type": "SMT/MappingInfo",
+                    "value": "Harness.Part_number.#text",
+                    "valueType": "xs:string"
                 }
             ],
             "description": [
@@ -1561,6 +1576,21 @@
                     "kind": "TemplateQualifier",
                     "type": "SMT/Cardinality",
                     "value": "ZeroToOne",
+                    "valueType": "xs:string"
+                },
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/MappingInfo/1/0"
+                            }
+                        ],
+                        "type": "ExternalReference"
+                    },
+                    "kind": "TemplateQualifier",
+                    "type": "SMT/MappingInfo",
+                    "value": "Harness.Part_number.#text",
                     "valueType": "xs:string"
                 }
             ],

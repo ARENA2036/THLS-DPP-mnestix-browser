@@ -438,6 +438,7 @@
 				{
 					"idShort": "Stecker1pol",
 					"entityType": "SelfManagedEntity",
+					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2_2310137_1",
 					"modelType": "Entity"
 				},
 				{
@@ -774,6 +775,7 @@
 				{
 					"idShort": "UTP-0.35",
 					"entityType": "SelfManagedEntity",
+					"globalAssetId": "http://asset.bedia-kabel.de/de/flry-2x/flry-a-2x035-15-gn-br-ws-br--ring-detail",
 					"modelType": "Entity"
 				},
 				{
@@ -822,6 +824,7 @@
 				{
 					"idShort": "Einzelleitung0.13",
 					"entityType": "SelfManagedEntity",
+					"globalAssetId": "https://asset.leonicables.com/FLCUAG01RY-013A",
 					"modelType": "Entity"
 				},
 				{
@@ -870,6 +873,7 @@
 				{
 					"idShort": "Einzelleitung1.5",
 					"entityType": "SelfManagedEntity",
+					"globalAssetId": "https://asset.helukabel.com/de-de/vehicle-cable-flry-m28484/28529",
 					"modelType": "Entity"
 				},
 				{
@@ -918,6 +922,7 @@
 				{
 					"idShort": "Coax-Leitung",
 					"entityType": "SelfManagedEntity",
+					"globalAssetId": "https://asset.helukabel.com/de-de/coaxial-cable-rg-174-u-m400189/400189",
 					"modelType": "Entity"
 				},
 				{
@@ -966,6 +971,7 @@
 				{
 					"idShort": "Tape",
 					"entityType": "SelfManagedEntity",
+					"globalAssetId": "https://asset.tesa.com/51036",
 					"modelType": "Entity"
 				},
 				{
