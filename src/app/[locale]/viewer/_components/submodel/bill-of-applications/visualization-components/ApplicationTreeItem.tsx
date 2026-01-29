@@ -1,7 +1,7 @@
 ﻿import * as React from 'react';
 import { ArrowForward, InfoOutlined } from '@mui/icons-material';
 import AppShortcutIcon from '@mui/icons-material/AppShortcut';
-import { Box, Button, IconButton, styled, type StyledComponentProps } from '@mui/material';
+import { Box, Button, IconButton, styled } from '@mui/material';
 import { Entity, KeyTypes, SubmodelElementChoice } from 'lib/api/aas/models';
 import { AssetIcon } from 'components/custom-icons/AssetIcon';
 import { encodeBase64 } from 'lib/util/Base64Util';
