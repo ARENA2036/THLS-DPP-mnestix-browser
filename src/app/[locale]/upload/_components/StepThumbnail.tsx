@@ -6,6 +6,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useTranslations } from 'next-intl';
 import { uploadThumbnail } from 'lib/services/data-upload/thumbnailUploadAction';
 import FileUploadForm from './FileUploadForm';
+import { convertPdfToImageClient } from 'lib/util/pdfToImage';
 
 export interface StepThumbnailProps {
     /** AAS ID for thumbnail upload */
@@ -31,10 +32,17 @@ export default function StepThumbnail(props: StepThumbnailProps) {
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
     const [isPending, startTransition] = useTransition();
     const t = useTranslations('pages.uploadData');
-
     const MAX_THUMBNAIL_SIZE_MB = 5;
-    const ACCEPTABLE_FILE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
-    const ACCEPTABLE_MIME_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
+   
+    const ACCEPTABLE_FILE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.pdf'];
+    const ACCEPTABLE_MIME_TYPES = [
+        'image/jpeg',
+        'image/jpg',
+        'image/png',
+        'image/gif',
+        'image/webp',
+        'application/pdf',
+    ];
 
     function translateBackendError(errorText: string | null | undefined): string | null {
         if (!errorText) return null;
@@ -78,11 +86,26 @@ export default function StepThumbnail(props: StepThumbnailProps) {
         setUploadStatus('uploading');
         setErrorMessage(null);
 
-        const formData = new FormData();
-        formData.append('thumbnail', file);
-
         startTransition(async () => {
             try {
+                // Convert PDF to PNG on the client side before uploading
+                let fileToUpload = file;
+                if (file.type === 'application/pdf') {
+                    try {
+                        fileToUpload = await convertPdfToImageClient(file);
+                    } catch (conversionError) {
+                        const errorMsg = conversionError instanceof Error 
+                            ? conversionError.message 
+                            : t('thumbnail.pdfConversionError');
+                        setErrorMessage(errorMsg);
+                        setUploadStatus('error');
+                        return;
+                    }
+                }
+
+                const formData = new FormData();
+                formData.append('thumbnail', fileToUpload);
+
                 const response = await uploadThumbnail(aasRepoUrl, aasId, formData);
 
                 if (!response.isSuccess) {

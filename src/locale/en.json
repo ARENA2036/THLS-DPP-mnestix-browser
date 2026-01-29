@@ -649,8 +649,9 @@
         "uploading": "Uploading product image...",
         "uploadSuccess": "Product image uploaded successfully.",
         "uploadError": "Failed to upload product image. Please try again.",
-        "invalidFileType": "Please select a valid image file (JPEG, PNG, GIF, or WebP).",
+        "invalidFileType": "Please select a valid image file (JPEG, PNG, GIF, WebP, or PDF).",
         "fileTooLarge": "Product image file is too large. Maximum size is {maxSize}.",
+        "pdfConversionError": "Failed to convert PDF to image. Please try a different file.",
         "required": "A product image is required to continue."
       },
       "stepper": {

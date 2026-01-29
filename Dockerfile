@@ -4,7 +4,7 @@ RUN apk update && apk add --no-cache openssl
 FROM base AS deps
 WORKDIR /app
 COPY package*.json yarn.lock* ./
-RUN apk add --no-cache python3 py-setuptools make g++
+RUN apk add --no-cache python3 py-setuptools make g++ vips-dev
 # network-timeout is a workaround for yarn QEMU support
 # https://github.com/docker/build-push-action/issues/471
 # https://github.com/nodejs/docker-node/issues/1335
@@ -30,6 +30,7 @@ FROM base AS production
 WORKDIR /app
 
 ENV NODE_ENV=production
+RUN apk add --no-cache vips
 RUN yarn add prisma@6.19.0
 
 RUN addgroup -g 1001 -S nodejs
