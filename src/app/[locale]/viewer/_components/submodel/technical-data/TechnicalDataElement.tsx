@@ -1,6 +1,6 @@
 import { ConceptDescription, SubmodelElementChoice, KeyTypes } from 'lib/api/aas/models';
 import { useTranslations } from 'next-intl';
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { DataRowWithUnit } from 'app/[locale]/viewer/_components/submodel/technical-data/ConceptDescriptionDataRow';
 import { TreeItem } from '@mui/x-tree-view';
@@ -20,7 +20,6 @@ export const TechnicalDataElement = (props: {
     showUnits?: boolean;
 }) => {
     const t = useTranslations('pages.aasViewer.submodels');
-    const theme = useTheme();
     const [conceptDescriptions, setConceptDescriptions] = useState<Record<string, ConceptDescription>>({});
     const [loadingConceptDescriptions, setLoadingConceptDescriptions] = useState<boolean>(true);
     const infrastructureName = useCurrentAasContext().infrastructureName;
@@ -107,7 +106,7 @@ export const TechnicalDataElement = (props: {
                         sx={{
                             '&& .MuiTreeItem-label': {
                                 m: 0,
-                                ...theme.typography.h5,
+                                typography: 'h5',
                             },
                         }}
                     >
@@ -183,7 +182,7 @@ export const TechnicalDataElement = (props: {
                 },
                 '&& .MuiTreeItem-label': {
                     m: 1,
-                    ...theme.typography.h4,
+                    typography: 'h4',
                 },
             }}
             key={props.label}
