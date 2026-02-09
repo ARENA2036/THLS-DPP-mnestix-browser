@@ -31,7 +31,7 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 RUN apk add --no-cache vips
-RUN yarn add prisma@7.2.0
+RUN yarn add prisma@7.3.0
 
 RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nextjs -u 1001

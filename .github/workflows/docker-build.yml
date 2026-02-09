@@ -11,7 +11,7 @@ on:
       - "wiki/**"
       - "README.md"
   pull_request:
-    branches: ["dev", "maintenance/*"]
+    branches: ["robotik-challenge-main"]
     paths-ignore:
       - ".github/ISSUE_TEMPLATE/**"
       - ".github/CODEOWNERS"
