@@ -6,7 +6,8 @@ WORKDIR /app
 COPY package*.json yarn.lock* ./
 RUN apk add --no-cache python3 py-setuptools make g++ vips-dev
 # Install node-gyp globally for native module compilation (required by sharp)
-RUN yarn global add node-gyp
+# Must use npm since sharp's build script uses npm, not yarn
+RUN npm install -g node-gyp
 # network-timeout is a workaround for yarn QEMU support
 # https://github.com/docker/build-push-action/issues/471
 # https://github.com/nodejs/docker-node/issues/1335
