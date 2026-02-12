@@ -1,6 +1,6 @@
 import MenuIcon from '@mui/icons-material/Menu';
 import { alpha, Box, Divider, Drawer, IconButton, List, styled, Typography } from '@mui/material';
-import { Dashboard, OpenInNew, Settings, UploadFile, Link } from '@mui/icons-material';
+import { Dashboard, OpenInNew, Settings, Link } from '@mui/icons-material';
 import React, { useState } from 'react';
 import { useAuth } from 'lib/hooks/UseAuth';
 import { TemplateIcon } from 'components/custom-icons/TemplateIcon';
@@ -13,6 +13,7 @@ import BottomMenu from 'layout/menu/BottomMenu';
 import { useTranslations, useLocale } from 'next-intl';
 import { MnestixRole } from 'components/authentication/AllowedRoutes';
 import { DynamicIcon } from 'components/basics/DynamicIcon';
+import UploadFile from '@mui/icons-material/UploadFile';
 
 const StyledDrawer = styled(Drawer)(({ theme }) => ({
     '.MuiDrawer-paper': {
