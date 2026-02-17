@@ -13,8 +13,8 @@ export type LocalizedIndexLayoutProps = {
 };
 
 export const metadata: Metadata = {
-    title: 'Mnestix',
-    description: 'AAS made easy',
+    title: 'Robotik Challenge DPP-Viewer - Mnestix',
+    description: 'Create and manage your DPPs for the Robotik Challenge with Mnestix using VEC or KBL files.',
 };
 
 /**
