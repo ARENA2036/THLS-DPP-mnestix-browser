@@ -18,8 +18,7 @@ import { CustomTreeItemContent } from '../../../submodel/bill-of-applications/vi
 import { useTreeItem, UseTreeItemParameters } from '@mui/x-tree-view/useTreeItem';
 
 interface EntityTreeItemProps
-    extends Omit<UseTreeItemParameters, 'rootRef'>,
-        Omit<React.HTMLAttributes<HTMLLIElement>, 'onFocus'> {
+    extends Omit<UseTreeItemParameters, 'rootRef'>, Omit<React.HTMLAttributes<HTMLLIElement>, 'onFocus'> {
     applicationUrl?: string;
     data?: SubmodelElementChoice;
 }
@@ -70,7 +69,7 @@ const CustomContent = React.forwardRef(function CustomContent(
                     navigate.push(assetId);
                 }
             } else {
-                navigate.push('/asset?assetId=' + encodeURIComponent(assetId));
+                window.open('/asset?assetId=' + encodeURIComponent(assetId), '_blank');
             }
         }
     };
