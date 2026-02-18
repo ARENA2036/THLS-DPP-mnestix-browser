@@ -9,7 +9,7 @@ import { GenericSubmodelElementComponent } from '../GenericSubmodelElementCompon
 import { EntityDetailsDialog } from './EntityDetailsDialog';
 import { RelationShipDetailsDialog } from './RelationShipDetailsDialog';
 import { ExpandableTreeitem } from 'app/[locale]/viewer/_components/submodel-elements/generic-elements/entity-components/TreeItem';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { searchInAllDiscoveries } from 'lib/services/discovery-service/discoveryActions';
 import { TreeItemCheckbox, TreeItemGroupTransition, TreeItemIconContainer } from '@mui/x-tree-view/TreeItem';
 import { TreeItemIcon } from '@mui/x-tree-view/TreeItemIcon';
@@ -28,6 +28,7 @@ const CustomContent = React.forwardRef(function CustomContent(
     ref: React.Ref<HTMLLIElement>,
 ) {
     const t = useTranslations('pages.aasViewer.submodels');
+    const locale = useLocale();
     const navigate = useRouter();
     const { id, label, itemId, children, data, disabled, ...other } = props;
     const {
@@ -53,23 +54,44 @@ const CustomContent = React.forwardRef(function CustomContent(
 
     const handleAssetNavigateClick = async (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
         event.stopPropagation();
-        if (assetId) {
-            // Check if the Asset Id exists in the same repository as the "parent AAS",
-            // if so, then navigate to the asset-redirect page of this Mnestix instance,
-            // if not, just navigate to the specified URL which might lead anywhere.
+        if (!assetId) return;
 
-            const { isSuccess, result: discoverySearchResult } = await searchInAllDiscoveries(assetId);
-            if (!isSuccess || (isSuccess && discoverySearchResult.length === 0)) {
-                const popup = window.open(''); // Try to open a new tab
-                if (popup) {
-                    // if not null -> new tab was opened
-                    popup.location.href = assetId;
-                } else {
-                    // popup was blocked open in same tab
-                    navigate.push(assetId);
+        // Open a tab synchronously to avoid popup blockers. We avoid passing
+        // `noopener,noreferrer` as some browsers then return `null` even when a
+        // tab is opened; instead null out `opener` manually to prevent reverse-tabnabbing.
+        const popup = typeof window !== 'undefined' ? window.open('', '_blank') : null;
+        try {
+            if (popup) popup.opener = null;
+        } catch {
+            // ignore
+        }
+
+        const { isSuccess, result: discoverySearchResult } = await searchInAllDiscoveries(assetId);
+
+        const hasDiscovery = isSuccess && discoverySearchResult.length > 0;
+
+        if (hasDiscovery) {
+            const prefix = locale ? `/${locale}` : '';
+            const assetPath = `${prefix}/asset?assetId=${encodeURIComponent(assetId)}`;
+            if (popup) {
+                try {
+                    popup.location.href = assetPath;
+                } catch {
+                    window.location.href = assetPath;
                 }
             } else {
-                window.open('/asset?assetId=' + encodeURIComponent(assetId), '_blank');
+                navigate.push(assetPath);
+            }
+        } else {
+            // No local discovery - navigate directly to the assetId (might be external URL)
+            if (popup) {
+                try {
+                    popup.location.href = assetId;
+                } catch {
+                    window.location.href = assetId;
+                }
+            } else {
+                navigate.push(assetId);
             }
         }
     };

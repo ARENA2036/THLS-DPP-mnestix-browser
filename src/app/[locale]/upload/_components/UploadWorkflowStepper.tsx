@@ -346,7 +346,7 @@ export default function UploadWorkflowStepper() {
                         >
                             {getStepLabel(index)}
                         </StepLabel>
-                        {/* HACK This component will be rendered just for displaying the logs and the filename so the user does*/}
+                        {/* HACK This component will be rendered just for displaying the logs and the filename after completing the processing step  so the user can see which file they uploaded*/}
                         {index === 1 && state.vecKblFile && state.activeStep > 1 && (
                             <StepProcessing
                                 file={state.vecKblFile}
