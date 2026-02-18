@@ -663,7 +663,7 @@
       },
       "additionalDocs": {
         "title": "Agregar Archivos Adicionales (Opcional)",
-        "description": "Cargue documentación adicional para su Pasaporte Digital del Producto. Cada archivo se añadirá al submodelo HandoverDocumentation.",
+        "description": "Cargue varios archivos como documentación para el Pasaporte Digital del Producto. Se mostrarán en el submodelo HandoverDocumentation, que es la pestaña de documentación en el DPP.",
         "dropzone": "Suelta archivos aquí o haz clic para explorar",
         "supportedFiles": "Cualquier tipo de archivo (máx. 10 MB por archivo)",
         "addMore": "Agregar más archivos",
