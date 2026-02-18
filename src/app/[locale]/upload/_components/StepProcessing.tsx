@@ -1,6 +1,6 @@
 'use client';
 
-import { LinearProgress, Stack, Typography, Box, Button } from '@mui/material';
+import { LinearProgress, Stack, Typography, Box } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ErrorIcon from '@mui/icons-material/Error';
 import { useTranslations } from 'next-intl';
@@ -26,8 +26,6 @@ export interface StepProcessingProps {
     warnings: string[];
     /** Detailed debug info from backend */
     rawDebugInfo: string[];
-    /** Callback when user clicks Next to proceed to thumbnail step */
-    onNext: () => void;
 }
 
 /**
@@ -45,7 +43,6 @@ export default function StepProcessing(props: StepProcessingProps) {
         errorDetail,
         warnings,
         rawDebugInfo,
-        onNext,
     } = props;
     const t = useTranslations('pages.uploadData');
 
@@ -150,15 +147,6 @@ export default function StepProcessing(props: StepProcessingProps) {
                     </Typography>
                     <CopyButton value={rawDebugInfo.join('\n')} size="small" dataTestId="copy-debug-logs-button" />
                 </Stack>
-            )}
-
-            {/* Next button - shown when processing is complete */}
-            {isComplete && (
-                <Box sx={{ mt: 1 }}>
-                    <Button variant="contained" onClick={onNext}>
-                        {t('actions.next')}
-                    </Button>
-                </Box>
             )}
         </Stack>
     );
