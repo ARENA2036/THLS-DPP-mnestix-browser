@@ -1,5 +1,19 @@
 {
 	"idShort": "HierarchicalStructures",
+	"displayName": [
+		{
+			"language": "en",
+			"text": "Example Bill Of Materials"
+		},
+		{
+			"language": "de",
+			"text": "Beispielhafte Materialliste"
+		},
+		{
+			"language": "es",
+			"text": "Ejemplo de Lista de Materiales"
+		}
+	],
 	"description": [
 		{
 			"language": "en",
