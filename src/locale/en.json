@@ -663,7 +663,7 @@
       },
       "additionalDocs": {
         "title": "Add Additional Files (Optional)",
-        "description": "Upload any additional documentation for your Digital Product Passport. Each file will be added to the HandoverDocumentation submodel.",
+        "description": "Upload multiple files to the Digital Product Passport as documentation. They will be shown in the HandoverDocumentation-Submodel, which is the documentation tab in the DPP.",
         "dropzone": "Drop files here or click to browse",
         "supportedFiles": "Any file type (max. 10 MB per file)",
         "addMore": "Add more files",

@@ -663,7 +663,7 @@
       },
       "additionalDocs": {
         "title": "Zusätzliche Dateien hinzufügen (Optional)",
-        "description": "Laden Sie zusätzliche Dokumentation für Ihren Digitalen Produktpass hoch. Jede Datei wird dem HandoverDocumentation Submodel hinzugefügt.",
+        "description": "Laden Sie mehrere Dateien als Dokumentation für den Digitalen Produktpass hoch. Sie werden im HandoverDocumentation-Submodel angezeigt, welches der Abschnitt für Dokumentationsdokumente im DPP ist.",
         "dropzone": "Dateien hier ablegen oder klicken zum Durchsuchen",
         "supportedFiles": "Beliebiger Dateityp (max. 10 MB pro Datei)",
         "addMore": "Weitere Dateien hinzufügen",

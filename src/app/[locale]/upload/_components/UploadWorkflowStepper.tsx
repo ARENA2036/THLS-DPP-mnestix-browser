@@ -180,6 +180,10 @@ export default function UploadWorkflowStepper() {
                             generateAasStatus:
                                 status === 'completed' ? 'success' : status === 'failed' ? 'error' : 'processing',
                         });
+                        // HACK: Automatically move to the next step after the AAS is generated, since it will be shown again in another component
+                        if (status === 'completed') {
+                            updateState({ activeStep: 2 }); // Move to thumbnail step when AAS generation is complete
+                        }
                     }
 
                     if (status === 'failed') {
@@ -224,10 +228,6 @@ export default function UploadWorkflowStepper() {
             thumbnailUploaded: true,
             activeStep: 3, // Move to additional documents step
         });
-    }
-
-    function handleProcessingNext() {
-        updateState({ activeStep: 2 }); // Move to thumbnail step
     }
 
     function handleAdditionalDocsSkip() {
@@ -292,7 +292,6 @@ export default function UploadWorkflowStepper() {
                         errorDetail={state.errorDetail}
                         warnings={state.warnings}
                         rawDebugInfo={state.rawDebugInfo}
-                        onNext={handleProcessingNext}
                     />
                 ) : null;
             case 2:
@@ -347,6 +346,19 @@ export default function UploadWorkflowStepper() {
                         >
                             {getStepLabel(index)}
                         </StepLabel>
+                        {/* HACK This component will be rendered just for displaying the logs and the filename after completing the processing step  so the user can see which file they uploaded*/}
+                        {index === 1 && state.vecKblFile && state.activeStep > 1 && (
+                            <StepProcessing
+                                file={state.vecKblFile}
+                                uploadStatus={state.uploadStatus}
+                                processingStatus={state.processingStatus}
+                                generateAasStatus={state.generateAasStatus}
+                                errorMessage={state.errorMessage}
+                                errorDetail={state.errorDetail}
+                                warnings={state.warnings}
+                                rawDebugInfo={state.rawDebugInfo}
+                            />
+                        )}
                         <StepContent>
                             {renderStepContent(index)}
                             {/* Show retry button on error */}
