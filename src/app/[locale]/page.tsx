@@ -36,7 +36,7 @@ export default function () {
                             </CardActionArea>
                         </Card>
                     </Grid>
-                    {!isMobile && env.AAS_LIST_FEATURE_FLAG && (
+                    {env.AAS_LIST_FEATURE_FLAG && (
                         <Grid size={{ md: 6, xs: 12 }}>
                             <Card sx={{ height: '100%', borderRadius: '12px' }}>
                                 <CardActionArea
