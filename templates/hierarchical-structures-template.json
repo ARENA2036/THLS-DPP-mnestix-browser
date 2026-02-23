@@ -115,7 +115,8 @@
 				{
 					"idShort": "SteckerModul2",
 					"entityType": "SelfManagedEntity",
-					"modelType": "Entity"
+					"modelType": "Entity",
+					"globalAssetId": "https://asset.te.com/TE_ConnectorModule_2_2302475_2"
 				},
 				{
 					"idShort": "HasPart",
@@ -163,7 +164,8 @@
 				{
 					"idShort": "SteckerModul1",
 					"entityType": "SelfManagedEntity",
-					"modelType": "Entity"
+					"modelType": "Entity",
+					"globalAssetId": "https://asset.te.com/TE_ConnectorModule_1_2310137_1"
 				},
 				{
 					"idShort": "HasPart",
@@ -211,7 +213,8 @@
 				{
 					"idShort": "SteckerModul3",
 					"entityType": "SelfManagedEntity",
-					"modelType": "Entity"
+					"modelType": "Entity",
+					"globalAssetId": "https://asset.te.com/TE_ConnectorModule_3_2302475_3"
 				},
 				{
 					"idShort": "HasPart",
@@ -259,7 +262,8 @@
 				{
 					"idShort": "Umgehäuse",
 					"entityType": "SelfManagedEntity",
-					"modelType": "Entity"
+					"modelType": "Entity",
+					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_Surround_2302475_S"
 				},
 				{
 					"idShort": "HasPart",
@@ -307,7 +311,8 @@
 				{
 					"idShort": "Cover",
 					"entityType": "SelfManagedEntity",
-					"modelType": "Entity"
+					"modelType": "Entity",
+					"globalAssetId": "https://asset.te.com/TE_ConnectorCover_2302475_C"
 				},
 				{
 					"idShort": "HasPart",
@@ -404,7 +409,8 @@
 				{
 					"idShort": "Stecker2pol",
 					"entityType": "SelfManagedEntity",
-					"modelType": "Entity"
+					"modelType": "Entity",
+					"globalAssetId": "https://asset.te.com/TE_Connector2pol_2311450_1"
 				},
 				{
 					"idShort": "HasPart",
@@ -501,7 +507,8 @@
 				{
 					"idShort": "MQS-Kontakt0.13",
 					"entityType": "SelfManagedEntity",
-					"modelType": "Entity"
+					"modelType": "Entity",
+					"globalAssetId": "https://asset.te.com/TE_MQSContact_013_1418796_1"
 				},
 				{
 					"idShort": "HasPart",
@@ -549,7 +556,8 @@
 				{
 					"idShort": "MQS-Kontakt0.35",
 					"entityType": "SelfManagedEntity",
-					"modelType": "Entity"
+					"modelType": "Entity",
+					"globalAssetId": "https://asset.te.com/TE_MQSContact_035_1418796_2"
 				},
 				{
 					"idShort": "HasPart",
@@ -597,7 +605,8 @@
 				{
 					"idShort": "NanoMQS-Kontakt0.13",
 					"entityType": "SelfManagedEntity",
-					"modelType": "Entity"
+					"modelType": "Entity",
+					"globalAssetId": "https://asset.te.com/TE_NanoMQSContact_013_2470646_1"
 				},
 				{
 					"idShort": "HasPart",
@@ -645,7 +654,8 @@
 				{
 					"idShort": "NanoMQS-Kontakt0.35",
 					"entityType": "SelfManagedEntity",
-					"modelType": "Entity"
+					"modelType": "Entity",
+					"globalAssetId": "https://asset.te.com/TE_NanoMQSContact_035_2470646_2"
 				},
 				{
 					"idShort": "HasPart",
@@ -693,7 +703,8 @@
 				{
 					"idShort": "AMP-MCP-Kontakt",
 					"entityType": "SelfManagedEntity",
-					"modelType": "Entity"
+					"modelType": "Entity",
+					"globalAssetId": "https://asset.te.com/TE_AMP_MCPContact_348470_1"
 				},
 				{
 					"idShort": "HasPart",
@@ -741,7 +752,8 @@
 				{
 					"idShort": "MATE-AX-Kontakt",
 					"entityType": "SelfManagedEntity",
-					"modelType": "Entity"
+					"modelType": "Entity",
+					"globalAssetId": "https://asset.te.com/TE_MATE_AXContact_1445204_1"
 				},
 				{
 					"idShort": "HasPart",
@@ -1034,7 +1046,8 @@
 				{
 					"idShort": "Fixierung",
 					"entityType": "SelfManagedEntity",
-					"modelType": "Entity"
+					"modelType": "Entity",
+					"globalAssetId": "https://asset.te.com/TE_ConnectorFixture_2108825_1"
 				},
 				{
 					"idShort": "HasPart",
