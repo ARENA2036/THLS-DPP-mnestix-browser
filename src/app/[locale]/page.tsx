@@ -5,13 +5,11 @@ import { GoToListCard } from 'app/[locale]/_components/GoToListCard';
 import { UploadCard } from 'app/[locale]/_components/UploadCard';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
-import { useIsMobile } from 'lib/hooks/UseBreakpoints';
 import { useEnv } from 'app/EnvProvider';
 
 export default function () {
     const t = useTranslations('pages.dashboard');
     const navigate = useRouter();
-    const isMobile = useIsMobile();
     const env = useEnv();
 
     return (
@@ -36,7 +34,7 @@ export default function () {
                             </CardActionArea>
                         </Card>
                     </Grid>
-                    {!isMobile && env.AAS_LIST_FEATURE_FLAG && (
+                    {env.AAS_LIST_FEATURE_FLAG && (
                         <Grid size={{ md: 6, xs: 12 }}>
                             <Card sx={{ height: '100%', borderRadius: '12px' }}>
                                 <CardActionArea
