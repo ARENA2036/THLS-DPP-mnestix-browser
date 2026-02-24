@@ -113,10 +113,59 @@
 			},
 			"statements": [
 				{
-					"idShort": "SteckerModul2",
+					"idShort": "Stecker Modul 1",
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorModule_2_2302475_2"
+					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470646-9"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "Stecker Modul 1"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "Stecker Modul 2",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity",
+					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470648-9"
 				},
 				{
 					"idShort": "HasPart",
@@ -155,17 +204,17 @@
 							},
 							{
 								"type": "Entity",
-								"value": "SteckerModul2"
+								"value": "Stecker Modul 2"
 							}
 						]
 					},
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "SteckerModul1",
+					"idShort": "Stecker Modul 3",
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorModule_1_2310137_1"
+					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470653-9"
 				},
 				{
 					"idShort": "HasPart",
@@ -204,56 +253,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "SteckerModul1"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
-					"idShort": "SteckerModul3",
-					"entityType": "SelfManagedEntity",
-					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorModule_3_2302475_3"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "SteckerModul3"
+								"value": "Stecker Modul 3"
 							}
 						]
 					},
@@ -263,7 +263,7 @@
 					"idShort": "Umgehäuse",
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_Surround_2302475_S"
+					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470829_9"
 				},
 				{
 					"idShort": "HasPart",
@@ -312,7 +312,7 @@
 					"idShort": "Cover",
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorCover_2302475_C"
+					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470839_1"
 				},
 				{
 					"idShort": "HasPart",
@@ -358,7 +358,7 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "Stecker10pol",
+					"idShort": "Stecker 10pol",
 					"entityType": "SelfManagedEntity",
 					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2302475_1",
 					"modelType": "Entity"
@@ -400,17 +400,17 @@
 							},
 							{
 								"type": "Entity",
-								"value": "Stecker10pol"
+								"value": "Stecker 10pol"
 							}
 						]
 					},
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "Stecker2pol",
+					"idShort": "Stecker 2pol",
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_Connector2pol_2311450_1"
+					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_1418796_3"
 				},
 				{
 					"idShort": "HasPart",
@@ -449,14 +449,14 @@
 							},
 							{
 								"type": "Entity",
-								"value": "Stecker2pol"
+								"value": "Stecker 2pol"
 							}
 						]
 					},
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "Stecker1pol",
+					"idShort": "Stecker 1pol",
 					"entityType": "SelfManagedEntity",
 					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2_2310137_1",
 					"modelType": "Entity"
@@ -498,17 +498,17 @@
 							},
 							{
 								"type": "Entity",
-								"value": "Stecker1pol"
+								"value": "Stecker 1pol"
 							}
 						]
 					},
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "MQS-Kontakt0.13",
+					"idShort": "MQS-Kontakt (0,13mm²)",
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_MQSContact_013_1418796_1"
+					"globalAssetId": "https://asset.te.com/TE_GeneralTerminal_2141824_1"
 				},
 				{
 					"idShort": "HasPart",
@@ -547,17 +547,17 @@
 							},
 							{
 								"type": "Entity",
-								"value": "MQS-Kontakt0.13"
+								"value": "MQS-Kontakt (0,13mm²)"
 							}
 						]
 					},
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "MQS-Kontakt0.35",
+					"idShort": "MQS-Kontakt (0,35mm²)",
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_MQSContact_035_1418796_2"
+					"globalAssetId": "https://asset.te.com/TE_GeneralTerminal_5_928999_1"
 				},
 				{
 					"idShort": "HasPart",
@@ -596,17 +596,17 @@
 							},
 							{
 								"type": "Entity",
-								"value": "MQS-Kontakt0.35"
+								"value": "MQS-Kontakt (0,35mm²)"
 							}
 						]
 					},
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "NanoMQS-Kontakt0.13",
+					"idShort": "Nano MQS-Kontakt (0,13mm2)",
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_NanoMQSContact_013_2470646_1"
+					"globalAssetId": "https://asset.te.com/TE_GeneralTerminal_1_1703930_1"
 				},
 				{
 					"idShort": "HasPart",
@@ -645,17 +645,17 @@
 							},
 							{
 								"type": "Entity",
-								"value": "NanoMQS-Kontakt0.13"
+								"value": "Nano MQS-Kontakt (0,13mm2)"
 							}
 						]
 					},
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "NanoMQS-Kontakt0.35",
+					"idShort": "Nano MQS-Kontakt (0,35mm²)",
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_NanoMQSContact_035_2470646_2"
+					"globalAssetId": "https://asset.te.com/TE_GeneralTerminal_2_1703930_1"
 				},
 				{
 					"idShort": "HasPart",
@@ -694,17 +694,17 @@
 							},
 							{
 								"type": "Entity",
-								"value": "NanoMQS-Kontakt0.35"
+								"value": "Nano MQS-Kontakt (0,35mm²)"
 							}
 						]
 					},
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "AMP-MCP-Kontakt",
+					"idShort": "AMP MCP Kontakt",
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_AMP_MCPContact_348470_1"
+					"globalAssetId": "https://fakeasset.te.com/TE_AMP_MCPContact_348470_1"
 				},
 				{
 					"idShort": "HasPart",
@@ -743,17 +743,17 @@
 							},
 							{
 								"type": "Entity",
-								"value": "AMP-MCP-Kontakt"
+								"value": "AMP MCP Kontakt"
 							}
 						]
 					},
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "MATE-AX-Kontakt",
+					"idShort": "MATE-AX Kontakt",
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_MATE_AXContact_1445204_1"
+					"globalAssetId": "https://fakeasset.te.com/TE_MATE_AXContact_1445204_1"
 				},
 				{
 					"idShort": "HasPart",
@@ -792,14 +792,14 @@
 							},
 							{
 								"type": "Entity",
-								"value": "MATE-AX-Kontakt"
+								"value": "MATE-AX Kontakt"
 							}
 						]
 					},
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "UTP-0.35",
+					"idShort": "0,35mm² UTP",
 					"entityType": "SelfManagedEntity",
 					"globalAssetId": "http://asset.bedia-kabel.de/de/flry-2x/flry-a-2x035-15-gn-br-ws-br--ring-detail",
 					"modelType": "Entity"
@@ -841,14 +841,14 @@
 							},
 							{
 								"type": "Entity",
-								"value": "UTP-0.35"
+								"value": "0,35mm² UTP"
 							}
 						]
 					},
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "Einzelleitung0.13",
+					"idShort": "0,13mm² Einzelleitung",
 					"entityType": "SelfManagedEntity",
 					"globalAssetId": "https://asset.leonicables.com/FLCUAG01RY-013A",
 					"modelType": "Entity"
@@ -890,14 +890,14 @@
 							},
 							{
 								"type": "Entity",
-								"value": "Einzelleitung0.13"
+								"value": "0,13mm² Einzelleitung"
 							}
 						]
 					},
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "Einzelleitung1.5",
+					"idShort": "1,5mm² Einzelleitungen",
 					"entityType": "SelfManagedEntity",
 					"globalAssetId": "https://asset.helukabel.com/de-de/vehicle-cable-flry-m28484/28529",
 					"modelType": "Entity"
@@ -939,14 +939,14 @@
 							},
 							{
 								"type": "Entity",
-								"value": "Einzelleitung1.5"
+								"value": "1,5mm² Einzelleitungen"
 							}
 						]
 					},
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "Coax-Leitung",
+					"idShort": "COAX-Leitung",
 					"entityType": "SelfManagedEntity",
 					"globalAssetId": "https://asset.helukabel.com/de-de/coaxial-cable-rg-174-u-m400189/400189",
 					"modelType": "Entity"
@@ -988,7 +988,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "Coax-Leitung"
+								"value": "COAX-Leitung"
 							}
 						]
 					},
@@ -1046,8 +1046,8 @@
 				{
 					"idShort": "Fixierung",
 					"entityType": "SelfManagedEntity",
-					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorFixture_2108825_1"
+					"globalAssetId": "https://asset.hellermanntyton.com/products/cable-ties-with-fixing-elements/t50sosec13e/126-00000",
+					"modelType": "Entity"
 				},
 				{
 					"idShort": "HasPart",
@@ -1093,9 +1093,9 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "TE_ConnectorHousing_1418796_3",
+					"idShort": "Tape",
 					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_1418796_3",
+					"globalAssetId": "https://asset.hellermanntyton.com/products/electrical-tapes/htape-protect180/712-10002",
 					"modelType": "Entity"
 				},
 				{
@@ -1135,938 +1135,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "TE_ConnectorHousing_1418796_3"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
-					"idShort": "TE_ConnectorHousing_2470646_9",
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470646-9",
-					"modelType": "Entity"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "TE_ConnectorHousing_2470646_9"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
-					"idShort": "TE_ConnectorHousing_2470648_9",
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470648-9",
-					"modelType": "Entity"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "TE_ConnectorHousing_2470648_9"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
-					"idShort": "TE_ConnectorHousing_2470653_9",
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470653-9",
-					"modelType": "Entity"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "TE_ConnectorHousing_2470653_9"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
-					"idShort": "TE_ConnectorHousing_2470829_9",
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470829_9",
-					"modelType": "Entity"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "TE_ConnectorHousing_2470829_9"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
-					"idShort": "TE_ConnectorHousing_2470839_1",
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470839_1",
-					"modelType": "Entity"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "TE_ConnectorHousing_2470839_1"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
-					"idShort": "TE_GeneralTerminal_1_1703930_1",
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.te.com/TE_GeneralTerminal_1_1703930_1",
-					"modelType": "Entity"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "TE_GeneralTerminal_1_1703930_1"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
-					"idShort": "TE_GeneralTerminal_2141824_1",
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.te.com/TE_GeneralTerminal_2141824_1",
-					"modelType": "Entity"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "TE_GeneralTerminal_2141824_1"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
-					"idShort": "TE_GeneralTerminal_2_1703930_1",
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.te.com/TE_GeneralTerminal_2_1703930_1",
-					"modelType": "Entity"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "TE_GeneralTerminal_2_1703930_1"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
-					"idShort": "TE_GeneralTerminal_5_928999_1",
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.te.com/TE_GeneralTerminal_5_928999_1",
-					"modelType": "Entity"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "TE_GeneralTerminal_5_928999_1"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
-					"idShort": "TE_ConnectorHousing_1418796_3",
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_1418796_3",
-					"modelType": "Entity"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "TE_ConnectorHousing_1418796_3"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
-					"idShort": "TE_ConnectorHousing_2470646_9",
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470646-9",
-					"modelType": "Entity"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "TE_ConnectorHousing_2470646_9"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
-					"idShort": "TE_ConnectorHousing_2470648_9",
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470648-9",
-					"modelType": "Entity"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "TE_ConnectorHousing_2470648_9"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
-					"idShort": "TE_ConnectorHousing_2470653_9",
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470653-9",
-					"modelType": "Entity"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "TE_ConnectorHousing_2470653_9"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
-					"idShort": "TE_ConnectorHousing_2470829_9",
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470829_9",
-					"modelType": "Entity"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "TE_ConnectorHousing_2470829_9"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
-					"idShort": "TE_ConnectorHousing_2470839_1",
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470839_1",
-					"modelType": "Entity"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "TE_ConnectorHousing_2470839_1"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
-					"idShort": "TE_GeneralTerminal_1_1703930_1",
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.te.com/TE_GeneralTerminal_1_1703930_1",
-					"modelType": "Entity"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "TE_GeneralTerminal_1_1703930_1"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
-					"idShort": "TE_GeneralTerminal_2141824_1",
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.te.com/TE_GeneralTerminal_2141824_1",
-					"modelType": "Entity"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "TE_GeneralTerminal_2141824_1"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
-					"idShort": "TE_GeneralTerminal_2_1703930_1",
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.te.com/TE_GeneralTerminal_2_1703930_1",
-					"modelType": "Entity"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "TE_GeneralTerminal_2_1703930_1"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
-					"idShort": "TE_GeneralTerminal_5_928999_1",
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.te.com/TE_GeneralTerminal_5_928999_1",
-					"modelType": "Entity"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "TE_GeneralTerminal_5_928999_1"
+								"value": "Tape"
 							}
 						]
 					},
