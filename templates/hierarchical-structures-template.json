@@ -113,59 +113,10 @@
 			},
 			"statements": [
 				{
-					"idShort": "Stecker Modul 2",
-					"entityType": "SelfManagedEntity",
-					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470648_9"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": ""
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": ""
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "Stecker Modul 2"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
 					"idShort": "Stecker Modul 1",
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470646_9"
+					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470646-9"
 				},
 				{
 					"idShort": "HasPart",
@@ -211,10 +162,59 @@
 					"modelType": "RelationshipElement"
 				},
 				{
+					"idShort": "Stecker Modul 2",
+					"entityType": "SelfManagedEntity",
+					"modelType": "Entity",
+					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470648-9"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": ""
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": ""
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "Stecker Modul 2"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
 					"idShort": "Stecker Modul 3",
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470653_9"
+					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470653-9"
 				},
 				{
 					"idShort": "HasPart",
@@ -1038,55 +1038,6 @@
 							{
 								"type": "Entity",
 								"value": "Tape"
-							}
-						]
-					},
-					"modelType": "RelationshipElement"
-				},
-				{
-					"idShort": "Fixierung",
-					"entityType": "SelfManagedEntity",
-					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorFixture_2108825_1"
-				},
-				{
-					"idShort": "HasPart",
-					"semanticId": {
-						"type": "ExternalReference",
-						"keys": [
-							{
-								"type": "GlobalReference",
-								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
-							}
-						]
-					},
-					"first": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							}
-						]
-					},
-					"second": {
-						"type": "ModelReference",
-						"keys": [
-							{
-								"type": "Submodel",
-								"value": "https://example.com/sm/cable_set_bom"
-							},
-							{
-								"type": "Entity",
-								"value": "CableSet"
-							},
-							{
-								"type": "Entity",
-								"value": "Fixierung"
 							}
 						]
 					},
