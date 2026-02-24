@@ -5,13 +5,11 @@ import { GoToListCard } from 'app/[locale]/_components/GoToListCard';
 import { UploadCard } from 'app/[locale]/_components/UploadCard';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
-import { useIsMobile } from 'lib/hooks/UseBreakpoints';
 import { useEnv } from 'app/EnvProvider';
 
 export default function () {
     const t = useTranslations('pages.dashboard');
     const navigate = useRouter();
-    const isMobile = useIsMobile();
     const env = useEnv();
 
     return (
