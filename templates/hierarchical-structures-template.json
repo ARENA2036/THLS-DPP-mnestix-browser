@@ -1091,6 +1091,104 @@
 						]
 					},
 					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "Fixierung",
+					"entityType": "SelfManagedEntity",
+					"globalAssetId": "https://asset.hellermanntyton.com/products/cable-ties-with-fixing-elements/t50sosec13e/126-00000",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "Fixierung"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
+				},
+				{
+					"idShort": "Tape",
+					"entityType": "SelfManagedEntity",
+					"globalAssetId": "https://asset.hellermanntyton.com/products/electrical-tapes/htape-protect180/712-10002",
+					"modelType": "Entity"
+				},
+				{
+					"idShort": "HasPart",
+					"semanticId": {
+						"type": "ExternalReference",
+						"keys": [
+							{
+								"type": "GlobalReference",
+								"value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+							}
+						]
+					},
+					"first": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							}
+						]
+					},
+					"second": {
+						"type": "ModelReference",
+						"keys": [
+							{
+								"type": "Submodel",
+								"value": "https://example.com/sm/cable_set_bom"
+							},
+							{
+								"type": "Entity",
+								"value": "CableSet"
+							},
+							{
+								"type": "Entity",
+								"value": "Tape"
+							}
+						]
+					},
+					"modelType": "RelationshipElement"
 				}
 			],
 			"entityType": "SelfManagedEntity",
