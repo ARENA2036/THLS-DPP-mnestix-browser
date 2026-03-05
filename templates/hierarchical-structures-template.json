@@ -113,7 +113,13 @@
 			},
 			"statements": [
 				{
-					"idShort": "Stecker Modul 1",
+					"idShort": "TE_ConnectorHousing_2470646-9",
+					"displayName": [
+						{
+							"language": "de",
+							"text": "Stecker Modul 1"
+						}
+					],
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
 					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470646-9"
@@ -162,7 +168,13 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "Stecker Modul 2",
+					"idShort": "TE_ConnectorHousing_2470648-9",
+					"displayName": [
+						{
+							"language": "de",
+							"text": "Stecker Modul 2"
+						}
+					],
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
 					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470648-9"
@@ -211,7 +223,13 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "Stecker Modul 3",
+					"idShort": "TE_ConnectorHousing_2470653-9",
+					"displayName": [
+						{
+							"language": "de",
+							"text": "Stecker Modul 3"
+						}
+					],
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
 					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470653-9"
@@ -260,7 +278,13 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "Umgehäuse",
+					"idShort": "TE_ConnectorHousing_2470829_9",
+					"displayName": [
+						{
+							"language": "de",
+							"text": "Umgehäuse"
+						}
+					],
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
 					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470829_9"
@@ -309,7 +333,13 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "Cover",
+					"idShort": "TE_ConnectorHousing_2470839_1",
+					"displayName": [
+						{
+							"language": "de",
+							"text": "Cover"
+						}
+					],
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
 					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470839_1"
@@ -358,7 +388,13 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "Stecker 10pol",
+					"idShort": "TE_ConnectorHousing_2302475_1",
+					"displayName": [
+						{
+							"language": "de",
+							"text": "Stecker 10pol"
+						}
+					],
 					"entityType": "SelfManagedEntity",
 					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2302475_1",
 					"modelType": "Entity"
@@ -407,7 +443,13 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "Stecker 2pol",
+					"idShort": "TE_ConnectorHousing_1418796_3",
+					"displayName": [
+						{
+							"language": "de",
+							"text": "Stecker 2pol"
+						}
+					],
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
 					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_1418796_3"
@@ -456,7 +498,13 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "Stecker 1pol",
+					"idShort": "TE_ConnectorHousing_2_2310137_1",
+					"displayName": [
+						{
+							"language": "de",
+							"text": "Stecker 1pol"
+						}
+					],
 					"entityType": "SelfManagedEntity",
 					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2_2310137_1",
 					"modelType": "Entity"
@@ -505,7 +553,13 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "MQS-Kontakt (0,13mm²)",
+					"idShort": "TE_GeneralTerminal_2141824_1",
+					"displayName": [
+						{
+							"language": "de",
+							"text": "MQS-Kontakt (0,13mm²)"
+						}
+					],
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
 					"globalAssetId": "https://asset.te.com/TE_GeneralTerminal_2141824_1"
@@ -554,7 +608,13 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "MQS-Kontakt (0,35mm²)",
+					"idShort": "TE_GeneralTerminal_5_928999_1",
+					"displayName": [
+						{
+							"language": "de",
+							"text": "MQS-Kontakt (0,35mm²)"
+						}
+					],
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
 					"globalAssetId": "https://asset.te.com/TE_GeneralTerminal_5_928999_1"
@@ -603,7 +663,13 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "Nano MQS-Kontakt (0,13mm2)",
+					"idShort": "TE_GeneralTerminal_1_1703930_1",
+					"displayName": [
+						{
+							"language": "de",
+							"text": "Nano MQS-Kontakt (0,13mm2)"
+						}
+					],
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
 					"globalAssetId": "https://asset.te.com/TE_GeneralTerminal_1_1703930_1"
@@ -652,7 +718,13 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "Nano MQS-Kontakt (0,35mm²)",
+					"idShort": "TE_GeneralTerminal_2_1703930_1",
+					"displayName": [
+						{
+							"language": "de",
+							"text": "Nano MQS-Kontakt (0,35mm²)"
+						}
+					],
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
 					"globalAssetId": "https://asset.te.com/TE_GeneralTerminal_2_1703930_1"
@@ -701,7 +773,13 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "AMP MCP Kontakt",
+					"idShort": "TE_AMP_MCPContact_348470_1",
+					"displayName": [
+						{
+							"language": "de",
+							"text": "AMP MCP Kontakt"
+						}
+					],
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
 					"globalAssetId": "https://fakeasset.te.com/TE_AMP_MCPContact_348470_1"
@@ -750,7 +828,13 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "MATE-AX Kontakt",
+					"idShort": "TE_MATE_AXContact_1445204_1",
+					"displayName": [
+						{
+							"language": "de",
+							"text": "MATE-AX Kontakt"
+						}
+					],
 					"entityType": "SelfManagedEntity",
 					"modelType": "Entity",
 					"globalAssetId": "https://fakeasset.te.com/TE_MATE_AXContact_1445204_1"
@@ -799,7 +883,13 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "0,35mm² UTP",
+					"idShort": "flry-a-2x035-15-gn-br-ws-br--ring-detail",
+					"displayName": [
+						{
+							"language": "de",
+							"text": "0,35mm² UTP"
+						}
+					],
 					"entityType": "SelfManagedEntity",
 					"globalAssetId": "http://asset.bedia-kabel.de/de/flry-2x/flry-a-2x035-15-gn-br-ws-br--ring-detail",
 					"modelType": "Entity"
@@ -848,7 +938,13 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "0,13mm² Einzelleitung",
+					"idShort": "FLCUAG01RY-013A",
+					"displayName": [
+						{
+							"language": "de",
+							"text": "0,13mm² Einzelleitung"
+						}
+					],
 					"entityType": "SelfManagedEntity",
 					"globalAssetId": "https://asset.leonicables.com/FLCUAG01RY-013A",
 					"modelType": "Entity"
@@ -897,7 +993,13 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "1,5mm² Einzelleitungen",
+					"idShort": "28529",
+					"displayName": [
+						{
+							"language": "de",
+							"text": "1,5mm² Einzelleitungen"
+						}
+					],
 					"entityType": "SelfManagedEntity",
 					"globalAssetId": "https://asset.helukabel.com/de-de/vehicle-cable-flry-m28484/28529",
 					"modelType": "Entity"
@@ -946,7 +1048,13 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "COAX-Leitung",
+					"idShort": "400189",
+					"displayName": [
+						{
+							"language": "de",
+							"text": "COAX-Leitung"
+						}
+					],
 					"entityType": "SelfManagedEntity",
 					"globalAssetId": "https://asset.helukabel.com/de-de/coaxial-cable-rg-174-u-m400189/400189",
 					"modelType": "Entity"
@@ -995,7 +1103,13 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "Tape",
+					"idShort": "51036",
+					"displayName": [
+						{
+							"language": "de",
+							"text": "Tape"
+						}
+					],
 					"entityType": "SelfManagedEntity",
 					"globalAssetId": "https://asset.tesa.com/51036",
 					"modelType": "Entity"
@@ -1044,7 +1158,13 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "Fixierung",
+					"idShort": "126-00000",
+					"displayName": [
+						{
+							"language": "de",
+							"text": "Fixierung"
+						}
+					],
 					"entityType": "SelfManagedEntity",
 					"globalAssetId": "https://asset.hellermanntyton.com/products/cable-ties-with-fixing-elements/t50sosec13e/126-00000",
 					"modelType": "Entity"
@@ -1093,7 +1213,13 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "Tape",
+					"idShort": "712-10002",
+					"displayName": [
+						{
+							"language": "de",
+							"text": "Tape"
+						}
+					],
 					"entityType": "SelfManagedEntity",
 					"globalAssetId": "https://asset.hellermanntyton.com/products/electrical-tapes/htape-protect180/712-10002",
 					"modelType": "Entity"
