@@ -575,7 +575,7 @@
                                     },
                                     "kind": "TemplateQualifier",
                                     "type": "SMT/MappingInfo",
-                                    "value": "Harness.Company_name.#text",
+                                    "value": "Harness.Company_name",
                                     "valueType": "xs:string"
                                 }
                             ],
@@ -849,7 +849,7 @@
                                     },
                                     "kind": "TemplateQualifier",
                                     "type": "SMT/MappingInfo",
-                                    "value": "Harness.Version.#text",
+                                    "value": "Harness.Version",
                                     "valueType": "xs:string"
                                 }
                             ],
@@ -1059,7 +1059,7 @@
                                     },
                                     "kind": "TemplateQualifier",
                                     "type": "SMT/MappingInfo",
-                                    "value": "Harness.Description.#text",
+                                    "value": "Harness.Description",
                                     "valueType": "xs:string"
                                 }
                             ],
@@ -1232,7 +1232,7 @@
                                     },
                                     "kind": "TemplateQualifier",
                                     "type": "SMT/MappingInfo",
-                                    "value": "Harness.Description.#text",
+                                    "value": "Harness.Description",
                                     "valueType": "xs:string"
                                 }
                             ],

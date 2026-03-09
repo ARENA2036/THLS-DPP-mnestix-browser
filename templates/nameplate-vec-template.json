@@ -120,7 +120,7 @@
                     },
                     "kind": "TemplateQualifier",
                     "type": "SMT/MappingInfo",
-                    "value": "DocumentVersion.CompanyName.#text",
+                    "value": "DocumentVersion.CompanyName",
                     "valueType": "xs:string"
                 }
             ],
@@ -171,7 +171,7 @@
                     },
                     "kind": "TemplateQualifier",
                     "type": "SMT/MappingInfo",
-                    "value": "DocumentVersion.description.#text",
+                    "value": "DocumentVersion.description",
                     "valueType": "xs:string"
                 }
             ],
@@ -1494,7 +1494,7 @@
                     },
                     "kind": "TemplateQualifier",
                     "type": "SMT/MappingInfo",
-                    "value": "DocumentVersion.abbreviation.#text",
+                    "value": "DocumentVersion.abbreviation",
                     "valueType": "xs:string"
                 }
             ],
@@ -1695,7 +1695,7 @@
                     },
                     "kind": "TemplateQualifier",
                     "type": "SMT/MappingInfo",
-                    "value": "Creation.creationDate.#text",
+                    "value": "Creation.creationDate",
                     "valueType": "xs:string"
                 }
             ],
@@ -1746,7 +1746,7 @@
                     },
                     "kind": "TemplateQualifier",
                     "type": "SMT/MappingInfo",
-                    "value": "DocumentVersion.documentVersion.#text",
+                    "value": "DocumentVersion.documentVersion",
                     "valueType": "xs:string"
                 }
             ],

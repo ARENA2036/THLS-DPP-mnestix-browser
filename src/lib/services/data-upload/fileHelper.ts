@@ -4,7 +4,7 @@ import { FileType, FileMetadata } from './types';
 /**
  * Helper function to safely get nested values from the parsed data
  * @param obj The object to traverse
- * @param path Dot-separated path to the value (e.g., 'Harness.Company_name.#text')
+ * @param path Dot-separated path to the value (e.g., 'Harness.Company_name')
  * @returns The string value at the path, or null if not found
  */
 export function getNestedValue(obj: unknown, path: string): string | null {
@@ -32,16 +32,14 @@ export function parseXmlToJson(xmlContent: string): Record<string, unknown> {
     const xmlDoc = parser.parseFromString(xmlContent, 'text/xml');
 
     function xmlToJson(node: Element): unknown {
-        const obj: Record<string, unknown> = {};
+        let obj: Record<string, unknown> | string = {};
 
-        // Handle attributes
+        // Handle attributes — flatten into obj with `_` prefix
         if (node.attributes && node.attributes.length > 0) {
-            const attributes: Record<string, string> = {};
             for (let i = 0; i < node.attributes.length; i++) {
                 const attr = node.attributes[i];
-                attributes[attr.nodeName] = attr.nodeValue || '';
+                (obj as Record<string, unknown>)[`_${attr.nodeName}`] = attr.nodeValue || '';
             }
-            obj['@attributes'] = attributes;
         }
 
         // Handle child nodes
@@ -54,21 +52,22 @@ export function parseXmlToJson(xmlContent: string): Record<string, unknown> {
                     const nodeName = childNode.nodeName;
                     const value = xmlToJson(childNode);
 
-                    if (obj[nodeName]) {
+                    const record = obj as Record<string, unknown>;
+                    if (record[nodeName]) {
                         // If property already exists, make it an array
-                        if (Array.isArray(obj[nodeName])) {
-                            (obj[nodeName] as unknown[]).push(value);
+                        if (Array.isArray(record[nodeName])) {
+                            (record[nodeName] as unknown[]).push(value);
                         } else {
-                            obj[nodeName] = [obj[nodeName], value];
+                            record[nodeName] = [record[nodeName], value];
                         }
                     } else {
-                        obj[nodeName] = value;
+                        record[nodeName] = value;
                     }
                 } else if (childNode.nodeType === 3) {
                     // Text node
                     const text = childNode.nodeValue?.trim();
                     if (text) {
-                        obj['#text'] = text;
+                        obj = text;
                     }
                 }
             }
@@ -121,12 +120,12 @@ export function extractKblMetadata(data: Record<string, unknown>): FileMetadata 
     // Extract metadata only from Harness element
     const harness = data['Harness'] as Record<string, unknown> | undefined;
     if (harness) {
-        companyName = getNestedValue(harness, 'Company_name.#text');
-        partName = getNestedValue(harness, 'Part_number.#text');
+        companyName = getNestedValue(harness, 'Company_name');
+        partName = getNestedValue(harness, 'Part_number');
 
         // Fallback to Description if Part_number is not available
         if (!partName) {
-            partName = getNestedValue(harness, 'Description.#text');
+            partName = getNestedValue(harness, 'Description');
         }
     }
 
@@ -139,8 +138,8 @@ export function extractKblMetadata(data: Record<string, unknown>): FileMetadata 
  * @returns Company name and part name
  */
 export function extractVecMetadata(data: Record<string, unknown>): FileMetadata {
-    const companyName = getNestedValue(data, 'DocumentVersion.CompanyName.#text');
-    const partName = getNestedValue(data, 'GeneratingSystemName.#text');
+    const companyName = getNestedValue(data, 'DocumentVersion.CompanyName');
+    const partName = getNestedValue(data, 'GeneratingSystemName');
     return { companyName, partName };
 }
 
