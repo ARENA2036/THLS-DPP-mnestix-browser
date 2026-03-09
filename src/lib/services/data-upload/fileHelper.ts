@@ -32,13 +32,17 @@ export function parseXmlToJson(xmlContent: string): Record<string, unknown> {
     const xmlDoc = parser.parseFromString(xmlContent, 'text/xml');
 
     function xmlToJson(node: Element): unknown {
-        let obj: Record<string, unknown> | string = {};
+        const obj: Record<string, unknown> = {};
+        let hasAttributes = false;
+        let hasElementChildren = false;
+        let textContent = '';
 
         // Handle attributes — flatten into obj with `_` prefix
         if (node.attributes && node.attributes.length > 0) {
             for (let i = 0; i < node.attributes.length; i++) {
                 const attr = node.attributes[i];
-                (obj as Record<string, unknown>)[`_${attr.nodeName}`] = attr.nodeValue || '';
+                obj[`_${attr.nodeName}`] = attr.nodeValue || '';
+                hasAttributes = true;
             }
         }
 
@@ -49,28 +53,37 @@ export function parseXmlToJson(xmlContent: string): Record<string, unknown> {
                 const childNode = child as Element;
                 if (childNode.nodeType === 1) {
                     // Element node
+                    hasElementChildren = true;
                     const nodeName = childNode.nodeName;
                     const value = xmlToJson(childNode);
 
-                    const record = obj as Record<string, unknown>;
-                    if (record[nodeName]) {
+                    if (obj[nodeName]) {
                         // If property already exists, make it an array
-                        if (Array.isArray(record[nodeName])) {
-                            (record[nodeName] as unknown[]).push(value);
+                        if (Array.isArray(obj[nodeName])) {
+                            (obj[nodeName] as unknown[]).push(value);
                         } else {
-                            record[nodeName] = [record[nodeName], value];
+                            obj[nodeName] = [obj[nodeName], value];
                         }
                     } else {
-                        record[nodeName] = value;
+                        obj[nodeName] = value;
                     }
                 } else if (childNode.nodeType === 3) {
                     // Text node
                     const text = childNode.nodeValue?.trim();
                     if (text) {
-                        obj = text;
+                        textContent += text;
                     }
                 }
             }
+        }
+
+        // Only return a raw string when the element has purely text content
+        // (no attributes and no element children). Otherwise keep the object.
+        if (textContent) {
+            if (!hasAttributes && !hasElementChildren) {
+                return textContent;
+            }
+            obj['__text'] = textContent;
         }
 
         return obj;

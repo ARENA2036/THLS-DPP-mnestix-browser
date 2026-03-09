@@ -1059,7 +1059,7 @@
                                     },
                                     "kind": "TemplateQualifier",
                                     "type": "SMT/MappingInfo",
-                                    "value": "DocumentVersion.description",
+                                    "value": "DocumentVersion.Description",
                                     "valueType": "xs:string"
                                 }
                             ],
@@ -1247,7 +1247,7 @@
                                     },
                                     "kind": "TemplateQualifier",
                                     "type": "SMT/MappingInfo",
-                                    "value": "DocumentVersion.description",
+                                    "value": "DocumentVersion.Description",
                                     "valueType": "xs:string"
                                 }
                             ],

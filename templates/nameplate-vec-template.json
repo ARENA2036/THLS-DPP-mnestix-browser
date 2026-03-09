@@ -171,7 +171,7 @@
                     },
                     "kind": "TemplateQualifier",
                     "type": "SMT/MappingInfo",
-                    "value": "DocumentVersion.description",
+                    "value": "DocumentVersion.Description",
                     "valueType": "xs:string"
                 }
             ],
@@ -1494,7 +1494,7 @@
                     },
                     "kind": "TemplateQualifier",
                     "type": "SMT/MappingInfo",
-                    "value": "DocumentVersion.abbreviation",
+                    "value": "DocumentVersion.Abbreviation",
                     "valueType": "xs:string"
                 }
             ],
@@ -1695,7 +1695,7 @@
                     },
                     "kind": "TemplateQualifier",
                     "type": "SMT/MappingInfo",
-                    "value": "Creation.creationDate",
+                    "value": "Creation.CreationDate",
                     "valueType": "xs:string"
                 }
             ],
@@ -1746,7 +1746,7 @@
                     },
                     "kind": "TemplateQualifier",
                     "type": "SMT/MappingInfo",
-                    "value": "DocumentVersion.documentVersion",
+                    "value": "DocumentVersion.DocumentVersion",
                     "valueType": "xs:string"
                 }
             ],
