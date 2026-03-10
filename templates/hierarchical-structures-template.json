@@ -161,7 +161,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "Stecker Modul 1"
+								"value": "TE_ConnectorHousing_2470646-9"
 							}
 						]
 					},
@@ -216,7 +216,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "Stecker Modul 2"
+								"value": "TE_ConnectorHousing_2470648-9"
 							}
 						]
 					},
@@ -271,7 +271,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "Stecker Modul 3"
+								"value": "TE_ConnectorHousing_2470653-9"
 							}
 						]
 					},
@@ -326,7 +326,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "Umgehäuse"
+								"value": "TE_ConnectorHousing_2470829_9"
 							}
 						]
 					},
@@ -381,7 +381,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "Cover"
+								"value": "TE_ConnectorHousing_2470839_1"
 							}
 						]
 					},
@@ -436,7 +436,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "Stecker 10pol"
+								"value": "TE_ConnectorHousing_2302475_1"
 							}
 						]
 					},
@@ -491,7 +491,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "Stecker 2pol"
+								"value": "TE_ConnectorHousing_1418796_3"
 							}
 						]
 					},
@@ -546,7 +546,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "Stecker 1pol"
+								"value": "TE_ConnectorHousing_2_2310137_1"
 							}
 						]
 					},
@@ -601,7 +601,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "MQS-Kontakt (0,13mm²)"
+								"value": "TE_GeneralTerminal_2141824_1"
 							}
 						]
 					},
@@ -656,7 +656,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "MQS-Kontakt (0,35mm²)"
+								"value": "TE_GeneralTerminal_5_928999_1"
 							}
 						]
 					},
@@ -711,7 +711,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "Nano MQS-Kontakt (0,13mm2)"
+								"value": "TE_GeneralTerminal_1_1703930_1"
 							}
 						]
 					},
@@ -766,7 +766,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "Nano MQS-Kontakt (0,35mm²)"
+								"value": "TE_GeneralTerminal_2_1703930_1"
 							}
 						]
 					},
@@ -821,7 +821,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "AMP MCP Kontakt"
+								"value": "TE_AMP_MCPContact_348470_1"
 							}
 						]
 					},
@@ -876,7 +876,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "MATE-AX Kontakt"
+								"value": "TE_MATE_AXContact_1445204_1"
 							}
 						]
 					},
@@ -931,7 +931,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "0,35mm² UTP"
+								"value": "flry-a-2x035-15-gn-br-ws-br--ring-detail"
 							}
 						]
 					},
@@ -986,7 +986,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "0,13mm² Einzelleitung"
+								"value": "FLCUAG01RY-013A"
 							}
 						]
 					},
@@ -1041,7 +1041,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "1,5mm² Einzelleitungen"
+								"value": "28529"
 							}
 						]
 					},
@@ -1096,7 +1096,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "COAX-Leitung"
+								"value": "400189"
 							}
 						]
 					},
@@ -1151,7 +1151,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "Tape"
+								"value": "51036"
 							}
 						]
 					},
@@ -1206,7 +1206,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "Fixierung"
+								"value": "126-00000"
 							}
 						]
 					},
@@ -1261,7 +1261,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "Tape"
+								"value": "712-10002"
 							}
 						]
 					},
