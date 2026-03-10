@@ -159,6 +159,7 @@ export const theme: ThemeOptions = {
     productLogo: { logo: '' },
     customColors: {
         menuBackground: { main: '#005962' },
+        materialCompositionSlices: ['#cc3300', '#a50d00', '#1e73be', '#66aaff', '#4831b0'],
     },
 };
 
@@ -172,6 +173,7 @@ declare module '@mui/material/styles' {
         };
         customColors: {
             menuBackground: PaletteColor;
+            materialCompositionSlices: string[];
         };
     }
 
@@ -181,6 +183,7 @@ declare module '@mui/material/styles' {
         };
         customColors?: {
             menuBackground?: PaletteColorOptions;
+            materialCompositionSlices?: string[];
         };
     }
 }

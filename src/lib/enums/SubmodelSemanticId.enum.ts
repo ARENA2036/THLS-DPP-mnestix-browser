@@ -14,4 +14,5 @@ export enum SubmodelSemanticIdEnum {
     BillOfApplications = 'https://xitaso.com/BillOfApplications',
     TechnicalDataV11 = 'https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/1',
     TechnicalDataV12 = 'https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2',
+    MaterialComposition = 'https://admin-shell.io/idta/MaterialComposition/1/0/Submodel',
 }

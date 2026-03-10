@@ -1,0 +1,1046 @@
+{
+    "modelType": "Submodel",
+    "kind": "Instance",
+    "semanticId": {
+        "keys": [
+            {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/MaterialComposition/1/0/Submodel"
+            }
+        ],
+        "type": "ExternalReference"
+    },
+    "administration": {
+        "revision": "0",
+        "version": "1"
+    },
+    "id": "MaterialComposition_Template_6a67e0d0-7db4-4cb7-9640-a2eea8dce2f8",
+    "qualifiers": [
+        {
+            "kind": "ConceptQualifier",
+            "type": "mnestixSubmodelIdShort",
+            "value": "MaterialComposition",
+            "valueType": "xs:string"
+        },
+        {
+            "kind": "ConceptQualifier",
+            "type": "mnestixSubmodelId",
+            "value": "https://admin-shell.io/idta/MaterialComposition/1/0/Submodel",
+            "valueType": "xs:string"
+        },
+        {
+            "kind": "ConceptQualifier",
+            "type": "displayName",
+            "value": "MaterialComposition",
+            "valueType": "xs:string"
+        }
+    ],
+    "description": [
+        {
+            "language": "en",
+            "text": "Contains product materials, and hazardous substances for a cable set DPP."
+        }
+    ],
+    "idShort": "MaterialComposition",
+    "submodelElements": [
+        {
+            "modelType": "SubmodelElementCollection",
+            "semanticId": {
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/MaterialComposition/ProductMaterials/1/0"
+                    }
+                ],
+                "type": "ExternalReference"
+            },
+            "qualifiers": [
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                            }
+                        ],
+                        "type": "ExternalReference"
+                    },
+                    "kind": "TemplateQualifier",
+                    "type": "SMT/Cardinality",
+                    "value": "OneToMany",
+                    "valueType": "xs:string"
+                }
+            ],
+            "description": [
+                {
+                    "language": "en",
+                    "text": "List of product material entries."
+                }
+            ],
+            "idShort": "ProductMaterials",
+            "value": [
+                {
+                    "modelType": "SubmodelElementCollection",
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/MaterialComposition/ProductMaterial/1/0"
+                            }
+                        ],
+                        "type": "ExternalReference"
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ],
+                                "type": "ExternalReference"
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "value": "OneToMany",
+                            "valueType": "xs:string"
+                        }
+                    ],
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Single product material entry."
+                        }
+                    ],
+                    "idShort": "ProductMaterial",
+                    "value": [
+                        {
+                            "modelType": "Property",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/MaterialComposition/ProductMaterial/ProductMaterialLocation/1/0"
+                                    }
+                                ],
+                                "type": "ExternalReference"
+                            },
+                            "value": "Module A",
+                            "valueType": "xs:string",
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "value": "One",
+                                    "valueType": "xs:string"
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/ExampleValue",
+                                    "value": "Module A",
+                                    "valueType": "xs:string"
+                                }
+                            ],
+                            "category": "PARAMETER",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Location of the product material inside the product."
+                                }
+                            ],
+                            "idShort": "ProductMaterialLocation"
+                        },
+                        {
+                            "modelType": "Property",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/MaterialComposition/ProductMaterial/ProductMaterialIdentifier/1/0"
+                                    }
+                                ],
+                                "type": "ExternalReference"
+                            },
+                            "value": "BM-001",
+                            "valueType": "xs:string",
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "value": "One",
+                                    "valueType": "xs:string"
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/ExampleValue",
+                                    "value": "BM-001",
+                                    "valueType": "xs:string"
+                                }
+                            ],
+                            "category": "PARAMETER",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Identifier of the product material entry."
+                                }
+                            ],
+                            "idShort": "ProductMaterialIdentifier"
+                        },
+                        {
+                            "modelType": "Property",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/MaterialComposition/ProductMaterial/ProductMaterialName/1/0"
+                                    }
+                                ],
+                                "type": "ExternalReference"
+                            },
+                            "value": "Lithium Cobalt Oxide",
+                            "valueType": "xs:string",
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "value": "One",
+                                    "valueType": "xs:string"
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/ExampleValue",
+                                    "value": "Lithium Cobalt Oxide",
+                                    "valueType": "xs:string"
+                                }
+                            ],
+                            "category": "PARAMETER",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Name of the product material."
+                                }
+                            ],
+                            "idShort": "ProductMaterialName"
+                        },
+                        {
+                            "modelType": "Property",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/MaterialComposition/ProductMaterial/ProductMaterialMass/1/0"
+                                    }
+                                ],
+                                "type": "ExternalReference"
+                            },
+                            "value": "0.42",
+                            "valueType": "xs:float",
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "value": "One",
+                                    "valueType": "xs:string"
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/ExampleValue",
+                                    "value": "0.42",
+                                    "valueType": "xs:string"
+                                }
+                            ],
+                            "category": "PARAMETER",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Mass of the product material in kilograms."
+                                }
+                            ],
+                            "idShort": "ProductMaterialMass"
+                        },
+                        {
+                            "modelType": "Property",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/MaterialComposition/ProductMaterial/IsCriticalRawMaterial/1/0"
+                                    }
+                                ],
+                                "type": "ExternalReference"
+                            },
+                            "value": "true",
+                            "valueType": "xs:boolean",
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "value": "One",
+                                    "valueType": "xs:string"
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/ExampleValue",
+                                    "value": "true",
+                                    "valueType": "xs:string"
+                                }
+                            ],
+                            "category": "PARAMETER",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Flag indicating if this product material is a critical raw material."
+                                }
+                            ],
+                            "idShort": "IsCriticalRawMaterial"
+                        }
+                    ]
+                },
+                {
+                    "modelType": "SubmodelElementCollection",
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/MaterialComposition/ProductMaterial/1/0"
+                            }
+                        ],
+                        "type": "ExternalReference"
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ],
+                                "type": "ExternalReference"
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "value": "OneToMany",
+                            "valueType": "xs:string"
+                        }
+                    ],
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Single product material entry."
+                        }
+                    ],
+                    "idShort": "ProductMaterial",
+                    "value": [
+                        {
+                            "modelType": "Property",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/MaterialComposition/ProductMaterial/ProductMaterialLocation/1/0"
+                                    }
+                                ],
+                                "type": "ExternalReference"
+                            },
+                            "value": "Conductor Core",
+                            "valueType": "xs:string",
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "value": "One",
+                                    "valueType": "xs:string"
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/ExampleValue",
+                                    "value": "Conductor Core",
+                                    "valueType": "xs:string"
+                                }
+                            ],
+                            "category": "PARAMETER",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Location of the product material inside the product."
+                                }
+                            ],
+                            "idShort": "ProductMaterialLocation"
+                        },
+                        {
+                            "modelType": "Property",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/MaterialComposition/ProductMaterial/ProductMaterialIdentifier/1/0"
+                                    }
+                                ],
+                                "type": "ExternalReference"
+                            },
+                            "value": "BM-002",
+                            "valueType": "xs:string",
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "value": "One",
+                                    "valueType": "xs:string"
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/ExampleValue",
+                                    "value": "BM-002",
+                                    "valueType": "xs:string"
+                                }
+                            ],
+                            "category": "PARAMETER",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Identifier of the product material entry."
+                                }
+                            ],
+                            "idShort": "ProductMaterialIdentifier"
+                        },
+                        {
+                            "modelType": "Property",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/MaterialComposition/ProductMaterial/ProductMaterialName/1/0"
+                                    }
+                                ],
+                                "type": "ExternalReference"
+                            },
+                            "value": "Copper",
+                            "valueType": "xs:string",
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "value": "One",
+                                    "valueType": "xs:string"
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/ExampleValue",
+                                    "value": "Copper",
+                                    "valueType": "xs:string"
+                                }
+                            ],
+                            "category": "PARAMETER",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Name of the product material."
+                                }
+                            ],
+                            "idShort": "ProductMaterialName"
+                        },
+                        {
+                            "modelType": "Property",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/MaterialComposition/ProductMaterial/ProductMaterialMass/1/0"
+                                    }
+                                ],
+                                "type": "ExternalReference"
+                            },
+                            "value": "1.35",
+                            "valueType": "xs:float",
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "value": "One",
+                                    "valueType": "xs:string"
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/ExampleValue",
+                                    "value": "1.35",
+                                    "valueType": "xs:string"
+                                }
+                            ],
+                            "category": "PARAMETER",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Mass of the product material in kilograms."
+                                }
+                            ],
+                            "idShort": "ProductMaterialMass"
+                        },
+                        {
+                            "modelType": "Property",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/MaterialComposition/ProductMaterial/IsCriticalRawMaterial/1/0"
+                                    }
+                                ],
+                                "type": "ExternalReference"
+                            },
+                            "value": "false",
+                            "valueType": "xs:boolean",
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "value": "One",
+                                    "valueType": "xs:string"
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/ExampleValue",
+                                    "value": "false",
+                                    "valueType": "xs:string"
+                                }
+                            ],
+                            "category": "PARAMETER",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Flag indicating if this product material is a critical raw material."
+                                }
+                            ],
+                            "idShort": "IsCriticalRawMaterial"
+                        }
+                    ]
+                },
+                {
+                    "modelType": "SubmodelElementCollection",
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/MaterialComposition/ProductMaterial/1/0"
+                            }
+                        ],
+                        "type": "ExternalReference"
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ],
+                                "type": "ExternalReference"
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "value": "OneToMany",
+                            "valueType": "xs:string"
+                        }
+                    ],
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Single product material entry."
+                        }
+                    ],
+                    "idShort": "ProductMaterial",
+                    "value": [
+                        {
+                            "modelType": "Property",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/MaterialComposition/ProductMaterial/ProductMaterialLocation/1/0"
+                                    }
+                                ],
+                                "type": "ExternalReference"
+                            },
+                            "value": "Insulation Jacket",
+                            "valueType": "xs:string",
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "value": "One",
+                                    "valueType": "xs:string"
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/ExampleValue",
+                                    "value": "Insulation Jacket",
+                                    "valueType": "xs:string"
+                                }
+                            ],
+                            "category": "PARAMETER",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Location of the product material inside the product."
+                                }
+                            ],
+                            "idShort": "ProductMaterialLocation"
+                        },
+                        {
+                            "modelType": "Property",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/MaterialComposition/ProductMaterial/ProductMaterialIdentifier/1/0"
+                                    }
+                                ],
+                                "type": "ExternalReference"
+                            },
+                            "value": "BM-003",
+                            "valueType": "xs:string",
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "value": "One",
+                                    "valueType": "xs:string"
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/ExampleValue",
+                                    "value": "BM-003",
+                                    "valueType": "xs:string"
+                                }
+                            ],
+                            "category": "PARAMETER",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Identifier of the product material entry."
+                                }
+                            ],
+                            "idShort": "ProductMaterialIdentifier"
+                        },
+                        {
+                            "modelType": "Property",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/MaterialComposition/ProductMaterial/ProductMaterialName/1/0"
+                                    }
+                                ],
+                                "type": "ExternalReference"
+                            },
+                            "value": "Polyvinyl Chloride (PVC)",
+                            "valueType": "xs:string",
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "value": "One",
+                                    "valueType": "xs:string"
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/ExampleValue",
+                                    "value": "Polyvinyl Chloride (PVC)",
+                                    "valueType": "xs:string"
+                                }
+                            ],
+                            "category": "PARAMETER",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Name of the product material."
+                                }
+                            ],
+                            "idShort": "ProductMaterialName"
+                        },
+                        {
+                            "modelType": "Property",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/MaterialComposition/ProductMaterial/ProductMaterialMass/1/0"
+                                    }
+                                ],
+                                "type": "ExternalReference"
+                            },
+                            "value": "0.58",
+                            "valueType": "xs:float",
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "value": "One",
+                                    "valueType": "xs:string"
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/ExampleValue",
+                                    "value": "0.58",
+                                    "valueType": "xs:string"
+                                }
+                            ],
+                            "category": "PARAMETER",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Mass of the product material in kilograms."
+                                }
+                            ],
+                            "idShort": "ProductMaterialMass"
+                        },
+                        {
+                            "modelType": "Property",
+                            "semanticId": {
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/MaterialComposition/ProductMaterial/IsCriticalRawMaterial/1/0"
+                                    }
+                                ],
+                                "type": "ExternalReference"
+                            },
+                            "value": "false",
+                            "valueType": "xs:boolean",
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "value": "One",
+                                    "valueType": "xs:string"
+                                },
+                                {
+                                    "semanticId": {
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                            }
+                                        ],
+                                        "type": "ExternalReference"
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/ExampleValue",
+                                    "value": "false",
+                                    "valueType": "xs:string"
+                                }
+                            ],
+                            "category": "PARAMETER",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Flag indicating if this product material is a critical raw material."
+                                }
+                            ],
+                            "idShort": "IsCriticalRawMaterial"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "modelType": "SubmodelElementCollection",
+            "semanticId": {
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/MaterialComposition/HazardousSubstances/1/0"
+                    }
+                ],
+                "type": "ExternalReference"
+            },
+            "qualifiers": [
+                {
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                            }
+                        ],
+                        "type": "ExternalReference"
+                    },
+                    "kind": "TemplateQualifier",
+                    "type": "SMT/Cardinality",
+                    "value": "ZeroToMany",
+                    "valueType": "xs:string"
+                }
+            ],
+            "description": [
+                {
+                    "language": "en",
+                    "text": "List of hazardous substance entries."
+                }
+            ],
+            "idShort": "HazardousSubstances",
+            "value": []
+        }
+    ]
+}
