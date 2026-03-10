@@ -25,6 +25,10 @@ const TEMPLATES = [
         envVarName: 'FILE_UPLOAD_BLUEPRINTS_VEC',
     },
     {
+        filePath: path.join(__dirname, '../templates/material-composition-template.json'),
+        envVarName: 'FILE_UPLOAD_BLUEPRINTS_VEC',
+    },
+    {
         filePath: path.join(__dirname, '../templates/nameplate-kbl-template.json'),
         envVarName: 'FILE_UPLOAD_BLUEPRINTS_KBL',
     },
@@ -34,6 +38,10 @@ const TEMPLATES = [
     },
     {
         filePath: path.join(__dirname, '../templates/hierarchical-structures-template.json'),
+        envVarName: 'FILE_UPLOAD_BLUEPRINTS_KBL',
+    },
+    {
+        filePath: path.join(__dirname, '../templates/material-composition-template.json'),
         envVarName: 'FILE_UPLOAD_BLUEPRINTS_KBL',
     },
 ];
