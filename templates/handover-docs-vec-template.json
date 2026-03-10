@@ -575,7 +575,7 @@
                                     },
                                     "kind": "TemplateQualifier",
                                     "type": "SMT/MappingInfo",
-                                    "value": "DocumentVersion.CompanyName.#text",
+                                    "value": "DocumentVersion.CompanyName",
                                     "valueType": "xs:string"
                                 }
                             ],
@@ -849,7 +849,7 @@
                                     },
                                     "kind": "TemplateQualifier",
                                     "type": "SMT/MappingInfo",
-                                    "value": "DocumentVersion.DocumentVersion.#text",
+                                    "value": "DocumentVersion.DocumentVersion",
                                     "valueType": "xs:string"
                                 }
                             ],
@@ -1059,7 +1059,7 @@
                                     },
                                     "kind": "TemplateQualifier",
                                     "type": "SMT/MappingInfo",
-                                    "value": "DocumentVersion.description.#text",
+                                    "value": "DocumentVersion.Description",
                                     "valueType": "xs:string"
                                 }
                             ],
@@ -1180,7 +1180,7 @@
                                     },
                                     "kind": "TemplateQualifier",
                                     "type": "SMT/MappingInfo",
-                                    "value": "DocumentVersion.Approval.status.#text",
+                                    "value": "DocumentVersion.Approval.status",
                                     "valueType": "xs:string"
                                 }
                             ],
@@ -1247,7 +1247,7 @@
                                     },
                                     "kind": "TemplateQualifier",
                                     "type": "SMT/MappingInfo",
-                                    "value": "DocumentVersion.description.#text",
+                                    "value": "DocumentVersion.Description",
                                     "valueType": "xs:string"
                                 }
                             ],

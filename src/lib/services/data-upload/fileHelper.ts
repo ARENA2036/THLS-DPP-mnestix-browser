@@ -4,7 +4,7 @@ import { FileType, FileMetadata } from './types';
 /**
  * Helper function to safely get nested values from the parsed data
  * @param obj The object to traverse
- * @param path Dot-separated path to the value (e.g., 'Harness.Company_name.#text')
+ * @param path Dot-separated path to the value (e.g., 'Harness.Company_name')
  * @returns The string value at the path, or null if not found
  */
 export function getNestedValue(obj: unknown, path: string): string | null {
@@ -33,15 +33,17 @@ export function parseXmlToJson(xmlContent: string): Record<string, unknown> {
 
     function xmlToJson(node: Element): unknown {
         const obj: Record<string, unknown> = {};
+        let hasAttributes = false;
+        let hasElementChildren = false;
+        let textContent = '';
 
-        // Handle attributes
+        // Handle attributes — flatten into obj with `_` prefix
         if (node.attributes && node.attributes.length > 0) {
-            const attributes: Record<string, string> = {};
             for (let i = 0; i < node.attributes.length; i++) {
                 const attr = node.attributes[i];
-                attributes[attr.nodeName] = attr.nodeValue || '';
+                obj[`_${attr.nodeName}`] = attr.nodeValue || '';
+                hasAttributes = true;
             }
-            obj['@attributes'] = attributes;
         }
 
         // Handle child nodes
@@ -51,6 +53,7 @@ export function parseXmlToJson(xmlContent: string): Record<string, unknown> {
                 const childNode = child as Element;
                 if (childNode.nodeType === 1) {
                     // Element node
+                    hasElementChildren = true;
                     const nodeName = childNode.nodeName;
                     const value = xmlToJson(childNode);
 
@@ -68,10 +71,19 @@ export function parseXmlToJson(xmlContent: string): Record<string, unknown> {
                     // Text node
                     const text = childNode.nodeValue?.trim();
                     if (text) {
-                        obj['#text'] = text;
+                        textContent += text;
                     }
                 }
             }
+        }
+
+        // Only return a raw string when the element has purely text content
+        // (no attributes and no element children). Otherwise keep the object.
+        if (textContent) {
+            if (!hasAttributes && !hasElementChildren) {
+                return textContent;
+            }
+            obj['__text'] = textContent;
         }
 
         return obj;
@@ -121,12 +133,12 @@ export function extractKblMetadata(data: Record<string, unknown>): FileMetadata 
     // Extract metadata only from Harness element
     const harness = data['Harness'] as Record<string, unknown> | undefined;
     if (harness) {
-        companyName = getNestedValue(harness, 'Company_name.#text');
-        partName = getNestedValue(harness, 'Part_number.#text');
+        companyName = getNestedValue(harness, 'Company_name');
+        partName = getNestedValue(harness, 'Part_number');
 
         // Fallback to Description if Part_number is not available
         if (!partName) {
-            partName = getNestedValue(harness, 'Description.#text');
+            partName = getNestedValue(harness, 'Description');
         }
     }
 
@@ -139,8 +151,8 @@ export function extractKblMetadata(data: Record<string, unknown>): FileMetadata 
  * @returns Company name and part name
  */
 export function extractVecMetadata(data: Record<string, unknown>): FileMetadata {
-    const companyName = getNestedValue(data, 'DocumentVersion.CompanyName.#text');
-    const partName = getNestedValue(data, 'GeneratingSystemName.#text');
+    const companyName = getNestedValue(data, 'DocumentVersion.CompanyName');
+    const partName = getNestedValue(data, 'GeneratingSystemName');
     return { companyName, partName };
 }
 
