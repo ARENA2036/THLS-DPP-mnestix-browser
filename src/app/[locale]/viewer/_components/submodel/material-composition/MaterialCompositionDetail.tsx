@@ -1,4 +1,4 @@
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { DataRow } from 'components/basics/DataRow';
 import { KeyTypes, Property, SubmodelElementChoice, SubmodelElementCollection } from 'lib/api/aas/models';
 import { cutDecimalPlaces, stringToFloat } from 'lib/util/NumberUtil';
@@ -69,7 +69,6 @@ export function extractMaterialPieData(
 
 export function MaterialCompositionDetail({ submodel }: SubmodelVisualizationProps) {
     const t = useTranslations('components.materialComposition');
-    const theme = useTheme();
 
     const [activeSlice, setActiveSlice] = useState<number>(-1);
 
@@ -86,7 +85,7 @@ export function MaterialCompositionDetail({ submodel }: SubmodelVisualizationPro
 
     const isHazardousSubstancesEmpty = !hazardousSubstancesCollection?.value?.length;
 
-    const colors = theme.customColors.materialCompositionSlices;
+    const colors = ['#cc3300', '#a50d00', '#1e73be', '#66aaff', '#4831b0'];
 
     const chartDataWithStyle = useMemo(
         () =>

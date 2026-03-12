@@ -159,7 +159,6 @@ export const theme: ThemeOptions = {
     productLogo: { logo: '' },
     customColors: {
         menuBackground: { main: '#005962' },
-        materialCompositionSlices: ['#cc3300', '#a50d00', '#1e73be', '#66aaff', '#4831b0'],
     },
 };
 
