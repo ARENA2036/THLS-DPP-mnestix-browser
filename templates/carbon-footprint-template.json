@@ -1,0 +1,2199 @@
+{
+    "idShort": "CarbonFootprint",
+    "description": [
+        {
+            "language": "en",
+            "text": "The Submodel provides the means to access the Carbon Footprint of the asset."
+        }
+    ],
+    "id": "CarbonFootprint_Template_da06f643-4c63-4740-ac2f-15c3b5d8ca6c",
+    "kind": "Instance",
+    "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+            {
+                "type": "GlobalReference",
+                "value": "0173-1#01-AHE712#001"
+            }
+        ]
+    },
+    "submodelElements": [
+        {
+            "idShort": "ProductCarbonFootprint A4",
+            "description": [
+                {
+                    "language": "en",
+                    "text": "Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use"
+                }
+            ],
+            "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "0173-1#01-AHE716#001"
+                    }
+                ]
+            },
+            "qualifiers": [
+                {
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                            }
+                        ]
+                    },
+                    "kind": "TemplateQualifier",
+                    "type": "SMT/Cardinality",
+                    "valueType": "xs:string",
+                    "value": "ZeroToMany"
+                }
+            ],
+            "value": [
+                {
+                    "category": "PARAMETER",
+                    "idShort": "PCFCalculationMethod",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Standard, method for determining the greenhouse gas emissions of a product"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABG854#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "GHG Protocol",
+                    "modelType": "Property"
+                },
+                {
+                    "category": "PARAMETER",
+                    "idShort": "PCFCO2eq",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Sum of all greenhouse gas emissions of a product according to the quantification requirements of the standard"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABG855#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "0.20",
+                    "modelType": "Property"
+                },
+                {
+                    "category": "PARAMETER",
+                    "idShort": "PCFReferenceValueForCalculation",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Quantity unit of the product to which the PCF information on the CO2 footprint refers"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABG856#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "meter",
+                    "modelType": "Property"
+                },
+                {
+                    "category": "PARAMETER",
+                    "idShort": "PCFQuantityOfMeasureForCalculation",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Quantity of the product to which the PCF information on the CO2 footprint refers"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABG857#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "1",
+                    "modelType": "Property"
+                },
+                {
+                    "category": "PARAMETER",
+                    "idShort": "PCFLiveCyclePhase",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Life cycle stages of the product according to the quantification requirements of the standard to which the PCF carbon footprint statement refers"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABG858#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "OneToMany"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "A4 - transport to final destination",
+                    "modelType": "Property"
+                },
+                {
+                    "idShort": "PCFGoodsAddressHandover",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Indicates the place of hand-over of the goods "
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABI497#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "value": [
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "Street",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Street indication of the place of transfer of goods"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH956#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "Austraße",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "HouseNumber",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Number for identification or differentiation of individual houses of a street"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH957#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "35",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "ZipCode",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Zip code of the goods transfer address"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH958#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "86153",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "CityTown",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Indication of the city or town of the transfer of goods"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH959#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "Augsburg",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "Country",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Country where the product is transmitted"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-AAO259#005"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "Germany",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "Latitude",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Latitude (B), also called geodetic latitude or latitude (Latin latitudo, English latitude, international abbreviation Lat. or LAT), is the northerly or southerly distance of a point on the earth's surface from the equator, given in angular measure in the unit of measurement degrees"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH960#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "48.389832",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "Longitude",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Geographic longitude, also called longitude (Latin longitudo, English longitude, international abbreviation long or LON), describes one of the two coordinates of a location on the earth's surface, namely its position east or west of a defined (arbitrarily determined) north-south line, the prime meridian"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH961#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "10.887690",
+                            "modelType": "Property"
+                        }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                }
+            ],
+            "modelType": "SubmodelElementCollection"
+        },
+        {
+            "idShort": "ProductCarbonFootprint A1",
+            "description": [
+                {
+                    "language": "en",
+                    "text": "Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use"
+                }
+            ],
+            "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "0173-1#01-AHE716#001"
+                    }
+                ]
+            },
+            "qualifiers": [
+                {
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                            }
+                        ]
+                    },
+                    "kind": "TemplateQualifier",
+                    "type": "SMT/Cardinality",
+                    "valueType": "xs:string",
+                    "value": "ZeroToMany"
+                }
+            ],
+            "value": [
+                {
+                    "category": "PARAMETER",
+                    "idShort": "PCFCalculationMethod",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Standard, method for determining the greenhouse gas emissions of a product"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABG854#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "GHG Protocol",
+                    "modelType": "Property"
+                },
+                {
+                    "category": "PARAMETER",
+                    "idShort": "PCFCO2eq",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Sum of all greenhouse gas emissions of a product according to the quantification requirements of the standard"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABG855#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "0.80",
+                    "modelType": "Property"
+                },
+                {
+                    "category": "PARAMETER",
+                    "idShort": "PCFReferenceValueForCalculation",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Quantity unit of the product to which the PCF information on the CO2 footprint refers"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABG856#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "meter",
+                    "modelType": "Property"
+                },
+                {
+                    "category": "PARAMETER",
+                    "idShort": "PCFQuantityOfMeasureForCalculation",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Quantity of the product to which the PCF information on the CO2 footprint refers"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABG857#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "1",
+                    "modelType": "Property"
+                },
+                {
+                    "category": "PARAMETER",
+                    "idShort": "PCFLiveCyclePhase",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Life cycle stages of the product according to the quantification requirements of the standard to which the PCF carbon footprint statement refers"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABG858#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "OneToMany"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "A1 - raw material supply (and upstream production)",
+                    "modelType": "Property"
+                },
+                {
+                    "idShort": "PCFGoodsAddressHandover",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Indicates the place of hand-over of the goods "
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABI497#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "value": [
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "Street",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Street indication of the place of transfer of goods"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH956#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "Nanshan High-tech Park",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "HouseNumber",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Number for identification or differentiation of individual houses of a street"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH957#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "8",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "ZipCode",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Zip code of the goods transfer address"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH958#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "518000",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "CityTown",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Indication of the city or town of the transfer of goods"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH959#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "Shenzhen",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "Country",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Country where the product is transmitted"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-AAO259#005"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "China",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "Latitude",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Latitude (B), also called geodetic latitude or latitude (Latin latitudo, English latitude, international abbreviation Lat. or LAT), is the northerly or southerly distance of a point on the earth's surface from the equator, given in angular measure in the unit of measurement degrees"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH960#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "22.5431",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "Longitude",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Geographic longitude, also called longitude (Latin longitudo, English longitude, international abbreviation long or LON), describes one of the two coordinates of a location on the earth's surface, namely its position east or west of a defined (arbitrarily determined) north-south line, the prime meridian"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH961#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "114.0579",
+                            "modelType": "Property"
+                        }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                }
+            ],
+            "modelType": "SubmodelElementCollection"
+        },
+        {
+            "idShort": "ProductCarbonFootprint A3",
+            "description": [
+                {
+                    "language": "en",
+                    "text": "Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use"
+                }
+            ],
+            "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "0173-1#01-AHE716#001"
+                    }
+                ]
+            },
+            "qualifiers": [
+                {
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                            }
+                        ]
+                    },
+                    "kind": "TemplateQualifier",
+                    "type": "SMT/Cardinality",
+                    "valueType": "xs:string",
+                    "value": "ZeroToMany"
+                }
+            ],
+            "value": [
+                {
+                    "category": "PARAMETER",
+                    "idShort": "PCFCalculationMethod",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Standard, method for determining the greenhouse gas emissions of a product"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABG854#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "GHG Protocol",
+                    "modelType": "Property"
+                },
+                {
+                    "category": "PARAMETER",
+                    "idShort": "PCFCO2eq",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Sum of all greenhouse gas emissions of a product according to the quantification requirements of the standard"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABG855#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "0.60",
+                    "modelType": "Property"
+                },
+                {
+                    "category": "PARAMETER",
+                    "idShort": "PCFReferenceValueForCalculation",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Quantity unit of the product to which the PCF information on the CO2 footprint refers"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABG856#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "meter",
+                    "modelType": "Property"
+                },
+                {
+                    "category": "PARAMETER",
+                    "idShort": "PCFQuantityOfMeasureForCalculation",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Quantity of the product to which the PCF information on the CO2 footprint refers"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABG857#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "1",
+                    "modelType": "Property"
+                },
+                {
+                    "category": "PARAMETER",
+                    "idShort": "PCFLiveCyclePhase",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Life cycle stages of the product according to the quantification requirements of the standard to which the PCF carbon footprint statement refers"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABG858#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "OneToMany"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "A3 - production",
+                    "modelType": "Property"
+                },
+                {
+                    "idShort": "PCFGoodsAddressHandover",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Indicates the place of hand-over of the goods "
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABI497#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "value": [
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "Street",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Street indication of the place of transfer of goods"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH956#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "No. 88 Xinzhu Road",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "HouseNumber",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Number for identification or differentiation of individual houses of a street"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH957#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "88",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "ZipCode",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Zip code of the goods transfer address"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH958#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "200120",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "CityTown",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Indication of the city or town of the transfer of goods"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH959#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "Shanghai",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "Country",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Country where the product is transmitted"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-AAO259#005"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "China",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "Latitude",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Latitude (B), also called geodetic latitude or latitude (Latin latitudo, English latitude, international abbreviation Lat. or LAT), is the northerly or southerly distance of a point on the earth's surface from the equator, given in angular measure in the unit of measurement degrees"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH960#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "31.2304",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "Longitude",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Geographic longitude, also called longitude (Latin longitudo, English longitude, international abbreviation long or LON), describes one of the two coordinates of a location on the earth's surface, namely its position east or west of a defined (arbitrarily determined) north-south line, the prime meridian"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH961#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "121.4737",
+                            "modelType": "Property"
+                        }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                }
+            ],
+            "modelType": "SubmodelElementCollection"
+        },
+        {
+            "idShort": "ProductCarbonFootprint A2",
+            "description": [
+                {
+                    "language": "en",
+                    "text": "Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use"
+                }
+            ],
+            "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "0173-1#01-AHE716#001"
+                    }
+                ]
+            },
+            "qualifiers": [
+                {
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                            }
+                        ]
+                    },
+                    "kind": "TemplateQualifier",
+                    "type": "SMT/Cardinality",
+                    "valueType": "xs:string",
+                    "value": "ZeroToMany"
+                }
+            ],
+            "value": [
+                {
+                    "category": "PARAMETER",
+                    "idShort": "PCFCalculationMethod",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Standard, method for determining the greenhouse gas emissions of a product"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABG854#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "GHG Protocol",
+                    "modelType": "Property"
+                },
+                {
+                    "category": "PARAMETER",
+                    "idShort": "PCFCO2eq",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Sum of all greenhouse gas emissions of a product according to the quantification requirements of the standard"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABG855#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "0.10",
+                    "modelType": "Property"
+                },
+                {
+                    "category": "PARAMETER",
+                    "idShort": "PCFReferenceValueForCalculation",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Quantity unit of the product to which the PCF information on the CO2 footprint refers"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABG856#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "meter",
+                    "modelType": "Property"
+                },
+                {
+                    "category": "PARAMETER",
+                    "idShort": "PCFQuantityOfMeasureForCalculation",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Quantity of the product to which the PCF information on the CO2 footprint refers"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABG857#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "1",
+                    "modelType": "Property"
+                },
+                {
+                    "category": "PARAMETER",
+                    "idShort": "PCFLiveCyclePhase",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Life cycle stages of the product according to the quantification requirements of the standard to which the PCF carbon footprint statement refers"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABG858#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "OneToMany"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "A2 - cradle-to-gate transport to factory",
+                    "modelType": "Property"
+                },
+                {
+                    "idShort": "PCFGoodsAddressHandover",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Indicates the place of hand-over of the goods "
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABI497#001"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "value": [
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "Street",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Street indication of the place of transfer of goods"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH956#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "Zhenxing Road",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "HouseNumber",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Number for identification or differentiation of individual houses of a street"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH957#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "12",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "ZipCode",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Zip code of the goods transfer address"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH958#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "215000",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "CityTown",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Indication of the city or town of the transfer of goods"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH959#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "Suzhou",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "Country",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Country where the product is transmitted"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-AAO259#005"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "China",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "Latitude",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Latitude (B), also called geodetic latitude or latitude (Latin latitudo, English latitude, international abbreviation Lat. or LAT), is the northerly or southerly distance of a point on the earth's surface from the equator, given in angular measure in the unit of measurement degrees"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH960#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "31.2989",
+                            "modelType": "Property"
+                        },
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "Longitude",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Geographic longitude, also called longitude (Latin longitudo, English longitude, international abbreviation long or LON), describes one of the two coordinates of a location on the earth's surface, namely its position east or west of a defined (arbitrarily determined) north-south line, the prime meridian"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-ABH961#001"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "120.5853",
+                            "modelType": "Property"
+                        }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                }
+            ],
+            "modelType": "SubmodelElementCollection"
+        }
+    ],
+    "modelType": "Submodel"
+}
