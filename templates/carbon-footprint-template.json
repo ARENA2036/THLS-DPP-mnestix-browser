@@ -19,7 +19,7 @@
     },
     "submodelElements": [
         {
-            "idShort": "ProductCarbonFootprint A4",
+            "idShort": "ProductCarbonFootprint-A4",
             "description": [
                 {
                     "language": "en",
@@ -563,7 +563,7 @@
             "modelType": "SubmodelElementCollection"
         },
         {
-            "idShort": "ProductCarbonFootprint A1",
+            "idShort": "ProductCarbonFootprint-A1",
             "description": [
                 {
                     "language": "en",
@@ -1107,7 +1107,7 @@
             "modelType": "SubmodelElementCollection"
         },
         {
-            "idShort": "ProductCarbonFootprint A3",
+            "idShort": "ProductCarbonFootprint-A3",
             "description": [
                 {
                     "language": "en",
@@ -1651,7 +1651,7 @@
             "modelType": "SubmodelElementCollection"
         },
         {
-            "idShort": "ProductCarbonFootprint A2",
+            "idShort": "ProductCarbonFootprint-A2",
             "description": [
                 {
                     "language": "en",

@@ -1,0 +1,344 @@
+{
+    "modelType": "Submodel",
+    "idShort": "Circularity",
+    "description": [
+        {
+            "language": "en",
+            "text": "Dismantling information (including at least: exploded diagrams of the product; disassembly sequences; type and number of fastening techniques to be unlocked; tools required for disassembly; warnings if risk of damaging parts exists); part numbers for components and contact details of sources for replacement spares; safety measures."
+        }
+    ],
+    "id": "Circularity_Template_a1b2c3d4-5678-9abc-def0-1234567890ab",
+    "kind": "Instance",
+    "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+            {
+                "type": "GlobalReference",
+                "value": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Circularity"
+            }
+        ]
+    },
+    "administration": {
+        "version": "1",
+        "revision": "0"
+    },
+    "submodelElements": [
+        {
+            "idShort": "DismantlingAndRemovalInformation",
+            "displayName": [
+                {
+                    "language": "en",
+                    "text": "dismantling and removal information"
+                }
+            ],
+            "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#dismantlingAndRemovalInformation"
+                    }
+                ]
+            },
+            "qualifiers": [
+                {
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                            }
+                        ]
+                    },
+                    "kind": "TemplateQualifier",
+                    "type": "SMT/Cardinality",
+                    "valueType": "xs:string",
+                    "value": "One"
+                }
+            ],
+            "orderRelevant": false,
+            "typeValueListElement": "Property",
+            "valueTypeListElement": "xs:string",
+            "value": [
+                {
+                    "idShort": "DismantlingInformation",
+                    "displayName": [
+                        {
+                            "language": "en",
+                            "text": "dismantling information"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "OneToMany"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "http://example.com/dismantlinginformation.pdf",
+                    "modelType": "Property"
+                },
+                {
+                    "idShort": "RemovalInformation",
+                    "displayName": [
+                        {
+                            "language": "en",
+                            "text": "removal information"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "OneToMany"
+                        }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "http://example.com/removalinformation.pdf",
+                    "modelType": "Property"
+                }
+            ],
+            "modelType": "SubmodelElementList"
+        },
+        {
+            "idShort": "SparePartSources",
+            "displayName": [
+                {
+                    "language": "en",
+                    "text": "spare part sources"
+                }
+            ],
+            "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#sparePartSources"
+                    }
+                ]
+            },
+            "qualifiers": [
+                {
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                            }
+                        ]
+                    },
+                    "kind": "TemplateQualifier",
+                    "type": "SMT/Cardinality",
+                    "valueType": "xs:string",
+                    "value": "One"
+                }
+            ],
+            "orderRelevant": false,
+            "typeValueListElement": "SubmodelElementCollection",
+            "value": [],
+            "modelType": "SubmodelElementList"
+        },
+        {
+            "idShort": "RecycledContentInformation",
+            "displayName": [
+                {
+                    "language": "en",
+                    "text": "recycled content information"
+                }
+            ],
+            "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#recycledContent"
+                    }
+                ]
+            },
+            "qualifiers": [
+                {
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                            }
+                        ]
+                    },
+                    "kind": "TemplateQualifier",
+                    "type": "SMT/Cardinality",
+                    "valueType": "xs:string",
+                    "value": "One"
+                }
+            ],
+            "orderRelevant": false,
+            "typeValueListElement": "SubmodelElementCollection",
+            "value": [],
+            "modelType": "SubmodelElementList"
+        },
+        {
+            "idShort": "SafetyMeasures",
+            "displayName": [
+                {
+                    "language": "en",
+                    "text": "safety measures"
+                }
+            ],
+            "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#safetyMeasures"
+                    }
+                ]
+            },
+            "qualifiers": [
+                {
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                            }
+                        ]
+                    },
+                    "kind": "TemplateQualifier",
+                    "type": "SMT/Cardinality",
+                    "valueType": "xs:string",
+                    "value": "One"
+                }
+            ],
+            "value": [],
+            "modelType": "SubmodelElementCollection"
+        },
+        {
+            "idShort": "EndOfLifeInformation",
+            "displayName": [
+                {
+                    "language": "en",
+                    "text": "end of life information"
+                }
+            ],
+            "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#endOfLifeInformation"
+                    }
+                ]
+            },
+            "qualifiers": [
+                {
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                            }
+                        ]
+                    },
+                    "kind": "TemplateQualifier",
+                    "type": "SMT/Cardinality",
+                    "valueType": "xs:string",
+                    "value": "One"
+                }
+            ],
+            "value": [],
+            "modelType": "SubmodelElementCollection"
+        },
+        {
+            "idShort": "RenewableContent",
+            "displayName": [
+                {
+                    "language": "en",
+                    "text": "renewable content"
+                }
+            ],
+            "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#renewableContent"
+                    }
+                ]
+            },
+            "supplementalSemanticIds": [
+                {
+                    "type": "ExternalReference",
+                    "keys": [
+                        {
+                            "type": "GlobalReference",
+                            "value": "urn:irdi:0173-1#02-ABL867#001"
+                        }
+                    ]
+                }
+            ],
+            "qualifiers": [
+                {
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                            }
+                        ]
+                    },
+                    "kind": "TemplateQualifier",
+                    "type": "SMT/Cardinality",
+                    "valueType": "xs:string",
+                    "value": "One"
+                }
+            ],
+            "valueType": "xs:float",
+            "modelType": "Property"
+        }
+    ]
+}
