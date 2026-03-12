@@ -172,7 +172,6 @@ declare module '@mui/material/styles' {
         };
         customColors: {
             menuBackground: PaletteColor;
-            materialCompositionSlices: string[];
         };
     }
 
@@ -182,7 +181,6 @@ declare module '@mui/material/styles' {
         };
         customColors?: {
             menuBackground?: PaletteColorOptions;
-            materialCompositionSlices?: string[];
         };
     }
 }
