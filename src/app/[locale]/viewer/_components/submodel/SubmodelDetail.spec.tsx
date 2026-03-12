@@ -79,4 +79,60 @@ describe('Submodel Detail', () => {
         expect(screen.queryByTestId('invalid-semantic-id-1')).toBeNull();
         expect(screen.queryByTestId('invalid-semantic-id-2')).toBeNull();
     });
+
+    it('should render MaterialCompositionDetail for Material Composition semantic id', async () => {
+        const materialCompositionSubmodel = {
+            id: 'material-composition-submodel',
+            idShort: 'MaterialComposition',
+            modelType: 'Submodel',
+            semanticId: {
+                keys: [
+                    {
+                        type: 'GlobalReference',
+                        value: 'https://admin-shell.io/idta/MaterialComposition/1/0/Submodel',
+                    },
+                ],
+                type: 'ExternalReference',
+            },
+            submodelElements: [
+                {
+                    modelType: 'SubmodelElementCollection',
+                    idShort: 'ProductMaterials',
+                    value: [
+                        {
+                            modelType: 'SubmodelElementCollection',
+                            idShort: 'ProductMaterial',
+                            value: [
+                                {
+                                    modelType: 'Property',
+                                    idShort: 'ProductMaterialName',
+                                    valueType: 'xs:string',
+                                    value: 'Copper',
+                                },
+                                {
+                                    modelType: 'Property',
+                                    idShort: 'ProductMaterialMass',
+                                    valueType: 'xs:float',
+                                    value: '1.35',
+                                },
+                            ],
+                        },
+                    ],
+                },
+                {
+                    modelType: 'SubmodelElementCollection',
+                    idShort: 'HazardousSubstances',
+                    value: [],
+                },
+            ],
+        } as unknown as Submodel;
+
+        CustomRender(
+            <SubmodelDetail submodel={materialCompositionSubmodel} submodelRepositoryUrl={'https://test.de'} />,
+        );
+
+        const map = screen.getByTestId('material-composition-visualization');
+        expect(map).toBeDefined();
+        expect(map).toBeInTheDocument();
+    });
 });

@@ -73,6 +73,13 @@
       "message": "This feature is currently under construction and will be available soon.",
       "title": "Under Construction"
     },
+    "materialComposition": {
+      "hazardousSubstancesTitle": "Hazardous substances",
+      "hazardousSubstancesUnavailable": "Hazardous substances data is not available.",
+      "materialsByMassTitle": "Materials by mass",
+      "noHazardousSubstancesPresent": "No hazardous substances present",
+      "noProductMaterialMassData": "No product material mass data available."
+    },
     "contactInformation": {
       "contactTypes": {
         "0173-1#07-AAS754#001": "Office",

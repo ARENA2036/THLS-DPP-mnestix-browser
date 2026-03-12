@@ -73,6 +73,13 @@
       "message": "Diese Funktion befindet sich derzeit im Aufbau und wird in Kürze verfügbar sein.",
       "title": "In Bearbeitung"
     },
+    "materialComposition": {
+      "hazardousSubstancesTitle": "Gefahrstoffe",
+      "hazardousSubstancesUnavailable": "Gefahrstoffdaten sind nicht verfügbar.",
+      "materialsByMassTitle": "Materialien nach Masse",
+      "noHazardousSubstancesPresent": "Keine Gefahrstoffe vorhanden",
+      "noProductMaterialMassData": "Keine Massedaten für Produktmaterialien verfügbar."
+    },
     "contactInformation": {
       "contactTypes": {
         "0173-1#07-AAS754#001": "Geschäftlich",

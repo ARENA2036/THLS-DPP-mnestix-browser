@@ -73,6 +73,13 @@
       "message": "Esta función está actualmente en construcción y estará disponible próximamente.",
       "title": "En Construcción"
     },
+    "materialComposition": {
+      "hazardousSubstancesTitle": "Sustancias peligrosas",
+      "hazardousSubstancesUnavailable": "Los datos de sustancias peligrosas no están disponibles.",
+      "materialsByMassTitle": "Materiales por masa",
+      "noHazardousSubstancesPresent": "No hay sustancias peligrosas",
+      "noProductMaterialMassData": "No hay datos de masa de materiales del producto."
+    },
     "contactInformation": {
       "contactTypes": {
         "0173-1#07-AAS754#001": "Oficina",
