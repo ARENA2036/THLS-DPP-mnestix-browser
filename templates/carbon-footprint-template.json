@@ -6,7 +6,7 @@
             "text": "The Submodel provides the means to access the Carbon Footprint of the asset."
         }
     ],
-    "id": "CarbonFootprint_Template_da06f643-4c63-4740-ac2f-15c3b5d8ca6c",
+    "id": "CarbonFootprint_Template_3f9c1b8a-1a27-4f2c-9b2b-8e2d4c6f9a11",
     "kind": "Instance",
     "semanticId": {
         "type": "ExternalReference",
