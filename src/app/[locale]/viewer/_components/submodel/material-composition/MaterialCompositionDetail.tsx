@@ -16,6 +16,7 @@ type MaterialPieData = {
 };
 
 const PRODUCT_MATERIALS_COLLECTION_ID_SHORT = 'ProductMaterials';
+const PRODUCT_MATERIAL_SEMANTIC_ID = 'https://admin-shell.io/idta/MaterialComposition/ProductMaterial/1/0';
 const PRODUCT_MATERIAL_ENTRY_ID_SHORT = 'ProductMaterial';
 const PRODUCT_MATERIAL_NAME_ID_SHORT = 'ProductMaterialName';
 const PRODUCT_MATERIAL_MASS_ID_SHORT = 'ProductMaterialMass';
@@ -36,6 +37,10 @@ function findCollectionByIdShort(
     ) as SubmodelElementCollection | undefined;
 }
 
+function hasSemanticId(submodelElement: SubmodelElementChoice, semanticId: string): boolean {
+    return submodelElement.semanticId?.keys?.some((key) => key.value === semanticId) ?? false;
+}
+
 function findPropertyValue(submodelElements: SubmodelElementChoice[] | undefined, idShort: string): string | undefined {
     const property = submodelElements?.find(
         (submodelElement) => submodelElement.modelType === KeyTypes.Property && submodelElement.idShort === idShort,
@@ -53,7 +58,11 @@ export function extractMaterialPieData(
 
     productMaterialsCollection.value.forEach((submodelElement, index) => {
         if (!isSubmodelElementCollection(submodelElement)) return;
-        if (submodelElement.idShort !== PRODUCT_MATERIAL_ENTRY_ID_SHORT) return;
+        if (
+            !hasSemanticId(submodelElement, PRODUCT_MATERIAL_SEMANTIC_ID) &&
+            submodelElement.idShort !== PRODUCT_MATERIAL_ENTRY_ID_SHORT
+        )
+            return;
 
         const materialName =
             findPropertyValue(submodelElement.value, PRODUCT_MATERIAL_NAME_ID_SHORT) || `Material ${index + 1}`;
