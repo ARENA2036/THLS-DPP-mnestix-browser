@@ -209,24 +209,30 @@ export function flattenLocalizedStrings(obj: unknown): unknown {
     }
 
     if (Array.isArray(obj)) {
+        // Array of LocalizedStrings (multiple languages) — pick the first entry's Value
+        if (
+            obj.length > 0 &&
+            obj.every(
+                (item) =>
+                    typeof item === 'object' && item !== null && isVecLocalizedString(item as Record<string, unknown>),
+            )
+        ) {
+            return (obj[0] as Record<string, unknown>)['Value'];
+        }
         return obj.map((item) => flattenLocalizedStrings(item));
     }
 
     const record = obj as Record<string, unknown>;
+
+    // If the current node itself is a LocalizedString, flatten it
+    if (isVecLocalizedString(record)) {
+        return record['Value'];
+    }
+
     const newObj: Record<string, unknown> = {};
 
     for (const key in record) {
-        const value = record[key];
-        if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
-            const valueRecord = value as Record<string, unknown>;
-            if (isVecLocalizedString(valueRecord)) {
-                newObj[key] = valueRecord['Value'];
-            } else {
-                newObj[key] = flattenLocalizedStrings(value);
-            }
-        } else {
-            newObj[key] = flattenLocalizedStrings(value);
-        }
+        newObj[key] = flattenLocalizedStrings(record[key]);
     }
 
     return newObj;

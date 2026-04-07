@@ -143,6 +143,33 @@ describe('flattenLocalizedStrings', () => {
             Slot: { _id: 'id_slot', Cavity: [{ CavityNumber: '1' }] },
         });
     });
+
+    it('should flatten when a LocalizedString object is the current node itself', () => {
+        const input = { LanguageCode: 'De', Value: 'Massebolzen M8', _id: 'id_123' };
+        expect(flattenLocalizedStrings(input)).toBe('Massebolzen M8');
+    });
+
+    it('should flatten an array of LocalizedStrings to the first Value', () => {
+        const input = {
+            CopyrightNote: [
+                { _id: 'id_1', LanguageCode: 'De', Value: 'Copyright DE' },
+                { _id: 'id_2', LanguageCode: 'En', Value: 'Copyright EN' },
+            ],
+        };
+        expect(flattenLocalizedStrings(input)).toEqual({
+            CopyrightNote: 'Copyright DE',
+        });
+    });
+
+    it('should not collapse arrays that mix LocalizedStrings with other objects', () => {
+        const input = {
+            Items: [{ LanguageCode: 'De', Value: 'Hello' }, { SomethingElse: 'data' }],
+        };
+        const result = flattenLocalizedStrings(input);
+        expect(result).toEqual({
+            Items: ['Hello', { SomethingElse: 'data' }],
+        });
+    });
 });
 
 describe('processVecData', () => {
