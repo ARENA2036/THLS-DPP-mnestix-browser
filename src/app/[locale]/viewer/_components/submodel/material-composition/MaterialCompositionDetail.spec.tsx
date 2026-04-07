@@ -41,7 +41,16 @@ function buildMaterialCompositionSubmodel(withHazardousEntries: boolean): Submod
                 value: [
                     {
                         modelType: 'SubmodelElementCollection',
-                        idShort: 'ProductMaterial',
+                        idShort: 'Copper',
+                        semanticId: {
+                            keys: [
+                                {
+                                    type: 'GlobalReference',
+                                    value: 'https://admin-shell.io/idta/MaterialComposition/ProductMaterial/1/0',
+                                },
+                            ],
+                            type: 'ExternalReference',
+                        },
                         value: [
                             {
                                 modelType: 'Property',
@@ -59,7 +68,16 @@ function buildMaterialCompositionSubmodel(withHazardousEntries: boolean): Submod
                     },
                     {
                         modelType: 'SubmodelElementCollection',
-                        idShort: 'ProductMaterial',
+                        idShort: 'PVC',
+                        semanticId: {
+                            keys: [
+                                {
+                                    type: 'GlobalReference',
+                                    value: 'https://admin-shell.io/idta/MaterialComposition/ProductMaterial/1/0',
+                                },
+                            ],
+                            type: 'ExternalReference',
+                        },
                         value: [
                             {
                                 modelType: 'Property',
@@ -77,7 +95,16 @@ function buildMaterialCompositionSubmodel(withHazardousEntries: boolean): Submod
                     },
                     {
                         modelType: 'SubmodelElementCollection',
-                        idShort: 'ProductMaterial',
+                        idShort: 'LithiumCobaltOxide',
+                        semanticId: {
+                            keys: [
+                                {
+                                    type: 'GlobalReference',
+                                    value: 'https://admin-shell.io/idta/MaterialComposition/ProductMaterial/1/0',
+                                },
+                            ],
+                            type: 'ExternalReference',
+                        },
                         value: [
                             {
                                 modelType: 'Property',
