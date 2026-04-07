@@ -113,7 +113,7 @@
                             "text": "Single product material entry."
                         }
                     ],
-                    "idShort": "ProductMaterial",
+                    "idShort": "LithiumCobaltOxide",
                     "value": [
                         {
                             "modelType": "Property",
@@ -421,7 +421,7 @@
                             "text": "Single product material entry."
                         }
                     ],
-                    "idShort": "ProductMaterial",
+                    "idShort": "Copper",
                     "value": [
                         {
                             "modelType": "Property",
@@ -729,7 +729,7 @@
                             "text": "Single product material entry."
                         }
                     ],
-                    "idShort": "ProductMaterial",
+                    "idShort": "PVC",
                     "value": [
                         {
                             "modelType": "Property",

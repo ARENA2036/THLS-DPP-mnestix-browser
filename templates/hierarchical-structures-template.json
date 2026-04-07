@@ -195,7 +195,7 @@
 						"keys": [
 							{
 								"type": "Submodel",
-								"value": ""
+								"value": "https://example.com/sm/cable_set_bom"
 							},
 							{
 								"type": "Entity",
@@ -208,7 +208,7 @@
 						"keys": [
 							{
 								"type": "Submodel",
-								"value": ""
+								"value": "https://example.com/sm/cable_set_bom"
 							},
 							{
 								"type": "Entity",
@@ -993,7 +993,7 @@
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "28529",
+					"idShort": "helukabel_28529",
 					"displayName": [
 						{
 							"language": "de",
@@ -1041,14 +1041,14 @@
 							},
 							{
 								"type": "Entity",
-								"value": "28529"
+								"value": "helukabel_28529"
 							}
 						]
 					},
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "400189",
+					"idShort": "helukabel_400189",
 					"displayName": [
 						{
 							"language": "de",
@@ -1096,14 +1096,14 @@
 							},
 							{
 								"type": "Entity",
-								"value": "400189"
+								"value": "helukabel_400189"
 							}
 						]
 					},
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "51036",
+					"idShort": "tesa_51036",
 					"displayName": [
 						{
 							"language": "de",
@@ -1151,14 +1151,14 @@
 							},
 							{
 								"type": "Entity",
-								"value": "51036"
+								"value": "tesa_51036"
 							}
 						]
 					},
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "126-00000",
+					"idShort": "hellermanntyton_126-00000",
 					"displayName": [
 						{
 							"language": "de",
@@ -1206,14 +1206,14 @@
 							},
 							{
 								"type": "Entity",
-								"value": "126-00000"
+								"value": "hellermanntyton_126-00000"
 							}
 						]
 					},
 					"modelType": "RelationshipElement"
 				},
 				{
-					"idShort": "712-10002",
+					"idShort": "hellermanntyton_712-10002",
 					"displayName": [
 						{
 							"language": "de",
@@ -1261,7 +1261,7 @@
 							},
 							{
 								"type": "Entity",
-								"value": "712-10002"
+								"value": "hellermanntyton_712-10002"
 							}
 						]
 					},

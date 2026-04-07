@@ -185,5 +185,49 @@ export function processVecData(data: Record<string, unknown>): Record<string, un
         return newObj;
     }
 
-    return findAndReplaceDocumentVersions(data) as Record<string, unknown>;
+    const processed = findAndReplaceDocumentVersions(data) as Record<string, unknown>;
+    return flattenLocalizedStrings(processed) as Record<string, unknown>;
+}
+
+/**
+ * Checks if an object matches the VEC LocalizedString pattern:
+ * has LanguageCode and Value properties, optionally with _xsi:type containing "LocalizedString".
+ */
+function isVecLocalizedString(obj: Record<string, unknown>): boolean {
+    return typeof obj['LanguageCode'] === 'string' && typeof obj['Value'] === 'string';
+}
+
+/**
+ * Recursively walks the parsed VEC JSON and replaces VEC LocalizedString objects
+ * (objects with LanguageCode + Value) with just the Value string.
+ * This is a workaround because the AAS Generator does not support object values
+ * for fields mapped to AAS string properties.
+ */
+export function flattenLocalizedStrings(obj: unknown): unknown {
+    if (typeof obj !== 'object' || obj === null) {
+        return obj;
+    }
+
+    if (Array.isArray(obj)) {
+        return obj.map((item) => flattenLocalizedStrings(item));
+    }
+
+    const record = obj as Record<string, unknown>;
+    const newObj: Record<string, unknown> = {};
+
+    for (const key in record) {
+        const value = record[key];
+        if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
+            const valueRecord = value as Record<string, unknown>;
+            if (isVecLocalizedString(valueRecord)) {
+                newObj[key] = valueRecord['Value'];
+            } else {
+                newObj[key] = flattenLocalizedStrings(value);
+            }
+        } else {
+            newObj[key] = flattenLocalizedStrings(value);
+        }
+    }
+
+    return newObj;
 }
