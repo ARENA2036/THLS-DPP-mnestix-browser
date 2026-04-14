@@ -50,7 +50,6 @@ export default function StepProcessing(props: StepProcessingProps) {
     let currentStep = '';
     let isComplete = false;
     let isError = false;
-    const shouldShowCopyButton = (isError || warnings.length > 0) && rawDebugInfo.length > 0;
 
     if (generateAasStatus === 'success') {
         isComplete = true;
@@ -68,6 +67,8 @@ export default function StepProcessing(props: StepProcessingProps) {
     } else if (uploadStatus === 'success') {
         currentStep = t('steps.processData');
     }
+
+    const shouldShowCopyButton = (isError || warnings.length > 0) && rawDebugInfo.length > 0;
 
     return (
         <Stack spacing={2}>

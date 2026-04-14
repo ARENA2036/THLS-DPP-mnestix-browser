@@ -326,6 +326,7 @@ export default function UploadWorkflowStepper() {
 
     // Handle retry after error in processing step
     function handleRetry() {
+        requestIdRef.current += 1;
         setState(initialState);
     }
 
@@ -336,6 +337,7 @@ export default function UploadWorkflowStepper() {
                     variant="text"
                     size="small"
                     onClick={handleRetry}
+                    disabled={isPending}
                     sx={{ position: 'absolute', top: 0, right: 0 }}
                 >
                     {t('actions.resetWorkflow')}
