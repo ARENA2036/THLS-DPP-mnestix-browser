@@ -310,17 +310,20 @@
       "aasOrAssetId": "AAS ID o Asset ID",
       "infrastructure": "Infraestructura",
       "searchAllInfrastructures": "Buscar en todas",
-      "digitalTwinMadeEasyText": "Simplificando los gemelos digitales.",
+      "digitalTwinMadeEasyText": "Cree DPPs basados en los datos de su mazo de cables.",
       "findOutMoreHeader": "Saber más",
       "findOutMoreText": "Versión actual de Mnestix",
       "listCardHeader": "Seleccionar mediante lista",
       "listBtnLabel": "Ver DPPs existentes en la Lista",
       "listBtnText": "Ir a lista de AAS",
       "uploadCardHeader": "Generar DPP",
-      "uploadBtnLabel": "Suba archivos para generar un DPP",
+      "uploadBtnLabel": "Suba archivos .vec o .kbl para generar un DPP",
       "scanIdLabel": "Escanear ID del AAS o Asset",
-      "welcomeText": "Pasaporte Digital de Producto",
-      "enterManuallyLabel": "Buscar activo"
+      "welcomeText": "DPP Generator",
+      "enterManuallyLabel": "Buscar activo",
+      "infoText": "Esta herramienta genera Pasaportes Digitales de Producto (DPPs) a partir de datos de ingeniería de mazos de cables (VEC/KBL). Fue desarrollada como parte del Robotics Challenge 2026 del Transformations-Hub Leitungssatz.",
+      "infoLinkText": "Más información sobre el Robotics Challenge",
+      "infoLink": "https://www.leitungssatz-hub.de/en/robotics-challenge/robotics-challenge-2026/accompanying-research-and-digitization-module/"
     },
     "discoveryList": {
       "errors": {
@@ -593,9 +596,9 @@
       "backToHome": "Volver al Inicio",
       "explanation": {
         "title": "Sobre la generación de DPP",
-        "paragraph1": "Aquí puede cargar un archivo KBL o VEC para generar un modelo de tipo DPP correspondiente en formato AAS. En particular, se generan los submodelos \"Digital Nameplate\", \"HandoverDocumentation\" y \"Hierarchical Structures\" y se puede almacenar una imagen del producto.",
+        "paragraph1": "Aquí puede cargar un archivo KBL o VEC para generar un modelo de tipo DPP correspondiente en formato AAS. Se generan los siguientes submodelos: \"Digital Nameplate\", \"HandoverDocumentation\", \"Hierarchical Structures\", \"Material Composition\", \"Circularity\" y \"Product Carbon Footprint\".",
         "paragraph2": "Ciertos contenidos de información de los formatos de archivo KBL o VEC se traducen en una representación correspondiente de Asset Administration Shell. Para la identificación del producto de arnés de cables y sus componentes modelados en KBL o VEC, se utilizan los contenidos de Company_name y Part_number en KBL. En VEC se utilizan los contenidos de CompanyName y GeneratingSystemName. Basándose en esta información, se crea una dirección de identificación apta para internet.",
-        "paragraph3": "El flujo de carga consta de los pasos carga de archivo VEC/KBL, procesamiento, carga obligatoria de una miniatura del producto y carga opcional de documentos adicionales."
+        "paragraph3": "A continuación, se debe cargar una imagen del producto que se almacenará en la Asset Administration Shell. Como paso final opcional, puede añadir archivos adicionales al submodelo HandoverDocumentation."
       },
       "actions": {
         "copyDetailedLogs": "Copiar registros detallados",
@@ -605,7 +608,9 @@
         "seeLess": "Ver menos",
         "seeMore": "Ver más",
         "uploadMore": "Generar otro DPP",
-        "viewCreatedAas": "Ver DPP creado"
+        "viewCreatedAas": "Ver DPP creado",
+        "resetWorkflow": "Restablecer",
+        "logsCopied": "Logs copiados al portapapeles"
       },
       "ariaLabel": "Subir archivo VEC de datos",
       "cta": {

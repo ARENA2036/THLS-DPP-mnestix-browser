@@ -145,7 +145,12 @@ export default function StepProcessing(props: StepProcessingProps) {
                     <Typography variant="caption" sx={{ mr: 0.5 }}>
                         {t('actions.copyDetailedLogs')}
                     </Typography>
-                    <CopyButton value={rawDebugInfo.join('\n')} size="small" dataTestId="copy-debug-logs-button" />
+                    <CopyButton
+                        value={rawDebugInfo.join('\n')}
+                        size="small"
+                        dataTestId="copy-debug-logs-button"
+                        toastMessage={t('actions.logsCopied')}
+                    />
                 </Stack>
             )}
         </Stack>

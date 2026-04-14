@@ -330,7 +330,17 @@ export default function UploadWorkflowStepper() {
     }
 
     return (
-        <Box>
+        <Box sx={{ position: 'relative' }}>
+            {state.activeStep > 0 && (
+                <Button
+                    variant="text"
+                    size="small"
+                    onClick={handleRetry}
+                    sx={{ position: 'absolute', top: 0, right: 0 }}
+                >
+                    {t('actions.resetWorkflow')}
+                </Button>
+            )}
             <Stepper activeStep={state.activeStep} orientation="vertical">
                 {WORKFLOW_STEPS.map((step, index) => (
                     <Step key={step.id} completed={isStepComplete(index)}>

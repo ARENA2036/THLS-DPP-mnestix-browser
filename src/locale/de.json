@@ -310,17 +310,20 @@
       "aasOrAssetId": "AAS ID oder Asset ID",
       "infrastructure": "Infrastruktur",
       "searchAllInfrastructures": "Suche überall",
-      "digitalTwinMadeEasyText": "Digitaler Zwilling leicht gemacht.",
+      "digitalTwinMadeEasyText": "Erstellen Sie DPPs basierend auf Ihren Leitungssatzdaten.",
       "findOutMoreHeader": "Mehr Informationen",
       "findOutMoreText": "Aktuelle Mnestix Version",
       "listCardHeader": "Auswahl über Liste",
       "listBtnLabel": "Bestehende DPPs in der Liste sehen",
       "listBtnText": "Zur AAS Liste",
       "uploadCardHeader": "DPP erzeugen",
-      "uploadBtnLabel": "Dateien hochladen, um einen DPP zu erzeugen",
+      "uploadBtnLabel": ".vec oder .kbl-Dateien hochladen, um einen DPP zu erzeugen",
       "scanIdLabel": "AAS ID oder Asset ID scannen",
-      "welcomeText": "Digitaler Produktpass",
-      "enterManuallyLabel": "Asset suchen"
+      "welcomeText": "DPP Generator",
+      "enterManuallyLabel": "Asset suchen",
+      "infoText": "Dieses Tool erzeugt Digitale Produktpässe (DPPs) aus Leitungssatz-Engineeringdaten (VEC/KBL). Es wurde im Rahmen der Robotik Challenge 2026 des Transformations-Hub Leitungssatz entwickelt.",
+      "infoLinkText": "Mehr zur Robotik Challenge erfahren",
+      "infoLink": "https://www.leitungssatz-hub.de/robotik-challenge/robotik-challenge-2026/begleitforschungs-und-digitalisierungsmodul/"
     },
     "discoveryList": {
       "errors": {
@@ -593,9 +596,9 @@
       "backToHome": "Zurück zur Startseite",
       "explanation": {
         "title": "Über die DPP-Erzeugung",
-        "paragraph1": "Hier kann eine KBL oder VEC-Datei hochgeladen werden, um ein korrespondierendes DPP-Typmodell im AAS-Format zu erzeugen. Insbesondere werden die Submodelle „Digital Nameplate“, „HandoverDocumentation“ und „Hierarchical Structures“ erzeugt und ein Produktbild kann hinterlegt werden.",
+        "paragraph1": "Hier kann eine KBL oder VEC-Datei hochgeladen werden, um ein korrespondierendes DPP-Typmodell im AAS-Format zu erzeugen. Dabei werden die Submodelle „Digital Nameplate“, „HandoverDocumentation“, „Hierarchical Structures“, „Material Composition“, „Circularity“ und „Product Carbon Footprint“ erzeugt.",
         "paragraph2": "Bestimmte Informationsinhalte aus den Dateiformaten KBL bzw. VEC werden dazu in eine entsprechende Verwaltungsschale-Repräsentation übersetzt. Zur Identifikation des im KBL oder VEC modellierten Leitungssatz-Produkts und seiner Komponenten werden bei KBL die Inhalte von Company_name und Part_number herangezogen. Bei VEC werden die Inhalte von CompanyName und GeneratingSystemName verwendet. Basierend auf diesen Informationen wird eine internetfähige Identifikationsadresse erstellt.",
-        "paragraph3": "Anschließend wird ein Produktbild hochgeladen und in der Verwaltungsschale hinterlegt. Als optionalen letzten Schritt können Sie weitere Anhänge zum HandoverDocumentation Submodel hinzufügen."
+        "paragraph3": "Im Anschluss muss ein Produktbild hochgeladen werden, das in der Verwaltungsschale hinterlegt wird. Als optionalen letzten Schritt können Sie weitere Anhänge zum HandoverDocumentation Submodel hinzufügen."
       },
       "actions": {
         "copyDetailedLogs": "Detaillierte Logs kopieren",
@@ -605,7 +608,9 @@
         "seeLess": "Weniger anzeigen",
         "seeMore": "Mehr anzeigen",
         "uploadMore": "Weiteren DPP generieren",
-        "viewCreatedAas": "Erstellten DPP anzeigen"
+        "viewCreatedAas": "Erstellten DPP anzeigen",
+        "resetWorkflow": "Zurücksetzen",
+        "logsCopied": "Logs in die Zwischenablage kopiert"
       },
       "ariaLabel": "VEC-Datei hochladen",
       "cta": {
