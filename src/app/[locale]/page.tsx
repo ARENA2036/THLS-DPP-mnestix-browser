@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Card, CardActionArea, Grid, Typography } from '@mui/material';
+import { Box, Card, CardActionArea, Grid, Link, Typography } from '@mui/material';
 import { GoToListCard } from 'app/[locale]/_components/GoToListCard';
 import { UploadCard } from 'app/[locale]/_components/UploadCard';
 import { useTranslations } from 'next-intl';
@@ -48,6 +48,13 @@ export default function () {
                         </Grid>
                     )}
                 </Grid>
+
+                <Typography variant="body2" color="text.secondary" sx={{ mt: 3 }}>
+                    {t('infoText')}{' '}
+                    <Link href={t('infoLink')} target="_blank" rel="noopener noreferrer">
+                        {t('infoLinkText')}
+                    </Link>
+                </Typography>
             </Box>
         </Box>
     );

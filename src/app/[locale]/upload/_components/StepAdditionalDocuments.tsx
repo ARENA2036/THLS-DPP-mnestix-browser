@@ -244,12 +244,9 @@ export default function StepAdditionalDocuments(props: StepAdditionalDocumentsPr
             )}
 
             {/* Action buttons */}
-            <Stack direction="row" spacing={2} justifyContent="flex-end">
+            <Stack direction="row" spacing={2} justifyContent="flex-start">
                 {!allUploaded && (
                     <>
-                        <Button variant="outlined" onClick={onSkip} disabled={disabled || isUploading}>
-                            {t('additionalDocs.skip')}
-                        </Button>
                         {pendingDocuments.length > 0 && (
                             <Button
                                 variant="contained"
@@ -260,6 +257,9 @@ export default function StepAdditionalDocuments(props: StepAdditionalDocumentsPr
                                 {t('additionalDocs.uploadAll')}
                             </Button>
                         )}
+                        <Button variant="outlined" onClick={onSkip} disabled={disabled || isUploading}>
+                            {t('additionalDocs.skip')}
+                        </Button>
                     </>
                 )}
                 {allUploaded && (

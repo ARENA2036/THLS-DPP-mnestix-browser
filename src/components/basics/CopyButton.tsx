@@ -10,6 +10,7 @@ type CopyButtonProps = {
     withBase64?: boolean;
     dataTestId?: string;
     size?: 'small' | 'medium' | 'large';
+    toastMessage?: string;
 };
 
 export function CopyButton({
@@ -18,6 +19,7 @@ export function CopyButton({
     withBase64 = false,
     dataTestId: testId,
     size = 'small',
+    toastMessage,
 }: CopyButtonProps) {
     const t = useTranslations('components.copyButton');
     const notificationSpawner = useNotificationSpawner();
@@ -30,7 +32,7 @@ export function CopyButton({
         try {
             await navigator.clipboard.writeText(textToCopy);
             notificationSpawner.spawn({
-                message: t('copied') + ': ' + textToCopy,
+                message: toastMessage || t('copied') + ': ' + textToCopy,
                 severity: 'success',
             });
         } catch (err) {

@@ -310,17 +310,20 @@
       "aasOrAssetId": "AAS ID or Asset ID",
       "infrastructure": "Infrastructure",
       "searchAllInfrastructures": "Search all",
-      "digitalTwinMadeEasyText": "Digital Twin made easy.",
+      "digitalTwinMadeEasyText": "Create DPPs based on your cable harness data.",
       "findOutMoreHeader": "Find out more",
       "findOutMoreText": "Mnestix' latest version",
       "listCardHeader": "Select via List",
       "listBtnLabel": "View existing DPPs in the List",
       "listBtnText": "Go to AAS List",
       "uploadCardHeader": "Generate DPP",
-      "uploadBtnLabel": "Upload files to generate a DPP",
+      "uploadBtnLabel": "Upload .vec or .kbl files to generate a DPP",
       "scanIdLabel": "Scan AAS ID or Asset ID",
-      "welcomeText": "Digital Product Passport",
-      "enterManuallyLabel": "Search asset"
+      "welcomeText": "DPP Generator",
+      "enterManuallyLabel": "Search asset",
+      "infoText": "This tool generates Digital Product Passports (DPPs) from cable harness engineering data (VEC/KBL). It was developed as part of the Robotics Challenge 2026 of the Transformations-Hub Leitungssatz.",
+      "infoLinkText": "Learn more about the Robotics Challenge",
+      "infoLink": "https://www.leitungssatz-hub.de/en/robotics-challenge/robotics-challenge-2026/accompanying-research-and-digitization-module/"
     },
     "discoveryList": {
       "errors": {
@@ -593,9 +596,9 @@
       "backToHome": "Back to Home",
       "explanation": {
         "title": "About generating DPPs",
-        "paragraph1": "Here you can upload a KBL or VEC file to generate a corresponding DPP type model in AAS format. In particular, the submodels \"Digital Nameplate\", \"HandoverDocumentation\" and \"Hierarchical Structures\" are generated and a product image can be stored.",
+        "paragraph1": "Here you can upload a KBL or VEC file to generate a corresponding DPP type model in AAS format. The following submodels are generated: \"Digital Nameplate\", \"HandoverDocumentation\", \"Hierarchical Structures\", \"Material Composition\", \"Circularity\" and \"Product Carbon Footprint\".",
         "paragraph2": "Certain information contents from the KBL or VEC file formats are translated into a corresponding Asset Administration Shell representation. For KBL, the contents of Company_name and Part_number are used to identify the wire harness product and its components modeled in KBL or VEC. For VEC, the contents of CompanyName and GeneratingSystemName are used. Based on this information, an internet-capable identification address is created.",
-        "paragraph3": "Additionally, you can upload a thumbnail image of the product and attach optional supplementary documents that will be stored together with the generated DPP."
+        "paragraph3": "A product image must then be uploaded and stored in the Asset Administration Shell. As an optional final step, you can add additional attachments to the HandoverDocumentation submodel."
       },
       "actions": {
         "copyDetailedLogs": "Copy detailed logs",
@@ -605,7 +608,9 @@
         "seeLess": "See less",
         "seeMore": "See more",
         "uploadMore": "Generate another DPP",
-        "viewCreatedAas": "View created DPP"
+        "viewCreatedAas": "View created DPP",
+        "resetWorkflow": "Reset",
+        "logsCopied": "Logs copied to clipboard"
       },
       "ariaLabel": "Upload data VEC file",
       "cta": {
