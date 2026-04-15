@@ -612,7 +612,7 @@
         "step2KblSuffix": "such as '<'Company_name'>', '<'Part_number'>', '<'Description'>' and '<'Abbreviation'>' are used to identify the wire harness product and its components modeled in KBL.",
         "step2VecPrefix": "With VEC, the contents of",
         "step2VecSuffix": "are used likewise.",
-        "step2Closing": "Based on this information, also an internet-capable identification address to the respective AAS of harness component is created.",
+        "step2Closing": "Based on this information, an internet-capable identification address for the respective AAS of the harness component is also created.",
         "step3": "A product image must then be uploaded and stored in the Asset Administration Shell.",
         "step4": "As an optional final step, you can add additional attachments to the HandoverDocumentation submodel."
       },
