@@ -184,7 +184,16 @@
     "footer": {
       "about": "Über Mnestix",
       "dataPrivacy": "Datenschutz",
-      "imprint": "Impressum"
+      "imprint": "Impressum",
+      "legalNotice": "Rechtlicher Hinweis",
+      "legalNoticeTitle": "Rechtlicher Hinweis",
+      "legalNoticeText1": "Diese Webanwendung wird ausschließlich als prototypisches System zu Demonstrations-, Evaluations-, Forschungs- und Testzwecken bereitgestellt.",
+      "legalNoticeText2": "Es handelt sich nicht um ein produktives System. Die Anwendung kann funktionale Fehler, unvollständige Inhalte, Sicherheitslücken sowie technische Einschränkungen enthalten. Eine permanente Verfügbarkeit, Fehlerfreiheit, Genauigkeit, Vollständigkeit oder Eignung für einen bestimmten Zweck wird nicht gewährleistet.",
+      "legalNoticeText3": "Die Nutzung erfolgt ausschließlich auf eigenes Risiko. Aus den bereitgestellten Informationen, Berechnungen, Visualisierungen oder automatisierten Ausgaben dürfen keine verbindlichen fachlichen, rechtlichen, wirtschaftlichen oder technischen Entscheidungen abgeleitet werden.",
+      "legalNoticeText4": "Der Betreiber übernimmt – soweit gesetzlich zulässig – keine Haftung für direkte oder indirekte Schäden, Datenverluste, Fehlentscheidungen, Betriebsunterbrechungen oder Folgeschäden, die aus der Nutzung oder Nichtverfügbarkeit dieses Prototyps entstehen.",
+      "legalNoticeText5": "Die Anwendung kann jederzeit ohne Vorankündigung geändert, eingeschränkt, zurückgesetzt oder eingestellt werden.",
+      "legalNoticeText6": "Sofern externe Dienste, Schnittstellen oder Verlinkungen eingebunden sind, wird für deren Inhalte, Verfügbarkeit, Sicherheit und Datenschutz keine Verantwortung übernommen.",
+      "legalNoticeText7": "Mit der Nutzung dieser Webanwendung erkennen die Nutzerinnen und Nutzer den experimentellen Charakter des Systems an."
     },
     "mainMenu": {
       "aasList": "AAS Liste",
@@ -596,9 +605,16 @@
       "backToHome": "Zurück zur Startseite",
       "explanation": {
         "title": "Über die DPP-Erzeugung",
-        "paragraph1": "Hier kann eine KBL oder VEC-Datei hochgeladen werden, um ein korrespondierendes DPP-Typmodell im AAS-Format zu erzeugen. Dabei werden die Submodelle „Digital Nameplate“, „HandoverDocumentation“, „Hierarchical Structures“, „Material Composition“, „Circularity“ und „Product Carbon Footprint“ erzeugt.",
-        "paragraph2": "Bestimmte Informationsinhalte aus den Dateiformaten KBL bzw. VEC werden dazu in eine entsprechende Verwaltungsschale-Repräsentation übersetzt. Zur Identifikation des im KBL oder VEC modellierten Leitungssatz-Produkts und seiner Komponenten werden bei KBL die Inhalte von Company_name und Part_number herangezogen. Bei VEC werden die Inhalte von CompanyName und GeneratingSystemName verwendet. Basierend auf diesen Informationen wird eine internetfähige Identifikationsadresse erstellt.",
-        "paragraph3": "Im Anschluss muss ein Produktbild hochgeladen werden, das in der Verwaltungsschale hinterlegt wird. Als optionalen letzten Schritt können Sie weitere Anhänge zum HandoverDocumentation Submodel hinzufügen."
+        "step1Intro": "Hier kann eine KBL oder VEC-Datei hochgeladen werden, um ein korrespondierendes DPP-Typmodell im AAS-Format zu erzeugen. Dabei werden die folgenden Submodelle erzeugt:",
+        "step1PcfSuffix": "mit",
+        "step2Intro": "Bestimmte Informationsinhalte aus den Dateiformaten KBL bzw. VEC werden dazu in eine entsprechende Verwaltungsschale-Repräsentation übersetzt.",
+        "step2KblPrefix": "Bei KBL werden die Inhalte von",
+        "step2KblSuffix": "wie z.B. '<'Company_name'>', '<'Part_number'>', '<'Description'>' und '<'Abbreviation'>' zur Identifikation des im KBL modellierten Leitungssatz-Produkts und seiner Komponenten herangezogen.",
+        "step2VecPrefix": "Bei VEC werden die Inhalte von",
+        "step2VecSuffix": "analog verwendet.",
+        "step2Closing": "Basierend auf diesen Informationen wird eine internetfähige Identifikationsadresse zur jeweiligen AAS der Leitungssatz-Komponente erstellt.",
+        "step3": "Im Anschluss muss ein Produktbild hochgeladen werden, das in der Verwaltungsschale hinterlegt wird.",
+        "step4": "Als optionalen letzten Schritt können Sie weitere Anhänge zum HandoverDocumentation Submodel hinzufügen."
       },
       "actions": {
         "copyDetailedLogs": "Detaillierte Logs kopieren",

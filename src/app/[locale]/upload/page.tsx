@@ -1,10 +1,12 @@
 'use client';
-import { Box, Grid, Link, Paper, Typography } from '@mui/material';
+import { Box, Grid, Paper } from '@mui/material';
 import { ViewHeading } from 'components/basics/ViewHeading';
 import { useTranslations } from 'next-intl';
 import UploadWorkflowStepper from './_components/UploadWorkflowStepper';
+import { UploadExplainer } from './_components/UploadExplainer';
 import NextLink from 'next/link';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import Link from '@mui/material/Link';
 
 /**
  * Page presenting the data upload workflow.
@@ -48,18 +50,7 @@ export default function UploadPage() {
                         <UploadWorkflowStepper />
                     </Grid>
                     <Grid size={{ xs: 12, md: 5 }}>
-                        <Typography variant="h6" gutterBottom>
-                            {t('explanation.title')}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary" paragraph>
-                            {t('explanation.paragraph1')}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary" paragraph>
-                            {t('explanation.paragraph2')}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            {t('explanation.paragraph3')}
-                        </Typography>
+                        <UploadExplainer />
                     </Grid>
                 </Grid>
             </Paper>
