@@ -184,7 +184,16 @@
     "footer": {
       "about": "Sobre Mnestix",
       "dataPrivacy": "Privacidad",
-      "imprint": "Aviso legal"
+      "imprint": "Aviso legal",
+      "legalNotice": "Nota legal",
+      "legalNoticeTitle": "Nota legal",
+      "legalNoticeText1": "Esta aplicación web se proporciona exclusivamente como un sistema prototípico con fines de demostración, evaluación, investigación y pruebas.",
+      "legalNoticeText2": "No es un sistema productivo. La aplicación puede contener errores funcionales, contenido incompleto, vulnerabilidades de seguridad y limitaciones técnicas. No se garantiza disponibilidad permanente, ausencia de errores, exactitud, integridad ni idoneidad para un fin determinado.",
+      "legalNoticeText3": "El uso se realiza exclusivamente bajo la propia responsabilidad del usuario. No se podrán derivar decisiones vinculantes profesionales, legales, económicas o técnicas de la información, cálculos, visualizaciones o resultados automatizados proporcionados.",
+      "legalNoticeText4": "El operador no asume – en la medida permitida por la ley – ninguna responsabilidad por daños directos o indirectos, pérdidas de datos, decisiones erróneas, interrupciones del servicio o daños consecuentes derivados del uso o la indisponibilidad de este prototipo.",
+      "legalNoticeText5": "La aplicación puede ser modificada, restringida, reiniciada o descontinuada en cualquier momento sin previo aviso.",
+      "legalNoticeText6": "Si se integran servicios externos, interfaces o enlaces, no se asume responsabilidad por su contenido, disponibilidad, seguridad o protección de datos.",
+      "legalNoticeText7": "Al utilizar esta aplicación web, los usuarios reconocen el carácter experimental del sistema."
     },
     "mainMenu": {
       "aasList": "Lista de AAS",
@@ -596,9 +605,16 @@
       "backToHome": "Volver al Inicio",
       "explanation": {
         "title": "Sobre la generación de DPP",
-        "paragraph1": "Aquí puede cargar un archivo KBL o VEC para generar un modelo de tipo DPP correspondiente en formato AAS. Se generan los siguientes submodelos: \"Digital Nameplate\", \"HandoverDocumentation\", \"Hierarchical Structures\", \"Material Composition\", \"Circularity\" y \"Product Carbon Footprint\".",
-        "paragraph2": "Ciertos contenidos de información de los formatos de archivo KBL o VEC se traducen en una representación correspondiente de Asset Administration Shell. Para la identificación del producto de arnés de cables y sus componentes modelados en KBL o VEC, se utilizan los contenidos de Company_name y Part_number en KBL. En VEC se utilizan los contenidos de CompanyName y GeneratingSystemName. Basándose en esta información, se crea una dirección de identificación apta para internet.",
-        "paragraph3": "A continuación, se debe cargar una imagen del producto que se almacenará en la Asset Administration Shell. Como paso final opcional, puede añadir archivos adicionales al submodelo HandoverDocumentation."
+        "step1Intro": "Aquí puede cargar un archivo KBL o VEC para generar un modelo de tipo DPP correspondiente en formato AAS. Se generan los siguientes submodelos:",
+        "step1PcfSuffix": "con",
+        "step2Intro": "Ciertos contenidos de información de los formatos de archivo KBL o VEC se traducen en una representación correspondiente de Asset Administration Shell.",
+        "step2KblPrefix": "Con KBL, los contenidos de",
+        "step2KblSuffix": "como '<'Company_name'>', '<'Part_number'>', '<'Description'>' y '<'Abbreviation'>' se utilizan para identificar el producto de arnés de cables y sus componentes modelados en KBL.",
+        "step2VecPrefix": "Con VEC, los contenidos de",
+        "step2VecSuffix": "se utilizan de manera similar.",
+        "step2Closing": "Basada en esta información, también se crea una dirección de identificación compatible con internet para la AAS respectiva del componente del arnés.",
+        "step3": "A continuación, se debe cargar una imagen del producto que se almacenará en la Asset Administration Shell.",
+        "step4": "Como paso final opcional, puede añadir archivos adicionales al submodelo HandoverDocumentation."
       },
       "actions": {
         "copyDetailedLogs": "Copiar registros detallados",

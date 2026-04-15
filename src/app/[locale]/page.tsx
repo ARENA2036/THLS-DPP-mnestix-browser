@@ -13,7 +13,7 @@ export default function () {
     const env = useEnv();
 
     return (
-        <Box sx={{ display: 'flex', justifyContent: 'center', minHeight: '100vh' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', minHeight: '90vh' }}>
             <Box sx={{ maxWidth: 1000, textAlign: 'left', p: 2 }}>
                 <Box sx={{ mb: 2 }}>
                     <Typography data-testid="welcome-text" variant="h1" color="primary" sx={{ mt: 3, mb: 2 }}>

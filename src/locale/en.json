@@ -184,7 +184,16 @@
     "footer": {
       "about": "About Mnestix",
       "dataPrivacy": "Data Privacy",
-      "imprint": "Imprint"
+      "imprint": "Imprint",
+      "legalNotice": "Legal Notice",
+      "legalNoticeTitle": "Legal Notice",
+      "legalNoticeText1": "This web application is provided exclusively as a prototypical system for demonstration, evaluation, research, and testing purposes.",
+      "legalNoticeText2": "This is not a production system. The application may contain functional errors, incomplete content, security vulnerabilities, and technical limitations. Permanent availability, freedom from errors, accuracy, completeness, or fitness for a particular purpose is not guaranteed.",
+      "legalNoticeText3": "Use is entirely at the user's own risk. No binding professional, legal, economic, or technical decisions may be derived from the information, calculations, visualizations, or automated outputs provided.",
+      "legalNoticeText4": "The operator assumes – to the extent permitted by law – no liability for direct or indirect damages, data losses, erroneous decisions, business interruptions, or consequential damages arising from the use or unavailability of this prototype.",
+      "legalNoticeText5": "The application may be modified, restricted, reset, or discontinued at any time without prior notice.",
+      "legalNoticeText6": "If external services, interfaces, or links are integrated, no responsibility is assumed for their content, availability, security, or data protection.",
+      "legalNoticeText7": "By using this web application, users acknowledge the experimental nature of the system."
     },
     "mainMenu": {
       "aasList": "AAS List",
@@ -596,9 +605,16 @@
       "backToHome": "Back to Home",
       "explanation": {
         "title": "About generating DPPs",
-        "paragraph1": "Here you can upload a KBL or VEC file to generate a corresponding DPP type model in AAS format. The following submodels are generated: \"Digital Nameplate\", \"HandoverDocumentation\", \"Hierarchical Structures\", \"Material Composition\", \"Circularity\" and \"Product Carbon Footprint\".",
-        "paragraph2": "Certain information contents from the KBL or VEC file formats are translated into a corresponding Asset Administration Shell representation. For KBL, the contents of Company_name and Part_number are used to identify the wire harness product and its components modeled in KBL or VEC. For VEC, the contents of CompanyName and GeneratingSystemName are used. Based on this information, an internet-capable identification address is created.",
-        "paragraph3": "A product image must then be uploaded and stored in the Asset Administration Shell. As an optional final step, you can add additional attachments to the HandoverDocumentation submodel."
+        "step1Intro": "Here you can upload a KBL or VEC file to generate a corresponding DPP type model in AAS format. The following submodels are generated:",
+        "step1PcfSuffix": "with",
+        "step2Intro": "Certain information contents from the KBL or VEC file formats are translated into a corresponding Asset Administration Shell representation.",
+        "step2KblPrefix": "With KBL, the contents of",
+        "step2KblSuffix": "such as '<'Company_name'>', '<'Part_number'>', '<'Description'>' and '<'Abbreviation'>' are used to identify the wire harness product and its components modeled in KBL.",
+        "step2VecPrefix": "With VEC, the contents of",
+        "step2VecSuffix": "are used likewise.",
+        "step2Closing": "Based on this information, an internet-capable identification address for the respective AAS of the harness component is also created.",
+        "step3": "A product image must then be uploaded and stored in the Asset Administration Shell.",
+        "step4": "As an optional final step, you can add additional attachments to the HandoverDocumentation submodel."
       },
       "actions": {
         "copyDetailedLogs": "Copy detailed logs",

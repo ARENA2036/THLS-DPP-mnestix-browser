@@ -5,6 +5,7 @@ import { useEnv } from 'app/EnvProvider';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { AboutDialog } from 'components/basics/AboutDialog';
+import { LegalNoticeDialog } from 'components/basics/LegalNoticeDialog';
 
 export function Footer() {
     const env = useEnv();
@@ -12,8 +13,12 @@ export function Footer() {
     const dataPrivacyString = env.DATA_PRIVACY_URL;
     const copyrightString = `Copyright © ${new Date().getFullYear()} XITASO GmbH`;
     const [aboutDialogOpen, setAboutDialogOpen] = useState(false);
+    const [legalNoticeDialogOpen, setLegalNoticeDialogOpen] = useState(false);
     const handleAboutDialogClose = () => {
         setAboutDialogOpen(false);
+    };
+    const handleLegalNoticeDialogClose = () => {
+        setLegalNoticeDialogOpen(false);
     };
 
     const t = useTranslations('navigation.footer');
@@ -78,6 +83,18 @@ export function Footer() {
                         <Typography
                             fontSize="small"
                             maxWidth="10rem"
+                            onClick={() => setLegalNoticeDialogOpen(!legalNoticeDialogOpen)}
+                        >
+                            <Link href="#">{t('legalNotice')}</Link>
+                        </Typography>
+
+                        <Typography mx={2} color="text.secondary" fontSize="small">
+                            |
+                        </Typography>
+
+                        <Typography
+                            fontSize="small"
+                            maxWidth="10rem"
                             onClick={() => setAboutDialogOpen(!aboutDialogOpen)}
                         >
                             <Link href="#">{t('about')}</Link>
@@ -86,6 +103,7 @@ export function Footer() {
                 </Grid>
             </Box>
             <AboutDialog open={aboutDialogOpen} onClose={handleAboutDialogClose}></AboutDialog>
+            <LegalNoticeDialog open={legalNoticeDialogOpen} onClose={handleLegalNoticeDialogClose}></LegalNoticeDialog>
         </>
     );
 }
