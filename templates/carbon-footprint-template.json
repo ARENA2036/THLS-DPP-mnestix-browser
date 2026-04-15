@@ -2193,6 +2193,3046 @@
                 }
             ],
             "modelType": "SubmodelElementCollection"
+        },
+        {
+            "idShort": "CatenaxProductCarbonFootprint",
+            "description": [
+                {
+                    "language": "en",
+                    "text": "A Product (Carbon) Footprint represents the carbon footprint of a product with values conforming to the Catena-X PCF Rulebook v4 and the WBCSD/PACT Data Exchange specification v2.0.0"
+                }
+            ],
+            "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "urn:samm:io.catenax.pcf:9.0.0#Pcf"
+                    }
+                ]
+            },
+            "qualifiers": [
+                {
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                            }
+                        ]
+                    },
+                    "kind": "TemplateQualifier",
+                    "type": "SMT/Cardinality",
+                    "valueType": "xs:string",
+                    "value": "ZeroToOne"
+                }
+            ],
+            "value": [
+                {
+                    "idShort": "scopeOfPcfForm",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Collection of Scope of PCF Form properties"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:samm:io.catenax.pcf:9.0.0#scopeOfPcfForm"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "value": [
+                        {
+                            "idShort": "specVersion",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Specification of the PCF format/data model (name and version number)"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:samm:io.catenax.pcf:9.0.0#specVersion"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "One"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "urn:io.catenax.pcf:datamodel:version:9.0.0",
+                            "modelType": "Property"
+                        },
+                        {
+                            "idShort": "partialFullPcf",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Indicator for partial or full PCF declaration"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:samm:io.catenax.pcf:9.0.0#partialFullPcf"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "One"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "Cradle-to-gate",
+                            "modelType": "Property"
+                        }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                },
+                {
+                    "idShort": "companyAndProductInformation",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Collection of company and product information properties"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:samm:io.catenax.pcf:9.0.0#companyAndProductInformation"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "value": [
+                        {
+                            "idShort": "companyInformation",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Collection of company information properties"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:samm:io.catenax.pcf:9.0.0#companyInformation"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "value": [
+                                {
+                                    "idShort": "companyName",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Name of the company supplying the product and reporting the PCF"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#companyName"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "One"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "Kabelwerk Augsburg GmbH",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "companyIds",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Company identifier, e.g. BPNL according to Catena-X"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#companyIds"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "One"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "urn:BPNL000000000DWF",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "productInformation",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Collection of product information properties"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:samm:io.catenax.pcf:9.0.0#productInformation"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "value": [
+                                {
+                                    "idShort": "productNameCompany",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Trade name of the product"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#productNameCompany"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "One"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "Cable Assembly XY-500",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "productIds",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Product identifiers, e.g. manufacturerPartID, GTIN"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#productIds"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "One"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "urn:mycompany.com:product-id:401765",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "declaredUnitOfMeasurement",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Unit of measurement for the declared unit"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#declaredUnitOfMeasurement"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "One"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "piece",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "declaredUnitAmount",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Quantity of the declared unit"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#declaredUnitAmount"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "One"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "1.0",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "productMassPerDeclaredUnit",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Mass of the product per declared unit amount in kg"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#productMassPerDeclaredUnit"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "One"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "2.35",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "productDescription",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Brief description of the product"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#productDescription"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "ZeroToOne"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "Industrial cable assembly for automotive wiring, comprising copper conductors, PVC insulation, and lithium cobalt oxide components",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "modelType": "SubmodelElementCollection"
+                        }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                },
+                {
+                    "idShort": "pcfAssessmentAndMethodology",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Collection of PCF assessment and methodology properties"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:samm:io.catenax.pcf:9.0.0#pcfAssessmentAndMethodology"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "value": [
+                        {
+                            "idShort": "dataSourcesAndQuality",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Collection of data sources and quality properties"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:samm:io.catenax.pcf:9.0.0#dataSourcesAndQuality"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "One"
+                                }
+                            ],
+                            "value": [
+                                {
+                                    "idShort": "primaryDataShare",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Share of primary data in the final PCF"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#primaryDataShare"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "ZeroToOne"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "56.12",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "secondaryEmissionFactorSources",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Secondary data sources and versions used"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#secondaryEmissionFactorSources"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "ZeroToOne"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "ecoinvent 3.8",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "technologicalDQR",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Technological data quality rating (1-5)"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#technologicalDQR"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "ZeroToOne"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "2.0",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "temporalDQR",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Temporal data quality rating (1-5)"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#temporalDQR"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "ZeroToOne"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "2.0",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "geographicalDQR",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Geographical data quality rating (1-5)"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#geographicalDQR"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "ZeroToOne"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "2.0",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "pcfAssessmentInformation",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Collection of PCF assessment information properties"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:samm:io.catenax.pcf:9.0.0#pcfAssessmentInformation"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "value": [
+                                {
+                                    "idShort": "technology",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Collection of technology properties"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#technology"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "One"
+                                        }
+                                    ],
+                                    "value": [
+                                        {
+                                            "idShort": "ccsTechnologicalCO2CaptureIncluded",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Whether CCS/BECCS technology has been employed"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#ccsTechnologicalCO2CaptureIncluded"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "One"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "false",
+                                            "modelType": "Property"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                },
+                                {
+                                    "idShort": "idAndVersion",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Collection of ID and version properties"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#idAndVersion"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "One"
+                                        }
+                                    ],
+                                    "value": [
+                                        {
+                                            "idShort": "id",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Globally unique PCF identifier (UUID v4)"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#id"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "One"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "3893bb5d-da16-4dc1-9185-11d97476c254",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "version",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Product footprint version (default 0 for Catena-X)"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#version"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "One"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "0",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "status",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Status of the product footprint (Active or Deprecated)"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#status"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "One"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "Active",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "retroOrProspectivePcfType",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Type of PCF: retrospective or prospective"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#retroOrProspectivePcfType"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "One"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "Retrospective PCF",
+                                            "modelType": "Property"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                },
+                                {
+                                    "idShort": "boundarySpecifications",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Collection of boundary specifications properties"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#boundarySpecifications"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "One"
+                                        }
+                                    ],
+                                    "value": [
+                                        {
+                                            "idShort": "exemptedEmissionsPercent",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Percentage of emissions excluded from PCF (cut-off)"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#exemptedEmissionsPercent"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "One"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "0.0",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "exemptedEmissionsDescription",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Rationale for exclusion of specific PCF emissions"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#exemptedEmissionsDescription"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "ZeroToOne"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "No exemption",
+                                            "modelType": "Property"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                },
+                                {
+                                    "idShort": "geography",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Collection of geography properties"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#geography"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "One"
+                                        }
+                                    ],
+                                    "value": [
+                                        {
+                                            "idShort": "geographyRegionOrSubregion",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Region of the supplier production site according to ISO 3166"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#geographyRegionOrSubregion"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "One"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "Eastern Asia",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "geographyCountry",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Country code according to ISO 3166-1 alpha-2"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#geographyCountry"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "ZeroToOne"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "CN",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "geographyCountrySubdivision",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Country subdivision code according to ISO 3166-2"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#geographyCountrySubdivision"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "ZeroToOne"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "CN-31",
+                                            "modelType": "Property"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                },
+                                {
+                                    "idShort": "time",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Collection of time properties"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#time"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "One"
+                                        }
+                                    ],
+                                    "value": [
+                                        {
+                                            "idShort": "referencePeriodStart",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Start of time period of data collection for primary data sources"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#referencePeriodStart"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "One"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "2022-01-01T00:00:01Z",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "referencePeriodEnd",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "End of time period of data collection for primary data sources"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#referencePeriodEnd"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "One"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "2022-12-31T23:59:59Z",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "created",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Timestamp at which the PCF has been declared"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#created"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "One"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "2022-05-22T21:47:32Z",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "validityPeriodEnd",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Expected end of the validity period for this declaration"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#validityPeriodEnd"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "One"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "2022-12-31T23:59:59Z",
+                                            "modelType": "Property"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                }
+                            ],
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "pcfMethodology",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Collection of PCF methodology properties"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:samm:io.catenax.pcf:9.0.0#pcfMethodology"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "value": [
+                                {
+                                    "idShort": "massBalancingInformation",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Collection of mass balancing information properties"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#massBalancingInformation"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "One"
+                                        }
+                                    ],
+                                    "value": [
+                                        {
+                                            "idShort": "massBalancingUsed",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Whether mass balancing (credit method) is used"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#massBalancingUsed"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "One"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "false",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "freeAttributionInMassBalancing",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Free attribution in mass balancing"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#freeAttributionInMassBalancing"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "One"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "not applicable",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "massBalancingCertificateScheme",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Certification scheme used for mass balancing"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#massBalancingCertificateScheme"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "One"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "ISCC+",
+                                            "modelType": "Property"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                },
+                                {
+                                    "idShort": "standards",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Collection of standards properties"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#standards"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "One"
+                                        }
+                                    ],
+                                    "value": [
+                                        {
+                                            "idShort": "crossSectoralStandards",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Cross-sectoral standards the PCF calculation is based on"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#crossSectoralStandards"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "One"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "ISO 14067",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "productOrSectorSpecificRules",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Product or sector specific rules applied"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#productOrSectorSpecificRules"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "One"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "urn:tfs-initiative.com:PCR:The Product Carbon Footprint Guideline for the Chemical Industry:version:v2.0",
+                                            "modelType": "Property"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                },
+                                {
+                                    "idShort": "gwpCharacterizationFactorDetails",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Collection of GWP characterization factor details"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#gwpCharacterizationFactorDetails"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "One"
+                                        }
+                                    ],
+                                    "value": [
+                                        {
+                                            "idShort": "ipccCharacterizationFactors",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "IPCC Assessment Report version of GWP values used"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#ipccCharacterizationFactors"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "One"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "AR6",
+                                            "modelType": "Property"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                },
+                                {
+                                    "idShort": "allocationInForeground",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Collection of allocation in foreground properties"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#allocationInForeground"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "One"
+                                        }
+                                    ],
+                                    "value": [
+                                        {
+                                            "idShort": "allocationWasteIncineration",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Allocation approach for waste incineration"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#allocationWasteIncineration"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "One"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "cut-off",
+                                            "modelType": "Property"
+                                        },
+                                        {
+                                            "idShort": "allocationRulesDescription",
+                                            "description": [
+                                                {
+                                                    "language": "en",
+                                                    "text": "Description of allocation rules applied to foreground data"
+                                                }
+                                            ],
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "urn:samm:io.catenax.pcf:9.0.0#allocationRulesDescription"
+                                                    }
+                                                ]
+                                            },
+                                            "qualifiers": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "kind": "TemplateQualifier",
+                                                    "type": "SMT/Cardinality",
+                                                    "valueType": "xs:string",
+                                                    "value": "ZeroToOne"
+                                                }
+                                            ],
+                                            "valueType": "xs:string",
+                                            "value": "In accordance with Catena-X PCF Rulebook",
+                                            "modelType": "Property"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                }
+                            ],
+                            "modelType": "SubmodelElementCollection"
+                        }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                },
+                {
+                    "idShort": "general",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Collection of general properties"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:samm:io.catenax.pcf:9.0.0#general"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "value": [
+                        {
+                            "idShort": "comment",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Additional information or instructions on the calculation"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:samm:io.catenax.pcf:9.0.0#comment"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "Additional explanatory information not reflected by other attributes",
+                            "modelType": "Property"
+                        },
+                        {
+                            "idShort": "pcfLegalStatement",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Legal disclaimer for the publication of this PCF"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:samm:io.catenax.pcf:9.0.0#pcfLegalStatement"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "This PCF (Product Carbon Footprint) is for information purposes only. It is based upon the standards mentioned above.",
+                            "modelType": "Property"
+                        }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                },
+                {
+                    "idShort": "carbonContent",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Collection of carbon content properties"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:samm:io.catenax.pcf:9.0.0#carbonContent"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "value": [
+                        {
+                            "idShort": "carbonContentTotal",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Total carbon content"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:samm:io.catenax.pcf:9.0.0#carbonContentTotal"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "0.22",
+                            "modelType": "Property"
+                        },
+                        {
+                            "idShort": "fossilCarbonContent",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Carbon content defined as fossil"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:samm:io.catenax.pcf:9.0.0#fossilCarbonContent"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "0.22",
+                            "modelType": "Property"
+                        },
+                        {
+                            "idShort": "biogenicCarbonContent",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Carbon content defined as biogenic"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:samm:io.catenax.pcf:9.0.0#biogenicCarbonContent"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "ZeroToOne"
+                                }
+                            ],
+                            "valueType": "xs:string",
+                            "value": "0.0",
+                            "modelType": "Property"
+                        }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                },
+                {
+                    "idShort": "productLifeCycleStagesAndEmissions",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "Collection of product life cycle stages and emissions properties"
+                        }
+                    ],
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "urn:samm:io.catenax.pcf:9.0.0#productLifeCycleStagesAndEmissions"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality",
+                            "valueType": "xs:string",
+                            "value": "One"
+                        }
+                    ],
+                    "value": [
+                        {
+                            "idShort": "productionStage",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Collection of production stage properties"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:samm:io.catenax.pcf:9.0.0#productionStage"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "One"
+                                }
+                            ],
+                            "value": [
+                                {
+                                    "idShort": "pcfIncludingBiogenicUptake",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "GWP total including biogenic uptake (position T1)"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#pcfIncludingBiogenicUptake"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "One"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "1.50",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "pcfExcludingBiogenicUptake",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "GWP total excluding biogenic uptake (position T2)"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#pcfExcludingBiogenicUptake"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "One"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "1.50",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "fossilGhgEmissions",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Fossil GHG emissions (position A)"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#fossilGhgEmissions"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "ZeroToOne"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "1.40",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "biogenicNonCO2Emissions",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Biogenic non-CO2 emissions (position C)"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#biogenicNonCO2Emissions"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "ZeroToOne"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "0.0",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "biogenicCO2Uptake",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Biogenic CO2 uptake (position D, negative contribution)"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#biogenicCO2Uptake"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "ZeroToOne"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "0.0",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "landUseChangeGhgEmissions",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Land use change GHG emissions (position E)"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#landUseChangeGhgEmissions"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "ZeroToOne"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "0.10",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "aircraftGhgEmissions",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Aviation GHG emissions upstream (position H)"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#aircraftGhgEmissions"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "ZeroToOne"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "0.0",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "distributionStage",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Collection of distribution stage properties"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:samm:io.catenax.pcf:9.0.0#distributionStage"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "One"
+                                }
+                            ],
+                            "value": [
+                                {
+                                    "idShort": "distributionStageIncluded",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Whether distribution stage emissions are included"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#distributionStageIncluded"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "One"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "true",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "distributionStagePcfIncludingBiogenicUptake",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Distribution stage GWP total including biogenic uptake"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#distributionStagePcfIncludingBiogenicUptake"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "ZeroToOne"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "0.20",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "distributionStagePcfExcludingBiogenicUptake",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Distribution stage GWP total excluding biogenic uptake"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#distributionStagePcfExcludingBiogenicUptake"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "ZeroToOne"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "0.20",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "distributionStageFossilGhgEmissions",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Distribution stage fossil GHG emissions"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#distributionStageFossilGhgEmissions"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "ZeroToOne"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "0.20",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                            "idShort": "packagingStage",
+                            "description": [
+                                {
+                                    "language": "en",
+                                    "text": "Collection of packaging stage properties"
+                                }
+                            ],
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "urn:samm:io.catenax.pcf:9.0.0#packagingStage"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                            }
+                                        ]
+                                    },
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/Cardinality",
+                                    "valueType": "xs:string",
+                                    "value": "One"
+                                }
+                            ],
+                            "value": [
+                                {
+                                    "idShort": "packagingEmissionsIncluded",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Whether packaging emissions are included in the system boundary"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#packagingEmissionsIncluded"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "One"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "true",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "packagingPcfIncludingBiogenicUptake",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Packaging GWP total including biogenic uptake"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#packagingPcfIncludingBiogenicUptake"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "ZeroToOne"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "0.05",
+                                    "modelType": "Property"
+                                },
+                                {
+                                    "idShort": "packagingPcfExcludingBiogenicUptake",
+                                    "description": [
+                                        {
+                                            "language": "en",
+                                            "text": "Packaging GHG emissions excluding biogenic uptake"
+                                        }
+                                    ],
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "urn:samm:io.catenax.pcf:9.0.0#packagingPcfExcludingBiogenicUptake"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality",
+                                            "valueType": "xs:string",
+                                            "value": "ZeroToOne"
+                                        }
+                                    ],
+                                    "valueType": "xs:string",
+                                    "value": "0.05",
+                                    "modelType": "Property"
+                                }
+                            ],
+                            "modelType": "SubmodelElementCollection"
+                        }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                }
+            ],
+            "modelType": "SubmodelElementCollection"
         }
     ],
     "modelType": "Submodel"
