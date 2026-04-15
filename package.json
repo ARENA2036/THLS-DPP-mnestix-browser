@@ -107,6 +107,7 @@
     "docker:azure": "docker compose -f compose.yml -f docker-compose/compose.azure_ad.yml up",
     "docker:rbac": "docker compose -f compose.yml -f docker-compose/compose.dynamic-rbac.yml up",
     "docker:proxy": "docker compose -f compose.yml -f docker-compose/compose.mnestix.keycloak.yml up -d",
+    "postinstall": "mkdir -p public/_static && cp node_modules/pdfjs-dist/build/pdf.worker.min.mjs public/_static/pdf.worker.min.mjs",
     "prisma:migrate": "yarn prisma migrate deploy --config prisma/prisma.config.ts",
     "prisma:generate": "yarn prisma generate --config prisma/prisma.config.ts"
   },
