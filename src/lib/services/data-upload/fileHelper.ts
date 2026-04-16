@@ -79,10 +79,10 @@ export function parseXmlToJson(xmlContent: string): Record<string, unknown> {
 
         // Only return a raw string when the element has purely text content
         // (no attributes and no element children). Otherwise keep the object.
+        if (!hasAttributes && !hasElementChildren) {
+            return textContent;
+        }
         if (textContent) {
-            if (!hasAttributes && !hasElementChildren) {
-                return textContent;
-            }
             obj['__text'] = textContent;
         }
 
