@@ -95,6 +95,18 @@ describe('parseXmlToJson', () => {
         const result = parseXmlToJson(xml);
         expect(result).toEqual({ Tag: { _id: 'x' } });
     });
+
+    it('should return empty object for self-closing root element', () => {
+        const xml = '<Root/>';
+        const result = parseXmlToJson(xml);
+        expect(result).toEqual({});
+    });
+
+    it('should return empty object for text-only root element', () => {
+        const xml = '<Root>just text</Root>';
+        const result = parseXmlToJson(xml);
+        expect(result).toEqual({});
+    });
 });
 
 describe('flattenLocalizedStrings', () => {
