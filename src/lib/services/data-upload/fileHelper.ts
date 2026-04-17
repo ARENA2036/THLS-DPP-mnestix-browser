@@ -79,17 +79,23 @@ export function parseXmlToJson(xmlContent: string): Record<string, unknown> {
 
         // Only return a raw string when the element has purely text content
         // (no attributes and no element children). Otherwise keep the object.
+        if (!hasAttributes && !hasElementChildren) {
+            return textContent;
+        }
         if (textContent) {
-            if (!hasAttributes && !hasElementChildren) {
-                return textContent;
-            }
             obj['__text'] = textContent;
         }
 
         return obj;
     }
 
-    return xmlToJson(xmlDoc.documentElement) as Record<string, unknown>;
+    const result = xmlToJson(xmlDoc.documentElement);
+    // Ensure the top-level return is always an object, even if the root
+    // element itself is empty/text-only (e.g. `<Root/>` or `<Root>text</Root>`).
+    if (typeof result !== 'object' || result === null) {
+        return {};
+    }
+    return result as Record<string, unknown>;
 }
 
 /**

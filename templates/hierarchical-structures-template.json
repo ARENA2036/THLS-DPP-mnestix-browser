@@ -891,7 +891,7 @@
 						}
 					],
 					"entityType": "SelfManagedEntity",
-					"globalAssetId": "http://asset.bedia-kabel.de/de/flry-2x/flry-a-2x035-15-gn-br-ws-br--ring-detail",
+					"globalAssetId": "https://asset.bedia-kabel.de/de/flry-2x/flry-a-2x035-15-gn-br-ws-br--ring-detail",
 					"modelType": "Entity"
 				},
 				{

@@ -66,16 +66,46 @@ describe('parseXmlToJson', () => {
         });
     });
 
-    it('should return empty object for element with no content', () => {
+    it('should return empty string for self-closing element with no content', () => {
         const xml = '<Root><Empty/></Root>';
         const result = parseXmlToJson(xml);
-        expect(result).toEqual({ Empty: {} });
+        expect(result).toEqual({ Empty: '' });
+    });
+
+    it('should return empty string for element with empty content', () => {
+        const xml = '<Root><Empty></Empty></Root>';
+        const result = parseXmlToJson(xml);
+        expect(result).toEqual({ Empty: '' });
+    });
+
+    it('should return empty strings for multiple self-closing elements', () => {
+        const xml = '<Root><Company_name/><Version/><Abbreviation/></Root>';
+        const result = parseXmlToJson(xml);
+        expect(result).toEqual({ Company_name: '', Version: '', Abbreviation: '' });
+    });
+
+    it('should return empty string for self-closing elements mixed with text elements', () => {
+        const xml = '<Root><Part_number/><Description>DefaultConnector</Description></Root>';
+        const result = parseXmlToJson(xml);
+        expect(result).toEqual({ Part_number: '', Description: 'DefaultConnector' });
     });
 
     it('should handle attributes-only element (no text, no children)', () => {
         const xml = '<Root><Tag id="x"/></Root>';
         const result = parseXmlToJson(xml);
         expect(result).toEqual({ Tag: { _id: 'x' } });
+    });
+
+    it('should return empty object for self-closing root element', () => {
+        const xml = '<Root/>';
+        const result = parseXmlToJson(xml);
+        expect(result).toEqual({});
+    });
+
+    it('should return empty object for text-only root element', () => {
+        const xml = '<Root>just text</Root>';
+        const result = parseXmlToJson(xml);
+        expect(result).toEqual({});
     });
 });
 

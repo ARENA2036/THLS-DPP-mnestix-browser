@@ -21,7 +21,7 @@ const TEMPLATES = [
         envVarName: 'FILE_UPLOAD_BLUEPRINTS_VEC',
     },
     {
-        filePath: path.join(__dirname, '../templates/hierarchical-structures-template.json'),
+        filePath: path.join(__dirname, '../templates/hierarchical-structures-dynamic-vec-template.json'),
         envVarName: 'FILE_UPLOAD_BLUEPRINTS_VEC',
     },
     {
@@ -46,6 +46,10 @@ const TEMPLATES = [
     },
     {
         filePath: path.join(__dirname, '../templates/hierarchical-structures-template.json'),
+        envVarName: 'FILE_UPLOAD_BLUEPRINTS_KBL',
+    },
+    {
+        filePath: path.join(__dirname, '../templates/hierarchical-structures-dynamic-kbl-template.json'),
         envVarName: 'FILE_UPLOAD_BLUEPRINTS_KBL',
     },
     {

@@ -1,0 +1,340 @@
+{
+    "idShort": "HierarchicalStructures",
+    "displayName": [
+        {
+            "language": "en",
+            "text": "Dynamic Bill Of Materials (KBL)"
+        },
+        {
+            "language": "de",
+            "text": "Dynamische Materialliste (KBL)"
+        },
+        {
+            "language": "es",
+            "text": "Lista de Materiales Dinámica (KBL)"
+        }
+    ],
+    "description": [
+        {
+            "language": "en",
+            "text": "Dynamic HierarchicalStructures blueprint that generates a Bill of Materials from KBL (Kabelbaumliste) data. Uses SMT/CollectionMappingInfo to create entities and HasPart relationships for each Connector_housing, General_terminal, and General_wire in the KBL file."
+        }
+    ],
+    "id": "https://example.com/sm/cable_set_bom_dynamic_kbl",
+    "kind": "Template",
+    "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+            {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/HierarchicalStructures/1/1/Submodel"
+            }
+        ]
+    },
+    "qualifiers": [
+        {
+            "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                    }
+                ]
+            },
+            "kind": "TemplateQualifier",
+            "type": "SMT/Cardinality",
+            "valueType": "xs:string",
+            "value": "ZeroToOne"
+        },
+        {
+            "kind": "TemplateQualifier",
+            "type": "EditIdShort",
+            "valueType": "xs:string",
+            "value": "True"
+        }
+    ],
+    "submodelElements": [
+        {
+            "category": "CONSTANT",
+            "idShort": "ArcheType",
+            "description": [
+                {
+                    "language": "en",
+                    "text": "ArcheType of the Submodel. Allowed values: \"Full\", \"OneDown\", \"OneUp\"."
+                }
+            ],
+            "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/HierarchicalStructures/ArcheType/1/0"
+                    }
+                ]
+            },
+            "qualifiers": [
+                {
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                            }
+                        ]
+                    },
+                    "kind": "TemplateQualifier",
+                    "type": "SMT/Cardinality",
+                    "valueType": "xs:string",
+                    "value": "One"
+                },
+                {
+                    "kind": "TemplateQualifier",
+                    "type": "FormChoices",
+                    "valueType": "xs:string",
+                    "value": "Full;OneDown;OneUp"
+                }
+            ],
+            "valueType": "xs:string",
+            "value": "Full",
+            "modelType": "Property"
+        },
+        {
+            "idShort": "CableSet",
+            "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/HierarchicalStructures/EntryNode/1/0"
+                    }
+                ]
+            },
+            "statements": [
+                {
+                    "idShort": "ConnectorHousingPart",
+                    "entityType": "SelfManagedEntity",
+                    "globalAssetId": "",
+                    "modelType": "Entity",
+                    "qualifiers": [
+                        {
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/CollectionMappingInfo",
+                            "valueType": "xs:string",
+                            "value": "Connector_housing[*]"
+                        },
+                        {
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/MappingInfo/idShort",
+                            "valueType": "xs:string",
+                            "value": "$replace(Connector_housing[*].Company_name, ' ', '_') & '_ConnectorHousing_' & $replace(Connector_housing[*].Part_number, ' ', '_')"
+                        },
+                        {
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/MappingInfo/globalAssetId",
+                            "valueType": "xs:string",
+                            "value": "'https://' & Connector_housing[*].Company_name & '/' & Connector_housing[*].Part_number"
+                        },
+                        {
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/MappingInfo/displayName",
+                            "valueType": "xs:string",
+                            "value": "'ConnectorHousing - ' & Connector_housing[*].Part_number"
+                        }
+                    ]
+                },
+                {
+                    "idShort": "HasPartConnectorHousing",
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+                            }
+                        ]
+                    },
+                    "first": {
+                        "type": "ModelReference",
+                        "keys": [
+                            {
+                                "type": "Submodel",
+                                "value": "https://example.com/sm/cable_set_bom_dynamic_kbl"
+                            },
+                            {
+                                "type": "Entity",
+                                "value": "CableSet"
+                            }
+                        ]
+                    },
+                    "second": {},
+                    "modelType": "RelationshipElement",
+                    "qualifiers": [
+                        {
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/CollectionMappingInfo",
+                            "valueType": "xs:string",
+                            "value": "Connector_housing[*]"
+                        },
+                        {
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/MappingInfo/second",
+                            "valueType": "xs:string",
+                            "value": "{\"type\": \"ModelReference\", \"keys\": [{\"type\": \"Submodel\", \"value\": \"https://example.com/sm/cable_set_bom_dynamic_kbl\"}, {\"type\": \"Entity\", \"value\": \"CableSet\"}, {\"type\": \"Entity\", \"value\": $replace(Connector_housing[*].Company_name, ' ', '_') & '_ConnectorHousing_' & $replace(Connector_housing[*].Part_number, ' ', '_')}]}"
+                        }
+                    ]
+                },
+                {
+                    "idShort": "TerminalPart",
+                    "entityType": "SelfManagedEntity",
+                    "globalAssetId": "",
+                    "modelType": "Entity",
+                    "qualifiers": [
+                        {
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/CollectionMappingInfo",
+                            "valueType": "xs:string",
+                            "value": "General_terminal[*]"
+                        },
+                        {
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/MappingInfo/idShort",
+                            "valueType": "xs:string",
+                            "value": "$replace(General_terminal[*].Company_name, ' ', '_') & '_Terminal_' & $replace(General_terminal[*].Part_number, ' ', '_')"
+                        },
+                        {
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/MappingInfo/globalAssetId",
+                            "valueType": "xs:string",
+                            "value": "'https://' & General_terminal[*].Company_name & '/' & General_terminal[*].Part_number"
+                        },
+                        {
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/MappingInfo/displayName",
+                            "valueType": "xs:string",
+                            "value": "'Terminal - ' & General_terminal[*].Part_number"
+                        }
+                    ]
+                },
+                {
+                    "idShort": "HasPartTerminal",
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+                            }
+                        ]
+                    },
+                    "first": {
+                        "type": "ModelReference",
+                        "keys": [
+                            {
+                                "type": "Submodel",
+                                "value": "https://example.com/sm/cable_set_bom_dynamic_kbl"
+                            },
+                            {
+                                "type": "Entity",
+                                "value": "CableSet"
+                            }
+                        ]
+                    },
+                    "second": {},
+                    "modelType": "RelationshipElement",
+                    "qualifiers": [
+                        {
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/CollectionMappingInfo",
+                            "valueType": "xs:string",
+                            "value": "General_terminal[*]"
+                        },
+                        {
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/MappingInfo/second",
+                            "valueType": "xs:string",
+                            "value": "{\"type\": \"ModelReference\", \"keys\": [{\"type\": \"Submodel\", \"value\": \"https://example.com/sm/cable_set_bom_dynamic_kbl\"}, {\"type\": \"Entity\", \"value\": \"CableSet\"}, {\"type\": \"Entity\", \"value\": $replace(General_terminal[*].Company_name, ' ', '_') & '_Terminal_' & $replace(General_terminal[*].Part_number, ' ', '_')}]}"
+                        }
+                    ]
+                },
+                {
+                    "idShort": "WirePart",
+                    "entityType": "SelfManagedEntity",
+                    "globalAssetId": "",
+                    "modelType": "Entity",
+                    "qualifiers": [
+                        {
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/CollectionMappingInfo",
+                            "valueType": "xs:string",
+                            "value": "General_wire[*]"
+                        },
+                        {
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/MappingInfo/idShort",
+                            "valueType": "xs:string",
+                            "value": "$replace(General_wire[*].Company_name, ' ', '_') & '_Wire_' & $replace(General_wire[*].Part_number, ' ', '_')"
+                        },
+                        {
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/MappingInfo/globalAssetId",
+                            "valueType": "xs:string",
+                            "value": "'https://' & General_wire[*].Company_name & '/' & General_wire[*].Part_number"
+                        },
+                        {
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/MappingInfo/displayName",
+                            "valueType": "xs:string",
+                            "value": "'Wire - ' & General_wire[*].Part_number"
+                        }
+                    ]
+                },
+                {
+                    "idShort": "HasPartWire",
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+                            }
+                        ]
+                    },
+                    "first": {
+                        "type": "ModelReference",
+                        "keys": [
+                            {
+                                "type": "Submodel",
+                                "value": "https://example.com/sm/cable_set_bom_dynamic_kbl"
+                            },
+                            {
+                                "type": "Entity",
+                                "value": "CableSet"
+                            }
+                        ]
+                    },
+                    "second": {},
+                    "modelType": "RelationshipElement",
+                    "qualifiers": [
+                        {
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/CollectionMappingInfo",
+                            "valueType": "xs:string",
+                            "value": "General_wire[*]"
+                        },
+                        {
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/MappingInfo/second",
+                            "valueType": "xs:string",
+                            "value": "{\"type\": \"ModelReference\", \"keys\": [{\"type\": \"Submodel\", \"value\": \"https://example.com/sm/cable_set_bom_dynamic_kbl\"}, {\"type\": \"Entity\", \"value\": \"CableSet\"}, {\"type\": \"Entity\", \"value\": $replace(General_wire[*].Company_name, ' ', '_') & '_Wire_' & $replace(General_wire[*].Part_number, ' ', '_')}]}"
+                        }
+                    ]
+                }
+            ],
+            "entityType": "SelfManagedEntity",
+            "modelType": "Entity"
+        }
+    ],
+    "modelType": "Submodel"
+}

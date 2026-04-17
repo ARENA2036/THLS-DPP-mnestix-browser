@@ -1,0 +1,1289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kbl:KBL_container xsi:schemaLocation="http://www.prostep.org/Car_electric_container/KBL2.3/KBLSchema" xmlns:kbl="http://www.prostep.org/Car_electric_container/KBL2.3/KBLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version_id="2.4" id="Obfa8110a1440b3ce08f26f50XObfa8110a1440b3ce08f26f4f00">
+    <Cartesian_point id="a99d8ce99c66211bcd8a0d01a5a4757">
+      <Coordinates>0.0</Coordinates>
+      <Coordinates>0.0</Coordinates>
+      <Coordinates>0.0</Coordinates>
+    </Cartesian_point>
+    <Connector_housing id="Na504fba199e67b6e125634fXNa504fba199e67b6e125634800">
+      <Part_number>TE_ConnectorHousing_2_2310137_1</Part_number>
+      <Company_name>asset.te.com</Company_name>
+      <Version/>
+      <Abbreviation/>
+      <Description>TE_2-2310137-1_Minicoax_1Pol</Description>
+      <Slots id="Na504fba199e67b6e1275e22XNa504fba199e67b6e1275e1b00">
+        <Id>Minicoax_1Pos</Id>
+        <Number_of_cavities>2</Number_of_cavities>
+        <Cavities id="Na504fba199e67b6e1275e22xNa504fba199e67b6e1275e8100">
+          <Cavity_number>1</Cavity_number>
+        </Cavities>
+        <Cavities id="Na504fba199e67b6e1275e22xObfa8022f19a0025d6b5b41c000">
+          <Cavity_number>2</Cavity_number>
+        </Cavities>
+      </Slots>
+    </Connector_housing>
+    <Connector_housing id="Na504fba199e67b6e12764a7XNa504fba199e67b6e12764a000">
+      <Part_number>TE_ConnectorHousing_1418796_3</Part_number>
+      <Company_name>asset.te.com</Company_name>
+      <Version/>
+      <Abbreviation/>
+      <Description>TE_1418796-3_2.8(AMPMCP)_2WAY_1ROW_FEMALE</Description>
+      <Slots id="Na504fba199e67b6e127655aXNa504fba199e67b6e127655300">
+        <Id>2.8mm(MCP)_2WAY_1ROW</Id>
+        <Number_of_cavities>2</Number_of_cavities>
+        <Cavities id="Na504fba199e67b6e127655axNa504fba199e67b6e127659e00">
+          <Cavity_number>1</Cavity_number>
+        </Cavities>
+        <Cavities id="Na504fba199e67b6e127655axNa504fba199e67b6e12765e900">
+          <Cavity_number>2</Cavity_number>
+        </Cavities>
+      </Slots>
+    </Connector_housing>
+    <Connector_housing id="Na52040318fa3ea7b667f35cXNa52040318fa3ea7b667f35500">
+      <Part_number>TE_ConnectorHousing_2470646-9</Part_number>
+      <Company_name>asset.te.com</Company_name>
+      <Version/>
+      <Abbreviation/>
+      <Description>TE_2470646-9_MQS_18WAY_2ROW_FEMALE_UNSEALED</Description>
+      <Slots id="Na52040318fa3ea7b667f3cfXNa52040318fa3ea7b667f3c800">
+        <Id>MQS_18Pos</Id>
+        <Number_of_cavities>18</Number_of_cavities>
+        <Cavities id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f3f900">
+          <Cavity_number>1</Cavity_number>
+        </Cavities>
+        <Cavities id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f47d00">
+          <Cavity_number>2</Cavity_number>
+        </Cavities>
+        <Cavities id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f4c000">
+          <Cavity_number>3</Cavity_number>
+        </Cavities>
+        <Cavities id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f50300">
+          <Cavity_number>4</Cavity_number>
+        </Cavities>
+        <Cavities id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f54600">
+          <Cavity_number>5</Cavity_number>
+        </Cavities>
+        <Cavities id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f58900">
+          <Cavity_number>6</Cavity_number>
+        </Cavities>
+        <Cavities id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f5cc00">
+          <Cavity_number>7</Cavity_number>
+        </Cavities>
+        <Cavities id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f60f00">
+          <Cavity_number>8</Cavity_number>
+        </Cavities>
+        <Cavities id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f65200">
+          <Cavity_number>9</Cavity_number>
+        </Cavities>
+        <Cavities id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f69500">
+          <Cavity_number>10</Cavity_number>
+        </Cavities>
+        <Cavities id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f6d800">
+          <Cavity_number>11</Cavity_number>
+        </Cavities>
+        <Cavities id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f71b00">
+          <Cavity_number>12</Cavity_number>
+        </Cavities>
+        <Cavities id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f76e00">
+          <Cavity_number>13</Cavity_number>
+        </Cavities>
+        <Cavities id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f7b100">
+          <Cavity_number>14</Cavity_number>
+        </Cavities>
+        <Cavities id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f7f400">
+          <Cavity_number>15</Cavity_number>
+        </Cavities>
+        <Cavities id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f83700">
+          <Cavity_number>16</Cavity_number>
+        </Cavities>
+        <Cavities id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f87a00">
+          <Cavity_number>17</Cavity_number>
+        </Cavities>
+        <Cavities id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f8bd00">
+          <Cavity_number>18</Cavity_number>
+        </Cavities>
+      </Slots>
+    </Connector_housing>
+    <Connector_housing id="Na5206e3187e73b9ff44fc22XNa5206e3187e73b9ff44fc2100">
+      <Part_number>DefaultConnector_2pins</Part_number>
+      <Company_name/>
+      <Version/>
+      <Abbreviation/>
+      <Description>DefaultConnector_2pins</Description>
+      <Mass_information id="x1277_1761663176865">
+        <Unit_component>Obfa7b23e187bbffad473dd0eXNa66158717ef70e69811caa600</Unit_component>
+        <Value_component>0.82</Value_component>
+      </Mass_information>
+      <Slots id="Na5206e3187e73b9ff44fc30XNa5206e3187e73b9ff44fc2f00">
+        <Id>A</Id>
+        <Number_of_cavities>2</Number_of_cavities>
+        <Cavities id="Na5206e3187e73b9ff44fc30xNa5206e3187e73b9ff44fc3c00">
+          <Cavity_number>1</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff44fc30xNa5206e3187e73b9ff44fc4d00">
+          <Cavity_number>2</Cavity_number>
+        </Cavities>
+      </Slots>
+    </Connector_housing>
+    <Connector_housing id="Na5206e3187e73b9ff4506c2XNa5206e3187e73b9ff4506c100">
+      <Part_number>DefaultConnector_4pins</Part_number>
+      <Company_name/>
+      <Version/>
+      <Abbreviation/>
+      <Description>DefaultConnector_4pins</Description>
+      <Slots id="Na5206e3187e73b9ff4506cfXNa5206e3187e73b9ff4506ce00">
+        <Id>A</Id>
+        <Number_of_cavities>4</Number_of_cavities>
+        <Cavities id="Na5206e3187e73b9ff4506cfxNa5206e3187e73b9ff4506db00">
+          <Cavity_number>1</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff4506cfxNa5206e3187e73b9ff4506ec00">
+          <Cavity_number>3</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff4506cfxNa5206e3187e73b9ff4506fc00">
+          <Cavity_number>2</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff4506cfxNa5206e3187e73b9ff45070c00">
+          <Cavity_number>4</Cavity_number>
+        </Cavities>
+      </Slots>
+    </Connector_housing>
+    <Connector_housing id="Na5206e3187e73b9ff451432XNa5206e3187e73b9ff45143100">
+      <Part_number>DefaultConnector_1pins</Part_number>
+      <Company_name/>
+      <Version/>
+      <Abbreviation/>
+      <Description>DefaultConnector_1pins</Description>
+      <Slots id="Na5206e3187e73b9ff45143fXNa5206e3187e73b9ff45143e00">
+        <Id>A</Id>
+        <Number_of_cavities>1</Number_of_cavities>
+        <Cavities id="Na5206e3187e73b9ff45143fxNa5206e3187e73b9ff45144b00">
+          <Cavity_number>1</Cavity_number>
+        </Cavities>
+      </Slots>
+    </Connector_housing>
+    <Connector_housing id="Na5206e3187e73b9ff453f58XNa5206e3187e73b9ff453f5700">
+      <Part_number>DefaultConnector_18pins</Part_number>
+      <Company_name/>
+      <Version/>
+      <Abbreviation/>
+      <Description>DefaultConnector_18pins</Description>
+      <Slots id="Na5206e3187e73b9ff453f63XNa5206e3187e73b9ff453f6200">
+        <Id>A</Id>
+        <Number_of_cavities>18</Number_of_cavities>
+        <Cavities id="Na5206e3187e73b9ff453f63xNa5206e3187e73b9ff453f6e00">
+          <Cavity_number>2</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff453f63xNa5206e3187e73b9ff453f7e00">
+          <Cavity_number>18</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff453f63xNa5206e3187e73b9ff453f8d00">
+          <Cavity_number>3</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff453f63xNa5206e3187e73b9ff453f9c00">
+          <Cavity_number>9</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff453f63xNa5206e3187e73b9ff453fab00">
+          <Cavity_number>11</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff453f63xNa5206e3187e73b9ff453fba00">
+          <Cavity_number>14</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff453f63xNa5206e3187e73b9ff453fc900">
+          <Cavity_number>15</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff453f63xNa5206e3187e73b9ff453fd800">
+          <Cavity_number>16</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff453f63xNa5206e3187e73b9ff453fe700">
+          <Cavity_number>7</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff453f63xNa5206e3187e73b9ff453ff600">
+          <Cavity_number>4</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff453f63xNa5206e3187e73b9ff45400500">
+          <Cavity_number>13</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff453f63xNa5206e3187e73b9ff45401400">
+          <Cavity_number>17</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff453f63xNa5206e3187e73b9ff45402300">
+          <Cavity_number>1</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff453f63xNa5206e3187e73b9ff45403200">
+          <Cavity_number>10</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff453f63xNa5206e3187e73b9ff45404100">
+          <Cavity_number>8</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff453f63xNa5206e3187e73b9ff45405000">
+          <Cavity_number>5</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff453f63xNa5206e3187e73b9ff45405f00">
+          <Cavity_number>6</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff453f63xNa5206e3187e73b9ff45406e00">
+          <Cavity_number>12</Cavity_number>
+        </Cavities>
+      </Slots>
+    </Connector_housing>
+    <Connector_housing id="Na5206e3187e73b9ff45422bXNa5206e3187e73b9ff45422a00">
+      <Part_number>DefaultConnector_10pins</Part_number>
+      <Company_name/>
+      <Version/>
+      <Abbreviation/>
+      <Description>DefaultConnector_10pins</Description>
+      <Mass_information id="x1276_1761663176865">
+        <Unit_component>Obfa7b23e187bbffad473dd0eXNa66158717ef70e69811caa600</Unit_component>
+        <Value_component>8.552</Value_component>
+      </Mass_information>
+      <Slots id="Na5206e3187e73b9ff45423aXNa5206e3187e73b9ff45423900">
+        <Id>A</Id>
+        <Number_of_cavities>10</Number_of_cavities>
+        <Cavities id="Na5206e3187e73b9ff45423axNa5206e3187e73b9ff45424600">
+          <Cavity_number>4</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff45423axNa5206e3187e73b9ff45425700">
+          <Cavity_number>2</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff45423axNa5206e3187e73b9ff45426700">
+          <Cavity_number>10</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff45423axNa5206e3187e73b9ff45427700">
+          <Cavity_number>5</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff45423axNa5206e3187e73b9ff45428700">
+          <Cavity_number>1</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff45423axNa5206e3187e73b9ff45429700">
+          <Cavity_number>7</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff45423axNa5206e3187e73b9ff4542a700">
+          <Cavity_number>8</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff45423axNa5206e3187e73b9ff4542b700">
+          <Cavity_number>3</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff45423axNa5206e3187e73b9ff4542c700">
+          <Cavity_number>6</Cavity_number>
+        </Cavities>
+        <Cavities id="Na5206e3187e73b9ff45423axNa5206e3187e73b9ff4542d700">
+          <Cavity_number>9</Cavity_number>
+        </Cavities>
+      </Slots>
+    </Connector_housing>
+    <Connector_housing id="Na660fb818f283ad7622ac22XNa660fb818f283ad7622ac1b00">
+      <Part_number>TE_ConnectorHousing_2470653-9</Part_number>
+      <Company_name>asset.te.com</Company_name>
+      <Version/>
+      <Abbreviation/>
+      <Description>TE_2470653-9_Minicoax_4Pos</Description>
+      <Slots id="Na660fb818f283ad7622ac70XNa660fb818f283ad7622ac6900">
+        <Id>Minicoax_4Pos</Id>
+        <Number_of_cavities>4</Number_of_cavities>
+        <Cavities id="Na660fb818f283ad7622ac70xNa66068519468ada8d72320100">
+          <Cavity_number>3</Cavity_number>
+        </Cavities>
+        <Cavities id="Na660fb818f283ad7622ac70xNa66068519468ada8d72328400">
+          <Cavity_number>3-S</Cavity_number>
+        </Cavities>
+        <Cavities id="Na660fb818f283ad7622ac70xNa66068519468ada8d7232e000">
+          <Cavity_number>4-S</Cavity_number>
+        </Cavities>
+        <Cavities id="Na660fb818f283ad7622ac70xNa66068519468ada8d72333c00">
+          <Cavity_number>4</Cavity_number>
+        </Cavities>
+        <Cavities id="Na660fb818f283ad7622ac70xNa660fb818f283ad7622acae00">
+          <Cavity_number>1</Cavity_number>
+        </Cavities>
+        <Cavities id="Na660fb818f283ad7622ac70xNa660fb818f283ad7622ad6900">
+          <Cavity_number>1-S</Cavity_number>
+        </Cavities>
+        <Cavities id="Na660fb818f283ad7622ac70xNa660fb818f283ad7622adcf00">
+          <Cavity_number>2</Cavity_number>
+        </Cavities>
+        <Cavities id="Na660fb818f283ad7622ac70xNa660fb818f283ad7622ae3500">
+          <Cavity_number>2-S</Cavity_number>
+        </Cavities>
+      </Slots>
+    </Connector_housing>
+    <Connector_housing id="Na660fb818f283ad76244d83XNa660fb818f283ad76244d7c00">
+      <Part_number>TE_ConnectorHousing_2470649_9</Part_number>
+      <Company_name>asset.te.com</Company_name>
+      <Version/>
+      <Abbreviation/>
+      <Description>TE-2470649-9_2.8(MCP)_4WAY_1ROW_FEMALE_UNSEALED</Description>
+      <Slots id="Na660fb818f283ad76244dddXNa660fb818f283ad76244dd600">
+        <Id>AMP MCP2.8_4Pos</Id>
+        <Number_of_cavities>4</Number_of_cavities>
+        <Cavities id="Na660fb818f283ad76244dddxNa660fb818f283ad76244e1800">
+          <Cavity_number>1</Cavity_number>
+        </Cavities>
+        <Cavities id="Na660fb818f283ad76244dddxNa660fb818f283ad76244e6200">
+          <Cavity_number>2</Cavity_number>
+        </Cavities>
+        <Cavities id="Na660fb818f283ad76244dddxNa660fb818f283ad76244eaa00">
+          <Cavity_number>3</Cavity_number>
+        </Cavities>
+        <Cavities id="Na660fb818f283ad76244dddxNa660fb818f283ad76244ef200">
+          <Cavity_number>4</Cavity_number>
+        </Cavities>
+      </Slots>
+    </Connector_housing>
+    <Connector_housing id="Oa504fba199e17c50476fc505XOa504fba199e17c50476fc4ff00">
+      <Part_number>TE_ConnectorHousing_2302475_1</Part_number>
+      <Company_name>asset.te.com</Company_name>
+      <Version/>
+      <Abbreviation/>
+      <Description>TE_2302475-1_NANOMQS_COD A_0.5mm_10 WAY_2 ROW_FEMALE_UNSEALED</Description>
+      <Housing_colour>Black</Housing_colour>
+      <Housing_code>A</Housing_code>
+      <Slots id="Oa504fba199e17c50476fc511XOa504fba199e17c50476fc50b00">
+        <Id>0.5mm(NANOMQS)_10WAY_2Row</Id>
+        <Number_of_cavities>10</Number_of_cavities>
+        <Cavities id="Oa504fba199e17c50476fc511xOa504fba199e17c50476fc51f00">
+          <Cavity_number>1</Cavity_number>
+        </Cavities>
+        <Cavities id="Oa504fba199e17c50476fc511xOa504fba199e17c50476fc52f00">
+          <Cavity_number>2</Cavity_number>
+        </Cavities>
+        <Cavities id="Oa504fba199e17c50476fc511xOa504fba199e17c50476fc53e00">
+          <Cavity_number>3</Cavity_number>
+        </Cavities>
+        <Cavities id="Oa504fba199e17c50476fc511xOa504fba199e17c50476fc54d00">
+          <Cavity_number>4</Cavity_number>
+        </Cavities>
+        <Cavities id="Oa504fba199e17c50476fc511xOa504fba199e17c50476fc55c00">
+          <Cavity_number>5</Cavity_number>
+        </Cavities>
+        <Cavities id="Oa504fba199e17c50476fc511xOa504fba199e17c50476fc56b00">
+          <Cavity_number>6</Cavity_number>
+        </Cavities>
+        <Cavities id="Oa504fba199e17c50476fc511xOa504fba199e17c50476fc57a00">
+          <Cavity_number>7</Cavity_number>
+        </Cavities>
+        <Cavities id="Oa504fba199e17c50476fc511xOa504fba199e17c50476fc58900">
+          <Cavity_number>8</Cavity_number>
+        </Cavities>
+        <Cavities id="Oa504fba199e17c50476fc511xOa504fba199e17c50476fc59800">
+          <Cavity_number>9</Cavity_number>
+        </Cavities>
+        <Cavities id="Oa504fba199e17c50476fc511xOa504fba199e17c50476fc5a700">
+          <Cavity_number>10</Cavity_number>
+        </Cavities>
+      </Slots>
+    </Connector_housing>
+    <General_terminal id="Na504fba199eb9ff98933ff3XNa504fba199eb9ff98933fec00">
+      <Part_number>TE_GeneralTerminal_5_928999_1</Part_number>
+      <Company_name>asset.te.com</Company_name>
+      <Version/>
+      <Abbreviation/>
+      <Description/>
+    </General_terminal>
+    <General_terminal id="Na504fba199eb9ff9893404aXNa504fba199eb9ff9893404900">
+      <Part_number>TE_GeneralTerminal_2_1703930_1</Part_number>
+      <Company_name>asset.te.com</Company_name>
+      <Version/>
+      <Abbreviation/>
+      <Description/>
+      <Cross_section_area id="x1198_1761663176865">
+        <Unit_component>Na660fcd18b03510ead71c69XNa660fcd18b03510ead71c6800</Unit_component>
+        <Minimum>0.22</Minimum>
+        <Maximum>0.35</Maximum>
+      </Cross_section_area>
+    </General_terminal>
+    <General_terminal id="Na504fba199eb9ff98934187XNa504fba199eb9ff9893418600">
+      <Part_number>TE_MATE_AXContact_1445204_1</Part_number>
+      <Company_name>fakeasset.te.com</Company_name>
+      <Version/>
+      <Abbreviation/>
+      <Description/>
+    </General_terminal>
+    <General_terminal id="Na504fba199eb9ff989342b8XNa504fba199eb9ff989342b700">
+      <Part_number>TE_AMP_MCPContact_348470_1</Part_number>
+      <Company_name>fakeasset.te.com</Company_name>
+      <Version/>
+      <Abbreviation/>
+      <Description/>
+      <Cross_section_area id="x1201_1761663176865">
+        <Unit_component>Na660fcd18b03510ead71c69XNa660fcd18b03510ead71c6800</Unit_component>
+        <Minimum>1.5</Minimum>
+        <Maximum>2.5</Maximum>
+      </Cross_section_area>
+    </General_terminal>
+    <General_terminal id="Na504fba199eb9ff9893436fXNa504fba199eb9ff9893436e00">
+      <Part_number>TE_GeneralTerminal_1_1703930_1</Part_number>
+      <Company_name>asset.te.com</Company_name>
+      <Version/>
+      <Abbreviation/>
+      <Description/>
+      <Cross_section_area id="x1200_1761663176865">
+        <Unit_component>Na660fcd18b03510ead71c69XNa660fcd18b03510ead71c6800</Unit_component>
+        <Minimum>0.13</Minimum>
+        <Maximum>0.17</Maximum>
+      </Cross_section_area>
+    </General_terminal>
+    <General_terminal id="Na504fba199eb9ff98934414XNa504fba199eb9ff9893441300">
+      <Part_number>TE_GeneralTerminal_2141824_1</Part_number>
+      <Company_name>asset.te.com</Company_name>
+      <Version/>
+      <Abbreviation/>
+      <Description/>
+      <Cross_section_area id="x1199_1761663176865">
+        <Unit_component>Na660fcd18b03510ead71c69XNa660fcd18b03510ead71c6800</Unit_component>
+        <Minimum>0.13</Minimum>
+        <Maximum>0.17</Maximum>
+      </Cross_section_area>
+    </General_terminal>
+    <General_terminal id="Na5206e3187e73b9ff46393dXNa5206e3187e73b9ff46393c00">
+      <Part_number>defaultFemale</Part_number>
+      <Company_name/>
+      <Version/>
+      <Abbreviation/>
+      <Description/>
+    </General_terminal>
+    <General_terminal id="Na5206e3187e73b9ff463963XNa5206e3187e73b9ff46396200">
+      <Part_number>defaultMale</Part_number>
+      <Company_name/>
+      <Version/>
+      <Abbreviation/>
+      <Description/>
+    </General_terminal>
+    <General_wire id="Ma661119192f5d7ed1ed4d4XMa661119192f5d7ed1ed4d300">
+      <Part_number>de/flry-2x/flry-a-2x035-15-gn-br-ws-br--ring-detail</Part_number>
+      <Company_name>asset.bedia-kabel.de</Company_name>
+      <Version/>
+      <Abbreviation>/NULL</Abbreviation>
+      <Description/>
+      <Mass_information id="Ma661119192f5d7ed1ed4d4xMa661119192f5d7ed1ed52b00">
+        <Unit_component>Obfa7b23e187bbffad473dd0eXNa66158717ef70e69811caa600</Unit_component>
+        <Value_component>16.0</Value_component>
+      </Mass_information>
+      <Wire_type>wire</Wire_type>
+      <Cross_section_area id="x1245_1761663176865">
+        <Unit_component>Oa500555187b6fa17151303d6XNa50055517e6bd2783d4262800</Unit_component>
+        <Value_component>1.5</Value_component>
+      </Cross_section_area>
+      <Outside_diameter id="x1010_1761663176865">
+        <Unit_component>Oa500555187b6fa17151305f2XNa660fc71862f959e6b2f04500</Unit_component>
+        <Value_component>2.4</Value_component>
+      </Outside_diameter>
+      <Cover_colour id="x1009_1761663176865">
+        <Colour_type>Base Color</Colour_type>
+        <Colour_value>RD</Colour_value>
+      </Cover_colour>
+    </General_wire>
+    <General_wire id="Na504fba199eb9ff9892e06cXNa504fba199eb9ff9892e06500">
+      <Part_number>FLCUAG01RY-013A</Part_number>
+      <Company_name>asset.leonicables.com</Company_name>
+      <Version/>
+      <Abbreviation/>
+      <Description/>
+      <Cover_colour id="x1008_1761663176865">
+        <Colour_type>Base Color</Colour_type>
+        <Colour_value>BU</Colour_value>
+      </Cover_colour>
+    </General_wire>
+    <General_wire id="Na504fba19a057bd01e1f38cXNa504fba19a057bd01e1f38500">
+      <Part_number>de-de/coaxial-cable-rg-174-u-m400189/400189</Part_number>
+      <Company_name>asset.helukabel.com</Company_name>
+      <Version/>
+      <Abbreviation/>
+      <Description/>
+      <Core id="x1212_1761663176865">
+        <Id>10454906</Id>
+        <Cross_section_area id="x1231_1761663176865">
+          <Unit_component>x1238_1761663176865</Unit_component>
+          <Value_component>0.18</Value_component>
+        </Cross_section_area>
+        <Core_colour id="x1288_1761663176865">
+          <Colour_type>Base Color</Colour_type>
+          <Colour_value>WH</Colour_value>
+        </Core_colour>
+      </Core>
+      <Core id="x1237_1761663176865">
+        <Id>10454905</Id>
+        <Cross_section_area id="x1240_1761663176865">
+          <Unit_component>x1238_1761663176865</Unit_component>
+          <Value_component>0.01</Value_component>
+        </Cross_section_area>
+        <Core_colour id="x1307_1761663176865">
+          <Colour_type>Base Color</Colour_type>
+          <Colour_value>SC</Colour_value>
+        </Core_colour>
+      </Core>
+      <Cover_colour id="x1007_1761663176865">
+        <Colour_type>Base Color</Colour_type>
+        <Colour_value>BK</Colour_value>
+      </Cover_colour>
+    </General_wire>
+    <General_wire id="Na5206e3187e73b9ff44c823XNa5206e3187e73b9ff44c82200">
+      <Part_number>de-de/vehicle-cable-flry-m28484/28529</Part_number>
+      <Company_name>asset.helukabel.com</Company_name>
+      <Version/>
+      <Abbreviation/>
+      <Description/>
+      <Core id="x1225_1761663176865">
+        <Id>8132438</Id>
+        <Wire_type>wire</Wire_type>
+        <Cross_section_area id="x1227_1761663176865">
+          <Unit_component>Oa500555187b6fa17151303d6XNa50055517e6bd2783d4262800</Unit_component>
+          <Value_component>0.35</Value_component>
+        </Cross_section_area>
+        <Outside_diameter id="x1215_1761663176865">
+          <Unit_component>Oa500555187b6fa17151305f2XNa660fc71862f959e6b2f04500</Unit_component>
+          <Value_component>1.2</Value_component>
+        </Outside_diameter>
+        <Core_colour id="x1210_1761663176865">
+          <Colour_type>Base Color</Colour_type>
+          <Colour_value>YE</Colour_value>
+        </Core_colour>
+        <Core_colour id="x1292_1761663176865">
+          <Colour_type>Identification Color 1</Colour_type>
+          <Colour_value>GN</Colour_value>
+        </Core_colour>
+      </Core>
+      <Cover_colour id="x1006_1761663176865">
+        <Colour_type>Base Color</Colour_type>
+        <Colour_value/>
+      </Cover_colour>
+    </General_wire>
+    <Harness id="x1076_1761663176865">
+      <Part_number/>
+      <Company_name>ExampleCompany</Company_name>
+      <Version/>
+      <Abbreviation/>
+      <Description>ExampleCablesetKBL</Description>
+      <Car_classification_level_2/>
+      <Model_year/>
+      <Content>harness complete set</Content>
+      <Connection id="x10444743con">
+        <Signal_name>Stecker Modul 1 : 17</Signal_name>
+        <Wire>Na504fba199eb9ff9892df6aXNa504fba199eb9ff9892df6400</Wire>
+        <Extremities id="x1172_1761663176865">
+          <Position_on_wire>1.0</Position_on_wire>
+          <Contact_point>Na504fba199e67b6e12b5ad4XNa504fba199e67b6e12b5acd00</Contact_point>
+        </Extremities>
+        <Extremities id="x1178_1761663176865">
+          <Position_on_wire>0.0</Position_on_wire>
+          <Contact_point>Na504fba199e67b6e12540d1XNa504fba199e67b6e12540ca00</Contact_point>
+        </Extremities>
+      </Connection>
+      <Connection id="x10444744con">
+        <Signal_name>Stecker Modul 2 : 4</Signal_name>
+        <Wire>Na504fba199eb9ff9892e2c2XNa504fba199eb9ff9892e2bc00</Wire>
+        <Extremities id="x1175_1761663176865">
+          <Position_on_wire>1.0</Position_on_wire>
+          <Contact_point>Na504fba199e67b6e12862bbXNa504fba199e67b6e12862b400</Contact_point>
+        </Extremities>
+        <Extremities id="x1181_1761663176865">
+          <Position_on_wire>0.0</Position_on_wire>
+          <Contact_point>Na504fba199e67b6e1254b20XNa504fba199e67b6e1254b1900</Contact_point>
+        </Extremities>
+      </Connection>
+      <Connection id="x10444749con">
+        <Signal_name>Stecker Modul 2 : 3</Signal_name>
+        <Wire>Na504fba199eb9ff9892e1b7XNa504fba199eb9ff9892e1b100</Wire>
+        <Extremities id="x1173_1761663176865">
+          <Position_on_wire>1.0</Position_on_wire>
+          <Contact_point>Na504fba199e67b6e1286303XNa504fba199e67b6e12862fc00</Contact_point>
+        </Extremities>
+        <Extremities id="x1176_1761663176865">
+          <Position_on_wire>0.0</Position_on_wire>
+          <Contact_point>Na504fba199e67b6e1254acfXNa504fba199e67b6e1254ac800</Contact_point>
+        </Extremities>
+      </Connection>
+      <Connection id="x10444757con">
+        <Signal_name>Stecker Modul 1 : 9</Signal_name>
+        <Wire>Na504fba199eb9ff9892d311XNa504fba199eb9ff9892d30a00</Wire>
+        <Extremities id="x1169_1761663176865">
+          <Position_on_wire>0.0</Position_on_wire>
+          <Contact_point>Na504fba199e67b6e125407dXNa504fba199e67b6e125407600</Contact_point>
+        </Extremities>
+        <Extremities id="x1170_1761663176865">
+          <Position_on_wire>1.0</Position_on_wire>
+          <Contact_point>Na504fba199e67b6e12b5b64XNa504fba199e67b6e12b5b5d00</Contact_point>
+        </Extremities>
+      </Connection>
+      <Connection id="x10444758con">
+        <Signal_name>Stecker Modul 1 : 8 </Signal_name>
+        <Wire>Na504fba199eb9ff9892d2ffXNa504fba199eb9ff9892d2f800</Wire>
+        <Extremities id="x1177_1761663176865">
+          <Position_on_wire>0.0</Position_on_wire>
+          <Contact_point>Na504fba199e67b6e125402cXNa504fba199e67b6e125402500</Contact_point>
+        </Extremities>
+        <Extremities id="x1179_1761663176865">
+          <Position_on_wire>1.0</Position_on_wire>
+          <Contact_point>Na504fba199e67b6e12b5b1cXNa504fba199e67b6e12b5b1500</Contact_point>
+        </Extremities>
+      </Connection>
+      <Connection id="x10444765con">
+        <Signal_name>Stecker Modul 3 : 3</Signal_name>
+        <Wire>Na504fba199eb9ff9892f589XNa504fba199eb9ff9892f57300</Wire>
+        <Extremities id="x1168_1761663176865">
+          <Position_on_wire>0.0</Position_on_wire>
+          <Contact_point>Na504fba199e67b6e1275ab8XNa504fba199e67b6e1275ab100</Contact_point>
+        </Extremities>
+        <Extremities id="x1171_1761663176865">
+          <Position_on_wire>1.0</Position_on_wire>
+          <Contact_point>Na504fba199e67b6e1275f49XNa504fba199e67b6e1275f4200</Contact_point>
+        </Extremities>
+      </Connection>
+      <Connection id="x10454513con">
+        <Signal_name>Stecker Shielding</Signal_name>
+        <Wire>Obfa8022f19a0025d6b52b8d7XObfa8022f19a0025d6b52b8d100</Wire>
+        <Extremities id="x1174_1761663176865">
+          <Position_on_wire>0.0</Position_on_wire>
+          <Contact_point>Obfa8022f19a0025d6b591c39XObfa8022f19a0025d6b591c3200</Contact_point>
+        </Extremities>
+        <Extremities id="x1180_1761663176865">
+          <Position_on_wire>1.0</Position_on_wire>
+          <Contact_point>Obfa8022f19a0025d6b5b4298XObfa8022f19a0025d6b5b429100</Contact_point>
+        </Extremities>
+      </Connection>
+      <Connector_occurrence id="Na504fba199e67b6e1231320XNa504fba199e67b6e123131900">
+        <Id>TE_2470646-9_MQS_18WAY_2ROW_FEMALE_UNSEALED</Id>
+        <Part>Na52040318fa3ea7b667f35cXNa52040318fa3ea7b667f35500</Part>
+        <Contact_points id="Na504fba199e67b6e125402cXNa504fba199e67b6e125402500">
+          <Id/>
+          <Associated_parts>ID_TermOcc__10444429</Associated_parts>
+          <Contacted_cavity>Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e7900</Contacted_cavity>
+        </Contact_points>
+        <Contact_points id="Na504fba199e67b6e125407dXNa504fba199e67b6e125407600">
+          <Id/>
+          <Associated_parts>ID_TermOcc__10444430</Associated_parts>
+          <Contacted_cavity>Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240ded00</Contacted_cavity>
+        </Contact_points>
+        <Contact_points id="Na504fba199e67b6e12540d1XNa504fba199e67b6e12540ca00">
+          <Id/>
+          <Associated_parts>ID_TermOcc__10444428</Associated_parts>
+          <Contacted_cavity>Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240ea300</Contacted_cavity>
+        </Contact_points>
+        <Slots xsi:type="kbl:Slot_occurrence" id="Na504fba199e67b6e1240dc6XNa504fba199e67b6e1240dbf00">
+          <Part>Na52040318fa3ea7b667f3cfXNa52040318fa3ea7b667f3c800</Part>
+          <Cavities id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240dd000">
+            <Part>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f7f400</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240ddf00">
+            <Part>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f58900</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240ded00">
+            <Part>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f65200</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240dfb00">
+            <Part>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f47d00</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e0900">
+            <Part>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f76e00</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e1700">
+            <Part>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f7b100</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e2500">
+            <Part>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f6d800</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e3300">
+            <Part>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f69500</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e4100">
+            <Part>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f5cc00</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e4f00">
+            <Part>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f54600</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e5d00">
+            <Part>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f4c000</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e6b00">
+            <Part>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f83700</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e7900">
+            <Part>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f60f00</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e8700">
+            <Part>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f50300</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e9500">
+            <Part>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f3f900</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240ea300">
+            <Part>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f87a00</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240eb100">
+            <Part>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f71b00</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240ebf00">
+            <Part>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f8bd00</Part>
+          </Cavities>
+        </Slots>
+      </Connector_occurrence>
+      <Connector_occurrence id="Na504fba199e67b6e1240fe2XNa504fba199e67b6e1240fdb00">
+        <Id>TE-2470649-9_2.8(MCP)_4WAY_1ROW_FEMALE_UNSEALED</Id>
+        <Part>Na660fb818f283ad76244d83XNa660fb818f283ad76244d7c00</Part>
+        <Contact_points id="Na504fba199e67b6e1254acfXNa504fba199e67b6e1254ac800">
+          <Id/>
+          <Associated_parts>ID_TermOcc__10444431</Associated_parts>
+          <Contacted_cavity>Na504fba199e67b6e1250a72xNa504fba199e67b6e1250a8b00</Contacted_cavity>
+        </Contact_points>
+        <Contact_points id="Na504fba199e67b6e1254b20XNa504fba199e67b6e1254b1900">
+          <Id/>
+          <Associated_parts>ID_TermOcc__10444424</Associated_parts>
+          <Contacted_cavity>Na504fba199e67b6e1250a72xNa504fba199e67b6e1250a9900</Contacted_cavity>
+        </Contact_points>
+        <Slots xsi:type="kbl:Slot_occurrence" id="Na504fba199e67b6e1250a72XNa504fba199e67b6e1250a6b00">
+          <Part>Na660fb818f283ad76244dddXNa660fb818f283ad76244dd600</Part>
+          <Cavities id="Na504fba199e67b6e1250a72xNa504fba199e67b6e1250a7c00">
+            <Part>Na660fb818f283ad76244dddxNa660fb818f283ad76244ef200</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e1250a72xNa504fba199e67b6e1250a8b00">
+            <Part>Na660fb818f283ad76244dddxNa660fb818f283ad76244e1800</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e1250a72xNa504fba199e67b6e1250a9900">
+            <Part>Na660fb818f283ad76244dddxNa660fb818f283ad76244e6200</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e1250a72xNa504fba199e67b6e1250aa700">
+            <Part>Na660fb818f283ad76244dddxNa660fb818f283ad76244eaa00</Part>
+          </Cavities>
+        </Slots>
+      </Connector_occurrence>
+      <Connector_occurrence id="Na504fba199e67b6e12563f9XNa504fba199e67b6e12563f200">
+        <Id>TE_2-2310137-1_Minicoax_1Pol</Id>
+        <Part>Na504fba199e67b6e125634fXNa504fba199e67b6e125634800</Part>
+        <Contact_points id="Na504fba199e67b6e1275f49XNa504fba199e67b6e1275f4200">
+          <Id/>
+          <Associated_parts>ID_TermOcc__10444439</Associated_parts>
+          <Contacted_cavity>Na504fba199e67b6e1275e31xNa504fba199e67b6e1275e8d00</Contacted_cavity>
+        </Contact_points>
+        <Contact_points id="Obfa8022f19a0025d6b5b4298XObfa8022f19a0025d6b5b429100">
+          <Id/>
+          <Associated_parts>ID_TermOcc__10454598</Associated_parts>
+          <Contacted_cavity>Na504fba199e67b6e1275e31xObfa8022f19a0025d6b5b41ca00</Contacted_cavity>
+        </Contact_points>
+        <Slots xsi:type="kbl:Slot_occurrence" id="Na504fba199e67b6e1275e31XNa504fba199e67b6e1275e2a00">
+          <Part>Na504fba199e67b6e1275e22XNa504fba199e67b6e1275e1b00</Part>
+          <Cavities id="Na504fba199e67b6e1275e31xNa504fba199e67b6e1275e8d00">
+            <Part>Na504fba199e67b6e1275e22xNa504fba199e67b6e1275e8100</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e1275e31xObfa8022f19a0025d6b5b41ca00">
+            <Part>Na504fba199e67b6e1275e22xObfa8022f19a0025d6b5b41c000</Part>
+          </Cavities>
+        </Slots>
+      </Connector_occurrence>
+      <Connector_occurrence id="Na504fba199e67b6e1265ef3XNa504fba199e67b6e1265eec00">
+        <Id>TE_2470653-9_Minicoax_4Pos</Id>
+        <Part>Na660fb818f283ad7622ac22XNa660fb818f283ad7622ac1b00</Part>
+        <Contact_points id="Na504fba199e67b6e1275ab8XNa504fba199e67b6e1275ab100">
+          <Id/>
+          <Associated_parts>ID_TermOcc__10444453</Associated_parts>
+          <Contacted_cavity>Na504fba199e67b6e127598dxNa504fba199e67b6e12759d000</Contacted_cavity>
+        </Contact_points>
+        <Contact_points id="Obfa8022f19a0025d6b591c39XObfa8022f19a0025d6b591c3200">
+          <Id/>
+          <Associated_parts>ID_TermOcc__10454595</Associated_parts>
+          <Contacted_cavity>Na504fba199e67b6e127598dxNa504fba199e67b6e12759fa00</Contacted_cavity>
+        </Contact_points>
+        <Slots xsi:type="kbl:Slot_occurrence" id="Na504fba199e67b6e127598dXNa504fba199e67b6e127598600">
+          <Part>Na660fb818f283ad7622ac70XNa660fb818f283ad7622ac6900</Part>
+          <Cavities id="Na504fba199e67b6e127598dxNa504fba199e67b6e127599700">
+            <Part>Na660fb818f283ad7622ac70xNa660fb818f283ad7622ad6900</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e127598dxNa504fba199e67b6e12759a600">
+            <Part>Na660fb818f283ad7622ac70xNa660fb818f283ad7622ae3500</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e127598dxNa504fba199e67b6e12759b400">
+            <Part>Na660fb818f283ad7622ac70xNa660fb818f283ad7622adcf00</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e127598dxNa504fba199e67b6e12759c200">
+            <Part>Na660fb818f283ad7622ac70xNa660fb818f283ad7622acae00</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e127598dxNa504fba199e67b6e12759d000">
+            <Part>Na660fb818f283ad7622ac70xNa66068519468ada8d72320100</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e127598dxNa504fba199e67b6e12759de00">
+            <Part>Na660fb818f283ad7622ac70xNa66068519468ada8d72333c00</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e127598dxNa504fba199e67b6e12759ec00">
+            <Part>Na660fb818f283ad7622ac70xNa66068519468ada8d7232e000</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e127598dxNa504fba199e67b6e12759fa00">
+            <Part>Na660fb818f283ad7622ac70xNa66068519468ada8d72328400</Part>
+          </Cavities>
+        </Slots>
+      </Connector_occurrence>
+      <Connector_occurrence id="Na504fba199e67b6e127663bXNa504fba199e67b6e127663400">
+        <Id>TE_1418796-3_2.8(AMPMCP)_2WAY_1ROW_FEMALE</Id>
+        <Part>Na504fba199e67b6e12764a7XNa504fba199e67b6e12764a000</Part>
+        <Contact_points id="Na504fba199e67b6e12862bbXNa504fba199e67b6e12862b400">
+          <Id/>
+          <Associated_parts>ID_TermOcc__10444449</Associated_parts>
+          <Contacted_cavity>Na504fba199e67b6e12860e6xNa504fba199e67b6e12860f000</Contacted_cavity>
+        </Contact_points>
+        <Contact_points id="Na504fba199e67b6e1286303XNa504fba199e67b6e12862fc00">
+          <Id/>
+          <Associated_parts>ID_TermOcc__10444448</Associated_parts>
+          <Contacted_cavity>Na504fba199e67b6e12860e6xNa504fba199e67b6e12860ff00</Contacted_cavity>
+        </Contact_points>
+        <Slots xsi:type="kbl:Slot_occurrence" id="Na504fba199e67b6e12860e6XNa504fba199e67b6e12860df00">
+          <Part>Na504fba199e67b6e127655aXNa504fba199e67b6e127655300</Part>
+          <Cavities id="Na504fba199e67b6e12860e6xNa504fba199e67b6e12860f000">
+            <Part>Na504fba199e67b6e127655axNa504fba199e67b6e127659e00</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e12860e6xNa504fba199e67b6e12860ff00">
+            <Part>Na504fba199e67b6e127655axNa504fba199e67b6e12765e900</Part>
+          </Cavities>
+        </Slots>
+      </Connector_occurrence>
+      <Connector_occurrence id="Na504fba199e67b6e12a5ec1XNa504fba199e67b6e12a5eba00">
+        <Id>TE_2302475-1_NANOMQS_COD A_0.5mm_10 WAY_2 ROW_FEMALE_UNSEALED</Id>
+        <Part>Oa504fba199e17c50476fc505XOa504fba199e17c50476fc4ff00</Part>
+        <Contact_points id="Na504fba199e67b6e12b5ad4XNa504fba199e67b6e12b5acd00">
+          <Id/>
+          <Associated_parts>ID_TermOcc__10444458</Associated_parts>
+          <Contacted_cavity>Na504fba199e67b6e12b596cxNa504fba199e67b6e12b599300</Contacted_cavity>
+        </Contact_points>
+        <Contact_points id="Na504fba199e67b6e12b5b1cXNa504fba199e67b6e12b5b1500">
+          <Id/>
+          <Associated_parts>ID_TermOcc__10444459</Associated_parts>
+          <Contacted_cavity>Na504fba199e67b6e12b596cxNa504fba199e67b6e12b598500</Contacted_cavity>
+        </Contact_points>
+        <Contact_points id="Na504fba199e67b6e12b5b64XNa504fba199e67b6e12b5b5d00">
+          <Id/>
+          <Associated_parts>ID_TermOcc__10444457</Associated_parts>
+          <Contacted_cavity>Na504fba199e67b6e12b596cxNa504fba199e67b6e12b59a100</Contacted_cavity>
+        </Contact_points>
+        <Slots xsi:type="kbl:Slot_occurrence" id="Na504fba199e67b6e12b596cXNa504fba199e67b6e12b596500">
+          <Part>Oa504fba199e17c50476fc511XOa504fba199e17c50476fc50b00</Part>
+          <Cavities id="Na504fba199e67b6e12b596cxNa504fba199e67b6e12b597600">
+            <Part>Oa504fba199e17c50476fc511xOa504fba199e17c50476fc51f00</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e12b596cxNa504fba199e67b6e12b598500">
+            <Part>Oa504fba199e17c50476fc511xOa504fba199e17c50476fc52f00</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e12b596cxNa504fba199e67b6e12b599300">
+            <Part>Oa504fba199e17c50476fc511xOa504fba199e17c50476fc53e00</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e12b596cxNa504fba199e67b6e12b59a100">
+            <Part>Oa504fba199e17c50476fc511xOa504fba199e17c50476fc54d00</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e12b596cxNa504fba199e67b6e12b59af00">
+            <Part>Oa504fba199e17c50476fc511xOa504fba199e17c50476fc55c00</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e12b596cxNa504fba199e67b6e12b59bd00">
+            <Part>Oa504fba199e17c50476fc511xOa504fba199e17c50476fc56b00</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e12b596cxNa504fba199e67b6e12b59cb00">
+            <Part>Oa504fba199e17c50476fc511xOa504fba199e17c50476fc57a00</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e12b596cxNa504fba199e67b6e12b59d900">
+            <Part>Oa504fba199e17c50476fc511xOa504fba199e17c50476fc58900</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e12b596cxNa504fba199e67b6e12b59e700">
+            <Part>Oa504fba199e17c50476fc511xOa504fba199e17c50476fc59800</Part>
+          </Cavities>
+          <Cavities id="Na504fba199e67b6e12b596cxNa504fba199e67b6e12b59f500">
+            <Part>Oa504fba199e17c50476fc511xOa504fba199e17c50476fc5a700</Part>
+          </Cavities>
+        </Slots>
+      </Connector_occurrence>
+      <General_wire_occurrence xsi:type="kbl:Special_wire_occurrence" id="Na504fba199eb9ff9892d2f1XNa504fba199eb9ff9892d2e300">
+        <Part>Na5206e3187e73b9ff44c823XNa5206e3187e73b9ff44c82200</Part>
+        <Length_information id="x1162_1761663176865">
+          <Length_type>dmu length</Length_type>
+          <Length_value id="x1160_1761663176865">
+            <Unit_component>Na660fcd18b03510ead71e61XNa660fcd18b03510ead71e6000</Unit_component>
+            <Value_component>1000.0</Value_component>
+          </Length_value>
+        </Length_information>
+        <Special_wire_id>ETHERNET 2x0.35 UTP</Special_wire_id>
+        <Core_occurrence id="Na504fba199eb9ff9892d2ffXNa504fba199eb9ff9892d2f800">
+          <Wire_number>UTP_1</Wire_number>
+          <Part>x1225_1761663176865</Part>
+          <Length_information id="x1305_1761663176865">
+            <Length_type>dmu length</Length_type>
+            <Length_value id="x1296_1761663176865">
+              <Unit_component>x1238_1761663176865</Unit_component>
+              <Value_component>1000.0</Value_component>
+            </Length_value>
+          </Length_information>
+        </Core_occurrence>
+        <Core_occurrence id="Na504fba199eb9ff9892d311XNa504fba199eb9ff9892d30a00">
+          <Wire_number>UTP_2</Wire_number>
+          <Part>x1225_1761663176865</Part>
+          <Length_information id="x1303_1761663176865">
+            <Length_type>dmu length</Length_type>
+            <Length_value id="x1294_1761663176865">
+              <Unit_component>x1238_1761663176865</Unit_component>
+              <Value_component>1000.0</Value_component>
+            </Length_value>
+          </Length_information>
+        </Core_occurrence>
+      </General_wire_occurrence>
+      <General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="Na504fba199eb9ff9892df6aXNa504fba199eb9ff9892df6400">
+        <Part>Na504fba199eb9ff9892e06cXNa504fba199eb9ff9892e06500</Part>
+        <Length_information id="x1148_1761663176865">
+          <Length_type>dmu length</Length_type>
+          <Length_value id="x1151_1761663176865">
+            <Unit_component>x1238_1761663176865</Unit_component>
+            <Value_component>1000.0</Value_component>
+          </Length_value>
+        </Length_information>
+        <Wire_number>20085</Wire_number>
+      </General_wire_occurrence>
+      <General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="Na504fba199eb9ff9892e1b7XNa504fba199eb9ff9892e1b100">
+        <Part>Ma661119192f5d7ed1ed4d4XMa661119192f5d7ed1ed4d300</Part>
+        <Length_information id="x1149_1761663176865">
+          <Length_type>dmu length</Length_type>
+          <Length_value id="x1152_1761663176865">
+            <Unit_component>x1238_1761663176865</Unit_component>
+            <Value_component>1000.0</Value_component>
+          </Length_value>
+        </Length_information>
+        <Wire_number>20086</Wire_number>
+      </General_wire_occurrence>
+      <General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="Na504fba199eb9ff9892e2c2XNa504fba199eb9ff9892e2bc00">
+        <Part>Ma661119192f5d7ed1ed4d4XMa661119192f5d7ed1ed4d300</Part>
+        <Length_information id="x1147_1761663176865">
+          <Length_type>dmu length</Length_type>
+          <Length_value id="x1150_1761663176865">
+            <Unit_component>x1238_1761663176865</Unit_component>
+            <Value_component>1000.0</Value_component>
+          </Length_value>
+        </Length_information>
+        <Wire_number>20087</Wire_number>
+      </General_wire_occurrence>
+      <General_wire_occurrence xsi:type="kbl:Special_wire_occurrence" id="Na504fba199eb9ff9892f588XNa504fba199eb9ff9892f57b00">
+        <Part>Na504fba19a057bd01e1f38cXNa504fba19a057bd01e1f38500</Part>
+        <Length_information id="x1163_1761663176865">
+          <Length_type>dmu length</Length_type>
+          <Length_value id="x1161_1761663176865">
+            <Unit_component>Na660fcd18b03510ead720a1XNa660fcd18b03510ead720a000</Unit_component>
+            <Value_component>1000.0</Value_component>
+          </Length_value>
+        </Length_information>
+        <Special_wire_id>Koax-RG174</Special_wire_id>
+        <Core_occurrence id="Na504fba199eb9ff9892f589XNa504fba199eb9ff9892f57300">
+          <Wire_number>Core</Wire_number>
+          <Part>x1212_1761663176865</Part>
+          <Length_information id="x1304_1761663176865">
+            <Length_type>dmu length</Length_type>
+            <Length_value id="x1295_1761663176865">
+              <Unit_component>x1238_1761663176865</Unit_component>
+              <Value_component>1000.0</Value_component>
+            </Length_value>
+          </Length_information>
+        </Core_occurrence>
+        <Core_occurrence id="Obfa8022f19a0025d6b52b8d7XObfa8022f19a0025d6b52b8d100">
+          <Wire_number>Shielding</Wire_number>
+          <Part>x1237_1761663176865</Part>
+          <Length_information id="x1309_1761663176865">
+            <Length_type>dmu length</Length_type>
+            <Length_value id="x1310_1761663176865">
+              <Unit_component>x1238_1761663176865</Unit_component>
+              <Value_component>1000.0</Value_component>
+            </Length_value>
+          </Length_information>
+        </Core_occurrence>
+      </General_wire_occurrence>
+      <Terminal_occurrence id="ID_TermOcc__10444424">
+        <Part>Na504fba199eb9ff989342b8XNa504fba199eb9ff989342b700</Part>
+      </Terminal_occurrence>
+      <Terminal_occurrence id="ID_TermOcc__10444428">
+        <Part>Na504fba199eb9ff98934414XNa504fba199eb9ff9893441300</Part>
+      </Terminal_occurrence>
+      <Terminal_occurrence id="ID_TermOcc__10444429">
+        <Part>Na504fba199eb9ff98933ff3XNa504fba199eb9ff98933fec00</Part>
+      </Terminal_occurrence>
+      <Terminal_occurrence id="ID_TermOcc__10444430">
+        <Part>Na504fba199eb9ff98933ff3XNa504fba199eb9ff98933fec00</Part>
+      </Terminal_occurrence>
+      <Terminal_occurrence id="ID_TermOcc__10444431">
+        <Part>Na504fba199eb9ff989342b8XNa504fba199eb9ff989342b700</Part>
+      </Terminal_occurrence>
+      <Terminal_occurrence id="ID_TermOcc__10444439">
+        <Part>Na504fba199eb9ff98934187XNa504fba199eb9ff9893418600</Part>
+      </Terminal_occurrence>
+      <Terminal_occurrence id="ID_TermOcc__10444448">
+        <Part>Na504fba199eb9ff989342b8XNa504fba199eb9ff989342b700</Part>
+      </Terminal_occurrence>
+      <Terminal_occurrence id="ID_TermOcc__10444449">
+        <Part>Na504fba199eb9ff989342b8XNa504fba199eb9ff989342b700</Part>
+      </Terminal_occurrence>
+      <Terminal_occurrence id="ID_TermOcc__10444453">
+        <Part>Na504fba199eb9ff98934187XNa504fba199eb9ff9893418600</Part>
+      </Terminal_occurrence>
+      <Terminal_occurrence id="ID_TermOcc__10444457">
+        <Part>Na504fba199eb9ff9893404aXNa504fba199eb9ff9893404900</Part>
+      </Terminal_occurrence>
+      <Terminal_occurrence id="ID_TermOcc__10444458">
+        <Part>Na504fba199eb9ff9893436fXNa504fba199eb9ff9893436e00</Part>
+      </Terminal_occurrence>
+      <Terminal_occurrence id="ID_TermOcc__10444459">
+        <Part>Na504fba199eb9ff9893404aXNa504fba199eb9ff9893404900</Part>
+      </Terminal_occurrence>
+      <Terminal_occurrence id="ID_TermOcc__10454595">
+        <Part>Na5206e3187e73b9ff46393dXNa5206e3187e73b9ff46393c00</Part>
+      </Terminal_occurrence>
+      <Terminal_occurrence id="ID_TermOcc__10454598">
+        <Part>Na5206e3187e73b9ff46393dXNa5206e3187e73b9ff46393c00</Part>
+      </Terminal_occurrence>
+      <Wire_protection_occurrence id="x1555_1761663176865">
+        <Id>null</Id>
+        <Part>Na504fba199eb9ff9893295fXNa504fba199eb9ff9893295800</Part>
+      </Wire_protection_occurrence>
+      <Wire_protection_occurrence id="x1556_1761663176865">
+        <Id>null</Id>
+        <Part>Na504fba199eb9ff9893295fXNa504fba199eb9ff9893295800</Part>
+      </Wire_protection_occurrence>
+      <Wire_protection_occurrence id="x1557_1761663176865">
+        <Id>null</Id>
+        <Part>Na504fba199eb9ff9893295fXNa504fba199eb9ff9893295800</Part>
+      </Wire_protection_occurrence>
+      <Wire_protection_occurrence id="x1558_1761663176865">
+        <Id>null</Id>
+        <Part>Na504fba199eb9ff9893295fXNa504fba199eb9ff9893295800</Part>
+      </Wire_protection_occurrence>
+      <Wire_protection_occurrence id="x1559_1761663176865">
+        <Id>null</Id>
+        <Part>Na504fba199eb9ff9893295fXNa504fba199eb9ff9893295800</Part>
+      </Wire_protection_occurrence>
+      <Wire_protection_occurrence id="x1560_1761663176865">
+        <Id>null</Id>
+        <Part>Na504fba199eb9ff9893295fXNa504fba199eb9ff9893295800</Part>
+      </Wire_protection_occurrence>
+      <Wire_protection_occurrence id="x1561_1761663176865">
+        <Id>null</Id>
+        <Part>Na504fba199eb9ff9893295fXNa504fba199eb9ff9893295800</Part>
+      </Wire_protection_occurrence>
+      <Wire_protection_occurrence id="x1562_1761663176865">
+        <Id>null</Id>
+        <Part>Na504fba199eb9ff9893295fXNa504fba199eb9ff9893295800</Part>
+      </Wire_protection_occurrence>
+    </Harness>
+    <Node id="Oa504fba199e17c504782217dXOa504fba199e17c504782217600">
+      <Id>Stecker Modul 1</Id>
+      <Cartesian_point>a99d8ce99c66211bcd8a0d01a5a4757</Cartesian_point>
+      <Referenced_components>Na504fba199e67b6e1231320XNa504fba199e67b6e123131900</Referenced_components>
+    </Node>
+    <Node id="Oa504fba199e17c50478231bfXOa504fba199e17c50478231b800">
+      <Id>Stecker Modul 2</Id>
+      <Cartesian_point>a99d8ce99c66211bcd8a0d01a5a4757</Cartesian_point>
+      <Referenced_components>Na504fba199e67b6e1240fe2XNa504fba199e67b6e1240fdb00</Referenced_components>
+    </Node>
+    <Node id="Oa504fba199e17c504782322fXOa504fba199e17c504782322800">
+      <Id>Stecker Modul 3</Id>
+      <Cartesian_point>a99d8ce99c66211bcd8a0d01a5a4757</Cartesian_point>
+      <Referenced_components>Na504fba199e67b6e1265ef3XNa504fba199e67b6e1265eec00</Referenced_components>
+    </Node>
+    <Node id="Oa504fba199e17c504782373dXOa504fba199e17c504782373600">
+      <Id>Stecker 10pol</Id>
+      <Cartesian_point>a99d8ce99c66211bcd8a0d01a5a4757</Cartesian_point>
+      <Referenced_components>Na504fba199e67b6e12a5ec1XNa504fba199e67b6e12a5eba00</Referenced_components>
+    </Node>
+    <Node id="Oa504fba199e17c50478237b1XOa504fba199e17c50478237aa00">
+      <Id>Stecker 2pol</Id>
+      <Cartesian_point>a99d8ce99c66211bcd8a0d01a5a4757</Cartesian_point>
+      <Referenced_components>Na504fba199e67b6e127663bXNa504fba199e67b6e127663400</Referenced_components>
+    </Node>
+    <Node id="Oa504fba199e17c5047823822XOa504fba199e17c504782381b00">
+      <Id>Stecker 1pol</Id>
+      <Cartesian_point>a99d8ce99c66211bcd8a0d01a5a4757</Cartesian_point>
+      <Referenced_components>Na504fba199e67b6e12563f9XNa504fba199e67b6e12563f200</Referenced_components>
+    </Node>
+    <Node id="Oa504fba199e17c5047823bfeXOa504fba199e17c5047823bf800">
+      <Id>BO1</Id>
+      <Cartesian_point>a99d8ce99c66211bcd8a0d01a5a4757</Cartesian_point>
+    </Node>
+    <Node id="Obfa8022f19a0025d6b52437fXObfa8022f19a0025d6b52437900">
+      <Id>BO2</Id>
+      <Cartesian_point>a99d8ce99c66211bcd8a0d01a5a4757</Cartesian_point>
+    </Node>
+    <Node id="Obfa8022f19a0025d6b5251b2XObfa8022f19a0025d6b5251ac00">
+      <Id>BO3</Id>
+      <Cartesian_point>a99d8ce99c66211bcd8a0d01a5a4757</Cartesian_point>
+    </Node>
+    <Routing id="Na504fba199eb9ff98932cd3XNa504fba199eb9ff98932ccb00">
+      <Routed_wire>x10444758con</Routed_wire>
+      <Segments>Na504fba199e67b6e122342fXNa504fba199e67b6e122342900 Obfa8022f19a0025d6b525807XObfa8022f19a0025d6b52580100 Na504fba199e67b6e1222db3XNa504fba199e67b6e1222dad00 Obfa8022f19a0025d6b524e87XObfa8022f19a0025d6b524e8100</Segments>
+    </Routing>
+    <Routing id="Na504fba199eb9ff98932e70XNa504fba199eb9ff98932e6800">
+      <Routed_wire>x10444757con</Routed_wire>
+      <Segments>Na504fba199e67b6e122342fXNa504fba199e67b6e122342900 Obfa8022f19a0025d6b525807XObfa8022f19a0025d6b52580100 Na504fba199e67b6e1222db3XNa504fba199e67b6e1222dad00 Obfa8022f19a0025d6b524e87XObfa8022f19a0025d6b524e8100</Segments>
+    </Routing>
+    <Routing id="Na504fba199eb9ff98933068XNa504fba199eb9ff9893306000">
+      <Routed_wire>x10444743con</Routed_wire>
+      <Segments>Na504fba199e67b6e122342fXNa504fba199e67b6e122342900 Obfa8022f19a0025d6b525807XObfa8022f19a0025d6b52580100 Na504fba199e67b6e1222db3XNa504fba199e67b6e1222dad00 Obfa8022f19a0025d6b524e87XObfa8022f19a0025d6b524e8100</Segments>
+    </Routing>
+    <Routing id="Na504fba199eb9ff98933276XNa504fba199eb9ff9893326e00">
+      <Routed_wire>x10444749con</Routed_wire>
+      <Segments>Obfa8022f19a0025d6b525807XObfa8022f19a0025d6b52580100 Obfa8022f19a0025d6b524e87XObfa8022f19a0025d6b524e8100 Na504fba199e67b6e1223505XNa504fba199e67b6e12234ff00 Na504fba199e67b6e1223274XNa504fba199e67b6e122326e00</Segments>
+    </Routing>
+    <Routing id="Na504fba199eb9ff989333fdXNa504fba199eb9ff989333f500">
+      <Routed_wire>x10444744con</Routed_wire>
+      <Segments>Obfa8022f19a0025d6b525807XObfa8022f19a0025d6b52580100 Obfa8022f19a0025d6b524e87XObfa8022f19a0025d6b524e8100 Na504fba199e67b6e1223505XNa504fba199e67b6e12234ff00 Na504fba199e67b6e1223274XNa504fba199e67b6e122326e00</Segments>
+    </Routing>
+    <Routing id="Na504fba199eb9ff98933ad3XNa504fba199eb9ff98933acb00">
+      <Routed_wire>x10444765con</Routed_wire>
+      <Segments>Obfa8022f19a0025d6b525807XObfa8022f19a0025d6b52580100 Na504fba199e67b6e122335bXNa504fba199e67b6e122335500 Na504fba199e67b6e12235d8XNa504fba199e67b6e12235d200</Segments>
+    </Routing>
+    <Routing id="Obfa8022f19a0025d6b5b8e8cXObfa8022f19a0025d6b5b8e8400">
+      <Routed_wire>x10454513con</Routed_wire>
+      <Segments>Obfa8022f19a0025d6b525807XObfa8022f19a0025d6b52580100 Na504fba199e67b6e122335bXNa504fba199e67b6e122335500 Na504fba199e67b6e12235d8XNa504fba199e67b6e12235d200</Segments>
+    </Routing>
+    <Segment id="Na504fba199e67b6e1222db3XNa504fba199e67b6e1222dad00">
+      <Id>SEG_Connector Location169-BO1</Id>
+      <End_node>Obfa8022f19a0025d6b5251b2XObfa8022f19a0025d6b5251ac00</End_node>
+      <Start_node>Oa504fba199e17c504782217dXOa504fba199e17c504782217600</Start_node>
+      <Center_curve id="x7e3a3e78f5995bf176617ee18dd8497c">
+        <Degree>3</Degree>
+        <Control_points>a99d8ce99c66211bcd8a0d01a5a4757 a99d8ce99c66211bcd8a0d01a5a4757</Control_points>
+      </Center_curve>
+      <Protection_area id="Na504fba199e67b6e1222db3xNa504fba199eb9ff9893062200">
+        <Start_location>0.0</Start_location>
+        <End_location>1.0</End_location>
+        <Associated_protection>x1562_1761663176865</Associated_protection>
+      </Protection_area>
+    </Segment>
+    <Segment id="Na504fba199e67b6e1223274XNa504fba199e67b6e122326e00">
+      <Id>SEG_Connector Location170-BO1</Id>
+      <End_node>Obfa8022f19a0025d6b5251b2XObfa8022f19a0025d6b5251ac00</End_node>
+      <Start_node>Oa504fba199e17c50478231bfXOa504fba199e17c50478231b800</Start_node>
+      <Center_curve id="fcec11bff4cd13ddabe3f6f8a70d4b7">
+        <Degree>3</Degree>
+        <Control_points>a99d8ce99c66211bcd8a0d01a5a4757 a99d8ce99c66211bcd8a0d01a5a4757</Control_points>
+      </Center_curve>
+      <Protection_area id="Na504fba199e67b6e1223274xNa504fba199eb9ff9893204000">
+        <Start_location>0.0</Start_location>
+        <End_location>1.0</End_location>
+        <Associated_protection>x1557_1761663176865</Associated_protection>
+      </Protection_area>
+    </Segment>
+    <Segment id="Na504fba199e67b6e122335bXNa504fba199e67b6e122335500">
+      <Id>SEG_Connector Location171-BO1</Id>
+      <End_node>Obfa8022f19a0025d6b5251b2XObfa8022f19a0025d6b5251ac00</End_node>
+      <Start_node>Oa504fba199e17c504782322fXOa504fba199e17c504782322800</Start_node>
+      <Center_curve id="x74e98f67bd8e548f9cf1d578243cc4fb">
+        <Degree>3</Degree>
+        <Control_points>a99d8ce99c66211bcd8a0d01a5a4757 a99d8ce99c66211bcd8a0d01a5a4757</Control_points>
+      </Center_curve>
+      <Protection_area id="Na504fba199e67b6e122335bxNa504fba199eb9ff989320eb00">
+        <Start_location>0.0</Start_location>
+        <End_location>1.0</End_location>
+        <Associated_protection>x1559_1761663176865</Associated_protection>
+      </Protection_area>
+    </Segment>
+    <Segment id="Na504fba199e67b6e122342fXNa504fba199e67b6e122342900">
+      <Id>SEG_BO1-Connector Location172</Id>
+      <End_node>Oa504fba199e17c504782373dXOa504fba199e17c504782373600</End_node>
+      <Start_node>Oa504fba199e17c5047823bfeXOa504fba199e17c5047823bf800</Start_node>
+      <Center_curve id="x99eec73bad7c712653ac5ebddd77afd6">
+        <Degree>3</Degree>
+        <Control_points>a99d8ce99c66211bcd8a0d01a5a4757 a99d8ce99c66211bcd8a0d01a5a4757</Control_points>
+      </Center_curve>
+      <Protection_area id="Na504fba199e67b6e122342fxNa504fba199eb9ff9893219600">
+        <Start_location>0.0</Start_location>
+        <End_location>1.0</End_location>
+        <Associated_protection>x1558_1761663176865</Associated_protection>
+      </Protection_area>
+    </Segment>
+    <Segment id="Na504fba199e67b6e1223505XNa504fba199e67b6e12234ff00">
+      <Id>SEG_BO1-Connector Location173</Id>
+      <End_node>Oa504fba199e17c50478237b1XOa504fba199e17c50478237aa00</End_node>
+      <Start_node>Oa504fba199e17c5047823bfeXOa504fba199e17c5047823bf800</Start_node>
+      <Center_curve id="fd81bd852171f5d1682bf8514b0f3a2">
+        <Degree>3</Degree>
+        <Control_points>a99d8ce99c66211bcd8a0d01a5a4757 a99d8ce99c66211bcd8a0d01a5a4757</Control_points>
+      </Center_curve>
+      <Protection_area id="Na504fba199e67b6e1223505xNa504fba199eb9ff9893228500">
+        <Start_location>0.0</Start_location>
+        <End_location>1.0</End_location>
+        <Associated_protection>x1555_1761663176865</Associated_protection>
+      </Protection_area>
+    </Segment>
+    <Segment id="Na504fba199e67b6e12235d8XNa504fba199e67b6e12235d200">
+      <Id>SEG_BO1-Connector Location174</Id>
+      <End_node>Oa504fba199e17c5047823822XOa504fba199e17c504782381b00</End_node>
+      <Start_node>Obfa8022f19a0025d6b52437fXObfa8022f19a0025d6b52437900</Start_node>
+      <Center_curve id="x7d3fdac8a4c6988f62753715e4f57ba6">
+        <Degree>3</Degree>
+        <Control_points>a99d8ce99c66211bcd8a0d01a5a4757 a99d8ce99c66211bcd8a0d01a5a4757</Control_points>
+      </Center_curve>
+      <Protection_area id="Na504fba199e67b6e12235d8xNa504fba199eb9ff9893235800">
+        <Start_location>0.0</Start_location>
+        <End_location>1.0</End_location>
+        <Associated_protection>x1560_1761663176865</Associated_protection>
+      </Protection_area>
+    </Segment>
+    <Segment id="Obfa8022f19a0025d6b524e87XObfa8022f19a0025d6b524e8100">
+      <Id>SEG_BO2-BO1</Id>
+      <End_node>Oa504fba199e17c5047823bfeXOa504fba199e17c5047823bf800</End_node>
+      <Start_node>Obfa8022f19a0025d6b52437fXObfa8022f19a0025d6b52437900</Start_node>
+      <Center_curve id="e721818e0d47da3f1988760cd17a4e1">
+        <Degree>3</Degree>
+        <Control_points>a99d8ce99c66211bcd8a0d01a5a4757 a99d8ce99c66211bcd8a0d01a5a4757</Control_points>
+      </Center_curve>
+      <Protection_area id="Obfa8022f19a0025d6b524e87xObfa8022f19a0025d6b52510900">
+        <Start_location>0.0</Start_location>
+        <End_location>1.0</End_location>
+        <Associated_protection>x1556_1761663176865</Associated_protection>
+      </Protection_area>
+    </Segment>
+    <Segment id="Obfa8022f19a0025d6b525807XObfa8022f19a0025d6b52580100">
+      <Id>SEG_BO3-BO2</Id>
+      <End_node>Obfa8022f19a0025d6b52437fXObfa8022f19a0025d6b52437900</End_node>
+      <Start_node>Obfa8022f19a0025d6b5251b2XObfa8022f19a0025d6b5251ac00</Start_node>
+      <Center_curve id="x72a61b3c87bc5d3832fa46f1f0e3cef1">
+        <Degree>3</Degree>
+        <Control_points>a99d8ce99c66211bcd8a0d01a5a4757 a99d8ce99c66211bcd8a0d01a5a4757</Control_points>
+      </Center_curve>
+      <Protection_area id="Obfa8022f19a0025d6b525807xObfa8022f19a0025d6b526bc200">
+        <Start_location>0.0</Start_location>
+        <End_location>1.0</End_location>
+        <Associated_protection>x1561_1761663176865</Associated_protection>
+      </Protection_area>
+    </Segment>
+    <Unit id="Na660fcd18b03510ead71c69XNa660fcd18b03510ead71c6800">
+      <Unit_name>mm2</Unit_name>
+    </Unit>
+    <Unit id="Na660fcd18b03510ead71df9XNa660fcd18b03510ead71df800">
+      <Unit_name>A</Unit_name>
+    </Unit>
+    <Unit id="Na660fcd18b03510ead71e61XNa660fcd18b03510ead71e6000">
+      <Unit_name>mm</Unit_name>
+    </Unit>
+    <Unit id="Na660fcd18b03510ead720a1XNa660fcd18b03510ead720a000">
+      <Unit_name>mm</Unit_name>
+    </Unit>
+    <Unit id="Na661063190530a480c234efXNa661063190530a480c234ee00">
+      <Unit_name>mOhm/m</Unit_name>
+    </Unit>
+    <Unit id="Oa500555187b6fa17151303d6XNa50055517e6bd2783d4262800">
+      <Unit_name>mm2</Unit_name>
+    </Unit>
+    <Unit id="Oa500555187b6fa17151305f2XNa660fc71862f959e6b2f04500">
+      <Unit_name>mm</Unit_name>
+    </Unit>
+    <Unit id="Oa500555187b6fa1715ac153cXQbfa7b23e17da2fdec2a146c96f00">
+      <Unit_name>°C</Unit_name>
+    </Unit>
+    <Unit id="Obfa7b23e17e8adabadf2e799XObfa7b23e17e8adabadf2e79200">
+      <Unit_name>Euro</Unit_name>
+    </Unit>
+    <Unit id="Obfa7b23e187bbffad473dd0eXNa66158717ef70e69811caa600">
+      <Unit_name>g</Unit_name>
+    </Unit>
+    <Unit id="id_631_1">
+      <Unit_name>mm</Unit_name>
+    </Unit>
+    <Unit id="x1238_1761663176865">
+      <Unit_name>Synthesized_mm</Unit_name>
+      <Si_unit_name>metre</Si_unit_name>
+      <Si_prefix>milli</Si_prefix>
+    </Unit>
+    <Wire_protection id="Na504fba199eb9ff9893295fXNa504fba199eb9ff9893295800">
+      <Part_number/>
+      <Company_name/>
+      <Version/>
+      <Abbreviation/>
+      <Description/>
+    </Wire_protection>
+</kbl:KBL_container>

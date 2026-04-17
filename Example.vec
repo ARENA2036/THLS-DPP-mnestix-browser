@@ -1,0 +1,1245 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<vec:VecContent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="VecContent" xmlns:vec="http://www.prostep.org/ecad-if/2011/vec">
+  <VecVersion>1.1.3</VecVersion>
+  <GeneratingSystemName>Example-Company</GeneratingSystemName>
+  <GeneratingSystemVersion>9.0</GeneratingSystemVersion>
+  <Creation>
+    <CreationDate>1.1.2000</CreationDate>
+  </Creation>
+  <DocumentVersion id="ExportDocumentVersion">
+    <CompanyName>VI</CompanyName>
+    <DocumentNumber>0</DocumentNumber>
+    <DocumentVersion>1</DocumentVersion>
+    <CreatingSystem>Example-Company</CreatingSystem>
+    <Description>Robotik-Challenge-Test-VEC</Description>
+    <Abbreviation>RC-T-VEC</Abbreviation>
+    <Specification id="Oa504fba199e17c50476fc467XOa504fba199e17c50476fc46100_GenTechPartSpec" xsi:type="vec:GeneralTechnicalPartSpecification">
+      <Identification>Oa504fba199e17c50476fc467XOa504fba199e17c50476fc46100_GenTechPartSpec</Identification>
+      <DescribedPart>Oa504fba199e17c50476fc467XOa504fba199e17c50476fc46100_23024751_NULL_ConnectorHousing</DescribedPart>
+      <ColorInformation id="Oa504fba199e17c50476fc467XOa504fba199e17c50476fc46100_Color" xsi:type="vec:Color">
+        <Key>Black</Key>
+        <ReferenceSystem>na</ReferenceSystem>
+      </ColorInformation>
+    </Specification>
+    <Specification id="UsageNodeSpec" xsi:type="vec:UsageNodeSpecification">
+      <Identification>UsageNodeSpec</Identification>
+      <UsageNodes id="Na504fba199e67b6e122f3f1XNa504fba199e67b6e122f3ea00_UsageNode" xsi:type="vec:UsageNode">
+        <Identification>Stecker Modul_UsageNode</Identification>
+      </UsageNodes>
+      <UsageNodes id="Na504fba199e67b6e122f76bXNa504fba199e67b6e122f76400_UsageNode" xsi:type="vec:UsageNode">
+        <Identification>Stecker 10pol_UsageNode</Identification>
+      </UsageNodes>
+      <UsageNodes id="Na504fba199e67b6e122f537XNa504fba199e67b6e122f53000_UsageNode" xsi:type="vec:UsageNode">
+        <Identification>Stecker 1pol_UsageNode</Identification>
+      </UsageNodes>
+      <UsageNodes id="Na504fba199e67b6e122f4a3XNa504fba199e67b6e122f49c00_UsageNode" xsi:type="vec:UsageNode">
+        <Identification>Stecker 2pol_UsageNode</Identification>
+      </UsageNodes>
+    </Specification>
+    <Specification id="NetSpec" xsi:type="vec:NetSpecification">
+      <Identification>NetSpec</Identification>
+    </Specification>
+    <Specification id="Na504fba199e67b6e122f3f1XNa504fba199e67b6e122f3ea00_Spec" xsi:type="vec:EEComponentSpecification">
+      <Identification>Stecker Modul_EEComponentSpec</Identification>
+      <SpecialPartType>sensor</SpecialPartType>
+    </Specification>
+    <Specification id="Na504fba199e67b6e122f76bXNa504fba199e67b6e122f76400_Spec" xsi:type="vec:EEComponentSpecification">
+      <Identification>Stecker 10pol_EEComponentSpec</Identification>
+      <SpecialPartType>sensor</SpecialPartType>
+    </Specification>
+    <Specification id="Na504fba199e67b6e122f537XNa504fba199e67b6e122f53000_Spec" xsi:type="vec:EEComponentSpecification">
+      <Identification>Stecker 1pol_EEComponentSpec</Identification>
+      <SpecialPartType>sensor</SpecialPartType>
+    </Specification>
+    <Specification id="Na504fba199e67b6e122f4a3XNa504fba199e67b6e122f49c00_Spec" xsi:type="vec:EEComponentSpecification">
+      <Identification>Stecker 2pol_EEComponentSpec</Identification>
+      <SpecialPartType>sensor</SpecialPartType>
+    </Specification>
+    <Specification id="ConnectionSpecification" xsi:type="vec:ConnectionSpecification">
+      <Identification>ConnectionSpecification</Identification>
+      <ComponentNode id="Na504fba199e67b6e122f3f1XNa504fba199e67b6e122f3ea00_ComponentNode">
+        <Identification>Stecker Modul_ComponentNode</Identification>
+        <RealizedUsageNode>Na504fba199e67b6e122f3f1XNa504fba199e67b6e122f3ea00_UsageNode</RealizedUsageNode>
+        <ComponentConnector id="Na504fba199e67b6e122fb8eXNa504fba199e67b6e122fb8700_ComponentConnector">
+          <Identification>Stecker Modul 1_ComponentConnector</Identification>
+          <ComponentPort id="Na504fba199e67b6e122fd08XNa504fba199e67b6e122fd0200">
+            <Identification>Stecker Modul 1 : 8 </Identification>
+          </ComponentPort>
+          <ComponentPort id="Na504fba199e67b6e122fdfaXNa504fba199e67b6e122fdf400">
+            <Identification>Stecker Modul 1 : 9</Identification>
+          </ComponentPort>
+        </ComponentConnector>
+        <ComponentConnector id="Na504fba199e67b6e122fc00XNa504fba199e67b6e122fbf900_ComponentConnector">
+          <Identification>Stecker Modul 2_ComponentConnector</Identification>
+          <ComponentPort id="Na504fba199e67b6e122fef0XNa504fba199e67b6e122feea00">
+            <Identification>Stecker Modul 2 : 3</Identification>
+          </ComponentPort>
+          <ComponentPort id="Na504fba199e67b6e122ff75XNa504fba199e67b6e122ff6f00">
+            <Identification>Stecker Modul 2 : 4</Identification>
+          </ComponentPort>
+        </ComponentConnector>
+        <ComponentConnector id="Na504fba199e67b6e122fcb1XNa504fba199e67b6e122fcaa00_ComponentConnector">
+          <Identification>Stecker Modul 3_ComponentConnector</Identification>
+          <ComponentPort id="Na504fba199e67b6e122fffaXNa504fba199e67b6e122fff400">
+            <Identification>Stecker Modul 3 : 3</Identification>
+          </ComponentPort>
+        </ComponentConnector>
+        <ComponentConnector id="Na504fba199e67b6e1230a2fXNa504fba199e67b6e1230a2800_ComponentConnector">
+          <Identification>Stecker Modul 1_ComponentConnector</Identification>
+          <ComponentPort id="Na504fba199e67b6e122fe73XNa504fba199e67b6e122fe6d00">
+            <Identification>Stecker Modul 1 : 17</Identification>
+          </ComponentPort>
+        </ComponentConnector>
+      </ComponentNode>
+      <ComponentNode id="Na504fba199e67b6e122f76bXNa504fba199e67b6e122f76400_ComponentNode">
+        <Identification>Stecker 10pol_ComponentNode</Identification>
+        <RealizedUsageNode>Na504fba199e67b6e122f76bXNa504fba199e67b6e122f76400_UsageNode</RealizedUsageNode>
+        <ComponentConnector id="Na504fba199e67b6e123042aXNa504fba199e67b6e123042300_ComponentConnector">
+          <Identification>Stecker 10pol_ComponentConnector</Identification>
+          <ComponentPort id="Na504fba199e67b6e12304a0XNa504fba199e67b6e123049a00">
+            <Identification>Stecker 10pol : 2</Identification>
+          </ComponentPort>
+          <ComponentPort id="Na504fba199e67b6e1230eb3XNa504fba199e67b6e1230ead00">
+            <Identification>Stecker 10pol : 4</Identification>
+          </ComponentPort>
+        </ComponentConnector>
+        <ComponentConnector id="Na504fba199e67b6e1230f52XNa504fba199e67b6e1230f4b00_ComponentConnector">
+          <Identification>Stecker 10pol_ComponentConnector</Identification>
+          <ComponentPort id="Na504fba199e67b6e1230fbbXNa504fba199e67b6e1230fb500">
+            <Identification>Stecker 10pol : 3</Identification>
+          </ComponentPort>
+        </ComponentConnector>
+      </ComponentNode>
+      <ComponentNode id="Na504fba199e67b6e122f537XNa504fba199e67b6e122f53000_ComponentNode">
+        <Identification>Stecker 1pol_ComponentNode</Identification>
+        <RealizedUsageNode>Na504fba199e67b6e122f537XNa504fba199e67b6e122f53000_UsageNode</RealizedUsageNode>
+        <ComponentConnector id="Na504fba199e67b6e1230275XNa504fba199e67b6e123026e00_ComponentConnector">
+          <Identification>Stecker 1pol_ComponentConnector</Identification>
+          <ComponentPort id="Na504fba199e67b6e1230315XNa504fba199e67b6e123030f00">
+            <Identification>Stecker 1pol : 1</Identification>
+          </ComponentPort>
+        </ComponentConnector>
+      </ComponentNode>
+      <ComponentNode id="Na504fba199e67b6e122f4a3XNa504fba199e67b6e122f49c00_ComponentNode">
+        <Identification>Stecker 2pol_ComponentNode</Identification>
+        <RealizedUsageNode>Na504fba199e67b6e122f4a3XNa504fba199e67b6e122f49c00_UsageNode</RealizedUsageNode>
+        <ComponentConnector id="Na504fba199e67b6e1230097XNa504fba199e67b6e123009000_ComponentConnector">
+          <Identification>Stecker 2pol_ComponentConnector</Identification>
+          <ComponentPort id="Na504fba199e67b6e12300e7XNa504fba199e67b6e12300e100">
+            <Identification>Stecker 2pol : 1</Identification>
+          </ComponentPort>
+          <ComponentPort id="Na504fba199e67b6e1230161XNa504fba199e67b6e123015b00">
+            <Identification>Stecker 2pol : 2</Identification>
+          </ComponentPort>
+        </ComponentConnector>
+      </ComponentNode>
+      <Connection id="Na504fba199eb9ff9892f5e3XNa504fba199eb9ff9892f5d300">
+        <Identification>Stecker Modul 3 : 3</Identification>
+        <ConnectionEnd id="Na504fba199eb9ff9892f5e3XNa504fba199eb9ff9892f5d300Na504fba199e67b6e122fffaXNa504fba199e67b6e122fff400">
+          <Identification>Stecker Modul 3 : 3_ConnectionEnd</Identification>
+          <IsExternalEnd>false</IsExternalEnd>
+          <ConnectedComponentPort>Na504fba199e67b6e122fffaXNa504fba199e67b6e122fff400</ConnectedComponentPort>
+        </ConnectionEnd>
+        <ConnectionEnd id="Na504fba199eb9ff9892f5e3XNa504fba199eb9ff9892f5d300Na504fba199e67b6e1230315XNa504fba199e67b6e123030f00">
+          <Identification>Stecker 1pol : 1_ConnectionEnd</Identification>
+          <IsExternalEnd>false</IsExternalEnd>
+          <ConnectedComponentPort>Na504fba199e67b6e1230315XNa504fba199e67b6e123030f00</ConnectedComponentPort>
+        </ConnectionEnd>
+      </Connection>
+      <Connection id="Na504fba199eb9ff9892e215XNa504fba199eb9ff9892e20600">
+        <Identification>Stecker Modul 2 : 3</Identification>
+        <ConnectionEnd id="Na504fba199eb9ff9892e215XNa504fba199eb9ff9892e20600Na504fba199e67b6e122fef0XNa504fba199e67b6e122feea00">
+          <Identification>Stecker Modul 2 : 3_ConnectionEnd</Identification>
+          <IsExternalEnd>false</IsExternalEnd>
+          <ConnectedComponentPort>Na504fba199e67b6e122fef0XNa504fba199e67b6e122feea00</ConnectedComponentPort>
+        </ConnectionEnd>
+        <ConnectionEnd id="Na504fba199eb9ff9892e215XNa504fba199eb9ff9892e20600Na504fba199e67b6e1230161XNa504fba199e67b6e123015b00">
+          <Identification>Stecker 2pol : 2_ConnectionEnd</Identification>
+          <IsExternalEnd>false</IsExternalEnd>
+          <ConnectedComponentPort>Na504fba199e67b6e1230161XNa504fba199e67b6e123015b00</ConnectedComponentPort>
+        </ConnectionEnd>
+      </Connection>
+      <Connection id="Na504fba199eb9ff9892d8f3XNa504fba199eb9ff9892d8e400">
+        <Identification>Stecker Modul 1 : 8 </Identification>
+        <ConnectionEnd id="Na504fba199eb9ff9892d8f3XNa504fba199eb9ff9892d8e400Na504fba199e67b6e122fd08XNa504fba199e67b6e122fd0200">
+          <Identification>Stecker Modul 1 : 8 _ConnectionEnd</Identification>
+          <IsExternalEnd>false</IsExternalEnd>
+          <ConnectedComponentPort>Na504fba199e67b6e122fd08XNa504fba199e67b6e122fd0200</ConnectedComponentPort>
+        </ConnectionEnd>
+        <ConnectionEnd id="Na504fba199eb9ff9892d8f3XNa504fba199eb9ff9892d8e400Na504fba199e67b6e12304a0XNa504fba199e67b6e123049a00">
+          <Identification>Stecker 10pol : 2_ConnectionEnd</Identification>
+          <IsExternalEnd>false</IsExternalEnd>
+          <ConnectedComponentPort>Na504fba199e67b6e12304a0XNa504fba199e67b6e123049a00</ConnectedComponentPort>
+        </ConnectionEnd>
+      </Connection>
+      <Connection id="Na504fba199eb9ff9892e320XNa504fba199eb9ff9892e31100">
+        <Identification>Stecker Modul 2 : 4</Identification>
+        <ConnectionEnd id="Na504fba199eb9ff9892e320XNa504fba199eb9ff9892e31100Na504fba199e67b6e122ff75XNa504fba199e67b6e122ff6f00">
+          <Identification>Stecker Modul 2 : 4_ConnectionEnd</Identification>
+          <IsExternalEnd>false</IsExternalEnd>
+          <ConnectedComponentPort>Na504fba199e67b6e122ff75XNa504fba199e67b6e122ff6f00</ConnectedComponentPort>
+        </ConnectionEnd>
+        <ConnectionEnd id="Na504fba199eb9ff9892e320XNa504fba199eb9ff9892e31100Na504fba199e67b6e12300e7XNa504fba199e67b6e12300e100">
+          <Identification>Stecker 2pol : 1_ConnectionEnd</Identification>
+          <IsExternalEnd>false</IsExternalEnd>
+          <ConnectedComponentPort>Na504fba199e67b6e12300e7XNa504fba199e67b6e12300e100</ConnectedComponentPort>
+        </ConnectionEnd>
+      </Connection>
+      <Connection id="Na504fba199eb9ff9892dfc3XNa504fba199eb9ff9892dfb300">
+        <Identification>Stecker Modul 1 : 17</Identification>
+        <ConnectionEnd id="Na504fba199eb9ff9892dfc3XNa504fba199eb9ff9892dfb300Na504fba199e67b6e122fe73XNa504fba199e67b6e122fe6d00">
+          <Identification>Stecker Modul 1 : 17_ConnectionEnd</Identification>
+          <IsExternalEnd>false</IsExternalEnd>
+          <ConnectedComponentPort>Na504fba199e67b6e122fe73XNa504fba199e67b6e122fe6d00</ConnectedComponentPort>
+        </ConnectionEnd>
+        <ConnectionEnd id="Na504fba199eb9ff9892dfc3XNa504fba199eb9ff9892dfb300Na504fba199e67b6e1230fbbXNa504fba199e67b6e1230fb500">
+          <Identification>Stecker 10pol : 3_ConnectionEnd</Identification>
+          <IsExternalEnd>false</IsExternalEnd>
+          <ConnectedComponentPort>Na504fba199e67b6e1230fbbXNa504fba199e67b6e1230fb500</ConnectedComponentPort>
+        </ConnectionEnd>
+      </Connection>
+      <Connection id="Na504fba199eb9ff9892de4fXNa504fba199eb9ff9892de4000">
+        <Identification>Stecker Modul 1 : 9</Identification>
+        <ConnectionEnd id="Na504fba199eb9ff9892de4fXNa504fba199eb9ff9892de4000Na504fba199e67b6e122fdfaXNa504fba199e67b6e122fdf400">
+          <Identification>Stecker Modul 1 : 9_ConnectionEnd</Identification>
+          <IsExternalEnd>false</IsExternalEnd>
+          <ConnectedComponentPort>Na504fba199e67b6e122fdfaXNa504fba199e67b6e122fdf400</ConnectedComponentPort>
+        </ConnectionEnd>
+        <ConnectionEnd id="Na504fba199eb9ff9892de4fXNa504fba199eb9ff9892de4000Na504fba199e67b6e1230eb3XNa504fba199e67b6e1230ead00">
+          <Identification>Stecker 10pol : 4_ConnectionEnd</Identification>
+          <IsExternalEnd>false</IsExternalEnd>
+          <ConnectedComponentPort>Na504fba199e67b6e1230eb3XNa504fba199e67b6e1230ead00</ConnectedComponentPort>
+        </ConnectionEnd>
+      </Connection>
+    </Specification>
+    <Specification id="Na504fba199e67b6e122e7d4XNa504fba199e67b6e122e7cd00" xsi:type="vec:CompositionSpecification">
+      <Identification>RC_Test</Identification>
+      <Component id="Na504fba199e67b6e122f3f1XNa504fba199e67b6e122f3ea00_PartOccurance" xsi:type="vec:PartOccurrence">
+        <Identification>Stecker Modul_PartOcccurrence</Identification>
+        <RealizedUsageNode>Na504fba199e67b6e122f3f1XNa504fba199e67b6e122f3ea00_UsageNode</RealizedUsageNode>
+        <Role id="Na504fba199e67b6e122f3f1XNa504fba199e67b6e122f3ea00" xsi:type="vec:EEComponentRole">
+          <Identification>Stecker Modul</Identification>
+          <EEComponentSpecification>Na504fba199e67b6e122f3f1XNa504fba199e67b6e122f3ea00_Spec</EEComponentSpecification>
+          <ComponentNode>Na504fba199e67b6e122f3f1XNa504fba199e67b6e122f3ea00_ComponentNode</ComponentNode>
+        </Role>
+        <IsSecondaryAlternative>false</IsSecondaryAlternative>
+      </Component>
+      <Component id="Na504fba199e67b6e122f76bXNa504fba199e67b6e122f76400_PartOccurance" xsi:type="vec:PartOccurrence">
+        <Identification>Stecker 10pol_PartOcccurrence</Identification>
+        <RealizedUsageNode>Na504fba199e67b6e122f76bXNa504fba199e67b6e122f76400_UsageNode</RealizedUsageNode>
+        <Role id="Na504fba199e67b6e122f76bXNa504fba199e67b6e122f76400" xsi:type="vec:EEComponentRole">
+          <Identification>Stecker 10pol</Identification>
+          <EEComponentSpecification>Na504fba199e67b6e122f76bXNa504fba199e67b6e122f76400_Spec</EEComponentSpecification>
+          <ComponentNode>Na504fba199e67b6e122f76bXNa504fba199e67b6e122f76400_ComponentNode</ComponentNode>
+        </Role>
+        <IsSecondaryAlternative>false</IsSecondaryAlternative>
+      </Component>
+      <Component id="Na504fba199e67b6e122f537XNa504fba199e67b6e122f53000_PartOccurance" xsi:type="vec:PartOccurrence">
+        <Identification>Stecker 1pol_PartOcccurrence</Identification>
+        <RealizedUsageNode>Na504fba199e67b6e122f537XNa504fba199e67b6e122f53000_UsageNode</RealizedUsageNode>
+        <Role id="Na504fba199e67b6e122f537XNa504fba199e67b6e122f53000" xsi:type="vec:EEComponentRole">
+          <Identification>Stecker 1pol</Identification>
+          <EEComponentSpecification>Na504fba199e67b6e122f537XNa504fba199e67b6e122f53000_Spec</EEComponentSpecification>
+          <ComponentNode>Na504fba199e67b6e122f537XNa504fba199e67b6e122f53000_ComponentNode</ComponentNode>
+        </Role>
+        <IsSecondaryAlternative>false</IsSecondaryAlternative>
+      </Component>
+      <Component id="Na504fba199e67b6e122f4a3XNa504fba199e67b6e122f49c00_PartOccurance" xsi:type="vec:PartOccurrence">
+        <Identification>Stecker 2pol_PartOcccurrence</Identification>
+        <RealizedUsageNode>Na504fba199e67b6e122f4a3XNa504fba199e67b6e122f49c00_UsageNode</RealizedUsageNode>
+        <Role id="Na504fba199e67b6e122f4a3XNa504fba199e67b6e122f49c00" xsi:type="vec:EEComponentRole">
+          <Identification>Stecker 2pol</Identification>
+          <EEComponentSpecification>Na504fba199e67b6e122f4a3XNa504fba199e67b6e122f49c00_Spec</EEComponentSpecification>
+          <ComponentNode>Na504fba199e67b6e122f4a3XNa504fba199e67b6e122f49c00_ComponentNode</ComponentNode>
+        </Role>
+        <IsSecondaryAlternative>false</IsSecondaryAlternative>
+      </Component>
+    </Specification>
+    <Specification id="Na504fba199eb9ff9892f259XNa504fba199eb9ff9892f25200" xsi:type="vec:WireSpecification">
+      <Identification>Koax-301</Identification>
+      <WireElementSpecification>Na504fba199eb9ff9892f1f9XNa504fba199eb9ff9892f1f200</WireElementSpecification>
+      <WireElement id="Na504fba199eb9ff9892f259XNa504fba199eb9ff9892f25200_WireElement">
+        <Identification>Koax-301_WireElement</Identification>
+        <WireElementSpecification>Na504fba199eb9ff9892f1f9XNa504fba199eb9ff9892f1f200</WireElementSpecification>
+      </WireElement>
+    </Specification>
+    <Specification id="Ma66122518a82ccafb1840eXMa66122518a82ccafb1840d00" xsi:type="vec:WireSpecification">
+      <Identification>ETHERNET 2x0.35 UTP</Identification>
+      <WireElementSpecification>Na5206e3187e73b9ff44c823XNa5206e3187e73b9ff44c82200</WireElementSpecification>
+      <WireElement id="Ma66122518a82ccafb1840eXMa66122518a82ccafb1840d00_WireElement">
+        <Identification>ETHERNET 2x0.35 UTP_WireElement</Identification>
+        <WireElementSpecification>Na5206e3187e73b9ff44c823XNa5206e3187e73b9ff44c82200</WireElementSpecification>
+      </WireElement>
+    </Specification>
+    <Specification id="Na504fba199eb9ff9892f1f9XNa504fba199eb9ff9892f1f200" xsi:type="vec:WireElementSpecification">
+      <Identification>Koax-301</Identification>
+      <SuitedForDynamicUse>false</SuitedForDynamicUse>
+      <InsulationSpecification>Na504fba199eb9ff9892f1f9XNa504fba199eb9ff9892f1f200_InsulationSpecification</InsulationSpecification>
+    </Specification>
+    <Specification id="Na5206e3187e73b9ff44c823XNa5206e3187e73b9ff44c82200" xsi:type="vec:WireElementSpecification">
+      <Identification>ETHERNET 2x0.35 UTP</Identification>
+      <SuitedForDynamicUse>false</SuitedForDynamicUse>
+      <InsulationSpecification>Na5206e3187e73b9ff44c823XNa5206e3187e73b9ff44c82200_InsulationSpecification</InsulationSpecification>
+    </Specification>
+    <Specification id="Na504fba199eb9ff9892f1f9XNa504fba199eb9ff9892f1f200_InsulationSpecification" xsi:type="vec:InsulationSpecification">
+      <Identification>Na504fba199eb9ff9892f1f9XNa504fba199eb9ff9892f1f210Na504fba199eb9ff9892f1f2_InsulationSpecification</Identification>
+    </Specification>
+    <Specification id="Na5206e3187e73b9ff44c823XNa5206e3187e73b9ff44c82200_InsulationSpecification" xsi:type="vec:InsulationSpecification">
+      <Identification>Na5206e3187e73b9ff44c823XNa5206e3187e73b9ff44c82210Na5206e3187e73b9ff44c822_InsulationSpecification</Identification>
+    </Specification>
+    <Specification id="Na504fba199eb9ff9892e3d8XNa504fba199eb9ff9892e3d100" xsi:type="vec:WireElementSpecification">
+      <Identification>FLRY_1.5</Identification>
+      <SuitedForDynamicUse>false</SuitedForDynamicUse>
+      <ConductorSpecification>Na504fba199eb9ff9892e3d8XNa504fba199eb9ff9892e3d100_CoreSpecification</ConductorSpecification>
+    </Specification>
+    <Specification id="Na504fba199eb9ff9892e06cXNa504fba199eb9ff9892e06500" xsi:type="vec:WireElementSpecification">
+      <Identification>FLRY_0.13</Identification>
+      <SuitedForDynamicUse>false</SuitedForDynamicUse>
+      <ConductorSpecification>Na504fba199eb9ff9892e06cXNa504fba199eb9ff9892e06500_CoreSpecification</ConductorSpecification>
+    </Specification>
+    <Specification id="Na504fba199eb9ff9892e3d8XNa504fba199eb9ff9892e3d100_CoreSpecification" xsi:type="vec:CoreSpecification"/>
+    <Specification id="Na504fba199eb9ff9892e06cXNa504fba199eb9ff9892e06500_CoreSpecification" xsi:type="vec:CoreSpecification"/>
+    <Specification id="Na504fba199eb9ff9892e3d8XNa504fba199eb9ff9892e3d100_WireSpecification" xsi:type="vec:WireSpecification">
+      <Identification>FLRY_1.5_WireSpecification</Identification>
+      <WireElementSpecification>Na504fba199eb9ff9892e3d8XNa504fba199eb9ff9892e3d100</WireElementSpecification>
+      <WireElement id="Na504fba199eb9ff9892e3d8XNa504fba199eb9ff9892e3d100_WireElement">
+        <Identification>FLRY_1.5_WireElement</Identification>
+        <WireElementSpecification>Na504fba199eb9ff9892e3d8XNa504fba199eb9ff9892e3d100</WireElementSpecification>
+      </WireElement>
+    </Specification>
+    <Specification id="Na504fba199eb9ff9892e06cXNa504fba199eb9ff9892e06500_WireSpecification" xsi:type="vec:WireSpecification">
+      <Identification>FLRY_0.13_WireSpecification</Identification>
+      <WireElementSpecification>Na504fba199eb9ff9892e06cXNa504fba199eb9ff9892e06500</WireElementSpecification>
+      <WireElement id="Na504fba199eb9ff9892e06cXNa504fba199eb9ff9892e06500_WireElement">
+        <Identification>FLRY_0.13_WireElement</Identification>
+        <WireElementSpecification>Na504fba199eb9ff9892e06cXNa504fba199eb9ff9892e06500</WireElementSpecification>
+      </WireElement>
+    </Specification>
+    <Specification id="Na504fba199e67b6e1255ef4XNa504fba199e67b6e1255eed00" xsi:type="vec:ConnectorHousingSpecification">
+      <Identification>Minicoax_1Pol</Identification>
+      <DescribedPart>Na504fba199e67b6e1255ef4XNa504fba199e67b6e1255eed00_223101371_NULL_ConnectorHousing</DescribedPart>
+      <Coupleable>false</Coupleable>
+      <ConnectorPositionAssurance>false</ConnectorPositionAssurance>
+      <Slot id="Na504fba199e67b6e1275e22XNa504fba199e67b6e1275e1b00" xsi:type="vec:Slot">
+        <SlotNumber>A</SlotNumber>
+        <SlotSpecification>Na504fba199eb9ff98941556XNa504fba199eb9ff9894154f00</SlotSpecification>
+        <Cavity id="Na504fba199e67b6e1275e22xNa504fba199e67b6e1275e8100">
+          <Available>true</Available>
+          <CavityNumber>1</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na66110e18f18e034b524987XNa66110e18f18e034b52498000</CavitySpecification>
+        </Cavity>
+      </Slot>
+    </Specification>
+    <Specification id="Na504fba199e67b6e1276416XNa504fba199e67b6e127640f00" xsi:type="vec:ConnectorHousingSpecification">
+      <Identification>TE_1418796-3_2.8(AMPMCP)_2WAY_1ROW_FEMALE</Identification>
+      <DescribedPart>Na504fba199e67b6e1276416XNa504fba199e67b6e127640f00_14187963_NULL_ConnectorHousing</DescribedPart>
+      <Coupleable>false</Coupleable>
+      <ConnectorPositionAssurance>false</ConnectorPositionAssurance>
+      <Slot id="Na504fba199e67b6e127655aXNa504fba199e67b6e127655300" xsi:type="vec:Slot">
+        <SlotNumber>A</SlotNumber>
+        <SlotSpecification>Ma66116719319db75a88c38XMa66116719319db75a88c3700</SlotSpecification>
+        <Cavity id="Na504fba199e67b6e127655axNa504fba199e67b6e127659e00">
+          <Available>true</Available>
+          <CavityNumber>1</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Ma66116719319db75a88899XMa66116719319db75a8889200</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na504fba199e67b6e127655axNa504fba199e67b6e12765e900">
+          <Available>true</Available>
+          <CavityNumber>2</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Ma66116719319db75a88899XMa66116719319db75a8889200</CavitySpecification>
+        </Cavity>
+      </Slot>
+    </Specification>
+    <Specification id="Na52040318fa3ea7b667f910XNa52040318fa3ea7b667f90900" xsi:type="vec:ConnectorHousingSpecification">
+      <Identification>TE_2470646-9_MQS_18WAY_2ROW_FEMALE_UNSEALED</Identification>
+      <DescribedPart>Na52040318fa3ea7b667f910XNa52040318fa3ea7b667f90900_MQS_18POS_NULL_ConnectorHousing</DescribedPart>
+      <Coupleable>false</Coupleable>
+      <ConnectorPositionAssurance>false</ConnectorPositionAssurance>
+      <Slot id="Na52040318fa3ea7b667f3cfXNa52040318fa3ea7b667f3c800" xsi:type="vec:Slot">
+        <SlotNumber>A</SlotNumber>
+        <SlotSpecification>Na52040318fa3ea7b667f2b7XNa52040318fa3ea7b667f2b000</SlotSpecification>
+        <Cavity id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f7f400">
+          <Available>true</Available>
+          <CavityNumber>15</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na52040318fa3ea7b667263cXNa52040318fa3ea7b667263500</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f58900">
+          <Available>true</Available>
+          <CavityNumber>6</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na52040318fa3ea7b667263cXNa52040318fa3ea7b667263500</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f65200">
+          <Available>true</Available>
+          <CavityNumber>9</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na52040318fa3ea7b667263cXNa52040318fa3ea7b667263500</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f47d00">
+          <Available>true</Available>
+          <CavityNumber>2</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na52040318fa3ea7b667263cXNa52040318fa3ea7b667263500</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f76e00">
+          <Available>true</Available>
+          <CavityNumber>13</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na52040318fa3ea7b667263cXNa52040318fa3ea7b667263500</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f7b100">
+          <Available>true</Available>
+          <CavityNumber>14</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na52040318fa3ea7b667263cXNa52040318fa3ea7b667263500</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f6d800">
+          <Available>true</Available>
+          <CavityNumber>11</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na52040318fa3ea7b667263cXNa52040318fa3ea7b667263500</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f69500">
+          <Available>true</Available>
+          <CavityNumber>10</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na52040318fa3ea7b667263cXNa52040318fa3ea7b667263500</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f5cc00">
+          <Available>true</Available>
+          <CavityNumber>7</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na52040318fa3ea7b667263cXNa52040318fa3ea7b667263500</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f54600">
+          <Available>true</Available>
+          <CavityNumber>5</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na52040318fa3ea7b667263cXNa52040318fa3ea7b667263500</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f4c000">
+          <Available>true</Available>
+          <CavityNumber>3</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na52040318fa3ea7b667263cXNa52040318fa3ea7b667263500</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f83700">
+          <Available>true</Available>
+          <CavityNumber>16</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na52040318fa3ea7b667263cXNa52040318fa3ea7b667263500</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f60f00">
+          <Available>true</Available>
+          <CavityNumber>8</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na52040318fa3ea7b667263cXNa52040318fa3ea7b667263500</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f50300">
+          <Available>true</Available>
+          <CavityNumber>4</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na52040318fa3ea7b667263cXNa52040318fa3ea7b667263500</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f3f900">
+          <Available>true</Available>
+          <CavityNumber>1</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na52040318fa3ea7b667263cXNa52040318fa3ea7b667263500</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f87a00">
+          <Available>true</Available>
+          <CavityNumber>17</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na52040318fa3ea7b667263cXNa52040318fa3ea7b667263500</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f71b00">
+          <Available>true</Available>
+          <CavityNumber>12</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na52040318fa3ea7b667263cXNa52040318fa3ea7b667263500</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f8bd00">
+          <Available>true</Available>
+          <CavityNumber>18</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na52040318fa3ea7b667263cXNa52040318fa3ea7b667263500</CavitySpecification>
+        </Cavity>
+      </Slot>
+    </Specification>
+    <Specification id="Na660fb818f283ad762310aaXNa660fb818f283ad762310a300" xsi:type="vec:ConnectorHousingSpecification">
+      <Identification>Minicoax_4Pos</Identification>
+      <DescribedPart>Na660fb818f283ad762310aaXNa660fb818f283ad762310a300_Minicoax_4Pos_NULL_ConnectorHousing</DescribedPart>
+      <Coupleable>false</Coupleable>
+      <ConnectorPositionAssurance>false</ConnectorPositionAssurance>
+      <Slot id="Na660fb818f283ad7622ac70XNa660fb818f283ad7622ac6900" xsi:type="vec:Slot">
+        <SlotNumber>A</SlotNumber>
+        <SlotSpecification>Na66110e18f18e034b5248c9XNa66110e18f18e034b5248c200</SlotSpecification>
+        <Cavity id="Na660fb818f283ad7622ac70xNa660fb818f283ad7622ad6900">
+          <Available>true</Available>
+          <CavityNumber>1-S</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na66110e18f18e034b524987XNa66110e18f18e034b52498000</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na660fb818f283ad7622ac70xNa660fb818f283ad7622ae3500">
+          <Available>true</Available>
+          <CavityNumber>2-S</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na66110e18f18e034b524987XNa66110e18f18e034b52498000</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na660fb818f283ad7622ac70xNa660fb818f283ad7622adcf00">
+          <Available>true</Available>
+          <CavityNumber>2</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na66110e18f18e034b524987XNa66110e18f18e034b52498000</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na660fb818f283ad7622ac70xNa660fb818f283ad7622acae00">
+          <Available>true</Available>
+          <CavityNumber>1</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na66110e18f18e034b524987XNa66110e18f18e034b52498000</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na660fb818f283ad7622ac70xNa66068519468ada8d72320100">
+          <Available>true</Available>
+          <CavityNumber>3</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na66110e18f18e034b524987XNa66110e18f18e034b52498000</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na660fb818f283ad7622ac70xNa66068519468ada8d72333c00">
+          <Available>true</Available>
+          <CavityNumber>4</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+        </Cavity>
+        <Cavity id="Na660fb818f283ad7622ac70xNa66068519468ada8d7232e000">
+          <Available>true</Available>
+          <CavityNumber>4-S</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+        </Cavity>
+        <Cavity id="Na660fb818f283ad7622ac70xNa66068519468ada8d72328400">
+          <Available>true</Available>
+          <CavityNumber>3-S</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+        </Cavity>
+      </Slot>
+    </Specification>
+    <Specification id="Na660fb818f283ad76244f46XNa660fb818f283ad76244f3f00" xsi:type="vec:ConnectorHousingSpecification">
+      <Identification>TE-2470649-9_2.8(MCP)_4WAY_1ROW_FEMALE_UNSEALED</Identification>
+      <DescribedPart>Na660fb818f283ad76244f46XNa660fb818f283ad76244f3f00_AMP MCP28_4Pos_NULL_ConnectorHousing</DescribedPart>
+      <Coupleable>false</Coupleable>
+      <ConnectorPositionAssurance>false</ConnectorPositionAssurance>
+      <Slot id="Na660fb818f283ad76244dddXNa660fb818f283ad76244dd600" xsi:type="vec:Slot">
+        <SlotNumber>A</SlotNumber>
+        <SlotSpecification>Na660fb818f283ad76244c4dXNa660fb818f283ad76244c4600</SlotSpecification>
+        <Cavity id="Na660fb818f283ad76244dddxNa660fb818f283ad76244ef200">
+          <Available>true</Available>
+          <CavityNumber>4</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na660fb818f283ad76244d3cXNa660fb818f283ad76244d3500</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na660fb818f283ad76244dddxNa660fb818f283ad76244e1800">
+          <Available>true</Available>
+          <CavityNumber>1</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na660fb818f283ad76244d3cXNa660fb818f283ad76244d3500</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na660fb818f283ad76244dddxNa660fb818f283ad76244e6200">
+          <Available>true</Available>
+          <CavityNumber>2</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na660fb818f283ad76244d3cXNa660fb818f283ad76244d3500</CavitySpecification>
+        </Cavity>
+        <Cavity id="Na660fb818f283ad76244dddxNa660fb818f283ad76244eaa00">
+          <Available>true</Available>
+          <CavityNumber>3</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Na660fb818f283ad76244d3cXNa660fb818f283ad76244d3500</CavitySpecification>
+        </Cavity>
+      </Slot>
+    </Specification>
+    <Specification id="Oa504fba199e17c50476fc467XOa504fba199e17c50476fc46100" xsi:type="vec:ConnectorHousingSpecification">
+      <Identification>TE_2302475-1_NANOMQS_COD A_0.5mm_10 WAY_2 ROW_FEMALE_UNSEALED</Identification>
+      <DescribedPart>Oa504fba199e17c50476fc467XOa504fba199e17c50476fc46100_23024751_NULL_ConnectorHousing</DescribedPart>
+      <Coupleable>false</Coupleable>
+      <ConnectorPositionAssurance>false</ConnectorPositionAssurance>
+      <Coding id="Oa504fba199e17c50476fc467XOa504fba199e17c50476fc46100_Coding">
+        <Coding>A</Coding>
+      </Coding>
+      <Slot id="Oa504fba199e17c50476fc511XOa504fba199e17c50476fc50b00" xsi:type="vec:Slot">
+        <SlotNumber>A</SlotNumber>
+        <SlotSpecification>Oa504fba199e17c50476dc29eXOa504fba199e17c50476dc29800</SlotSpecification>
+        <Cavity id="Oa504fba199e17c50476fc511xOa504fba199e17c50476fc51f00">
+          <Available>true</Available>
+          <CavityNumber>1</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Oa504fba199e17c504762c0d7XOa504fba199e17c504762c0d100</CavitySpecification>
+        </Cavity>
+        <Cavity id="Oa504fba199e17c50476fc511xOa504fba199e17c50476fc52f00">
+          <Available>true</Available>
+          <CavityNumber>2</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Oa504fba199e17c504762c0d7XOa504fba199e17c504762c0d100</CavitySpecification>
+        </Cavity>
+        <Cavity id="Oa504fba199e17c50476fc511xOa504fba199e17c50476fc53e00">
+          <Available>true</Available>
+          <CavityNumber>3</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Oa504fba199e17c504762c0d7XOa504fba199e17c504762c0d100</CavitySpecification>
+        </Cavity>
+        <Cavity id="Oa504fba199e17c50476fc511xOa504fba199e17c50476fc54d00">
+          <Available>true</Available>
+          <CavityNumber>4</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Oa504fba199e17c504762c0d7XOa504fba199e17c504762c0d100</CavitySpecification>
+        </Cavity>
+        <Cavity id="Oa504fba199e17c50476fc511xOa504fba199e17c50476fc55c00">
+          <Available>true</Available>
+          <CavityNumber>5</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Oa504fba199e17c504762c0d7XOa504fba199e17c504762c0d100</CavitySpecification>
+        </Cavity>
+        <Cavity id="Oa504fba199e17c50476fc511xOa504fba199e17c50476fc56b00">
+          <Available>true</Available>
+          <CavityNumber>6</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Oa504fba199e17c504762c0d7XOa504fba199e17c504762c0d100</CavitySpecification>
+        </Cavity>
+        <Cavity id="Oa504fba199e17c50476fc511xOa504fba199e17c50476fc57a00">
+          <Available>true</Available>
+          <CavityNumber>7</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Oa504fba199e17c504762c0d7XOa504fba199e17c504762c0d100</CavitySpecification>
+        </Cavity>
+        <Cavity id="Oa504fba199e17c50476fc511xOa504fba199e17c50476fc58900">
+          <Available>true</Available>
+          <CavityNumber>8</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Oa504fba199e17c504762c0d7XOa504fba199e17c504762c0d100</CavitySpecification>
+        </Cavity>
+        <Cavity id="Oa504fba199e17c50476fc511xOa504fba199e17c50476fc59800">
+          <Available>true</Available>
+          <CavityNumber>9</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Oa504fba199e17c504762c0d7XOa504fba199e17c504762c0d100</CavitySpecification>
+        </Cavity>
+        <Cavity id="Oa504fba199e17c50476fc511xOa504fba199e17c50476fc5a700">
+          <Available>true</Available>
+          <CavityNumber>10</CavityNumber>
+          <HasIntegratedTerminal>false</HasIntegratedTerminal>
+          <CavitySpecification>Oa504fba199e17c504762c0d7XOa504fba199e17c504762c0d100</CavitySpecification>
+        </Cavity>
+      </Slot>
+    </Specification>
+    <Specification id="Na504fba199eb9ff98941556XNa504fba199eb9ff9894154f00" xsi:type="vec:SlotSpecification">
+      <Identification>Minicoax_1Pos</Identification>
+      <EmvProtectionRequired>false</EmvProtectionRequired>
+      <Gender>na</Gender>
+      <SecondaryLocking>false</SecondaryLocking>
+      <NumberOfCavities>0</NumberOfCavities>
+    </Specification>
+    <Specification id="Ma66116719319db75a88c38XMa66116719319db75a88c3700" xsi:type="vec:SlotSpecification">
+      <Identification>2.8mm(MCP)_2WAY_1ROW</Identification>
+      <EmvProtectionRequired>false</EmvProtectionRequired>
+      <Gender>female</Gender>
+      <SecondaryLocking>false</SecondaryLocking>
+      <NumberOfCavities>2</NumberOfCavities>
+    </Specification>
+    <Specification id="Na52040318fa3ea7b667f2b7XNa52040318fa3ea7b667f2b000" xsi:type="vec:SlotSpecification">
+      <Identification>MQS_18Pos</Identification>
+      <EmvProtectionRequired>false</EmvProtectionRequired>
+      <Gender>na</Gender>
+      <SecondaryLocking>false</SecondaryLocking>
+      <NumberOfCavities>18</NumberOfCavities>
+    </Specification>
+    <Specification id="Na66110e18f18e034b5248c9XNa66110e18f18e034b5248c200" xsi:type="vec:SlotSpecification">
+      <Identification>Minicoax_4Pos</Identification>
+      <EmvProtectionRequired>false</EmvProtectionRequired>
+      <Gender>na</Gender>
+      <SecondaryLocking>false</SecondaryLocking>
+      <NumberOfCavities>4</NumberOfCavities>
+    </Specification>
+    <Specification id="Na660fb818f283ad76244c4dXNa660fb818f283ad76244c4600" xsi:type="vec:SlotSpecification">
+      <Identification>AMP MCP2.8_4Pos</Identification>
+      <EmvProtectionRequired>false</EmvProtectionRequired>
+      <Gender>female</Gender>
+      <SecondaryLocking>false</SecondaryLocking>
+      <NumberOfCavities>4</NumberOfCavities>
+    </Specification>
+    <Specification id="Oa504fba199e17c50476dc29eXOa504fba199e17c50476dc29800" xsi:type="vec:SlotSpecification">
+      <Identification>0.5mm(NANOMQS)_10WAY_2Row</Identification>
+      <EmvProtectionRequired>false</EmvProtectionRequired>
+      <Gender>na</Gender>
+      <SecondaryLocking>false</SecondaryLocking>
+      <NumberOfCavities>10</NumberOfCavities>
+    </Specification>
+    <Specification id="Na660fb818f283ad76244d3cXNa660fb818f283ad76244d3500" xsi:type="vec:CavitySpecification">
+      <Identification>AMP MCP2.8</Identification>
+      <Sealable>false</Sealable>
+    </Specification>
+    <Specification id="Oa504fba199e17c504762c0d7XOa504fba199e17c504762c0d100" xsi:type="vec:CavitySpecification">
+      <Identification>0.5mm(NANOMQS)</Identification>
+      <Sealable>false</Sealable>
+    </Specification>
+    <Specification id="Na52040318fa3ea7b667263cXNa52040318fa3ea7b667263500" xsi:type="vec:CavitySpecification">
+      <Identification>MQS</Identification>
+      <Sealable>false</Sealable>
+    </Specification>
+    <Specification id="Ma66116719319db75a88899XMa66116719319db75a8889200" xsi:type="vec:CavitySpecification">
+      <Identification>2.8mm(MCP)</Identification>
+      <Sealable>false</Sealable>
+    </Specification>
+    <Specification id="Na66110e18f18e034b524987XNa66110e18f18e034b52498000" xsi:type="vec:CavitySpecification">
+      <Identification>Minicoax</Identification>
+      <Sealable>false</Sealable>
+    </Specification>
+    <Specification id="Na504fba199eb9ff98934414XNa504fba199eb9ff9893441300" xsi:type="vec:TerminalSpecification">
+      <Identification>MQS_0,13</Identification>
+      <DescribedPart>Na504fba199eb9ff98934414XNa504fba199eb9ff9893441300_21418241_NULL_Terminal</DescribedPart>
+      <TerminalReception id="Na504fba199eb9ff98934414XNa504fba199eb9ff9893441310Na504fba199eb9ff98934413_TerminalReception">
+        <Identification>MQS_0,13_TerminalReception</Identification>
+      </TerminalReception>
+    </Specification>
+    <Specification id="Na504fba199eb9ff98934187XNa504fba199eb9ff9893418600" xsi:type="vec:TerminalSpecification">
+      <Identification>MATE AX 180</Identification>
+      <DescribedPart>Na504fba199eb9ff98934187XNa504fba199eb9ff9893418600_22984881_NULL_Terminal</DescribedPart>
+      <TerminalReception id="Na504fba199eb9ff98934187XNa504fba199eb9ff9893418610Na504fba199eb9ff98934186_TerminalReception">
+        <Identification>MATE AX 180_TerminalReception</Identification>
+      </TerminalReception>
+    </Specification>
+    <Specification id="Na504fba199eb9ff9893404aXNa504fba199eb9ff9893404900" xsi:type="vec:TerminalSpecification">
+      <Identification>NanoMQS_0,35</Identification>
+      <DescribedPart>Na504fba199eb9ff9893404aXNa504fba199eb9ff9893404900_217039301_NULL_Terminal</DescribedPart>
+      <TerminalReception id="Na504fba199eb9ff9893404aXNa504fba199eb9ff9893404910Na504fba199eb9ff98934049_TerminalReception">
+        <Identification>NanoMQS_0,35_TerminalReception</Identification>
+      </TerminalReception>
+    </Specification>
+    <Specification id="Na504fba199eb9ff98933ff3XNa504fba199eb9ff98933fec00" xsi:type="vec:TerminalSpecification">
+      <Identification>MQS_0,35</Identification>
+      <DescribedPart>Na504fba199eb9ff98933ff3XNa504fba199eb9ff98933fec00_59289991_NULL_Terminal</DescribedPart>
+      <TerminalReception id="Na504fba199eb9ff98933ff3XNa504fba199eb9ff98933fec10Na504fba199eb9ff98933fec_TerminalReception">
+        <Identification>MQS_0,35_TerminalReception</Identification>
+      </TerminalReception>
+    </Specification>
+    <Specification id="Na504fba199eb9ff989342b8XNa504fba199eb9ff989342b700" xsi:type="vec:TerminalSpecification">
+      <Identification>AMPMCP 2.8K</Identification>
+      <DescribedPart>Na504fba199eb9ff989342b8XNa504fba199eb9ff989342b700_12413901_NULL_Terminal</DescribedPart>
+      <TerminalReception id="Na504fba199eb9ff989342b8XNa504fba199eb9ff989342b710Na504fba199eb9ff989342b7_TerminalReception">
+        <Identification>AMPMCP 2.8K_TerminalReception</Identification>
+      </TerminalReception>
+    </Specification>
+    <Specification id="Na504fba199eb9ff9893436fXNa504fba199eb9ff9893436e00" xsi:type="vec:TerminalSpecification">
+      <Identification>NanoMQS_0,13</Identification>
+      <DescribedPart>Na504fba199eb9ff9893436fXNa504fba199eb9ff9893436e00_117039301_NULL_Terminal</DescribedPart>
+      <TerminalReception id="Na504fba199eb9ff9893436fXNa504fba199eb9ff9893436e10Na504fba199eb9ff9893436e_TerminalReception">
+        <Identification>NanoMQS_0,13_TerminalReception</Identification>
+      </TerminalReception>
+    </Specification>
+    <Specification id="Na504fba199e67b6e122e766XNa504fba199e67b6e122e75f00" xsi:type="vec:CompositionSpecification">
+      <Identification>RC_Test</Identification>
+      <Component id="Na504fba199e67b6e127663bXNa504fba199e67b6e127663410Na504fba199e67b6e1276634_PartOccurrence" xsi:type="vec:PartOccurrence">
+        <Identification>TE_1418796-3_2.8(AMPMCP)_2WAY_1ROW_FEMALE_PartOccurrence</Identification>
+        <Role id="Na504fba199e67b6e127663bXNa504fba199e67b6e127663400" xsi:type="vec:ConnectorHousingRole">
+          <Identification>TE_1418796-3_2.8(AMPMCP)_2WAY_1ROW_FEMALE</Identification>
+          <ConnectorHousingSpecification>Na504fba199e67b6e1276416XNa504fba199e67b6e127640f00</ConnectorHousingSpecification>
+          <SlotReference id="Na504fba199e67b6e12860e6XNa504fba199e67b6e12860df00" xsi:type="vec:SlotReference">
+            <Identification>A</Identification>
+            <ReferencedSlot>Na504fba199e67b6e127655aXNa504fba199e67b6e127655300</ReferencedSlot>
+            <CavityReference id="Na504fba199e67b6e12860e6xNa504fba199e67b6e12860f000">
+              <Identification>A-C1</Identification>
+              <ReferencedCavity>Na504fba199e67b6e127655axNa504fba199e67b6e127659e00</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e12860e6xNa504fba199e67b6e12860ff00">
+              <Identification>A-C2</Identification>
+              <ReferencedCavity>Na504fba199e67b6e127655axNa504fba199e67b6e12765e900</ReferencedCavity>
+            </CavityReference>
+          </SlotReference>
+        </Role>
+        <IsSecondaryAlternative>false</IsSecondaryAlternative>
+      </Component>
+      <Component id="Na504fba199e67b6e1231320XNa504fba199e67b6e123131910Na504fba199e67b6e1231319_PartOccurrence" xsi:type="vec:PartOccurrence">
+        <Identification>TE_2470646-9_MQS_18WAY_2ROW_FEMALE_UNSEALED_PartOccurrence</Identification>
+        <Role id="Na504fba199e67b6e1231320XNa504fba199e67b6e123131900" xsi:type="vec:ConnectorHousingRole">
+          <Identification>TE_2470646-9_MQS_18WAY_2ROW_FEMALE_UNSEALED</Identification>
+          <ConnectorHousingSpecification>Na52040318fa3ea7b667f910XNa52040318fa3ea7b667f90900</ConnectorHousingSpecification>
+          <SlotReference id="Na504fba199e67b6e1240dc6XNa504fba199e67b6e1240dbf00" xsi:type="vec:SlotReference">
+            <Identification>A</Identification>
+            <ReferencedSlot>Na52040318fa3ea7b667f3cfXNa52040318fa3ea7b667f3c800</ReferencedSlot>
+            <CavityReference id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240dd000">
+              <Identification>A-C15</Identification>
+              <ReferencedCavity>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f7f400</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240ddf00">
+              <Identification>A-C6</Identification>
+              <ReferencedCavity>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f58900</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240ded00">
+              <Identification>A-C9</Identification>
+              <ReferencedCavity>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f65200</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240dfb00">
+              <Identification>A-C2</Identification>
+              <ReferencedCavity>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f47d00</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e0900">
+              <Identification>A-C13</Identification>
+              <ReferencedCavity>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f76e00</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e1700">
+              <Identification>A-C14</Identification>
+              <ReferencedCavity>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f7b100</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e2500">
+              <Identification>A-C11</Identification>
+              <ReferencedCavity>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f6d800</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e3300">
+              <Identification>A-C10</Identification>
+              <ReferencedCavity>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f69500</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e4100">
+              <Identification>A-C7</Identification>
+              <ReferencedCavity>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f5cc00</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e4f00">
+              <Identification>A-C5</Identification>
+              <ReferencedCavity>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f54600</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e5d00">
+              <Identification>A-C3</Identification>
+              <ReferencedCavity>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f4c000</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e6b00">
+              <Identification>A-C16</Identification>
+              <ReferencedCavity>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f83700</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e7900">
+              <Identification>A-C8</Identification>
+              <ReferencedCavity>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f60f00</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e8700">
+              <Identification>A-C4</Identification>
+              <ReferencedCavity>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f50300</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e9500">
+              <Identification>A-C1</Identification>
+              <ReferencedCavity>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f3f900</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240ea300">
+              <Identification>A-C17</Identification>
+              <ReferencedCavity>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f87a00</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240eb100">
+              <Identification>A-C12</Identification>
+              <ReferencedCavity>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f71b00</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240ebf00">
+              <Identification>A-C18</Identification>
+              <ReferencedCavity>Na52040318fa3ea7b667f3cfxNa52040318fa3ea7b667f8bd00</ReferencedCavity>
+            </CavityReference>
+          </SlotReference>
+        </Role>
+        <IsSecondaryAlternative>false</IsSecondaryAlternative>
+      </Component>
+      <Component id="Na504fba199e67b6e1240fe2XNa504fba199e67b6e1240fdb10Na504fba199e67b6e1240fdb_PartOccurrence" xsi:type="vec:PartOccurrence">
+        <Identification>TE-2470649-9_2.8(MCP)_4WAY_1ROW_FEMALE_UNSEALED_PartOccurrence</Identification>
+        <Role id="Na504fba199e67b6e1240fe2XNa504fba199e67b6e1240fdb00" xsi:type="vec:ConnectorHousingRole">
+          <Identification>TE-2470649-9_2.8(MCP)_4WAY_1ROW_FEMALE_UNSEALED</Identification>
+          <ConnectorHousingSpecification>Na660fb818f283ad76244f46XNa660fb818f283ad76244f3f00</ConnectorHousingSpecification>
+          <SlotReference id="Na504fba199e67b6e1250a72XNa504fba199e67b6e1250a6b00" xsi:type="vec:SlotReference">
+            <Identification>A</Identification>
+            <ReferencedSlot>Na660fb818f283ad76244dddXNa660fb818f283ad76244dd600</ReferencedSlot>
+            <CavityReference id="Na504fba199e67b6e1250a72xNa504fba199e67b6e1250a7c00">
+              <Identification>A-C4</Identification>
+              <ReferencedCavity>Na660fb818f283ad76244dddxNa660fb818f283ad76244ef200</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e1250a72xNa504fba199e67b6e1250a8b00">
+              <Identification>A-C1</Identification>
+              <ReferencedCavity>Na660fb818f283ad76244dddxNa660fb818f283ad76244e1800</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e1250a72xNa504fba199e67b6e1250a9900">
+              <Identification>A-C2</Identification>
+              <ReferencedCavity>Na660fb818f283ad76244dddxNa660fb818f283ad76244e6200</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e1250a72xNa504fba199e67b6e1250aa700">
+              <Identification>A-C3</Identification>
+              <ReferencedCavity>Na660fb818f283ad76244dddxNa660fb818f283ad76244eaa00</ReferencedCavity>
+            </CavityReference>
+          </SlotReference>
+        </Role>
+        <IsSecondaryAlternative>false</IsSecondaryAlternative>
+      </Component>
+      <Component id="Na504fba199e67b6e12a5ec1XNa504fba199e67b6e12a5eba10Na504fba199e67b6e12a5eba_PartOccurrence" xsi:type="vec:PartOccurrence">
+        <Identification>TE_2302475-1_NANOMQS_COD A_0.5mm_10 WAY_2 ROW_FEMALE_UNSEALED_PartOccurrence</Identification>
+        <Role id="Na504fba199e67b6e12a5ec1XNa504fba199e67b6e12a5eba00" xsi:type="vec:ConnectorHousingRole">
+          <Identification>TE_2302475-1_NANOMQS_COD A_0.5mm_10 WAY_2 ROW_FEMALE_UNSEALED</Identification>
+          <ConnectorHousingSpecification>Oa504fba199e17c50476fc467XOa504fba199e17c50476fc46100</ConnectorHousingSpecification>
+          <SlotReference id="Na504fba199e67b6e12b596cXNa504fba199e67b6e12b596500" xsi:type="vec:SlotReference">
+            <Identification>A</Identification>
+            <ReferencedSlot>Oa504fba199e17c50476fc511XOa504fba199e17c50476fc50b00</ReferencedSlot>
+            <CavityReference id="Na504fba199e67b6e12b596cxNa504fba199e67b6e12b597600">
+              <Identification>A-C1</Identification>
+              <ReferencedCavity>Oa504fba199e17c50476fc511xOa504fba199e17c50476fc51f00</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e12b596cxNa504fba199e67b6e12b598500">
+              <Identification>A-C2</Identification>
+              <ReferencedCavity>Oa504fba199e17c50476fc511xOa504fba199e17c50476fc52f00</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e12b596cxNa504fba199e67b6e12b599300">
+              <Identification>A-C3</Identification>
+              <ReferencedCavity>Oa504fba199e17c50476fc511xOa504fba199e17c50476fc53e00</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e12b596cxNa504fba199e67b6e12b59a100">
+              <Identification>A-C4</Identification>
+              <ReferencedCavity>Oa504fba199e17c50476fc511xOa504fba199e17c50476fc54d00</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e12b596cxNa504fba199e67b6e12b59af00">
+              <Identification>A-C5</Identification>
+              <ReferencedCavity>Oa504fba199e17c50476fc511xOa504fba199e17c50476fc55c00</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e12b596cxNa504fba199e67b6e12b59bd00">
+              <Identification>A-C6</Identification>
+              <ReferencedCavity>Oa504fba199e17c50476fc511xOa504fba199e17c50476fc56b00</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e12b596cxNa504fba199e67b6e12b59cb00">
+              <Identification>A-C7</Identification>
+              <ReferencedCavity>Oa504fba199e17c50476fc511xOa504fba199e17c50476fc57a00</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e12b596cxNa504fba199e67b6e12b59d900">
+              <Identification>A-C8</Identification>
+              <ReferencedCavity>Oa504fba199e17c50476fc511xOa504fba199e17c50476fc58900</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e12b596cxNa504fba199e67b6e12b59e700">
+              <Identification>A-C9</Identification>
+              <ReferencedCavity>Oa504fba199e17c50476fc511xOa504fba199e17c50476fc59800</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e12b596cxNa504fba199e67b6e12b59f500">
+              <Identification>A-C10</Identification>
+              <ReferencedCavity>Oa504fba199e17c50476fc511xOa504fba199e17c50476fc5a700</ReferencedCavity>
+            </CavityReference>
+          </SlotReference>
+        </Role>
+        <IsSecondaryAlternative>false</IsSecondaryAlternative>
+      </Component>
+      <Component id="Na504fba199e67b6e1265ef3XNa504fba199e67b6e1265eec10Na504fba199e67b6e1265eec_PartOccurrence" xsi:type="vec:PartOccurrence">
+        <Identification>Minicoax_4Pos_PartOccurrence</Identification>
+        <Role id="Na504fba199e67b6e1265ef3XNa504fba199e67b6e1265eec00" xsi:type="vec:ConnectorHousingRole">
+          <Identification>Minicoax_4Pos</Identification>
+          <ConnectorHousingSpecification>Na660fb818f283ad762310aaXNa660fb818f283ad762310a300</ConnectorHousingSpecification>
+          <SlotReference id="Na504fba199e67b6e127598dXNa504fba199e67b6e127598600" xsi:type="vec:SlotReference">
+            <Identification>A</Identification>
+            <ReferencedSlot>Na660fb818f283ad7622ac70XNa660fb818f283ad7622ac6900</ReferencedSlot>
+            <CavityReference id="Na504fba199e67b6e127598dxNa504fba199e67b6e127599700">
+              <Identification>A-C1-S</Identification>
+              <ReferencedCavity>Na660fb818f283ad7622ac70xNa660fb818f283ad7622ad6900</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e127598dxNa504fba199e67b6e12759a600">
+              <Identification>A-C2-S</Identification>
+              <ReferencedCavity>Na660fb818f283ad7622ac70xNa660fb818f283ad7622ae3500</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e127598dxNa504fba199e67b6e12759b400">
+              <Identification>A-C2</Identification>
+              <ReferencedCavity>Na660fb818f283ad7622ac70xNa660fb818f283ad7622adcf00</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e127598dxNa504fba199e67b6e12759c200">
+              <Identification>A-C1</Identification>
+              <ReferencedCavity>Na660fb818f283ad7622ac70xNa660fb818f283ad7622acae00</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e127598dxNa504fba199e67b6e12759d000">
+              <Identification>A-C3</Identification>
+              <ReferencedCavity>Na660fb818f283ad7622ac70xNa66068519468ada8d72320100</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e127598dxNa504fba199e67b6e12759de00">
+              <Identification>A-C4</Identification>
+              <ReferencedCavity>Na660fb818f283ad7622ac70xNa66068519468ada8d72333c00</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e127598dxNa504fba199e67b6e12759ec00">
+              <Identification>A-C4-S</Identification>
+              <ReferencedCavity>Na660fb818f283ad7622ac70xNa66068519468ada8d7232e000</ReferencedCavity>
+            </CavityReference>
+            <CavityReference id="Na504fba199e67b6e127598dxNa504fba199e67b6e12759fa00">
+              <Identification>A-C3-S</Identification>
+              <ReferencedCavity>Na660fb818f283ad7622ac70xNa66068519468ada8d72328400</ReferencedCavity>
+            </CavityReference>
+          </SlotReference>
+        </Role>
+        <IsSecondaryAlternative>false</IsSecondaryAlternative>
+      </Component>
+      <Component id="Na504fba199e67b6e12563f9XNa504fba199e67b6e12563f210Na504fba199e67b6e12563f2_PartOccurrence" xsi:type="vec:PartOccurrence">
+        <Identification>TE_2-2310137-1_Minicoax_1Pol_PartOccurrence</Identification>
+        <Role id="Na504fba199e67b6e12563f9XNa504fba199e67b6e12563f200" xsi:type="vec:ConnectorHousingRole">
+          <Identification>TE_2-2310137-1_Minicoax_1Pol</Identification>
+          <ConnectorHousingSpecification>Na504fba199e67b6e1255ef4XNa504fba199e67b6e1255eed00</ConnectorHousingSpecification>
+          <SlotReference id="Na504fba199e67b6e1275e31XNa504fba199e67b6e1275e2a00" xsi:type="vec:SlotReference">
+            <Identification>A</Identification>
+            <ReferencedSlot>Na504fba199e67b6e1275e22XNa504fba199e67b6e1275e1b00</ReferencedSlot>
+            <CavityReference id="Na504fba199e67b6e1275e31xNa504fba199e67b6e1275e8d00">
+              <Identification>A-C1</Identification>
+              <ReferencedCavity>Na504fba199e67b6e1275e22xNa504fba199e67b6e1275e8100</ReferencedCavity>
+            </CavityReference>
+          </SlotReference>
+        </Role>
+        <IsSecondaryAlternative>false</IsSecondaryAlternative>
+      </Component>
+      <Component id="Na504fba199eb9ff9892df6aXNa504fba199eb9ff9892df6400_PartOccurrence" xsi:type="vec:PartOccurrence">
+        <Identification>20085_PartOccurrence</Identification>
+        <Role id="Na504fba199eb9ff9892df6aXNa504fba199eb9ff9892df6400" xsi:type="vec:WireRole">
+          <Identification>20085</Identification>
+          <WireSpecification>Na504fba199eb9ff9892e06cXNa504fba199eb9ff9892e06500_WireSpecification</WireSpecification>
+          <WireElementReference id="Na504fba199eb9ff9892df6aXNa504fba199eb9ff9892df6400_WireElementReference">
+            <Identification>20085</Identification>
+            <ReferencedWireElement>Na504fba199eb9ff9892e06cXNa504fba199eb9ff9892e06500_WireElement</ReferencedWireElement>
+          </WireElementReference>
+        </Role>
+        <IsSecondaryAlternative>false</IsSecondaryAlternative>
+      </Component>
+      <Component id="Na504fba199eb9ff9892e1b7XNa504fba199eb9ff9892e1b100_PartOccurrence" xsi:type="vec:PartOccurrence">
+        <Identification>20086_PartOccurrence</Identification>
+        <Role id="Na504fba199eb9ff9892e1b7XNa504fba199eb9ff9892e1b100" xsi:type="vec:WireRole">
+          <Identification>20086</Identification>
+          <WireSpecification>Na504fba199eb9ff9892e3d8XNa504fba199eb9ff9892e3d100_WireSpecification</WireSpecification>
+          <WireElementReference id="Na504fba199eb9ff9892e1b7XNa504fba199eb9ff9892e1b100_WireElementReference">
+            <Identification>20086</Identification>
+            <ReferencedWireElement>Na504fba199eb9ff9892e3d8XNa504fba199eb9ff9892e3d100_WireElement</ReferencedWireElement>
+          </WireElementReference>
+        </Role>
+        <IsSecondaryAlternative>false</IsSecondaryAlternative>
+      </Component>
+      <Component id="Na504fba199eb9ff9892e2c2XNa504fba199eb9ff9892e2bc00_PartOccurrence" xsi:type="vec:PartOccurrence">
+        <Identification>20087_PartOccurrence</Identification>
+        <Role id="Na504fba199eb9ff9892e2c2XNa504fba199eb9ff9892e2bc00" xsi:type="vec:WireRole">
+          <Identification>20087</Identification>
+          <WireSpecification>Na504fba199eb9ff9892e3d8XNa504fba199eb9ff9892e3d100_WireSpecification</WireSpecification>
+          <WireElementReference id="Na504fba199eb9ff9892e2c2XNa504fba199eb9ff9892e2bc00_WireElementReference">
+            <Identification>20087</Identification>
+            <ReferencedWireElement>Na504fba199eb9ff9892e3d8XNa504fba199eb9ff9892e3d100_WireElement</ReferencedWireElement>
+          </WireElementReference>
+        </Role>
+        <IsSecondaryAlternative>false</IsSecondaryAlternative>
+      </Component>
+      <Component id="Na504fba199eb9ff9892d2f1XNa504fba199eb9ff9892d2e300_PartOccurrence" xsi:type="vec:PartOccurrence">
+        <Identification>ETHERNET 2x0.35 UTP_PartOccurrence</Identification>
+        <Role id="Na504fba199eb9ff9892d2f1XNa504fba199eb9ff9892d2e300" xsi:type="vec:WireRole">
+          <Identification>ETHERNET 2x0.35 UTP</Identification>
+          <WireSpecification>Ma66122518a82ccafb1840eXMa66122518a82ccafb1840d00</WireSpecification>
+        </Role>
+        <IsSecondaryAlternative>false</IsSecondaryAlternative>
+      </Component>
+    </Specification>
+    <Specification id="Na504fba199e67b6e122e766XNa504fba199e67b6e122e75f10Na504fba199e67b6e122e75f_ContactingSpec" xsi:type="vec:ContactingSpecification">
+      <Identification>RC_Test_ContactingSpec</Identification>
+      <ContactPoint id="Na504fba199e67b6e1254acfXNa504fba199e67b6e1254ac800">
+        <Identification>Cont-3.1</Identification>
+        <CavityMounting id="Na504fba199e67b6e1254acfXNa504fba199e67b6e1254ac800_CavityMounting">
+          <EquippedCavityRef>Na504fba199e67b6e1250a72xNa504fba199e67b6e1250aa700</EquippedCavityRef>
+        </CavityMounting>
+      </ContactPoint>
+      <ContactPoint id="Na504fba199e67b6e1275f49XNa504fba199e67b6e1275f4200">
+        <Identification>Cont-1.1</Identification>
+        <CavityMounting id="Na504fba199e67b6e1275f49XNa504fba199e67b6e1275f4200_CavityMounting">
+          <EquippedCavityRef>Na504fba199e67b6e1275e31xNa504fba199e67b6e1275e8d00</EquippedCavityRef>
+        </CavityMounting>
+      </ContactPoint>
+      <ContactPoint id="Na504fba199e67b6e12b5ad4XNa504fba199e67b6e12b5acd00">
+        <Identification>Cont-3.1</Identification>
+        <CavityMounting id="Na504fba199e67b6e12b5ad4XNa504fba199e67b6e12b5acd00_CavityMounting">
+          <EquippedCavityRef>Na504fba199e67b6e12b596cxNa504fba199e67b6e12b599300</EquippedCavityRef>
+        </CavityMounting>
+      </ContactPoint>
+      <ContactPoint id="Na504fba199e67b6e12b5b64XNa504fba199e67b6e12b5b5d00">
+        <Identification>Cont-4.1</Identification>
+        <CavityMounting id="Na504fba199e67b6e12b5b64XNa504fba199e67b6e12b5b5d00_CavityMounting">
+          <EquippedCavityRef>Na504fba199e67b6e12b596cxNa504fba199e67b6e12b59a100</EquippedCavityRef>
+        </CavityMounting>
+      </ContactPoint>
+      <ContactPoint id="Na504fba199e67b6e125402cXNa504fba199e67b6e125402500">
+        <Identification>Cont-8.1</Identification>
+        <CavityMounting id="Na504fba199e67b6e125402cXNa504fba199e67b6e125402500_CavityMounting">
+          <EquippedCavityRef>Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240e7900</EquippedCavityRef>
+        </CavityMounting>
+      </ContactPoint>
+      <ContactPoint id="Na504fba199e67b6e12862bbXNa504fba199e67b6e12862b400">
+        <Identification>Cont-1.1</Identification>
+        <CavityMounting id="Na504fba199e67b6e12862bbXNa504fba199e67b6e12862b400_CavityMounting">
+          <EquippedCavityRef>Na504fba199e67b6e12860e6xNa504fba199e67b6e12860f000</EquippedCavityRef>
+        </CavityMounting>
+      </ContactPoint>
+      <ContactPoint id="Na504fba199e67b6e12540d1XNa504fba199e67b6e12540ca00">
+        <Identification>Cont-17.1</Identification>
+        <CavityMounting id="Na504fba199e67b6e12540d1XNa504fba199e67b6e12540ca00_CavityMounting">
+          <EquippedCavityRef>Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240ea300</EquippedCavityRef>
+        </CavityMounting>
+      </ContactPoint>
+      <ContactPoint id="Na504fba199e67b6e1275ab8XNa504fba199e67b6e1275ab100">
+        <Identification>Cont-3.1</Identification>
+        <CavityMounting id="Na504fba199e67b6e1275ab8XNa504fba199e67b6e1275ab100_CavityMounting">
+          <EquippedCavityRef>Na504fba199e67b6e127598dxNa504fba199e67b6e12759d000</EquippedCavityRef>
+        </CavityMounting>
+      </ContactPoint>
+      <ContactPoint id="Na504fba199e67b6e125407dXNa504fba199e67b6e125407600">
+        <Identification>Cont-9.1</Identification>
+        <CavityMounting id="Na504fba199e67b6e125407dXNa504fba199e67b6e125407600_CavityMounting">
+          <EquippedCavityRef>Na504fba199e67b6e1240dc6xNa504fba199e67b6e1240ded00</EquippedCavityRef>
+        </CavityMounting>
+      </ContactPoint>
+      <ContactPoint id="Na504fba199e67b6e1286303XNa504fba199e67b6e12862fc00">
+        <Identification>Cont-2.1</Identification>
+        <CavityMounting id="Na504fba199e67b6e1286303XNa504fba199e67b6e12862fc00_CavityMounting">
+          <EquippedCavityRef>Na504fba199e67b6e12860e6xNa504fba199e67b6e12860ff00</EquippedCavityRef>
+        </CavityMounting>
+      </ContactPoint>
+      <ContactPoint id="Na504fba199e67b6e1254b20XNa504fba199e67b6e1254b1900">
+        <Identification>Cont-4.1</Identification>
+        <CavityMounting id="Na504fba199e67b6e1254b20XNa504fba199e67b6e1254b1900_CavityMounting">
+          <EquippedCavityRef>Na504fba199e67b6e1250a72xNa504fba199e67b6e1250a7c00</EquippedCavityRef>
+        </CavityMounting>
+      </ContactPoint>
+      <ContactPoint id="Na504fba199e67b6e12b5b1cXNa504fba199e67b6e12b5b1500">
+        <Identification>Cont-2.1</Identification>
+        <CavityMounting id="Na504fba199e67b6e12b5b1cXNa504fba199e67b6e12b5b1500_CavityMounting">
+          <EquippedCavityRef>Na504fba199e67b6e12b596cxNa504fba199e67b6e12b598500</EquippedCavityRef>
+        </CavityMounting>
+      </ContactPoint>
+    </Specification>
+  </DocumentVersion>
+  <PartVersion id="Na504fba199eb9ff98934414XNa504fba199eb9ff9893441300_21418241_NULL_Terminal">
+    <CompanyName>asset.te.com</CompanyName>
+    <PartNumber>TE_GeneralTerminal_2141824_1</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>Terminal</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="Na504fba199eb9ff98934187XNa504fba199eb9ff9893418600_22984881_NULL_Terminal">
+    <CompanyName>fakeasset.te.com</CompanyName>
+    <PartNumber>TE_MATE_AXContact_1445204_1</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>Terminal</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="Na504fba199e67b6e1255ef4XNa504fba199e67b6e1255eed00_223101371_NULL_ConnectorHousing">
+    <CompanyName>asset.te.com</CompanyName>
+    <PartNumber>TE_ConnectorHousing_2_2310137_1</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>ConnectorHousing</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="Na504fba199e67b6e1276416XNa504fba199e67b6e127640f00_14187963_NULL_ConnectorHousing">
+    <CompanyName>asset.te.com</CompanyName>
+    <PartNumber>TE_ConnectorHousing_1418796_3</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>ConnectorHousing</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="Na504fba199eb9ff9893404aXNa504fba199eb9ff9893404900_217039301_NULL_Terminal">
+    <CompanyName>asset.te.com</CompanyName>
+    <PartNumber>TE_GeneralTerminal_2_1703930_1</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>Terminal</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="Na504fba199eb9ff98933ff3XNa504fba199eb9ff98933fec00_59289991_NULL_Terminal">
+    <CompanyName>asset.te.com</CompanyName>
+    <PartNumber>TE_GeneralTerminal_5_928999_1</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>Terminal</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="Na504fba199eb9ff989342b8XNa504fba199eb9ff989342b700_12413901_NULL_Terminal">
+    <CompanyName>fakeasset.te.com</CompanyName>
+    <PartNumber>TE_AMP_MCPContact_348470_1</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>Terminal</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="Na504fba199eb9ff9893436fXNa504fba199eb9ff9893436e00_117039301_NULL_Terminal">
+    <CompanyName>asset.te.com</CompanyName>
+    <PartNumber>TE_GeneralTerminal_1_1703930_1</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>Terminal</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="Na52040318fa3ea7b667f910XNa52040318fa3ea7b667f90900_MQS_18POS_NULL_ConnectorHousing">
+    <CompanyName>asset.te.com</CompanyName>
+    <PartNumber>TE_ConnectorHousing_2470646-9</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>ConnectorHousing</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="Na660fb818f283ad762310aaXNa660fb818f283ad762310a300_Minicoax_4Pos_NULL_ConnectorHousing">
+    <CompanyName>asset.te.com</CompanyName>
+    <PartNumber>TE_ConnectorHousing_Minicoax_4Pos</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>ConnectorHousing</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="Na660fb818f283ad76244f46XNa660fb818f283ad76244f3f00_AMP MCP28_4Pos_NULL_ConnectorHousing">
+    <CompanyName>asset.te.com</CompanyName>
+    <PartNumber>TE_ConnectorHousing_2470649_9</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>ConnectorHousing</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="Oa504fba199e17c50476fc467XOa504fba199e17c50476fc46100_23024751_NULL_ConnectorHousing">
+    <CompanyName>asset.te.com</CompanyName>
+    <PartNumber>TE_ConnectorHousing_2302475_1</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>ConnectorHousing</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="TE_ConnectorHousing_2470648-9">
+    <CompanyName>asset.te.com</CompanyName>
+    <PartNumber>TE_ConnectorHousing_2470648-9</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>ConnectorHousing</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="TE_ConnectorHousing_2470653-9">
+    <CompanyName>asset.te.com</CompanyName>
+    <PartNumber>TE_ConnectorHousing_2470653-9</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>ConnectorHousing</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="TE_ConnectorHousing_2470829_9">
+    <CompanyName>asset.te.com</CompanyName>
+    <PartNumber>TE_ConnectorHousing_2470829_9</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>ConnectorHousing</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="TE_ConnectorHousing_2470839_1">
+    <CompanyName>asset.te.com</CompanyName>
+    <PartNumber>TE_ConnectorHousing_2470839_1</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>ConnectorHousing</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="bedia-kabel_flry-a-2x035">
+    <CompanyName>asset.bedia-kabel.de</CompanyName>
+    <PartNumber>de/flry-2x/flry-a-2x035-15-gn-br-ws-br--ring-detail</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>Wire</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="leonicables_FLCUAG01RY-013A">
+    <CompanyName>asset.leonicables.com</CompanyName>
+    <PartNumber>FLCUAG01RY-013A</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>Wire</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="helukabel_28529">
+    <CompanyName>asset.helukabel.com</CompanyName>
+    <PartNumber>de-de/vehicle-cable-flry-m28484/28529</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>Wire</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="helukabel_400189">
+    <CompanyName>asset.helukabel.com</CompanyName>
+    <PartNumber>de-de/coaxial-cable-rg-174-u-m400189/400189</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>Wire</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="tesa_51036">
+    <CompanyName>asset.tesa.com</CompanyName>
+    <PartNumber>51036</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>Tape</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="hellermanntyton_126-00000">
+    <CompanyName>asset.hellermanntyton.com</CompanyName>
+    <PartNumber>products/cable-ties-with-fixing-elements/t50sosec13e/126-00000</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>CableTie</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="hellermanntyton_712-10002">
+    <CompanyName>asset.hellermanntyton.com</CompanyName>
+    <PartNumber>products/electrical-tapes/htape-protect180/712-10002</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>Tape</PrimaryPartType>
+  </PartVersion>
+</vec:VecContent>
