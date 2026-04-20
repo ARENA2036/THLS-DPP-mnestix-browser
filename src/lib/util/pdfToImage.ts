@@ -10,11 +10,13 @@ import * as pdfjsLib from 'pdfjs-dist';
 pdfjsLib.GlobalWorkerOptions.workerSrc = '/_static/pdf.worker.min.mjs';
 
 /**
- * Converts a PDF file to a PNG image file (first page only)
+ * Converts a PDF file to an image file (first page only).
+ * Automatically scales down if the result exceeds maxFileSizeBytes.
  * @param pdfFile The PDF file to convert
- * @returns A Promise that resolves to a PNG File object
+ * @param maxFileSizeBytes Optional maximum file size in bytes (default: 5MB)
+ * @returns A Promise that resolves to an image File object
  */
-export async function convertPdfToImageClient(pdfFile: File): Promise<File> {
+export async function convertPdfToImageClient(pdfFile: File, maxFileSizeBytes = 5 * 1024 * 1024): Promise<File> {
     const bytes = await pdfFile.arrayBuffer();
     const uint8Array = new Uint8Array(bytes);
 
@@ -24,29 +26,68 @@ export async function convertPdfToImageClient(pdfFile: File): Promise<File> {
     // Get the first page
     const page = await pdfDoc.getPage(1);
 
-    // Set up the viewport with a scale for good quality
-    const scale = 2.0;
-    const viewport = page.getViewport({ scale });
+    const scales = [2.0, 1.5, 1.0, 0.75];
+    const qualities = [0.9, 0.7, 0.5];
 
-    // Create a canvas element
-    const canvas = document.createElement('canvas');
-    canvas.width = viewport.width;
-    canvas.height = viewport.height;
-    const context = canvas.getContext('2d');
+    let resultBlob: Blob | null = null;
 
-    if (!context) {
-        throw new Error('Failed to get canvas context');
+    for (const scale of scales) {
+        const viewport = page.getViewport({ scale });
+
+        // Create a canvas element
+        const canvas = document.createElement('canvas');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        const context = canvas.getContext('2d');
+
+        if (!context) {
+            throw new Error('Failed to get canvas context');
+        }
+
+        // Render the PDF page to the canvas
+        await page.render({
+            canvas: canvas,
+            viewport: viewport,
+        }).promise;
+
+        for (const quality of qualities) {
+            const blob = await canvasToBlob(canvas, 'image/jpeg', quality);
+            if (blob.size <= maxFileSizeBytes) {
+                resultBlob = blob;
+                break;
+            }
+        }
+
+        if (resultBlob) break;
     }
 
-    // Render the PDF page to the canvas
-    // Using canvas parameter (required) and canvasContext for backwards compatibility
-    await page.render({
-        canvas: canvas,
-        viewport: viewport,
-    }).promise;
+    // If still no valid blob, use the lowest quality as fallback
+    if (!resultBlob) {
+        const viewport = page.getViewport({ scale: 0.5 });
+        const canvas = document.createElement('canvas');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        const context = canvas.getContext('2d');
+        if (!context) {
+            throw new Error('Failed to get canvas context');
+        }
+        await page.render({ canvas, viewport }).promise;
+        resultBlob = await canvasToBlob(canvas, 'image/jpeg', 0.5);
+    }
 
-    // Convert canvas to blob
-    const blob = await new Promise<Blob>((resolve, reject) => {
+    // Generate a new filename with .jpg extension
+    const originalName = pdfFile.name.replace(/\.pdf$/i, '');
+    const newFileName = `${originalName}.jpg`;
+
+    // Clean up
+    await pdfDoc.destroy();
+
+    // Create a new File object
+    return new File([resultBlob], newFileName, { type: 'image/jpeg' });
+}
+
+function canvasToBlob(canvas: HTMLCanvasElement, mimeType: string, quality: number): Promise<Blob> {
+    return new Promise<Blob>((resolve, reject) => {
         canvas.toBlob(
             (blob) => {
                 if (blob) {
@@ -55,20 +96,10 @@ export async function convertPdfToImageClient(pdfFile: File): Promise<File> {
                     reject(new Error('Failed to convert canvas to blob'));
                 }
             },
-            'image/png',
-            0.9,
+            mimeType,
+            quality,
         );
     });
-
-    // Generate a new filename with .png extension
-    const originalName = pdfFile.name.replace(/\.pdf$/i, '');
-    const newFileName = `${originalName}.png`;
-
-    // Clean up
-    await pdfDoc.destroy();
-
-    // Create a new File object
-    return new File([blob], newFileName, { type: 'image/png' });
 }
 
 /**
