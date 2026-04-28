@@ -7,11 +7,12 @@ interface ExpandableTreeItemContentProps
     extends Omit<UseTreeItemParameters, 'rootRef'>,
         React.HTMLAttributes<HTMLLIElement> {
     dataIcon: React.JSX.Element;
+    bulkCount?: string;
 }
 
 export const ExpandableTreeitem = React.forwardRef(function CustomContent(props: ExpandableTreeItemContentProps, _ref) {
     const theme = useTheme();
-    const { label, dataIcon } = props;
+    const { label, dataIcon, bulkCount } = props;
 
     return (
         <>
@@ -41,6 +42,11 @@ export const ExpandableTreeitem = React.forwardRef(function CustomContent(props:
                     data-testid="tree-item-label"
                 >
                     {label}
+                    {bulkCount && (
+                        <Typography component="span" sx={{ ml: 0.5, color: 'text.secondary' }}>
+                            ({bulkCount})
+                        </Typography>
+                    )}
                 </Typography>
             </Box>
         </>

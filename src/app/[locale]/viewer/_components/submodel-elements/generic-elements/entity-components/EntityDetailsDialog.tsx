@@ -8,6 +8,7 @@ type EntityDetailsModalProps = {
     readonly entity: Entity;
     readonly handleClose: () => void;
     readonly open: boolean;
+    readonly bulkCount?: string;
 };
 
 export function EntityDetailsDialog(props: EntityDetailsModalProps) {
@@ -26,6 +27,7 @@ export function EntityDetailsDialog(props: EntityDetailsModalProps) {
                 </DataRow>
                 <DataRow title="asset">{entity.globalAssetId || t('labels.notAvailable')}</DataRow>
                 <DataRow title="entityType">{entity.entityType || t('labels.notAvailable')}</DataRow>
+                {props.bulkCount && <DataRow title="bulkCount">{props.bulkCount}</DataRow>}
             </DialogContent>
         </Dialog>
     );

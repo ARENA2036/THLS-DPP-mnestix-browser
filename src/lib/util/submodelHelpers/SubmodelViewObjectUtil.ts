@@ -1,6 +1,7 @@
 import { SubmodelElementChoice, KeyTypes, LangStringTextType, Property } from 'lib/api/aas/models';
 import { SubmodelViewObject } from 'lib/types/SubmodelViewObject';
 import { cloneDeep, parseInt } from 'lodash';
+import { HierarchicalStructuresSubmodelElementSemanticIdEnum } from 'app/[locale]/viewer/_components/submodel/hierarchical-structures/HierarchicalStructuresSubmodelElementSemanticId.enum';
 
 /**
  * Generates a SubmodelViewObject from a SubmodelElement to visualize it as tree structure.
@@ -44,6 +45,10 @@ export function generateSubmodelViewObjectFromSubmodelElement(
         const entity = localEl;
         entity.statements?.forEach((child, i) => {
             if (!child) return;
+            if (child.semanticId?.keys[0]?.value === HierarchicalStructuresSubmodelElementSemanticIdEnum.BulkCount) {
+                frontend.bulkCount = (child as Property).value ?? undefined;
+                return;
+            }
             frontend.children?.push(generateSubmodelViewObjectFromSubmodelElement(child, id + '-' + i, language));
         });
         entity.statements = [];

@@ -23,7 +23,7 @@ export function EntityComponent(props: EntityComponentProps) {
 
     const renderTree = (tree: SubmodelViewObject) => {
         return (
-            <EntityTreeItem key={tree.id} itemId={tree.id} label={tree.name} data={tree.data as SubmodelElementChoice}>
+            <EntityTreeItem key={tree.id} itemId={tree.id} label={tree.name} data={tree.data as SubmodelElementChoice} bulkCount={tree.bulkCount}>
                 {tree.children.length ? tree.children.map((childTree) => renderTree(childTree)) : undefined}
             </EntityTreeItem>
         );

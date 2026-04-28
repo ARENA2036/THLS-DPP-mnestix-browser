@@ -8,4 +8,5 @@ export interface SubmodelViewObject {
     hasValue?: boolean;
     isAboutToBeDeleted?: boolean;
     propertyValue?: string;
+    bulkCount?: string;
 }
