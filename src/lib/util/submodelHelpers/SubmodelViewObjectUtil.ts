@@ -43,13 +43,16 @@ export function generateSubmodelViewObjectFromSubmodelElement(
         col.value = [];
     } else if (localEl.modelType === KeyTypes.Entity) {
         const entity = localEl;
-        entity.statements?.forEach((child, i) => {
+        entity.statements?.forEach((child) => {
             if (!child) return;
             if (child.semanticId?.keys[0]?.value === HierarchicalStructuresSubmodelElementSemanticIdEnum.BulkCount) {
                 frontend.bulkCount = (child as Property).value ?? undefined;
                 return;
             }
-            frontend.children?.push(generateSubmodelViewObjectFromSubmodelElement(child, id + '-' + i, language));
+            const childIndex = frontend.children.length;
+            frontend.children?.push(
+                generateSubmodelViewObjectFromSubmodelElement(child, id + '-' + childIndex, language),
+            );
         });
         entity.statements = [];
     }

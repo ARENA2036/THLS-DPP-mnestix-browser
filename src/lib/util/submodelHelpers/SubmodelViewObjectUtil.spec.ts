@@ -16,6 +16,7 @@ import {
 } from 'lib/api/aas/models';
 import { SubmodelViewObject } from 'lib/types/SubmodelViewObject';
 import { describe, it, expect } from '@jest/globals';
+import { HierarchicalStructuresSubmodelElementSemanticIdEnum } from 'app/[locale]/viewer/_components/submodel/hierarchical-structures/HierarchicalStructuresSubmodelElementSemanticId.enum';
 
 describe('SubmodelViewObjectUtil', () => {
     describe('generateSubmodelViewObjectFromSubmodelElement', () => {
@@ -162,6 +163,46 @@ describe('SubmodelViewObjectUtil', () => {
             expect(result.children[0].name).toBe('Aussage');
             expect(result.hasValue).toBe(false);
             expect((result.data as Entity).statements).toEqual([]);
+        });
+
+        it('should keep entity child ids aligned with children indexes when BulkCount is skipped', () => {
+            const bulkCount: Property = {
+                modelType: KeyTypes.Property,
+                idShort: 'BulkCount',
+                valueType: 'xs:int',
+                value: '2',
+                semanticId: {
+                    type: 'ExternalReference',
+                    keys: [
+                        {
+                            type: 'GlobalReference',
+                            value: HierarchicalStructuresSubmodelElementSemanticIdEnum.BulkCount,
+                        },
+                    ],
+                },
+            };
+
+            const statement: Property = {
+                modelType: KeyTypes.Property,
+                idShort: 'statement',
+                valueType: 'xs:string',
+                value: 'statement value',
+                displayName: [{ language: 'de', text: 'Aussage' }],
+            };
+
+            const entity: Entity = {
+                modelType: KeyTypes.Entity,
+                idShort: 'testEntity',
+                displayName: [{ language: 'de', text: 'Test Entitaet' }],
+                entityType: 'SelfManagedEntity',
+                statements: [bulkCount, statement],
+            };
+
+            const result = generateSubmodelViewObjectFromSubmodelElement(entity, '0', 'de');
+
+            expect(result.bulkCount).toBe('2');
+            expect(result.children).toHaveLength(1);
+            expect(result.children[0].id).toBe('0-0');
         });
 
         it('should handle empty SubmodelElementList value', () => {
