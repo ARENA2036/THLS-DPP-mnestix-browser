@@ -1,4 +1,4 @@
-import { Entity, EntityType, SubmodelElementChoice, KeyTypes, Property, RelationshipElement } from 'lib/api/aas/models';
+import { Entity, EntityType, SubmodelElementChoice, KeyTypes, RelationshipElement } from 'lib/api/aas/models';
 import { EntityComponent } from '../../submodel-elements/generic-elements/entity-components/EntityComponent';
 import { cloneDeep } from 'lodash';
 import { HierarchicalStructuresSubmodelElementSemanticIdEnum } from 'app/[locale]/viewer/_components/submodel/hierarchical-structures/HierarchicalStructuresSubmodelElementSemanticId.enum';
@@ -56,7 +56,6 @@ export function HierarchicalStructuresDetail({ submodel }: SubmodelVisualization
     return (
         <Box width="100%">
             <EntityComponent entity={entryNode as Entity} />
-
             {archeTypePropertylElement && (
                 <>
                     <Box sx={{ mt: 2, display: 'flex' }}>
@@ -105,14 +104,7 @@ const prepareEntryNodeModel = (subMod?: SubmodelElementChoice) => {
                 const entityType = GetEntityType(elementEntity);
                 const keyType = entity.modelType;
 
-                if (isBulkCountProperty(entity)) {
-                    elementEntity.idShort = elementEntity.idShort + ' x' + (entity as Property).value;
-                }
-
-                if (
-                    isBulkCountProperty(entity) ||
-                    (entityType === EntityType.SelfManagedEntity && keyType !== KeyTypes.Property)
-                ) {
+                if (entityType === EntityType.SelfManagedEntity && keyType !== KeyTypes.Property) {
                     elementEntity.statements?.splice(i, 1);
                 }
             }
@@ -200,16 +192,8 @@ function findEntity(entityNodes: Entity[], entityName: string): Entity {
 
     if (entityNodes !== undefined && entityNodes.length > 0) {
         entityNodes.forEach((ent) => {
-            const splitter = ' x';
-            const indexOf = ent?.idShort?.indexOf(splitter);
-            let idShortToCompare: string;
-            if (indexOf != -1) {
-                idShortToCompare = ent?.idShort?.substring(0, indexOf) as string;
-            } else {
-                idShortToCompare = ent?.idShort as string;
-            }
             if (foundEntities.length < 1) {
-                if (idShortToCompare === entityName) {
+                if (ent?.idShort === entityName) {
                     foundEntities.push(ent);
                 } else {
                     const found = findEntity(ent?.statements as Entity[], entityName);
@@ -255,8 +239,4 @@ function separateEntryNode(smElements: Entity[]) {
         }
     }
     smElements.push(entryNode as Entity);
-}
-
-function isBulkCountProperty(el: SubmodelElementChoice) {
-    return el.semanticId?.keys[0]?.value === HierarchicalStructuresSubmodelElementSemanticIdEnum.BulkCount;
 }

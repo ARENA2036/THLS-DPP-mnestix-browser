@@ -21,6 +21,7 @@ interface EntityTreeItemProps
     extends Omit<UseTreeItemParameters, 'rootRef'>, Omit<React.HTMLAttributes<HTMLLIElement>, 'onFocus'> {
     applicationUrl?: string;
     data?: SubmodelElementChoice;
+    bulkCount?: string;
 }
 
 const CustomContent = React.forwardRef(function CustomContent(
@@ -30,7 +31,7 @@ const CustomContent = React.forwardRef(function CustomContent(
     const t = useTranslations('pages.aasViewer.submodels');
     const locale = useLocale();
     const navigate = useRouter();
-    const { id, label, itemId, children, data, disabled, ...other } = props;
+    const { id, label, itemId, children, data, disabled, bulkCount, ...other } = props;
     const {
         getRootProps,
         getContentProps,
@@ -114,7 +115,13 @@ const CustomContent = React.forwardRef(function CustomContent(
                     </TreeItemIconContainer>
                     <TreeItemCheckbox {...getCheckboxProps()} />
                     <Box sx={{ flexGrow: 1, display: 'flex', gap: 1 }} data-testid="bom-entity">
-                        <ExpandableTreeitem dataIcon={dataIcon} itemId={itemId} label={label} {...other} />
+                        <ExpandableTreeitem
+                            dataIcon={dataIcon}
+                            itemId={itemId}
+                            label={label}
+                            bulkCount={bulkCount}
+                            {...other}
+                        />
                         <Box sx={{ ml: 'auto', pl: 1, display: 'flex' }}>
                             {assetId && !showDataDirectly && (
                                 <>
@@ -157,6 +164,7 @@ const CustomContent = React.forwardRef(function CustomContent(
                     open={detailsModalOpen}
                     handleClose={handleDetailsModalClose}
                     entity={props.data as Entity}
+                    bulkCount={bulkCount}
                 />
             )}
             {isRelationShip && (

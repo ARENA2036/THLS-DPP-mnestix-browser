@@ -112,18 +112,35 @@
 				]
 			},
 			"statements": [
-				{
-					"idShort": "TE_ConnectorHousing_2470646-9",
-					"displayName": [
-						{
-							"language": "de",
-							"text": "Stecker Modul 1"
-						}
-					],
-					"entityType": "SelfManagedEntity",
-					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470646-9"
-				},
+			{
+				"idShort": "TE_ConnectorHousing_2470646-9",
+				"displayName": [
+					{
+						"language": "de",
+						"text": "Stecker Modul 1"
+					}
+				],
+				"statements": [
+					{
+						"idShort": "BulkCount",
+						"semanticId": {
+							"type": "ExternalReference",
+							"keys": [
+								{
+									"type": "GlobalReference",
+									"value": "https://admin-shell.io/idta/HierarchicalStructures/BulkCount/1/0"
+								}
+							]
+						},
+						"valueType": "xs:int",
+						"value": "1",
+						"modelType": "Property"
+					}
+				],
+				"entityType": "SelfManagedEntity",
+				"modelType": "Entity",
+				"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470646-9"
+			},
 				{
 					"idShort": "HasPart",
 					"semanticId": {
@@ -167,18 +184,35 @@
 					},
 					"modelType": "RelationshipElement"
 				},
-				{
-					"idShort": "TE_ConnectorHousing_2470648-9",
-					"displayName": [
-						{
-							"language": "de",
-							"text": "Stecker Modul 2"
-						}
-					],
-					"entityType": "SelfManagedEntity",
-					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470648-9"
-				},
+			{
+				"idShort": "TE_ConnectorHousing_2470648-9",
+				"displayName": [
+					{
+						"language": "de",
+						"text": "Stecker Modul 2"
+					}
+				],
+				"statements": [
+					{
+						"idShort": "BulkCount",
+						"semanticId": {
+							"type": "ExternalReference",
+							"keys": [
+								{
+									"type": "GlobalReference",
+									"value": "https://admin-shell.io/idta/HierarchicalStructures/BulkCount/1/0"
+								}
+							]
+						},
+						"valueType": "xs:int",
+						"value": "1",
+						"modelType": "Property"
+					}
+				],
+				"entityType": "SelfManagedEntity",
+				"modelType": "Entity",
+				"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470648-9"
+			},
 				{
 					"idShort": "HasPart",
 					"semanticId": {
@@ -222,18 +256,35 @@
 					},
 					"modelType": "RelationshipElement"
 				},
-				{
-					"idShort": "TE_ConnectorHousing_2470653-9",
-					"displayName": [
-						{
-							"language": "de",
-							"text": "Stecker Modul 3"
-						}
-					],
-					"entityType": "SelfManagedEntity",
-					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470653-9"
-				},
+			{
+				"idShort": "TE_ConnectorHousing_2470653-9",
+				"displayName": [
+					{
+						"language": "de",
+						"text": "Stecker Modul 3"
+					}
+				],
+				"statements": [
+					{
+						"idShort": "BulkCount",
+						"semanticId": {
+							"type": "ExternalReference",
+							"keys": [
+								{
+									"type": "GlobalReference",
+									"value": "https://admin-shell.io/idta/HierarchicalStructures/BulkCount/1/0"
+								}
+							]
+						},
+						"valueType": "xs:int",
+						"value": "2",
+						"modelType": "Property"
+					}
+				],
+				"entityType": "SelfManagedEntity",
+				"modelType": "Entity",
+				"globalAssetId": "https://asset.te.com/TE_ConnectorHousing_2470653-9"
+			},
 				{
 					"idShort": "HasPart",
 					"semanticId": {
@@ -552,18 +603,35 @@
 					},
 					"modelType": "RelationshipElement"
 				},
-				{
-					"idShort": "TE_GeneralTerminal_2141824_1",
-					"displayName": [
-						{
-							"language": "de",
-							"text": "MQS-Kontakt (0,13mm²)"
-						}
-					],
-					"entityType": "SelfManagedEntity",
-					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_GeneralTerminal_2141824_1"
-				},
+			{
+				"idShort": "TE_GeneralTerminal_2141824_1",
+				"displayName": [
+					{
+						"language": "de",
+						"text": "MQS-Kontakt (0,13mm²)"
+					}
+				],
+				"statements": [
+					{
+						"idShort": "BulkCount",
+						"semanticId": {
+							"type": "ExternalReference",
+							"keys": [
+								{
+									"type": "GlobalReference",
+									"value": "https://admin-shell.io/idta/HierarchicalStructures/BulkCount/1/0"
+								}
+							]
+						},
+						"valueType": "xs:int",
+						"value": "12",
+						"modelType": "Property"
+					}
+				],
+				"entityType": "SelfManagedEntity",
+				"modelType": "Entity",
+				"globalAssetId": "https://asset.te.com/TE_GeneralTerminal_2141824_1"
+			},
 				{
 					"idShort": "HasPart",
 					"semanticId": {
@@ -607,18 +675,35 @@
 					},
 					"modelType": "RelationshipElement"
 				},
-				{
-					"idShort": "TE_GeneralTerminal_5_928999_1",
-					"displayName": [
-						{
-							"language": "de",
-							"text": "MQS-Kontakt (0,35mm²)"
-						}
-					],
-					"entityType": "SelfManagedEntity",
-					"modelType": "Entity",
-					"globalAssetId": "https://asset.te.com/TE_GeneralTerminal_5_928999_1"
-				},
+			{
+				"idShort": "TE_GeneralTerminal_5_928999_1",
+				"displayName": [
+					{
+						"language": "de",
+						"text": "MQS-Kontakt (0,35mm²)"
+					}
+				],
+				"statements": [
+					{
+						"idShort": "BulkCount",
+						"semanticId": {
+							"type": "ExternalReference",
+							"keys": [
+								{
+									"type": "GlobalReference",
+									"value": "https://admin-shell.io/idta/HierarchicalStructures/BulkCount/1/0"
+								}
+							]
+						},
+						"valueType": "xs:int",
+						"value": "8",
+						"modelType": "Property"
+					}
+				],
+				"entityType": "SelfManagedEntity",
+				"modelType": "Entity",
+				"globalAssetId": "https://asset.te.com/TE_GeneralTerminal_5_928999_1"
+			},
 				{
 					"idShort": "HasPart",
 					"semanticId": {
@@ -937,18 +1022,35 @@
 					},
 					"modelType": "RelationshipElement"
 				},
-				{
-					"idShort": "FLCUAG01RY-013A",
-					"displayName": [
-						{
-							"language": "de",
-							"text": "0,13mm² Einzelleitung"
-						}
-					],
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.leonicables.com/FLCUAG01RY-013A",
-					"modelType": "Entity"
-				},
+			{
+				"idShort": "FLCUAG01RY-013A",
+				"displayName": [
+					{
+						"language": "de",
+						"text": "0,13mm² Einzelleitung"
+					}
+				],
+				"statements": [
+					{
+						"idShort": "BulkCount",
+						"semanticId": {
+							"type": "ExternalReference",
+							"keys": [
+								{
+									"type": "GlobalReference",
+									"value": "https://admin-shell.io/idta/HierarchicalStructures/BulkCount/1/0"
+								}
+							]
+						},
+						"valueType": "xs:int",
+						"value": "6",
+						"modelType": "Property"
+					}
+				],
+				"entityType": "SelfManagedEntity",
+				"globalAssetId": "https://asset.leonicables.com/FLCUAG01RY-013A",
+				"modelType": "Entity"
+			},
 				{
 					"idShort": "HasPart",
 					"semanticId": {
@@ -992,18 +1094,35 @@
 					},
 					"modelType": "RelationshipElement"
 				},
-				{
-					"idShort": "helukabel_28529",
-					"displayName": [
-						{
-							"language": "de",
-							"text": "1,5mm² Einzelleitungen"
-						}
-					],
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.helukabel.com/de-de/vehicle-cable-flry-m28484/28529",
-					"modelType": "Entity"
-				},
+			{
+				"idShort": "helukabel_28529",
+				"displayName": [
+					{
+						"language": "de",
+						"text": "1,5mm² Einzelleitungen"
+					}
+				],
+				"statements": [
+					{
+						"idShort": "BulkCount",
+						"semanticId": {
+							"type": "ExternalReference",
+							"keys": [
+								{
+									"type": "GlobalReference",
+									"value": "https://admin-shell.io/idta/HierarchicalStructures/BulkCount/1/0"
+								}
+							]
+						},
+						"valueType": "xs:int",
+						"value": "4",
+						"modelType": "Property"
+					}
+				],
+				"entityType": "SelfManagedEntity",
+				"globalAssetId": "https://asset.helukabel.com/de-de/vehicle-cable-flry-m28484/28529",
+				"modelType": "Entity"
+			},
 				{
 					"idShort": "HasPart",
 					"semanticId": {
@@ -1102,18 +1221,35 @@
 					},
 					"modelType": "RelationshipElement"
 				},
-				{
-					"idShort": "tesa_51036",
-					"displayName": [
-						{
-							"language": "de",
-							"text": "Tape"
-						}
-					],
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.tesa.com/51036",
-					"modelType": "Entity"
-				},
+			{
+				"idShort": "tesa_51036",
+				"displayName": [
+					{
+						"language": "de",
+						"text": "Tape"
+					}
+				],
+				"statements": [
+					{
+						"idShort": "BulkCount",
+						"semanticId": {
+							"type": "ExternalReference",
+							"keys": [
+								{
+									"type": "GlobalReference",
+									"value": "https://admin-shell.io/idta/HierarchicalStructures/BulkCount/1/0"
+								}
+							]
+						},
+						"valueType": "xs:int",
+						"value": "2",
+						"modelType": "Property"
+					}
+				],
+				"entityType": "SelfManagedEntity",
+				"globalAssetId": "https://asset.tesa.com/51036",
+				"modelType": "Entity"
+			},
 				{
 					"idShort": "HasPart",
 					"semanticId": {
@@ -1157,18 +1293,35 @@
 					},
 					"modelType": "RelationshipElement"
 				},
-				{
-					"idShort": "hellermanntyton_126-00000",
-					"displayName": [
-						{
-							"language": "de",
-							"text": "Fixierung"
-						}
-					],
-					"entityType": "SelfManagedEntity",
-					"globalAssetId": "https://asset.hellermanntyton.com/products/cable-ties-with-fixing-elements/t50sosec13e/126-00000",
-					"modelType": "Entity"
-				},
+			{
+				"idShort": "hellermanntyton_126-00000",
+				"displayName": [
+					{
+						"language": "de",
+						"text": "Fixierung"
+					}
+				],
+				"statements": [
+					{
+						"idShort": "BulkCount",
+						"semanticId": {
+							"type": "ExternalReference",
+							"keys": [
+								{
+									"type": "GlobalReference",
+									"value": "https://admin-shell.io/idta/HierarchicalStructures/BulkCount/1/0"
+								}
+							]
+						},
+						"valueType": "xs:int",
+						"value": "5",
+						"modelType": "Property"
+					}
+				],
+				"entityType": "SelfManagedEntity",
+				"globalAssetId": "https://asset.hellermanntyton.com/products/cable-ties-with-fixing-elements/t50sosec13e/126-00000",
+				"modelType": "Entity"
+			},
 				{
 					"idShort": "HasPart",
 					"semanticId": {
