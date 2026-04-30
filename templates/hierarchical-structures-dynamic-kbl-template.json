@@ -114,6 +114,31 @@
             "statements": [
                 {
                     "idShort": "ConnectorHousingPart",
+                    "statements": [
+                        {
+                            "idShort": "BulkCount",
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/HierarchicalStructures/BulkCount/1/0"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/MappingInfo",
+                                    "valueType": "xs:string",
+                                    "value": "($chId := Connector_housing[*]._id; $count(Harness.Connector_occurrence[Part = $chId]))"
+                                }
+                            ],
+                            "valueType": "xs:int",
+                            "value": "0",
+                            "modelType": "Property"
+                        }
+                    ],
                     "entityType": "SelfManagedEntity",
                     "globalAssetId": "",
                     "modelType": "Entity",
@@ -187,6 +212,31 @@
                 },
                 {
                     "idShort": "TerminalPart",
+                    "statements": [
+                        {
+                            "idShort": "BulkCount",
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/HierarchicalStructures/BulkCount/1/0"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/MappingInfo",
+                                    "valueType": "xs:string",
+                                    "value": "($gtId := General_terminal[*]._id; $count(Harness.Terminal_occurrence[Part = $gtId]))"
+                                }
+                            ],
+                            "valueType": "xs:int",
+                            "value": "0",
+                            "modelType": "Property"
+                        }
+                    ],
                     "entityType": "SelfManagedEntity",
                     "globalAssetId": "",
                     "modelType": "Entity",
@@ -260,6 +310,31 @@
                 },
                 {
                     "idShort": "WirePart",
+                    "statements": [
+                        {
+                            "idShort": "BulkCount",
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/HierarchicalStructures/BulkCount/1/0"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/MappingInfo",
+                                    "valueType": "xs:string",
+                                    "value": "($gwId := General_wire[*]._id; $count(Harness.General_wire_occurrence[Part = $gwId]))"
+                                }
+                            ],
+                            "valueType": "xs:int",
+                            "value": "0",
+                            "modelType": "Property"
+                        }
+                    ],
                     "entityType": "SelfManagedEntity",
                     "globalAssetId": "",
                     "modelType": "Entity",
