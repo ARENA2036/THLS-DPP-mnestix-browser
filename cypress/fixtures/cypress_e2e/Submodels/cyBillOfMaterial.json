@@ -43,6 +43,18 @@
                         }
                     ],
                     "modelType": "Entity"
+                },
+                {
+                    "idShort": "Cy External Link",
+                    "entityType": "SelfManagedEntity",
+                    "modelType": "Entity",
+                    "globalAssetId": "https://example.com/external-product"
+                },
+                {
+                    "idShort": "Cy No URL Asset",
+                    "entityType": "SelfManagedEntity",
+                    "modelType": "Entity",
+                    "globalAssetId": "urn:example:not-a-url"
                 }
             ],
             "modelType": "Entity",

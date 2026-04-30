@@ -7,6 +7,8 @@ const testdata = {
     entityToTest: 0,
     bomSubmodelName: 'BillOfMaterial',
     redirectComponentName: 'Cy BoM Component',
+    externalLinkComponentName: 'Cy External Link',
+    noUrlAssetName: 'Cy No URL Asset',
     propertyTestCollection: 'Cypress Test 02',
     multiLanguageTest: 'MultiLanguageProperty',
     multiLangEn: 'Bill Of Material Multilanguage',
@@ -59,6 +61,34 @@ describe('Test the Bill-of-Material', function () {
                     .as('cyBomComponent');
                 cy.get('@cyBomComponent').findByTestId('view-asset-button').as('cyBomComponent_Button');
                 cy.get('@cyBomComponent_Button').should('exist');
+            });
+
+            it('Shows external link button with OpenInNew icon for external URL entity', function () {
+                cy.getByTestId('bom-entity')
+                    .contains(testdata.externalLinkComponentName)
+                    .parents('[data-testid="bom-entity"]')
+                    .as('cyExternalLink');
+                cy.get('@cyExternalLink').findByTestId('view-asset-button').should('exist');
+                cy.get('@cyExternalLink').findByTestId('view-asset-button').should('contain', 'Open');
+            });
+
+            it('Shows external redirect dialog when clicking external link button', function () {
+                cy.getByTestId('bom-entity')
+                    .contains(testdata.externalLinkComponentName)
+                    .parents('[data-testid="bom-entity"]')
+                    .as('cyExternalLink');
+                cy.get('@cyExternalLink').findByTestId('view-asset-button').click();
+                cy.get('.MuiDialog-root').should('be.visible');
+                cy.get('.MuiDialogContentText-root').should('contain', 'https://example.com/external-product');
+            });
+
+            it('Does not show navigate button for non-URL asset', function () {
+                cy.getByTestId('bom-entity')
+                    .contains(testdata.noUrlAssetName)
+                    .parents('[data-testid="bom-entity"]')
+                    .as('cyNoUrlAsset');
+                cy.get('@cyNoUrlAsset').findByTestId('view-asset-button').should('not.exist');
+                cy.get('@cyNoUrlAsset').findByTestId('entity-info-icon').should('exist');
             });
 
             it('Finds a MultiLang String under "Cypress Test 02"', function () {

@@ -279,7 +279,13 @@
         },
         "title": "Submodels",
         "unknownModelType": "Mnestix doesn't support this model type yet ({type}).",
-        "repositoryUrlLabel": "Repository URL:"
+        "repositoryUrlLabel": "Repository URL:",
+        "externalRedirect": {
+          "title": "External link",
+          "message": "You will be redirected to an external site: {url}",
+          "confirm": "Open",
+          "cancel": "Cancel"
+        }
       }
     },
     "catalog": {

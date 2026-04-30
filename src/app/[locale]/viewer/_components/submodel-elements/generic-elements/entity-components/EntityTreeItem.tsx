@@ -3,11 +3,11 @@ import { TreeItemRoot } from '@mui/x-tree-view';
 import { Box, Button, IconButton } from '@mui/material';
 import { Entity, KeyTypes, RelationshipElement, SubmodelElementChoice } from 'lib/api/aas/models';
 import { AssetIcon } from 'components/custom-icons/AssetIcon';
-import { ArrowForward, ArticleOutlined, InfoOutlined, PinDropOutlined } from '@mui/icons-material';
-import { useRouter } from 'next/navigation';
+import { ArrowForward, ArticleOutlined, InfoOutlined, OpenInNew, PinDropOutlined } from '@mui/icons-material';
 import { GenericSubmodelElementComponent } from '../GenericSubmodelElementComponent';
 import { EntityDetailsDialog } from './EntityDetailsDialog';
 import { RelationShipDetailsDialog } from './RelationShipDetailsDialog';
+import { ExternalRedirectDialog } from './ExternalRedirectDialog';
 import { ExpandableTreeitem } from 'app/[locale]/viewer/_components/submodel-elements/generic-elements/entity-components/TreeItem';
 import { useTranslations, useLocale } from 'next-intl';
 import { searchInAllDiscoveries } from 'lib/services/discovery-service/discoveryActions';
@@ -16,6 +16,10 @@ import { TreeItemIcon } from '@mui/x-tree-view/TreeItemIcon';
 import { TreeItemProvider } from '@mui/x-tree-view/TreeItemProvider';
 import { CustomTreeItemContent } from '../../../submodel/bill-of-applications/visualization-components/ApplicationTreeItem';
 import { useTreeItem, UseTreeItemParameters } from '@mui/x-tree-view/useTreeItem';
+
+type AssetLinkType = 'loading' | 'internal' | 'external' | 'hidden';
+
+const URL_REGEX = /^https?:\/\/.+/i;
 
 interface EntityTreeItemProps
     extends Omit<UseTreeItemParameters, 'rootRef'>, Omit<React.HTMLAttributes<HTMLLIElement>, 'onFocus'> {
@@ -30,7 +34,6 @@ const CustomContent = React.forwardRef(function CustomContent(
 ) {
     const t = useTranslations('pages.aasViewer.submodels');
     const locale = useLocale();
-    const navigate = useRouter();
     const { id, label, itemId, children, data, disabled, bulkCount, ...other } = props;
     const {
         getRootProps,
@@ -52,49 +55,52 @@ const CustomContent = React.forwardRef(function CustomContent(
     const assetId = isEntity ? data.globalAssetId : undefined;
     const showDataDirectly = [KeyTypes.Property, KeyTypes.MultiLanguageProperty].find((mt) => mt === data?.modelType);
     const [detailsModalOpen, setDetailsModalOpen] = React.useState(false);
+    const [externalRedirectOpen, setExternalRedirectOpen] = React.useState(false);
+    const [assetLinkType, setAssetLinkType] = React.useState<AssetLinkType>('loading');
 
-    const handleAssetNavigateClick = async (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+    React.useEffect(() => {
+        if (!assetId) {
+            setAssetLinkType('hidden');
+            return;
+        }
+
+        let cancelled = false;
+
+        async function checkDiscovery() {
+            const { isSuccess, result: discoverySearchResult } = await searchInAllDiscoveries(assetId!);
+            if (cancelled) return;
+
+            if (isSuccess && discoverySearchResult.length > 0) {
+                setAssetLinkType('internal');
+            } else if (URL_REGEX.test(assetId!)) {
+                setAssetLinkType('external');
+            } else {
+                setAssetLinkType('hidden');
+            }
+        }
+
+        checkDiscovery();
+        return () => {
+            cancelled = true;
+        };
+    }, [assetId]);
+
+    const handleInternalNavigate = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
         event.stopPropagation();
         if (!assetId) return;
+        const prefix = locale ? `/${locale}` : '';
+        const assetPath = `${prefix}/asset?assetId=${encodeURIComponent(assetId)}`;
+        window.open(assetPath, '_blank', 'noopener,noreferrer');
+    };
 
-        // Open a tab synchronously to avoid popup blockers. We avoid passing
-        // `noopener,noreferrer` as some browsers then return `null` even when a
-        // tab is opened; instead null out `opener` manually to prevent reverse-tabnabbing.
-        const popup = typeof window !== 'undefined' ? window.open('', '_blank') : null;
-        try {
-            if (popup) popup.opener = null;
-        } catch {
-            // ignore
-        }
+    const handleExternalClick = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+        event.stopPropagation();
+        setExternalRedirectOpen(true);
+    };
 
-        const { isSuccess, result: discoverySearchResult } = await searchInAllDiscoveries(assetId);
-
-        const hasDiscovery = isSuccess && discoverySearchResult.length > 0;
-
-        if (hasDiscovery) {
-            const prefix = locale ? `/${locale}` : '';
-            const assetPath = `${prefix}/asset?assetId=${encodeURIComponent(assetId)}`;
-            if (popup) {
-                try {
-                    popup.location.href = assetPath;
-                } catch {
-                    window.location.href = assetPath;
-                }
-            } else {
-                navigate.push(assetPath);
-            }
-        } else {
-            // No local discovery - navigate directly to the assetId (might be external URL)
-            if (popup) {
-                try {
-                    popup.location.href = assetId;
-                } catch {
-                    window.location.href = assetId;
-                }
-            } else {
-                navigate.push(assetId);
-            }
-        }
+    const handleExternalConfirm = () => {
+        if (!assetId) return;
+        window.open(assetId, '_blank', 'noopener,noreferrer');
     };
 
     const handleDetailsClick = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
@@ -128,14 +134,26 @@ const CustomContent = React.forwardRef(function CustomContent(
                                     <IconButton sx={{ mr: 1 }} onClick={handleDetailsClick}>
                                         <InfoOutlined data-testid="entity-info-icon" sx={{ color: 'text.secondary' }} />
                                     </IconButton>
-                                    <Button
-                                        endIcon={<ArrowForward />}
-                                        size="small"
-                                        onClick={handleAssetNavigateClick}
-                                        data-testid="view-asset-button"
-                                    >
-                                        {t('actions.view')}
-                                    </Button>
+                                    {assetLinkType === 'internal' && (
+                                        <Button
+                                            endIcon={<ArrowForward />}
+                                            size="small"
+                                            onClick={handleInternalNavigate}
+                                            data-testid="view-asset-button"
+                                        >
+                                            {t('actions.view')}
+                                        </Button>
+                                    )}
+                                    {assetLinkType === 'external' && (
+                                        <Button
+                                            endIcon={<OpenInNew />}
+                                            size="small"
+                                            onClick={handleExternalClick}
+                                            data-testid="view-asset-button"
+                                        >
+                                            {t('actions.open')}
+                                        </Button>
+                                    )}
                                 </>
                             )}
                             {showDataDirectly && (
@@ -172,6 +190,14 @@ const CustomContent = React.forwardRef(function CustomContent(
                     open={detailsModalOpen}
                     handleClose={handleDetailsModalClose}
                     relationship={props.data as RelationshipElement}
+                />
+            )}
+            {assetId && assetLinkType === 'external' && (
+                <ExternalRedirectDialog
+                    open={externalRedirectOpen}
+                    handleClose={() => setExternalRedirectOpen(false)}
+                    url={assetId}
+                    onConfirm={handleExternalConfirm}
                 />
             )}
         </TreeItemProvider>
