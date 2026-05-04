@@ -60,7 +60,7 @@ describe('Test the Bill-of-Material', function () {
                     .parents('[data-testid="bom-entity"]')
                     .as('cyBomComponent');
                 cy.get('@cyBomComponent').findByTestId('view-asset-button').as('cyBomComponent_Button');
-                cy.get('@cyBomComponent_Button').should('exist');
+                cy.get('@cyBomComponent_Button').should('exist').and('not.have.attr', 'aria-busy', 'true');
             });
 
             it('Shows external link button with OpenInNew icon for external URL entity', function () {
@@ -68,8 +68,7 @@ describe('Test the Bill-of-Material', function () {
                     .contains(testdata.externalLinkComponentName)
                     .parents('[data-testid="bom-entity"]')
                     .as('cyExternalLink');
-                cy.get('@cyExternalLink').findByTestId('view-asset-button').should('exist');
-                cy.get('@cyExternalLink').findByTestId('view-asset-button').should('contain', 'Open');
+                cy.get('@cyExternalLink').findByTestId('view-asset-button').should('exist').and('contain', 'Open');
             });
 
             it('Shows external redirect dialog when clicking external link button', function () {
@@ -77,10 +76,8 @@ describe('Test the Bill-of-Material', function () {
                     .contains(testdata.externalLinkComponentName)
                     .parents('[data-testid="bom-entity"]')
                     .as('cyExternalLink');
-                cy.get('@cyExternalLink').findByTestId('view-asset-button').click();
-                cy.findByRole('dialog')
-                    .should('be.visible')
-                    .and('contain', 'https://example.com/external-product');
+                cy.get('@cyExternalLink').findByTestId('view-asset-button').should('contain', 'Open').click();
+                cy.get('[role="dialog"]').should('be.visible').and('contain', 'https://example.com/external-product');
             });
 
             it('Does not show navigate button for non-URL asset', function () {
