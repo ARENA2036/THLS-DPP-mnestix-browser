@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { TreeItemRoot } from '@mui/x-tree-view';
-import { Box, Button, CircularProgress, IconButton } from '@mui/material';
+import { Box, Button, IconButton } from '@mui/material';
 import { Entity, KeyTypes, RelationshipElement, SubmodelElementChoice } from 'lib/api/aas/models';
 import { AssetIcon } from 'components/custom-icons/AssetIcon';
 import { ArrowForward, ArticleOutlined, InfoOutlined, OpenInNew, PinDropOutlined } from '@mui/icons-material';
