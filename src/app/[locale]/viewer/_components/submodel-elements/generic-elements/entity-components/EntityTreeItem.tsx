@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { TreeItemRoot } from '@mui/x-tree-view';
-import { Box, Button, IconButton } from '@mui/material';
+import { Box, Button, CircularProgress, IconButton } from '@mui/material';
 import { Entity, KeyTypes, RelationshipElement, SubmodelElementChoice } from 'lib/api/aas/models';
 import { AssetIcon } from 'components/custom-icons/AssetIcon';
 import { ArrowForward, ArticleOutlined, InfoOutlined, OpenInNew, PinDropOutlined } from '@mui/icons-material';
@@ -134,6 +134,17 @@ const CustomContent = React.forwardRef(function CustomContent(
                                     <IconButton sx={{ mr: 1 }} onClick={handleDetailsClick}>
                                         <InfoOutlined data-testid="entity-info-icon" sx={{ color: 'text.secondary' }} />
                                     </IconButton>
+                                    {assetLinkType === 'loading' && (
+                                        <Button
+                                            endIcon={<ArrowForward />}
+                                            size="small"
+                                            onClick={handleInternalNavigate}
+                                            data-testid="view-asset-button"
+                                            loading
+                                        >
+                                            {t('actions.view')}
+                                        </Button>
+                                    )}
                                     {assetLinkType === 'internal' && (
                                         <Button
                                             endIcon={<ArrowForward />}
