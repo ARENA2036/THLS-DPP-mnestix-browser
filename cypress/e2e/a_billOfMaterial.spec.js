@@ -78,8 +78,9 @@ describe('Test the Bill-of-Material', function () {
                     .parents('[data-testid="bom-entity"]')
                     .as('cyExternalLink');
                 cy.get('@cyExternalLink').findByTestId('view-asset-button').click();
-                cy.get('.MuiDialog-root').should('be.visible');
-                cy.get('.MuiDialogContentText-root').should('contain', 'https://example.com/external-product');
+                cy.findByRole('dialog')
+                    .should('be.visible')
+                    .and('contain', 'https://example.com/external-product');
             });
 
             it('Does not show navigate button for non-URL asset', function () {
