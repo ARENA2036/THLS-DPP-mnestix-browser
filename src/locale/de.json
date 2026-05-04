@@ -279,7 +279,13 @@
         },
         "title": "Teilmodelle",
         "unknownModelType": "Mnestix unterstützt diesen ModelType noch nicht ({type}).",
-        "repositoryUrlLabel": "Repository URL:"
+        "repositoryUrlLabel": "Repository URL:",
+        "externalRedirect": {
+          "title": "Externer Link",
+          "message": "Sie werden zu einer externen Seite weitergeleitet: {url}",
+          "confirm": "Öffnen",
+          "cancel": "Abbrechen"
+        }
       }
     },
     "catalog": {
