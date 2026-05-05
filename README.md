@@ -15,6 +15,7 @@
 [![Join our Community](https://img.shields.io/badge/Join_our_Community-005962?style=flat-square)](https://xitaso.com/kompetenzen/mnestix/#support)
 
 ## DPP Generator Overview
+
 In the context of the [Robotik Challenge 2026](https://www.leitungssatz-hub.de/robotik-challenge/robotik-challenge-2026/begleitforschungs-und-digitalisierungsmodul/), this [DPP Generator](https://robotik-challenge.arena2036.app/) extension of Mnestix was developed and hosted:
 
 <img width="1186" height="648" alt="image" src="https://github.com/user-attachments/assets/d528b88f-0699-411b-aff2-c816b26653b9" />
@@ -27,10 +28,10 @@ The generated basic DPP-AAS can be viewed here:
 
 <img width="1306" height="1223" alt="image" src="https://github.com/user-attachments/assets/2d8d7638-1720-4d4a-9818-eb2840416225" />
 
-
 ### Mnestix is also utilized for the [VWS4LS Marketplace](https://marketplace.arena2036.app)
 
 ## Feature Overview
+
 Mnestix Browser is an open source software designed to simplify the implementation of the Asset Administration Shell.
 Together with contributions from users and developers, a growing community is working on further development under the
 leadership of XITASO.
@@ -58,9 +59,15 @@ in an extra user-friendly manner**. These are:
 
 Moreover, dedicated visualizations for submodels can be added as a further feature.
 
+## Arena-RC Project Documentation
+
+For details on the Robotik-Challenge DPP Creator, blueprint mapping rules, and the two-repo infrastructure setup, see the wiki:
+
+- [Robotik-Challenge DPP Creator](wiki/Robotik-Challenge-DPP-Creator.md)
+- [Two-Repo Setup (Arena-RC)](wiki/Two-Repo-Setup.md)
+
 ### **If you need support feel free to contact us through our website [here](https://xitaso.com/kompetenzen/mnestix/#support).**
 
 ### **Join our Mnestix Community Hour, register [here](https://xitaso.com/event/mnestix-open-hour/).**
 
 ### If you want to further configure your mnestix instance, go to our [wiki](https://github.com/eclipse-mnestix/mnestix-browser/wiki).
-
