@@ -230,8 +230,8 @@ These submodels are generated with placeholder values to illustrate how a full D
 - The Blueprints, Type-AASs and created DPPs are stored in the same Basyx-Repo.
 - Running Mnestix infrastructure (see [Getting Started](Getting-started-with-developing))
 - Add the same URL to the following environment:
--   - For Mnestix Browser: `DISCOVERY_API_URL`, `AAS_REPO_API_URL`, `SUBMODEL_REPO_API_URL`, `CONCEPT_DESCRIPTION_REPO_API_URL`, `SERIALIZATION_API_URL`, `MNESTIX_AAS_GENERATOR_API_URL`
--   - For Mnestix AAS Generator: `serverUrls`
+  - For Mnestix Browser: `DISCOVERY_API_URL`, `AAS_REPO_API_URL`, `SUBMODEL_REPO_API_URL`, `CONCEPT_DESCRIPTION_REPO_API_URL`, `SERIALIZATION_API_URL`, `MNESTIX_AAS_GENERATOR_API_URL`
+  - For Mnestix AAS Generator: `serverUrls`
 
 ### Two-Repo Setup
 
