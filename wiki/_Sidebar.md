@@ -24,6 +24,11 @@
 
 - [Contributing](Contributing)
 
+## Robotik-Challenge
+
+- [DPP Creator (VEC/KBL Blueprints)](Robotik-Challenge-DPP-Creator)
+- [Two-Repo Setup (Arena-RC)](Two-Repo-Setup)
+
 ## Advanced
 
 - [How to Create Custom Submodel Views](How-to-create-custom-submodel-visualizations)
