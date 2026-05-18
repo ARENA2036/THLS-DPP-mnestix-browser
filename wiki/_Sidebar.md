@@ -30,6 +30,7 @@
 - [Mnestix AAS Generator](Mnestix-AAS-Generator)
     - [API Reference](Mnestix-AAS-Generator-API-Reference)
     - [Data Ingest & Blueprint Guide](Mnestix-AAS-Generator-Dataingest-and-Blueprints)
+- [VEC and KBL File Formats](VEC-and-KBL-File-Formats)
 - [Mnestix API Documentation (deprecated)](Mnestix-API-Documentation)
 - [Configuring Mnestix for different versions](Different-versions-configuration)
 
