@@ -131,7 +131,7 @@
                                     "kind": "TemplateQualifier",
                                     "type": "SMT/MappingInfo",
                                     "valueType": "xs:string",
-                                    "value": "($pvId := PartVersion[*]._id; $matchingSpecIds := DocumentVersion.Specification[DescribedPart = $pvId]._id; $comps := DocumentVersion.Specification[$lookup($, '_xsi:type') = 'vec:CompositionSpecification'].Component[$lookup($, '_xsi:type') = 'vec:PartOccurrence']; $count($comps[Role.ConnectorHousingSpecification in $matchingSpecIds or Role.EEComponentSpecification in $matchingSpecIds or Role.WireSpecification in $matchingSpecIds or Role.TerminalSpecification in $matchingSpecIds]))"
+                                    "value": "($pvId := PartVersion[*]._id; $count(DocumentVersion.Specification[$lookup($, '_xsi:type') = 'vec:CompositionSpecification'].Component[$lookup($, '_xsi:type') = 'vec:PartOccurrence' and Part = $pvId]))"
                                 }
                             ],
                             "valueType": "xs:int",
