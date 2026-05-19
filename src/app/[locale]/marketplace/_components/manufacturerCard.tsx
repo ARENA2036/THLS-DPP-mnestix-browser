@@ -3,7 +3,7 @@
 import { Box, Card, IconButton, Typography, useTheme } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useTranslations } from 'next-intl';
-import { MnestixConnection } from '@prisma/client';
+import { MnestixConnection } from '../../../../../prisma/generated/client';
 import { useRouter } from 'next/navigation';
 import { searchProducts } from 'lib/api/graphql/catalogActions';
 import { useAsyncEffect } from 'lib/hooks/UseAsyncEffect';

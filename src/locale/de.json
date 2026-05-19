@@ -183,7 +183,6 @@
     },
     "footer": {
       "about": "Über Mnestix",
-      "aboutHeader": "Diese Anwendung wird von Mnestix unterstützt",
       "dataPrivacy": "Datenschutz",
       "imprint": "Impressum",
       "legalNotice": "Rechtlicher Hinweis",
@@ -194,7 +193,8 @@
       "legalNoticeText4": "Der Betreiber übernimmt – soweit gesetzlich zulässig – keine Haftung für direkte oder indirekte Schäden, Datenverluste, Fehlentscheidungen, Betriebsunterbrechungen oder Folgeschäden, die aus der Nutzung oder Nichtverfügbarkeit dieses Prototyps entstehen.",
       "legalNoticeText5": "Die Anwendung kann jederzeit ohne Vorankündigung geändert, eingeschränkt, zurückgesetzt oder eingestellt werden.",
       "legalNoticeText6": "Sofern externe Dienste, Schnittstellen oder Verlinkungen eingebunden sind, wird für deren Inhalte, Verfügbarkeit, Sicherheit und Datenschutz keine Verantwortung übernommen.",
-      "legalNoticeText7": "Mit der Nutzung dieser Webanwendung erkennen die Nutzerinnen und Nutzer den experimentellen Charakter des Systems an.""imprint": "Impressum",
+      "legalNoticeText7": "Mit der Nutzung dieser Webanwendung erkennen die Nutzerinnen und Nutzer den experimentellen Charakter des Systems an.",
+      "aboutHeader": "Diese Anwendung wird von Mnestix unterstützt",
       "documentation": "Dokumentation"
     },
     "mainMenu": {
@@ -233,7 +233,9 @@
       "repositoryDropdownLabel": "AAS Repository oder AAS Registry (Infrastruktur)",
       "selectListSource": "Bitte wählen Sie ein Repository oder AAS Registry aus",
       "subHeader": "Hier finden Sie alle AAS aus Ihrem Repository oder AAS Registry. Sie können ein AAS-Repository oder AAS Registry auswählen, um zwischen den Datenquellen zu wechseln.",
-      "titleComparisonAddButton": "AAS zum Vergleich hinzufügen"
+      "titleComparisonAddButton": "AAS zum Vergleich hinzufügen",
+      "repositoryDropdown": "AAS Repository",
+      "selectRepository": "Bitte wählen Sie ein Repository aus"
     },
     "aasViewer": {
       "actions": {
@@ -305,11 +307,9 @@
       "marketplaceTitle": "VWS4LS - Marketplace",
       "noSearcherWarning": "Kein AAS Searcher konfiguriert. AAS Liste wird angezeigt, Filterung ist nicht möglich.",
       "searchPlaceholder": "Suche aktuell nicht verfügbar...",
-      "title": "Hersteller Produktkatalog""articleCountUnavailable": "Filterung nicht konfiguriert",
-      "filter": "Filter",
-      "noSearcherWarning": "Kein AAS Searcher konfiguriert. AAS Liste wird angezeigt, Filterung ist nicht möglich.",
-      "eclassDocumentationLink": "In ECLASS Dokumentation nachlesen",
-      "searchPlaceholder": "Produkte suchen..."
+      "title": "Hersteller Produktkatalog",
+      "articleCountUnavailable": "Filterung nicht konfiguriert",
+      "eclassDocumentationLink": "In ECLASS Dokumentation nachlesen"
     },
     "compare": {
       "addAnother": "Eine weitere AAS hinzufügen",
@@ -452,361 +452,376 @@
           "buildDate": "Build-Datum",
           "aasGeneratorLabel": "Mnestix AAS Generator",
           "applicationVersion": "Anwendungsversion",
-          "refresh": "Status aktualisieren""connections": {
-            "aasRepository": {
-              "connectionType": "AAS_REPOSITORY",
-              "repositories": "AAS Repositorys",
-              "repositoryDefaultLabel": "Default AAS Repository",
-              "repositoryLabel": "AAS Repository",
-              "repositoryUrlLabel": "AAS Repository URL",
-              "nameLabel": "Name",
-              "imageUrlLabel": "Bild URL",
-              "aasSearcherUrlLabel": "AAS Searcher URL",
-              "commercialDataUrlLabel": "Kommerzielle Daten Submodel URL",
-              "notYetSupported": "Diese Funktion ist noch nicht verfügbar.",
-              "submodelRepositoryHint": "Submodel Repository kann aktuell nur über den separaten Abschnitt unten gesetzt werden.",
-              "noDuplicatedNames": "Es dürfen keine zwei Repositorys mit dem gleichen Namen existieren."
-            },
-            "addButton": "Hinzufügen",
-            "resetSuccessful": "Quellen wurden zurückgesetzt.",
-            "submodelRepository": {
-              "connectionType": "SUBMODEL_REPOSITORY",
-              "repositories": "Submodel Repositorys",
-              "repositoryDefaultLabel": "Default Submodel Repository",
-              "repositoryLabel": "Submodel Repository",
-              "repositoryUrlLabel": "Submodel Repository URL"
-            },
-            "subtitle": "Definieren Sie, welche Infrastrukturen verwendet werden sollen.",
-            "title": "Infrastrukturen",
-            "urlFieldNoTrailingSlash": "Die URL darf nicht mit einem Schrägstrich (/) enden.",
-            "noInfrastructuresFound": "Keine Infrastrukturen gefunden""urlFieldRequired": "URL wird benötigt",
-            "defaultUrlInfo": "Default URLs können nur über die Environment Variablen gesetzt werden."
-          },
-          "header": "Einstellungen",
-          "idStructure": {
-            "assetIdDocumentation": {
-              "assetId": "Asset ID",
-              "dnsHeading": "Zugriff via DNS",
-              "dnsText": "Besonders beim \"Brownfield\"-Ansatz und als Vertreiber eines Produkts ist es sinnvoll, zusätzlich einen DNS-Zugang über die Asset ID einzurichten, um so einen Datenzugriff über einen herkömmlichen Browser zu ermöglichen.",
-              "endResult": "Endergebnis",
-              "exampleHeading": "Beispiel",
-              "industry40Heading": "Industrie 4.0 Kontext",
-              "industry40Text": "Produkte haben eine global einzigartige ID, welche einer oder mehreren Verwaltungsschalen zugewiesen werden kann. Im Industrie 4.0 Kontext wird die Verbindung zwischen Asset und Verwaltungsschale über die I4.0 Infrastruktur hergestellt.",
-              "redirectsTo": "Leitet weiter auf",
-              "title": "Wie Sie Ihre Asset ID mit Ihrem Repository verbinden"
-            },
-            "errors": {
-              "idStructureError": "Fehler beim speichern von ''{name}'' ({reason}).",
-              "invalidIri": "Muss eine valide IRI sein. Z.B. https://example.com/",
-              "invalidIriPart": "Muss als Teil einer IRI funktionieren können (keine Schrägstriche, Leer- und Sonderzeichen erlaubt)"
-            },
-            "labels": {
-              "dynamicPart": "dynamischer Teil",
-              "idStructureExplanation": "Definieren Sie, wie Ihre IDs dargestellt werden sollen. Dies ist eine Basis-Einstellung, die für individuelle Importe angepasst werden kann.",
-              "staticPrefix": "statisches Präfix"
-            },
-            "messages": {
-              "successfullyUpdated": "Erfolgreich aktualisiert"
-            },
-            "title": "ID Struktur"
-          },
-          "messages": {
-            "changesSavedSuccessfully": "Änderungen erfolgreich gespeichert."
-          },
-          "rules": {
-            "buttons": {
-              "add": "Hinzufügen",
-              "back": "Zurück",
-              "cancel": "Abbrechen",
-              "create": "Berechtigung hinzufügen",
-              "delete": "Löschen",
-              "edit": "Bearbeiten",
-              "save": "Speichern"
-            },
-            "createRule": {
-              "placeholderText": "Neuer oder bestehender Rollenname",
-              "saveSuccess": "Neue Regel erfolgreich gespeichert.",
-              "subtitle": "Füge eine Berechtigung zu einer neuen oder bereits bestehenden Rolle hinzu.",
-              "subtitle2": "Füge eine Berechtigung zu der Rolle ''{role}'' hinzu.",
-              "title": "Neue Berechtigung hinzufügen"
-            },
-            "deleteRole": {
-              "delete": "Rolle löschen",
-              "description": "Die Rolle ''{roleName}'' enthält {count} Rechte. Wollen Sie die gesamte Rolle mit allen Rechten löschen?",
-              "header": "Gesamte Rolle löschen",
-              "partiallySuccess": "{count} von {total} Rechte wurden gelöscht. Die Rolle existiert weiterhin mit den restlichen Rechten!",
-              "success": "Rolle ''{roleName}'' wurde erfogreich gelöscht."
-            },
-            "deleteRule": {
-              "question": "Regel unwiderruflich löschen?",
-              "ruleInfo": "Nutzer mit der Rolle ''{role}'' haben danach keine Berrechtigungen mehr die folgenden Daten {action, select, READ {zu LESEN} EDIT {zu EDITIEREN} CREATE {zu ERSTELLEN} UPDATE {zu VERÄNDERN} EXECUTE {AUSZUFÜHREN}  other {#}}!",
-              "success": "Regel erfolgreich gelöscht."
-            },
-            "editRule": {
-              "saveSuccess": "Regel erfolgreich bearbeitet.",
-              "title": "Regel bearbeiten"
-            },
-            "errors": {
-              "uniqueIdShort": "Die Kombination aus Rollenname, Aktion und Typ existiert bereits in einer anderen Regel.\nBitte bearbeiten Sie die bestehende Regel."
-            },
-            "keycloakHint": {
-              "acknowledge": "In Ordnung",
-              "create": "Diese Rolle wurde bisher nicht verwendet. Vergessen Sie nicht diese auch in Keycloak zu konfigurieren!",
-              "delete": "Vergessen Sie nicht die Rolle in Keycloak zu entfernen!",
-              "title": "Keycloak aktualisieren"
-            },
-            "roleNameMaxLength": "Rollenname darf maximal {maxLength} Zeichen lang sein",
-            "roleNameNoTrailSpace": "Rollenname darf keine Leerzeichen am Ende haben.",
-            "roleRequired": "Rolle wird benötigt",
-            "subtitle": "Verwalten von Rollen und Berechtigungen.",
-            "tableHeader": {
-              "aasIds": "AAS IDs",
-              "action": "Aktion",
-              "name": "Rolle",
-              "permissions": "Berechtigungen",
-              "submodelIds": "Submodel IDs",
-              "type": "Typ"
-            },
-            "title": "Rollenmanagement",
-            "wildcardLabel": "Alle erlauben"
-          },
-          "subHeader": "Hinzufügen, Entfernen oder Ändern von Einstellungen und Konfigurationen für verschiedene Funktionen innerhalb Ihrer AAS-Umgebung."
+          "refresh": "Status aktualisieren"
         },
-        "templates": {
-          "actions": {
-            "add": "Hinzufügen",
-            "cancel": "Abbrechen",
-            "delete": "Löschen",
-            "duplicate": "Duplizieren",
-            "edit": "Bearbeiten",
-            "remove": "Entfernen",
-            "restore": "Wiederherstellen",
-            "revertChanges": "Änderungen zurücksetzen",
-            "saveChanges": "Änderungen speichern"
-          },
-          "all": "Alle",
-          "boolean": {
-            "false": "falsch",
-            "true": "wahr"
-          },
-          "healthCheck": {
-            "label": "Status des Mnestix AAS Generators: ",
-            "refresh": "Status aktualisieren"
-          },
-          "docsLink": "Klicken Sie hier, um zur Dokumentation zum Verwenden und Erstellen von Templates und Blueprints zu gelangen.",
-          "chooseAStartingPoint": "Wählen Sie ein Template als Ausgangspunkt",
-          "copyBlueprintId": "Blueprint-ID kopieren",
-          "createNew": "Blueprint erstellen",
-          "custom": "Custom",
-          "defaultValue": "Defaultwert",
-          "deleteBlueprintQuestion": "Blueprint ''{name}'' unwiderruflich löschen?",
-          "displayName": "Anzeigename",
-          "emptyTemplate": "Leer (Custom)",
-          "emptyTemplateDescription": "Basiert auf keinem standardisierten Template",
-          "errors": {
-            "unknownModelType": "Mnestix unterstützt diesen ModelType noch nicht ({type})."
-          },
-          "labels": {
-            "language": "Sprache",
-            "notAvailable": "-",
-            "semanticId": "semanticId",
-            "text": "Text",
-            "value": "Wert",
-            "modelType": "Model Type",
-            "valueType": "Value Type"
-          },
-          "mappingInfo": "Mapping Info",
-          "mappingInfoDescription": "Jsonata-Ausdruck, der zum Mappen von Werten während Datenimporten verwendet werden kann. Beachten Sie, dass das Ergebnis des Ausdrucks denselben Datentyp wie dieses SubmodelElement haben muss.",
-          "collectionMappingInfo": "Collection Mapping Info",
-          "collectionMappingInfoDescription": "Json-Ausdruck, der zum Duplizieren von SubmodelElementen während Datenimporten verwendet werden kann. Der angegebene Pfad muss zu einem Array führen, daher mit [*] enden.",
-          "filterMappingInfo": "Filter Mapping Info",
-          "filterMappingInfoDescription": "Jsonata-Ausdruck, der verwendet werden kann, um SubmodelElemente während Datenimporten zu filtern. Beachten Sie, dass das Ergebnis des Ausdrucks ein boolescher Wert sein muss.",
-          "messages": {
-            "changesSavedSuccessfully": "Änderungen erfolgreich gespeichert.",
-            "deleted": "gelöscht"
-          },
-          "multiplicity": "Multiplizität",
-          "multiplicityDescription": "Optionen zur Auswahl, ob ein SubmodelElement obligatorisch oder optional ist, und ob es mehrere Instanzen haben kann. Dies wird zur Datenvalidierung während Importen verwendet.",
-          "noBlueprintsFound": "Keine Blueprints gefunden",
-          "blueprintDeletedSuccessfully": "Blueprint erfolgreich gelöscht.",
-          "noTemplatesWarning": "Keine Templates verfügbar. Es werden nur Blueprints angezeigt.",
-          "blueprintIdCopied": "Blueprint-ID in die Zwischenablage kopiert: {id}",
-          "blueprintUseExplanation": "Blueprints erlauben es Ihnen, eine wiederverwendbare Teilmodell-Struktur, angepasst auf Ihre Bedürfnisse, zu definieren.",
-          "title": "Templates & Blueprints",
-          "validation": {
-            "errors": {
-              "invalidDate": "Muss ein gültiges Datum sein, im Format ''yyyy-mm-dd''",
-              "invalidLong": "Muss eine valide Zahl sein"
-            }
-          },
-          "noBlueprintsWarning": "Keine Blueprints verfügbar."
+        "subtitle": "Definieren Sie, welche Infrastrukturen verwendet werden sollen.",
+        "title": "Infrastrukturen",
+        "urlFieldNoTrailingSlash": "Die URL darf nicht mit einem Schrägstrich (/) enden.",
+        "noInfrastructuresFound": "Keine Infrastrukturen gefunden"
+      },
+      "header": "Einstellungen",
+      "idStructure": {
+        "assetIdDocumentation": {
+          "assetId": "Asset ID",
+          "dnsHeading": "Zugriff via DNS",
+          "dnsText": "Besonders beim \"Brownfield\"-Ansatz und als Vertreiber eines Produkts ist es sinnvoll, zusätzlich einen DNS-Zugang über die Asset ID einzurichten, um so einen Datenzugriff über einen herkömmlichen Browser zu ermöglichen.",
+          "endResult": "Endergebnis",
+          "exampleHeading": "Beispiel",
+          "industry40Heading": "Industrie 4.0 Kontext",
+          "industry40Text": "Produkte haben eine global einzigartige ID, welche einer oder mehreren Verwaltungsschalen zugewiesen werden kann. Im Industrie 4.0 Kontext wird die Verbindung zwischen Asset und Verwaltungsschale über die I4.0 Infrastruktur hergestellt.",
+          "redirectsTo": "Leitet weiter auf",
+          "title": "Wie Sie Ihre Asset ID mit Ihrem Repository verbinden"
         },
-        "uploadData": {
-          "title": "DPP erzeugen",
-          "backToHome": "Zurück zur Startseite",
-          "explanation": {
-            "title": "Über die DPP-Erzeugung",
-            "step1Intro": "Hier kann eine KBL oder VEC-Datei hochgeladen werden, um ein korrespondierendes DPP-Typmodell im AAS-Format zu erzeugen. Dabei werden die folgenden Submodelle erzeugt:",
-            "step1PcfSuffix": "mit",
-            "step2Intro": "Bestimmte Informationsinhalte aus den Dateiformaten KBL bzw. VEC werden dazu in eine entsprechende Verwaltungsschale-Repräsentation übersetzt.",
-            "step2KblPrefix": "Bei KBL werden die Inhalte von",
-            "step2KblSuffix": "wie z.B. '<'Company_name'>', '<'Part_number'>', '<'Description'>' und '<'Abbreviation'>' zur Identifikation des im KBL modellierten Leitungssatz-Produkts und seiner Komponenten herangezogen.",
-            "step2VecPrefix": "Bei VEC werden die Inhalte von",
-            "step2VecSuffix": "analog verwendet.",
-            "step2Closing": "Basierend auf diesen Informationen wird eine internetfähige Identifikationsadresse zur jeweiligen AAS der Leitungssatz-Komponente erstellt.",
-            "step3": "Im Anschluss muss ein Produktbild hochgeladen werden, das in der Verwaltungsschale hinterlegt wird.",
-            "step4": "Als optionalen letzten Schritt können Sie weitere Anhänge zum HandoverDocumentation Submodel hinzufügen."
-          },
-          "actions": {
-            "copyDetailedLogs": "Detaillierte Logs kopieren",
-            "deleteFile": "Datei löschen",
-            "next": "Weiter",
-            "removeFile": "Datei entfernen",
-            "seeLess": "Weniger anzeigen",
-            "seeMore": "Mehr anzeigen",
-            "uploadMore": "Weiteren DPP generieren",
-            "viewCreatedAas": "Erstellten DPP anzeigen",
-            "resetWorkflow": "Zurücksetzen",
-            "logsCopied": "Logs in die Zwischenablage kopiert"
-          },
-          "ariaLabel": "VEC-Datei hochladen",
-          "cta": {
-            "clickToUpload": "Zum Hochladen klicken",
-            "orDragAndDrop": "oder per Drag & Drop ablegen",
-            "supportedFiles": "Unterstützte Dateien: {formats} (max. {maxSize} MB)"
-          },
-          "descriptions": {
-            "supportedFormats": "Unterstütztes Format: .vec, .kbl (max. 10 MB)"
-          },
-          "fileTooLarge": "Datei ist zu groß. Maximale Größe: {maxSize}.",
-          "fileTypeNotSupported": "Es werden nur Dateien des Typs {formats} unterstützt.",
-          "apiErrors": {
-            "processingError": "Verarbeitung fehlgeschlagen. Bitte Datei prüfen und erneut versuchen.",
-            "missingFieldsError": "Erforderliche Felder fehlen in der Datei",
-            "missingFieldsDetail": "Die folgenden Felder fehlen oder sind leer: {fields}. Stellen Sie sicher, dass Ihre VEC- oder KBL-Datei diese Werte enthält.",
-            "uploadError": "Upload fehlgeschlagen. Bitte erneut versuchen.",
-            "unsupportedFileType": "Nicht unterstützter Dateityp",
-            "unsupportedFileTypeDetail": "Die hochgeladene Datei ist weder eine gültige VEC- noch eine KBL-Datei. Bitte laden Sie nur .vec oder .kbl Dateien hoch.",
-            "parseError": "Fehler beim Parsen der Datei. Bitte stellen Sie sicher, dass die Datei ein gültiges XML-Format hat."
-          },
-          "handoverDocs": {
-            "uploadError": "Fehler beim Hochladen der Datei in das Submodel. Bitte versuchen Sie es erneut.",
-            "infrastructureNotFound": "Keine Infrastruktur für Repository-URL gefunden"
-          },
-          "status": {
-            "error": "Fehlgeschlagen",
-            "loading": "In Bearbeitung",
-            "success": "Abgeschlossen"
-          },
-          "steps": {
-            "generateAas": "AAS wird generiert",
-            "processData": "Daten werden verarbeitet",
-            "uploadFile": "Datei wird hochgeladen"
-          },
-          "form": {
-            "userNameLabel": "Ihr Name",
-            "organizationNameLabel": "Organisation",
-            "submitLabel": "Absenden",
-            "errors": {
-              "userNameRequired": "Bitte geben Sie Ihren Namen ein.",
-              "organizationRequired": "Bitte geben Sie Ihre Organisation an.",
-              "fileRequired": "Bitte wählen Sie vor dem Absenden eine Datei aus."
-            }
-          },
-          "uploadSuccess": "DPP erfolgreich erstellt.",
-          "warningsEncountered": "Warnungen:",
-          "uploadSection": {
-            "title": "VEC oder KBL Datei hochladen"
-          },
-          "thumbnail": {
-            "sectionTitle": "Produktbild zum DPP hinzufügen",
-            "title": "Produktbild hinzufügen",
-            "description": "Laden Sie ein Produktbild für Ihren Digitalen Produktpass hoch.",
-            "selectFile": "Bild auswählen",
-            "changeFile": "Bild ändern",
-            "upload": "Produktbild hochladen",
-            "uploading": "Produktbild wird hochgeladen...",
-            "uploadSuccess": "Produktbild erfolgreich hochgeladen.",
-            "uploadError": "Fehler beim Hochladen des Produktbilds. Bitte versuchen Sie es erneut.",
-            "invalidFileType": "Bitte wählen Sie eine gültige Bilddatei (JPEG, PNG, GIF, WebP oder PDF).",
-            "fileTooLarge": "Produktbild ist zu groß. Maximale Größe: {maxSize}.",
-            "pdfConversionError": "PDF konnte nicht in ein Bild konvertiert werden. Bitte versuchen Sie eine andere Datei.",
-            "required": "Ein Produktbild ist erforderlich, um fortzufahren."
-          },
-          "stepper": {
-            "vecKbl": "VEC/KBL-Datei hochladen",
-            "processing": "DPP erzeugen",
-            "thumbnail": "Produktbild hinzufügen",
-            "additionalDocs": "Dateien hinzufügen",
-            "complete": "Fertig"
-          },
-          "additionalDocs": {
-            "title": "Zusätzliche Dateien hinzufügen (Optional)",
-            "description": "Laden Sie mehrere Dateien als Dokumentation für den Digitalen Produktpass hoch. Sie werden im HandoverDocumentation-Submodel angezeigt, welches der Abschnitt für Dokumentationsdokumente im DPP ist.",
-            "dropzone": "Dateien hier ablegen oder klicken zum Durchsuchen",
-            "supportedFiles": "Beliebiger Dateityp (max. 10 MB pro Datei)",
-            "addMore": "Weitere Dateien hinzufügen",
-            "uploadAll": "Alle Dateien hochladen",
-            "skip": "Diesen Schritt überspringen",
-            "continue": "Weiter",
-            "titleLabel": "Dokumenttitel",
-            "descriptionLabel": "Beschreibung",
-            "classLabel": "Dokumenttyp (VDI 2770)",
-            "selectClass": "Dokumenttyp auswählen",
-            "uploading": "Wird hochgeladen...",
-            "uploadSuccess": "Erfolgreich hochgeladen",
-            "uploadError": "Hochladen fehlgeschlagen",
-            "noFiles": "Keine Dateien ausgewählt",
-            "pendingUploads": "{count} Datei(en) bereit zum Hochladen",
-            "allUploaded": "Alle Dokumente erfolgreich hochgeladen",
-            "removeFile": "Datei entfernen"
-          },
-          "vdi2770": {
-            "01-01": "Identifikation",
-            "02-01": "Technische Spezifikation",
-            "02-02": "Zeichnungen, Pläne",
-            "02-03": "Bauteile",
-            "02-04": "Zeugnisse, Zertifikate, Bescheinigungen",
-            "03-01": "Montage, Demontage",
-            "03-02": "Bedienung",
-            "03-03": "Allgemeine Sicherheit",
-            "03-04": "Inspektion, Wartung, Prüfung",
-            "03-05": "Instandsetzung",
-            "03-06": "Ersatzteile",
-            "04-01": "Vertragsunterlagen"
-          },
-          "complete": {
-            "title": "DPP erfolgreich erstellt!",
-            "message": "Ihr Digitaler Produktpass wurde erzeugt und alle Dokumente wurden hochgeladen.",
-            "viewDpp": "Erstellten DPP anzeigen",
-            "createAnother": "Weiteren DPP erzeugen"
-          }
+        "errors": {
+          "idStructureError": "Fehler beim speichern von ''{name}'' ({reason}).",
+          "invalidIri": "Muss eine valide IRI sein. Z.B. https://example.com/",
+          "invalidIriPart": "Muss als Teil einer IRI funktionieren können (keine Schrägstriche, Leer- und Sonderzeichen erlaubt)"
         },
-        "transfer": {
-          "aasRepository": "AAS Repository",
-          "chooseRepository": "Wählen Sie das AAS-Repository, in das übertragen werden soll:",
-          "chooseSubmodelRepository": "Submodel Repository auswählen (optional)",
-          "errorToast": "Transfer der AAS nicht erfolgreich",
-          "partiallyFailedToast": "Teil des Transfers fehlgeschlagen",
-          "repositoryApiKey": "AAS Repository ApiKey",
-          "repositoryLabel": "Liste der AAS Repositorys",
-          "repositoryRequired": "AAS Repository wird benötigt",
-          "submodelRepository": "Submodel Repository",
-          "submodelRepositoryApiKey": "Submodel Repository ApiKey",
-          "submodelRepositoryLabel": "Liste der Submodel Repositorys",
-          "subtitle": "Transfer \"{aasId}\" von \"{repoUrl}\" zu:",
-          "successfulToast": "Transfer der AAS erfolgreich",
-          "title": "Transfer",
-          "useAasRepository": "AAS Repository verwenden",
-          "warningToast": "Transfer der AAS nur teilweise erfolgreich.",
-          "aasIdentifier": {
-            "display": "\"{aasId}\"",
-            "default": "Unbekannte AAS-ID"
-          },
-          "aasOriginUrl": {
-            "display": "\"{repoUrl}\"",
-            "default": "Unbekannte AAS-Origin-URL"
-          }
+        "labels": {
+          "dynamicPart": "dynamischer Teil",
+          "idStructureExplanation": "Definieren Sie, wie Ihre IDs dargestellt werden sollen. Dies ist eine Basis-Einstellung, die für individuelle Importe angepasst werden kann.",
+          "staticPrefix": "statisches Präfix"
+        },
+        "messages": {
+          "successfullyUpdated": "Erfolgreich aktualisiert"
+        },
+        "title": "ID Struktur"
+      },
+      "messages": {
+        "changesSavedSuccessfully": "Änderungen erfolgreich gespeichert."
+      },
+      "rules": {
+        "buttons": {
+          "add": "Hinzufügen",
+          "back": "Zurück",
+          "cancel": "Abbrechen",
+          "create": "Berechtigung hinzufügen",
+          "delete": "Löschen",
+          "edit": "Bearbeiten",
+          "save": "Speichern"
+        },
+        "createRule": {
+          "placeholderText": "Neuer oder bestehender Rollenname",
+          "saveSuccess": "Neue Regel erfolgreich gespeichert.",
+          "subtitle": "Füge eine Berechtigung zu einer neuen oder bereits bestehenden Rolle hinzu.",
+          "subtitle2": "Füge eine Berechtigung zu der Rolle ''{role}'' hinzu.",
+          "title": "Neue Berechtigung hinzufügen"
+        },
+        "deleteRole": {
+          "delete": "Rolle löschen",
+          "description": "Die Rolle ''{roleName}'' enthält {count} Rechte. Wollen Sie die gesamte Rolle mit allen Rechten löschen?",
+          "header": "Gesamte Rolle löschen",
+          "partiallySuccess": "{count} von {total} Rechte wurden gelöscht. Die Rolle existiert weiterhin mit den restlichen Rechten!",
+          "success": "Rolle ''{roleName}'' wurde erfogreich gelöscht."
+        },
+        "deleteRule": {
+          "question": "Regel unwiderruflich löschen?",
+          "ruleInfo": "Nutzer mit der Rolle ''{role}'' haben danach keine Berrechtigungen mehr die folgenden Daten {action, select, READ {zu LESEN} EDIT {zu EDITIEREN} CREATE {zu ERSTELLEN} UPDATE {zu VERÄNDERN} EXECUTE {AUSZUFÜHREN}  other {#}}!",
+          "success": "Regel erfolgreich gelöscht."
+        },
+        "editRule": {
+          "saveSuccess": "Regel erfolgreich bearbeitet.",
+          "title": "Regel bearbeiten"
+        },
+        "errors": {
+          "uniqueIdShort": "Die Kombination aus Rollenname, Aktion und Typ existiert bereits in einer anderen Regel.\nBitte bearbeiten Sie die bestehende Regel."
+        },
+        "keycloakHint": {
+          "acknowledge": "In Ordnung",
+          "create": "Diese Rolle wurde bisher nicht verwendet. Vergessen Sie nicht diese auch in Keycloak zu konfigurieren!",
+          "delete": "Vergessen Sie nicht die Rolle in Keycloak zu entfernen!",
+          "title": "Keycloak aktualisieren"
+        },
+        "roleNameMaxLength": "Rollenname darf maximal {maxLength} Zeichen lang sein",
+        "roleNameNoTrailSpace": "Rollenname darf keine Leerzeichen am Ende haben.",
+        "roleRequired": "Rolle wird benötigt",
+        "subtitle": "Verwalten von Rollen und Berechtigungen.",
+        "tableHeader": {
+          "aasIds": "AAS IDs",
+          "action": "Aktion",
+          "name": "Rolle",
+          "permissions": "Berechtigungen",
+          "submodelIds": "Submodel IDs",
+          "type": "Typ"
+        },
+        "title": "Rollenmanagement",
+        "wildcardLabel": "Alle erlauben"
+      },
+      "subHeader": "Hinzufügen, Entfernen oder Ändern von Einstellungen und Konfigurationen für verschiedene Funktionen innerhalb Ihrer AAS-Umgebung.",
+      "connections": {
+        "aasRepository": {
+          "connectionType": "AAS_REPOSITORY",
+          "repositories": "AAS Repositorys",
+          "repositoryDefaultLabel": "Default AAS Repository",
+          "repositoryLabel": "AAS Repository",
+          "repositoryUrlLabel": "AAS Repository URL",
+          "nameLabel": "Name",
+          "imageUrlLabel": "Bild URL",
+          "aasSearcherUrlLabel": "AAS Searcher URL",
+          "commercialDataUrlLabel": "Kommerzielle Daten Submodel URL",
+          "notYetSupported": "Diese Funktion ist noch nicht verfügbar.",
+          "submodelRepositoryHint": "Submodel Repository kann aktuell nur über den separaten Abschnitt unten gesetzt werden.",
+          "noDuplicatedNames": "Es dürfen keine zwei Repositorys mit dem gleichen Namen existieren."
+        },
+        "addButton": "Hinzufügen",
+        "resetSuccessful": "Quellen wurden zurückgesetzt.",
+        "submodelRepository": {
+          "connectionType": "SUBMODEL_REPOSITORY",
+          "repositories": "Submodel Repositorys",
+          "repositoryDefaultLabel": "Default Submodel Repository",
+          "repositoryLabel": "Submodel Repository",
+          "repositoryUrlLabel": "Submodel Repository URL"
+        },
+        "subtitle": "Definieren Sie, welche Datenquellen verwendet werden sollen.",
+        "title": "Datenquellen",
+        "urlFieldNoTrailingSlash": "Die URL darf nicht mit einem Schrägstrich (/) enden.",
+        "urlFieldRequired": "URL wird benötigt",
+        "defaultUrlInfo": "Default URLs können nur über die Environment Variablen gesetzt werden."
+      }
+    },
+    "templates": {
+      "actions": {
+        "add": "Hinzufügen",
+        "cancel": "Abbrechen",
+        "delete": "Löschen",
+        "duplicate": "Duplizieren",
+        "edit": "Bearbeiten",
+        "remove": "Entfernen",
+        "restore": "Wiederherstellen",
+        "revertChanges": "Änderungen zurücksetzen",
+        "saveChanges": "Änderungen speichern"
+      },
+      "all": "Alle",
+      "boolean": {
+        "false": "falsch",
+        "true": "wahr"
+      },
+      "healthCheck": {
+        "label": "Status des Mnestix AAS Generators: ",
+        "refresh": "Status aktualisieren"
+      },
+      "docsLink": "Klicken Sie hier, um zur Dokumentation zum Verwenden und Erstellen von Templates und Blueprints zu gelangen.",
+      "chooseAStartingPoint": "Wählen Sie ein Template als Ausgangspunkt",
+      "copyBlueprintId": "Blueprint-ID kopieren",
+      "createNew": "Blueprint erstellen",
+      "custom": "Custom",
+      "defaultValue": "Defaultwert",
+      "deleteBlueprintQuestion": "Blueprint ''{name}'' unwiderruflich löschen?",
+      "displayName": "Anzeigename",
+      "emptyTemplate": "Leer (Custom)",
+      "emptyTemplateDescription": "Basiert auf keinem standardisierten Template",
+      "errors": {
+        "unknownModelType": "Mnestix unterstützt diesen ModelType noch nicht ({type})."
+      },
+      "labels": {
+        "language": "Sprache",
+        "notAvailable": "-",
+        "semanticId": "semanticId",
+        "text": "Text",
+        "value": "Wert",
+        "modelType": "Model Type",
+        "valueType": "Value Type"
+      },
+      "mappingInfo": "Mapping Info",
+      "mappingInfoDescription": "Jsonata-Ausdruck, der zum Mappen von Werten während Datenimporten verwendet werden kann. Beachten Sie, dass das Ergebnis des Ausdrucks denselben Datentyp wie dieses SubmodelElement haben muss.",
+      "collectionMappingInfo": "Collection Mapping Info",
+      "collectionMappingInfoDescription": "Json-Ausdruck, der zum Duplizieren von SubmodelElementen während Datenimporten verwendet werden kann. Der angegebene Pfad muss zu einem Array führen, daher mit [*] enden.",
+      "filterMappingInfo": "Filter Mapping Info",
+      "filterMappingInfoDescription": "Jsonata-Ausdruck, der verwendet werden kann, um SubmodelElemente während Datenimporten zu filtern. Beachten Sie, dass das Ergebnis des Ausdrucks ein boolescher Wert sein muss.",
+      "messages": {
+        "changesSavedSuccessfully": "Änderungen erfolgreich gespeichert.",
+        "deleted": "gelöscht"
+      },
+      "multiplicity": "Multiplizität",
+      "multiplicityDescription": "Optionen zur Auswahl, ob ein SubmodelElement obligatorisch oder optional ist, und ob es mehrere Instanzen haben kann. Dies wird zur Datenvalidierung während Importen verwendet.",
+      "noBlueprintsFound": "Keine Blueprints gefunden",
+      "blueprintDeletedSuccessfully": "Blueprint erfolgreich gelöscht.",
+      "noTemplatesWarning": "Keine Templates verfügbar. Es werden nur Blueprints angezeigt.",
+      "blueprintIdCopied": "Blueprint-ID in die Zwischenablage kopiert: {id}",
+      "blueprintUseExplanation": "Blueprints erlauben es Ihnen, eine wiederverwendbare Teilmodell-Struktur, angepasst auf Ihre Bedürfnisse, zu definieren.",
+      "title": "Templates & Blueprints",
+      "validation": {
+        "errors": {
+          "invalidDate": "Muss ein gültiges Datum sein, im Format ''yyyy-mm-dd''",
+          "invalidLong": "Muss eine valide Zahl sein"
         }
+      },
+      "noBlueprintsWarning": "Keine Blueprints verfügbar.",
+      "copyTemplateId": "Template-ID kopieren",
+      "deleteTemplateQuestion": "Template \"{name}\" unwiderruflich löschen?",
+      "emptyCustom": "Leer (Custom)",
+      "emptyCustomDescription": "Basiert auf keinem standardisierten Template",
+      "noTemplatesFound": "Keine Templates gefunden",
+      "templateDeletedSuccessfully": "Template erfolgreich gelöscht.",
+      "templateIdCopied": "Template-ID in die Zwischenablage kopiert: {id}",
+      "templatesUseExplanation": "Templates erlauben es Ihnen, eine wiederverwendbare Teilmodell-Struktur, angepasst auf Ihre Bedürfnisse, zu definieren."
+    },
+    "uploadData": {
+      "title": "DPP erzeugen",
+      "backToHome": "Zurück zur Startseite",
+      "explanation": {
+        "title": "Über die DPP-Erzeugung",
+        "step1Intro": "Hier kann eine KBL oder VEC-Datei hochgeladen werden, um ein korrespondierendes DPP-Typmodell im AAS-Format zu erzeugen. Dabei werden die folgenden Submodelle erzeugt:",
+        "step1PcfSuffix": "mit",
+        "step2Intro": "Bestimmte Informationsinhalte aus den Dateiformaten KBL bzw. VEC werden dazu in eine entsprechende Verwaltungsschale-Repräsentation übersetzt.",
+        "step2KblPrefix": "Bei KBL werden die Inhalte von",
+        "step2KblSuffix": "wie z.B. '<'Company_name'>', '<'Part_number'>', '<'Description'>' und '<'Abbreviation'>' zur Identifikation des im KBL modellierten Leitungssatz-Produkts und seiner Komponenten herangezogen.",
+        "step2VecPrefix": "Bei VEC werden die Inhalte von",
+        "step2VecSuffix": "analog verwendet.",
+        "step2Closing": "Basierend auf diesen Informationen wird eine internetfähige Identifikationsadresse zur jeweiligen AAS der Leitungssatz-Komponente erstellt.",
+        "step3": "Im Anschluss muss ein Produktbild hochgeladen werden, das in der Verwaltungsschale hinterlegt wird.",
+        "step4": "Als optionalen letzten Schritt können Sie weitere Anhänge zum HandoverDocumentation Submodel hinzufügen."
+      },
+      "actions": {
+        "copyDetailedLogs": "Detaillierte Logs kopieren",
+        "deleteFile": "Datei löschen",
+        "next": "Weiter",
+        "removeFile": "Datei entfernen",
+        "seeLess": "Weniger anzeigen",
+        "seeMore": "Mehr anzeigen",
+        "uploadMore": "Weiteren DPP generieren",
+        "viewCreatedAas": "Erstellten DPP anzeigen",
+        "resetWorkflow": "Zurücksetzen",
+        "logsCopied": "Logs in die Zwischenablage kopiert"
+      },
+      "ariaLabel": "VEC-Datei hochladen",
+      "cta": {
+        "clickToUpload": "Zum Hochladen klicken",
+        "orDragAndDrop": "oder per Drag & Drop ablegen",
+        "supportedFiles": "Unterstützte Dateien: {formats} (max. {maxSize} MB)"
+      },
+      "descriptions": {
+        "supportedFormats": "Unterstütztes Format: .vec, .kbl (max. 10 MB)"
+      },
+      "fileTooLarge": "Datei ist zu groß. Maximale Größe: {maxSize}.",
+      "fileTypeNotSupported": "Es werden nur Dateien des Typs {formats} unterstützt.",
+      "apiErrors": {
+        "processingError": "Verarbeitung fehlgeschlagen. Bitte Datei prüfen und erneut versuchen.",
+        "missingFieldsError": "Erforderliche Felder fehlen in der Datei",
+        "missingFieldsDetail": "Die folgenden Felder fehlen oder sind leer: {fields}. Stellen Sie sicher, dass Ihre VEC- oder KBL-Datei diese Werte enthält.",
+        "uploadError": "Upload fehlgeschlagen. Bitte erneut versuchen.",
+        "unsupportedFileType": "Nicht unterstützter Dateityp",
+        "unsupportedFileTypeDetail": "Die hochgeladene Datei ist weder eine gültige VEC- noch eine KBL-Datei. Bitte laden Sie nur .vec oder .kbl Dateien hoch.",
+        "parseError": "Fehler beim Parsen der Datei. Bitte stellen Sie sicher, dass die Datei ein gültiges XML-Format hat."
+      },
+      "handoverDocs": {
+        "uploadError": "Fehler beim Hochladen der Datei in das Submodel. Bitte versuchen Sie es erneut.",
+        "infrastructureNotFound": "Keine Infrastruktur für Repository-URL gefunden"
+      },
+      "status": {
+        "error": "Fehlgeschlagen",
+        "loading": "In Bearbeitung",
+        "success": "Abgeschlossen"
+      },
+      "steps": {
+        "generateAas": "AAS wird generiert",
+        "processData": "Daten werden verarbeitet",
+        "uploadFile": "Datei wird hochgeladen"
+      },
+      "form": {
+        "userNameLabel": "Ihr Name",
+        "organizationNameLabel": "Organisation",
+        "submitLabel": "Absenden",
+        "errors": {
+          "userNameRequired": "Bitte geben Sie Ihren Namen ein.",
+          "organizationRequired": "Bitte geben Sie Ihre Organisation an.",
+          "fileRequired": "Bitte wählen Sie vor dem Absenden eine Datei aus."
+        }
+      },
+      "uploadSuccess": "DPP erfolgreich erstellt.",
+      "warningsEncountered": "Warnungen:",
+      "uploadSection": {
+        "title": "VEC oder KBL Datei hochladen"
+      },
+      "thumbnail": {
+        "sectionTitle": "Produktbild zum DPP hinzufügen",
+        "title": "Produktbild hinzufügen",
+        "description": "Laden Sie ein Produktbild für Ihren Digitalen Produktpass hoch.",
+        "selectFile": "Bild auswählen",
+        "changeFile": "Bild ändern",
+        "upload": "Produktbild hochladen",
+        "uploading": "Produktbild wird hochgeladen...",
+        "uploadSuccess": "Produktbild erfolgreich hochgeladen.",
+        "uploadError": "Fehler beim Hochladen des Produktbilds. Bitte versuchen Sie es erneut.",
+        "invalidFileType": "Bitte wählen Sie eine gültige Bilddatei (JPEG, PNG, GIF, WebP oder PDF).",
+        "fileTooLarge": "Produktbild ist zu groß. Maximale Größe: {maxSize}.",
+        "pdfConversionError": "PDF konnte nicht in ein Bild konvertiert werden. Bitte versuchen Sie eine andere Datei.",
+        "required": "Ein Produktbild ist erforderlich, um fortzufahren."
+      },
+      "stepper": {
+        "vecKbl": "VEC/KBL-Datei hochladen",
+        "processing": "DPP erzeugen",
+        "thumbnail": "Produktbild hinzufügen",
+        "additionalDocs": "Dateien hinzufügen",
+        "complete": "Fertig"
+      },
+      "additionalDocs": {
+        "title": "Zusätzliche Dateien hinzufügen (Optional)",
+        "description": "Laden Sie mehrere Dateien als Dokumentation für den Digitalen Produktpass hoch. Sie werden im HandoverDocumentation-Submodel angezeigt, welches der Abschnitt für Dokumentationsdokumente im DPP ist.",
+        "dropzone": "Dateien hier ablegen oder klicken zum Durchsuchen",
+        "supportedFiles": "Beliebiger Dateityp (max. 10 MB pro Datei)",
+        "addMore": "Weitere Dateien hinzufügen",
+        "uploadAll": "Alle Dateien hochladen",
+        "skip": "Diesen Schritt überspringen",
+        "continue": "Weiter",
+        "titleLabel": "Dokumenttitel",
+        "descriptionLabel": "Beschreibung",
+        "classLabel": "Dokumenttyp (VDI 2770)",
+        "selectClass": "Dokumenttyp auswählen",
+        "uploading": "Wird hochgeladen...",
+        "uploadSuccess": "Erfolgreich hochgeladen",
+        "uploadError": "Hochladen fehlgeschlagen",
+        "noFiles": "Keine Dateien ausgewählt",
+        "pendingUploads": "{count} Datei(en) bereit zum Hochladen",
+        "allUploaded": "Alle Dokumente erfolgreich hochgeladen",
+        "removeFile": "Datei entfernen"
+      },
+      "vdi2770": {
+        "01-01": "Identifikation",
+        "02-01": "Technische Spezifikation",
+        "02-02": "Zeichnungen, Pläne",
+        "02-03": "Bauteile",
+        "02-04": "Zeugnisse, Zertifikate, Bescheinigungen",
+        "03-01": "Montage, Demontage",
+        "03-02": "Bedienung",
+        "03-03": "Allgemeine Sicherheit",
+        "03-04": "Inspektion, Wartung, Prüfung",
+        "03-05": "Instandsetzung",
+        "03-06": "Ersatzteile",
+        "04-01": "Vertragsunterlagen"
+      },
+      "complete": {
+        "title": "DPP erfolgreich erstellt!",
+        "message": "Ihr Digitaler Produktpass wurde erzeugt und alle Dokumente wurden hochgeladen.",
+        "viewDpp": "Erstellten DPP anzeigen",
+        "createAnother": "Weiteren DPP erzeugen"
+      }
+    },
+    "transfer": {
+      "aasRepository": "AAS Repository",
+      "chooseRepository": "Wählen Sie das AAS-Repository, in das übertragen werden soll:",
+      "chooseSubmodelRepository": "Submodel Repository auswählen (optional)",
+      "errorToast": "Transfer der AAS nicht erfolgreich",
+      "partiallyFailedToast": "Teil des Transfers fehlgeschlagen",
+      "repositoryApiKey": "AAS Repository ApiKey",
+      "repositoryLabel": "Liste der AAS Repositorys",
+      "repositoryRequired": "AAS Repository wird benötigt",
+      "submodelRepository": "Submodel Repository",
+      "submodelRepositoryApiKey": "Submodel Repository ApiKey",
+      "submodelRepositoryLabel": "Liste der Submodel Repositorys",
+      "subtitle": "Transfer \"{aasId}\" von \"{repoUrl}\" zu:",
+      "successfulToast": "Transfer der AAS erfolgreich",
+      "title": "Transfer",
+      "useAasRepository": "AAS Repository verwenden",
+      "warningToast": "Transfer der AAS nur teilweise erfolgreich.",
+      "aasIdentifier": {
+        "display": "\"{aasId}\"",
+        "default": "Unbekannte AAS-ID"
+      },
+      "aasOriginUrl": {
+        "display": "\"{repoUrl}\"",
+        "default": "Unbekannte AAS-Origin-URL"
       }
     }
+  }
+}

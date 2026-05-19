@@ -11,11 +11,13 @@ import { isValidUrl } from 'lib/util/UrlUtil';
 import { useState, useEffect } from 'react';
 import { mapFileDtoToBlob } from 'lib/util/apiResponseWrapper/apiResponseWrapper';
 import { ListEntityDto } from 'lib/services/list-service/ListService';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { encodeBase64 } from 'lib/util/Base64Util';
 import useSWR from 'swr';
 import { useEnv } from 'app/EnvProvider';
 import { RepositoryWithInfrastructure } from 'lib/services/database/InfrastructureMappedTypes';
+import { getNameplateValuesForAAS } from 'lib/services/list-service/aasListApiActions';
+import { MultiLanguageValueOnly } from 'lib/api/basyx-v3/types';
 
 type AasTableRowProps = {
     repository: RepositoryWithInfrastructure;

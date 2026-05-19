@@ -1,11 +1,15 @@
 import { prisma } from 'lib/database/prisma';
-import { ConnectionType, Prisma } from '../../../../prisma/generated/client';
+import { ConnectionType, MnestixConnection, Prisma } from '../../../../prisma/generated/client';
 import { IPrismaConnector } from 'lib/services/database/PrismaConnectorInterface';
 import { PrismaConnectorInMemory } from 'lib/services/database/PrismaConnectorInMemory';
 import type { InfrastructureFormData } from 'app/[locale]/settings/_components/mnestix-infrastructure/InfrastructureTypes';
 import { RepositoryWithInfrastructure } from 'lib/services/database/InfrastructureMappedTypes';
 import { validateHeaderKey, validateHeaderValue } from 'lib/util/securityHelpers/ValidateSecurityInput';
 import { encryptSecret } from 'lib/util/securityHelpers/Encryption';
+
+export type MnestixConnectionWithTypes = MnestixConnection & {
+    types: { type: ConnectionType }[];
+};
 
 export type DataSourceFormData = {
     id: string;
@@ -117,6 +121,93 @@ export class PrismaConnector implements IPrismaConnector {
             url: item.url,
             isDefault: false,
         }));
+    }
+
+    async getConnectionData(): Promise<MnestixConnectionWithTypes[]> {
+        return prisma.mnestixConnection.findMany({
+            include: {
+                types: {
+                    include: {
+                        type: true,
+                    },
+                },
+            },
+        });
+    }
+
+    async upsertConnectionDataAction(formDataInput: DataSourceFormData[]): Promise<void> {
+        await prisma.$transaction(async (tx) => {
+            // Delete all existing connections and their type relations
+            await tx.mnestixConnectionTypeRelation.deleteMany();
+            await tx.mnestixConnection.deleteMany();
+
+            // Create new connections from form data
+            for (const formData of formDataInput) {
+                const connectionType = await tx.connectionType.findFirst({
+                    where: { typeName: formData.type },
+                });
+
+                if (!connectionType) continue;
+
+                // Find or create a default infrastructure for connections without one
+                let infrastructure = await tx.mnestixInfrastructure.findFirst();
+                if (!infrastructure) {
+                    const securityType = await tx.securityType.findFirst();
+                    if (!securityType) continue;
+                    infrastructure = await tx.mnestixInfrastructure.create({
+                        data: {
+                            name: formData.name || 'Default',
+                            securityTypeId: securityType.id,
+                        },
+                    });
+                }
+
+                const connection = await tx.mnestixConnection.create({
+                    data: {
+                        url: formData.url,
+                        infrastructureId: infrastructure.id,
+                        aasSearcher: formData.aasSearcher,
+                        image: formData.image,
+                        name: formData.name,
+                        commercialData: formData.commercialData,
+                    },
+                });
+
+                await tx.mnestixConnectionTypeRelation.create({
+                    data: {
+                        connectionId: connection.id,
+                        typeId: connectionType.id,
+                    },
+                });
+            }
+        });
+    }
+
+    async getRepositoryConfigurationGroups(): Promise<MnestixConnection[]> {
+        return prisma.mnestixConnection.findMany({
+            where: {
+                name: { not: null },
+                types: {
+                    some: {
+                        type: {
+                            typeName: 'AAS_REPOSITORY',
+                        },
+                    },
+                },
+            },
+        });
+    }
+
+    async getRepositoryConfigurationGroupByName(name: string): Promise<MnestixConnection | null> {
+        return prisma.mnestixConnection.findFirst({
+            where: { name },
+        });
+    }
+
+    async getRepositoryConfigurationByRepositoryUrl(repositoryUrl: string): Promise<MnestixConnection | null> {
+        return prisma.mnestixConnection.findFirst({
+            where: { url: repositoryUrl },
+        });
     }
 
     static create() {

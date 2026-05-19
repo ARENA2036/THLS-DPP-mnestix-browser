@@ -1,6 +1,6 @@
 'use server';
 
-import { ConnectionType } from '@prisma/client';
+import { ConnectionType } from '../../../../prisma/generated/client';
 import { DataSourceFormData, PrismaConnector } from 'lib/services/database/PrismaConnector';
 
 export async function getConnectionDataAction() {

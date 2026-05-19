@@ -5,6 +5,7 @@ import { CustomRender } from 'test-utils/CustomRender';
 import { ProductOverviewCard } from './ProductOverviewCard';
 import { useAasStore } from 'stores/AasStore';
 import { useCurrentAasContext } from 'components/contexts/CurrentAasContext';
+import { SubmodelElementCollection } from 'lib/api/aas/models';
 
 // Mock the next/navigation router
 jest.mock('next/navigation', () => ({
@@ -88,9 +89,15 @@ jest.mock('./../../../../lib/util/SubmodelResolverUtil', () => ({
                 modelType: { name: 'SubmodelElementCollection' },
                 value: [
                     {
-                        idShort: 'CEMarking',
-                        modelType: { name: 'Property' },
-                        value: 'CE',
+                        idShort: 'Marking',
+                        modelType: { name: 'SubmodelElementCollection' },
+                        value: [
+                            {
+                                idShort: 'MarkingName',
+                                modelType: { name: 'Property' },
+                                value: 'CE',
+                            },
+                        ],
                     },
                 ],
             } as unknown as SubmodelElementCollection;

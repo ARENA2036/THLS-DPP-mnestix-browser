@@ -12,8 +12,13 @@
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import { AasListTableRow } from 'app/[locale]/list/_components/AasListTableRow';
 import { AasListDto } from 'lib/services/list-service/ListService';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { RepositoryWithInfrastructure } from 'lib/services/database/InfrastructureMappedTypes';
+import { useState, useMemo } from 'react';
+import useSWR from 'swr';
+import { getNameplateValuesForAAS } from 'lib/services/list-service/aasListApiActions';
+import { MultiLanguageValueOnly } from 'lib/api/basyx-v3/types';
+import { translateListText } from 'lib/util/SubmodelResolverUtil';
 
 type AasListProps = {
     repositoryUrl: RepositoryWithInfrastructure;
@@ -30,7 +35,7 @@ type SortableColumn = 'manufacturer' | 'productDesignation' | 'assetId' | 'aasId
 type EnrichedListEntity = {
     aasId: string;
     assetId: string;
-    thumbnail?: string;
+    thumbnail: string;
     manufacturerName?: string;
     productDesignation?: string;
 };
@@ -225,7 +230,7 @@ export default function AasList(props: AasListProps) {
                                     <AasListTableRow
                                         repository={repositoryUrl}
                                         connectionType={connectionType}
-                                        aasListEntry={aasListEntry}
+                                        aasListEntry={enrichedEntity}
                                         comparisonFeatureFlag={comparisonFeatureFlag}
                                         checkBoxDisabled={checkBoxDisabled}
                                         selectedAasList={selectedAasList}

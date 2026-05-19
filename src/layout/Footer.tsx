@@ -99,16 +99,6 @@ export function Footer() {
                         >
                             <Link href="#">{t('about')}</Link>
                         </Typography>
-
-                        <Typography mx={2} color="text.secondary" fontSize="small">
-                            |
-                        </Typography>
-
-                        <Typography fontSize="small" maxWidth="10rem">
-                            <Link href={documentationURL} target="_blank">
-                                {t('documentation')}
-                            </Link>
-                        </Typography>
                     </Grid>
                 </Grid>
             </Box>

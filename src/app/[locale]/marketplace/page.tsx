@@ -13,7 +13,7 @@ import { useState } from 'react';
 import { getRepositoryConfigurationGroupsAction } from 'lib/services/database/connectionServerActions';
 import { CenteredLoadingSpinner } from 'components/basics/CenteredLoadingSpinner';
 import { useNotificationSpawner } from 'lib/hooks/UseNotificationSpawner';
-import { MnestixConnection } from '@prisma/client';
+import { MnestixConnection } from '../../../../prisma/generated/client';
 import { ManufacturerCard } from 'app/[locale]/marketplace/_components/manufacturerCard';
 
 export default function Page() {
@@ -60,7 +60,7 @@ export default function Page() {
                     <Box display="flex" flexWrap="wrap" gap={3}>
                         {/* Manufacturer Cards */}
                         {aasRepositories.map((connection) => (
-                            <ManufacturerCard connection={connection} key={connection.id}/>
+                            <ManufacturerCard connection={connection} key={connection.id} />
                         ))}
                         <Button
                             variant="contained"

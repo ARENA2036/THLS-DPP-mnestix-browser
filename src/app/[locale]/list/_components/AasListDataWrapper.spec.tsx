@@ -173,7 +173,7 @@ describe('AASListDataWrapper', () => {
             await waitFor(async () => backButton.click());
 
             expect(screen.getByText('assetId3', { exact: false })).toBeInTheDocument();
-            expect(screen.getByText('Page 1', { exact: false })).toBeInTheDocument();
+            expect(screen.getByText('Page: 1', { exact: false })).toBeInTheDocument();
             expect(mockActionFirstPage).toHaveBeenCalledWith(REPOSITORY_CONNECTION_TYPE, 10, undefined, 'repository');
         });
     });

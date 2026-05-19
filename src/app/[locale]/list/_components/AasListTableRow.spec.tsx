@@ -65,6 +65,8 @@ describe('AasListTableRow', () => {
             <AasListTableRow
                 repository={repository}
                 aasListEntry={listEntry1}
+                enrichedData={{ manufacturerName: 'ManufacturerEN', productDesignation: 'ProductDesignationEN' }}
+                enrichedDataLoading={false}
                 checkBoxDisabled={() => undefined}
                 comparisonFeatureFlag={true}
                 selectedAasList={undefined}
@@ -100,6 +102,8 @@ describe('AasListTableRow', () => {
             <AasListTableRow
                 repository={repository}
                 aasListEntry={listEntry2}
+                enrichedData={{ manufacturerName: '', productDesignation: '' }}
+                enrichedDataLoading={false}
                 checkBoxDisabled={() => undefined}
                 comparisonFeatureFlag={true}
                 selectedAasList={undefined}

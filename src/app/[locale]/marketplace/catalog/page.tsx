@@ -17,7 +17,7 @@ import { useShowError } from 'lib/hooks/UseShowError';
 import AasListDataWrapper from 'app/[locale]/list/_components/AasListDataWrapper';
 import SearchIcon from '@mui/icons-material/Search';
 import { getRepositoryConfigurationGroupByName } from 'lib/services/database/connectionServerActions';
-import { MnestixConnection } from '@prisma/client';
+import { MnestixConnection } from '../../../../../prisma/generated/client';
 
 export default function Page() {
     const params = useSearchParams();
@@ -69,11 +69,11 @@ export default function Page() {
     const fetchManufacturerData = async () => {
         if (repositoryUrlParam) {
             setRepositoryUrl(repositoryUrlParam);
-            const emptyConnection = {
+            const emptyConnection: MnestixConnection = {
                 url: repositoryUrlParam,
                 name: repositoryUrlParam,
                 id: '',
-                typeId: '',
+                infrastructureId: '',
                 aasSearcher: null,
                 image: null,
                 commercialData: null,

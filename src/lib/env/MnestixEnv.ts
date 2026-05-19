@@ -179,6 +179,7 @@ export const publicEnvs = {
     ...otherVariables,
     ...themingVariables,
     ...keycloak,
+    ...cfgBuildEnvs,
     EXTERNAL_LINKS: externalLinks,
 };
 

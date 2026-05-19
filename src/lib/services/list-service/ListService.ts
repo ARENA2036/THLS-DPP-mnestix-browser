@@ -164,39 +164,21 @@ export class ListService {
             assetAdministrationShells = shells;
             nextCursor = paging_metadata?.cursor;
         }
-        try {
-            const { result: assetAdministrationShells, paging_metadata } = response.result;
-            const nextCursor = paging_metadata.cursor;
 
-            const aasListDtos = assetAdministrationShells
-                .filter((aas) => {
-                    const aasToRemove = aas.assetInformation?.specificAssetIds?.find(
-                        (specificAssetId) => specificAssetId.name === 'aasListFilterId',
-                    );
-                    return !aasToRemove;
-                })
-                .map((aas) => ({
-                    aasId: aas.id,
-                    assetId: aas.assetInformation?.globalAssetId ?? '',
-                    thumbnail: aas.assetInformation?.defaultThumbnail?.path ?? '',
-                }));
-            const aasListDtos = assetAdministrationShells
-                .filter((aas) => {
-                    const aasToRemove = aas.assetInformation.specificAssetIds?.find(
-                        (specificAssetId) => specificAssetId.name === 'aasListFilterId',
-                    );
-                    return !aasToRemove;
-                })
-                .map((aas) => ({
-                    aasId: aas.id,
-                    assetId: aas.assetInformation?.globalAssetId ?? '',
-                    thumbnail: aas.assetInformation?.defaultThumbnail?.path ?? '',
-                }));
+        const aasListDtos = assetAdministrationShells
+            .filter((aas) => {
+                const aasToRemove = aas.assetInformation?.specificAssetIds?.find(
+                    (specificAssetId) => specificAssetId.name === 'aasListFilterId',
+                );
+                return !aasToRemove;
+            })
+            .map((aas) => ({
+                aasId: aas.id,
+                assetId: aas.assetInformation?.globalAssetId ?? '',
+                thumbnail: aas.assetInformation?.defaultThumbnail?.path ?? '',
+            }));
 
-            return { success: true, entities: aasListDtos, cursor: nextCursor };
-        } catch (error) {
-            return { success: false, error: { message: 'Error while processing AAS list', details: error } };
-        }
+        return { success: true, entities: aasListDtos, cursor: nextCursor };
     }
 
     async getNameplateValuesForAAS(aasId: string): Promise<NameplateValuesDto> {
@@ -217,7 +199,6 @@ export class ListService {
             const submodelId = reference.keys[0].value;
             const submodelRepositoryClient = this.getTargetSubmodelRepositoryClient();
             const submodelResponse = await submodelRepositoryClient.getSubmodelMetaData(submodelId);
-            const submodelResponse = await this.submodelRepositoryClient.getSubmodelById(submodelId);
             if (submodelResponse.isSuccess) {
                 const semanticId = submodelResponse.result?.semanticId?.keys[0]?.value;
                 const nameplateKeys = [
@@ -253,14 +234,6 @@ export class ListService {
                         success: true,
                         manufacturerName: extractValue(manufacturerName.result),
                         manufacturerProductDesignation: extractValue(manufacturerProduct.result),
-                        manufacturerName:
-                            typeof manufacturerName.result === 'string'
-                                ? [{ en: manufacturerName.result }]
-                                : manufacturerName.result,
-                        manufacturerProductDesignation:
-                            typeof manufacturerProduct.result === 'string'
-                                ? [{ en: manufacturerProduct.result }]
-                                : manufacturerProduct.result,
                     };
                 }
             }

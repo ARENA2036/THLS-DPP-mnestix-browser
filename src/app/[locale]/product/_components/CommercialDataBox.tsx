@@ -2,13 +2,12 @@ import { Box, Button, Skeleton, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { useAsyncEffect } from 'lib/hooks/UseAsyncEffect';
-import { Property, Submodel, SubmodelElementCollection } from '@aas-core-works/aas-core3.0-typescript/types';
+import { Property, Submodel, SubmodelElementCollection, SubmodelElementList } from 'lib/api/aas/models';
 import {
     findSubmodelElementByIdShort,
     findSubmodelElementBySemanticIdsOrIdShort,
     findValueByIdShort,
 } from 'lib/util/SubmodelResolverUtil';
-import { SubmodelElementList } from 'lib/api/aas/models';
 
 export const CommercialDataBox = (props: {
     commercialDataUrl?: string;
@@ -63,7 +62,9 @@ export const CommercialDataBox = (props: {
         ) as SubmodelElementList | null;
         const item: SubmodelElementCollection | undefined | null = itemList?.value?.find((element) => {
             // @ts-expect-error value is there
-            const itemId: Property | null = element?.value ? (findSubmodelElementByIdShort(element.value, 'ItemID', null) as Property | null) : null;
+            const itemId: Property | null = element?.value
+                ? (findSubmodelElementByIdShort(element.value, 'ItemID', null) as Property | null)
+                : null;
             return itemId?.valueId?.keys[0].value === props.assetId;
         }) as SubmodelElementCollection | undefined;
 
@@ -78,7 +79,9 @@ export const CommercialDataBox = (props: {
                     ) as SubmodelElementCollection
                 )?.value || null;
             // @ts-expect-error value is there
-            const priceType = findSubmodelElementBySemanticIdsOrIdShort(productPriceCollection, 'PriceType', null)?.value || undefined;
+            const priceType =
+                findSubmodelElementBySemanticIdsOrIdShort(productPriceCollection, 'PriceType', null)?.value ||
+                undefined;
             const productPrice = findValueByIdShort(productPriceCollection, 'Price', null, locale) || undefined;
             setPriceInfo({ grossPrice, productPrice, priceType, currency });
             console.log('Prepared commercial data:', { grossPrice, productPrice, priceType, currency });
@@ -99,8 +102,8 @@ export const CommercialDataBox = (props: {
             ) : (
                 <Box margin={3} borderLeft="1px solid #e0e0e0" paddingLeft={3} minWidth="120px">
                     {(priceInfo.grossPrice || priceInfo.productPrice) &&
-                        priceInfo.currency &&
-                        priceInfo.priceType !== 'on_request' ? (
+                    priceInfo.currency &&
+                    priceInfo.priceType !== 'on_request' ? (
                         <Box>
                             <Typography variant="h3">
                                 {priceInfo.grossPrice || priceInfo.productPrice} {priceInfo.currency}

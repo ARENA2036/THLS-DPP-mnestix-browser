@@ -86,21 +86,27 @@ function buildFilterInput(filters?: FilterQuery[]): string {
     // If root is unknown, it is not included in the filter
     const productFamilyFilters = filters.filter((filter) => filter.key === FilterKey.PRODUCT_FAMILY);
     if (productFamilyFilters.length > 0) {
-        const andBlocks = productFamilyFilters.map((filter) => {
-            if (typeof filter.value === 'object' && filter.value.family) {
-                const conditions: string[] = [];
-                if (filter.value.root && filter.value.root.trim() !== 'Unknown Root') {
-                    conditions.push(`{ productRoot: { mlValues: { some: { text: { in: ["${filter.value.root.trim()}"] }}}}}`);
-                }
-                conditions.push(`{ productFamily: { mlValues: { some: { text: { in: ["${filter.value.family.trim()}"] }}}}}`);
-                return `
+        const andBlocks = productFamilyFilters
+            .map((filter) => {
+                if (typeof filter.value === 'object' && filter.value.family) {
+                    const conditions: string[] = [];
+                    if (filter.value.root && filter.value.root.trim() !== 'Unknown Root') {
+                        conditions.push(
+                            `{ productRoot: { mlValues: { some: { text: { in: ["${filter.value.root.trim()}"] }}}}}`,
+                        );
+                    }
+                    conditions.push(
+                        `{ productFamily: { mlValues: { some: { text: { in: ["${filter.value.family.trim()}"] }}}}}`,
+                    );
+                    return `
         {
             and: [${conditions.join(', ')}]
         }
         `;
-            }
-            return '';
-        }).filter(Boolean);
+                }
+                return '';
+            })
+            .filter(Boolean);
 
         if (andBlocks.length > 0) {
             filterArray.push(`{ or: [${andBlocks.join(',')}] }`);
@@ -111,28 +117,36 @@ function buildFilterInput(filters?: FilterQuery[]): string {
     // If root or family is unknown, it is not included in the filter
     const productDesignationFilter = filters.filter((filter) => filter.key === FilterKey.PRODUCT_DESIGNATION);
     if (productDesignationFilter.length > 0) {
-        const andBlocks = productDesignationFilter.map((filter) => {
-            if (typeof filter.value === 'object' && filter.value.designation) {
-                const conditions: string[] = [];
+        const andBlocks = productDesignationFilter
+            .map((filter) => {
+                if (typeof filter.value === 'object' && filter.value.designation) {
+                    const conditions: string[] = [];
 
-                if (filter.value.root && filter.value.root.trim() !== 'Unknown Root') {
-                    conditions.push(`{ productRoot: { mlValues: { some: { text: { in: ["${filter.value.root.trim()}"] }}}}}`);
-                }
+                    if (filter.value.root && filter.value.root.trim() !== 'Unknown Root') {
+                        conditions.push(
+                            `{ productRoot: { mlValues: { some: { text: { in: ["${filter.value.root.trim()}"] }}}}}`,
+                        );
+                    }
 
-                if (filter.value.family && filter.value.family.trim() !== 'Unknown Family') {
-                    conditions.push(`{ productFamily: { mlValues: { some: { text: { in: ["${filter.value.family.trim()}"] }}}}}`);
-                }
+                    if (filter.value.family && filter.value.family.trim() !== 'Unknown Family') {
+                        conditions.push(
+                            `{ productFamily: { mlValues: { some: { text: { in: ["${filter.value.family.trim()}"] }}}}}`,
+                        );
+                    }
 
-                conditions.push(`{ productDesignation: { mlValues: { some: { text: { in: ["${filter.value.designation.trim()}"] }}}}}`);
+                    conditions.push(
+                        `{ productDesignation: { mlValues: { some: { text: { in: ["${filter.value.designation.trim()}"] }}}}}`,
+                    );
 
-                return `
+                    return `
         {
             and: [${conditions.join(', ')}]
         }
         `;
-            }
-            return '';
-        }).filter(Boolean);
+                }
+                return '';
+            })
+            .filter(Boolean);
 
         if (andBlocks.length > 0) {
             filterArray.push(`{ or: [${andBlocks.join(',')}] }`);
@@ -157,12 +171,12 @@ export async function searchProducts(
     const query = gql(queryString);
     try {
         const client = createApolloClient(aasSearcherUrl);
-        const { data } = await client.query<SearchResponse>({
+        const result = await client.query<SearchResponse>({
             query,
         });
-        return wrapSuccess(data.entries);
-    } catch (error) {
-        console.error('Error searching products:', JSON.stringify(error.result));
-        return wrapErrorCode('UNKNOWN_ERROR', error);
+        return wrapSuccess(result.data!.entries);
+    } catch (error: unknown) {
+        console.error('Error searching products:', error);
+        return wrapErrorCode('UNKNOWN_ERROR', String(error));
     }
 }

@@ -183,10 +183,8 @@
     },
     "footer": {
       "about": "About Mnestix",
-      "aboutHeader": "This application is powered by Mnestix",
       "dataPrivacy": "Data Privacy",
       "imprint": "Imprint",
-      "documentation": "Documentation""imprint": "Imprint",
       "legalNotice": "Legal Notice",
       "legalNoticeTitle": "Legal Notice",
       "legalNoticeText1": "This web application is provided exclusively as a prototypical system for demonstration, evaluation, research, and testing purposes.",
@@ -195,7 +193,9 @@
       "legalNoticeText4": "The operator assumes – to the extent permitted by law – no liability for direct or indirect damages, data losses, erroneous decisions, business interruptions, or consequential damages arising from the use or unavailability of this prototype.",
       "legalNoticeText5": "The application may be modified, restricted, reset, or discontinued at any time without prior notice.",
       "legalNoticeText6": "If external services, interfaces, or links are integrated, no responsibility is assumed for their content, availability, security, or data protection.",
-      "legalNoticeText7": "By using this web application, users acknowledge the experimental nature of the system."
+      "legalNoticeText7": "By using this web application, users acknowledge the experimental nature of the system.",
+      "aboutHeader": "This application is powered by Mnestix",
+      "documentation": "Documentation"
     },
     "mainMenu": {
       "aasList": "AAS List",
@@ -233,7 +233,9 @@
       "repositoryDropdownLabel": "AAS Repository or AAS Registry (Infrastructure)",
       "selectListSource": "Please select a repository or AAS registry",
       "subHeader": "You will find all AAS from your repository or AAS registry here. You can select an AAS repository or AAS registry to switch between data sources.",
-      "titleComparisonAddButton": "Add AAS to comparison"
+      "titleComparisonAddButton": "Add AAS to comparison",
+      "repositoryDropdown": "AAS Repository",
+      "selectRepository": "Please select a repository"
     },
     "aasViewer": {
       "actions": {
@@ -292,11 +294,7 @@
     },
     "catalog": {
       "articleCount": "{count, plural, =1 {# article} other {# articles}}",
-      "articleCountUnavailable": "Filtering not configured",
-      "filter": "Filter",
-      "noSearcherWarning": "No AAS Searcher Configured. Showing AAS List as Fallback, filters won't work.",
-      "eclassDocumentationLink": "Open in ECLASS documentation",
-      "searchPlaceholder": "Search products...""eclassCategories": {
+      "eclassCategories": {
         "15": "Maintenance (Service)",
         "27": "Electric engineering, automation, process control engineering ",
         "44": "Automotive engineering, vehicle component",
@@ -309,7 +307,9 @@
       "marketplaceTitle": "VWS4LS - Marketplace",
       "noSearcherWarning": "No AAS Searcher Configured. Showing AAS List as Fallback, filters won''t work.",
       "searchPlaceholder": "Search currently unavailable...",
-      "title": "Manufacturer catalog"
+      "title": "Manufacturer catalog",
+      "articleCountUnavailable": "Filtering not configured",
+      "eclassDocumentationLink": "Open in ECLASS documentation"
     },
     "compare": {
       "addAnother": "Add another AAS",
@@ -400,6 +400,154 @@
         "resetButton": "Reset to default",
         "saveButton": "Save all"
       },
+      "infrastructure": {
+        "form": {
+          "name": "Name",
+          "logoUrl": "Logo URL",
+          "endpoints": "Endpoints",
+          "endpointUrl": "Endpoint URL",
+          "addEndpoint": "Add endpoint",
+          "security": "Infrastructure Security",
+          "securityType": "Security type",
+          "headerName": "Header name",
+          "headerValue": "Header value",
+          "nameRequired": "Name is required",
+          "urlFieldRequired": "URL field is required",
+          "urlFieldInvalid": "Must be a valid URL",
+          "securityTypeRequired": "Security type is required",
+          "headerNameRequired": "Header name is required",
+          "headerValueRequired": "Header value is required",
+          "securityTypeNone": "None",
+          "securityTypeMnestixProxy": "Mnestix API Key",
+          "securityTypeHeaderSecurity": "Custom Header",
+          "proxyHeaderValue": "Mnestix API Key Header Value",
+          "proxyHeaderValueRequired": "Mnestix API Key Header Value is required",
+          "saveSuccess": "Infrastructure saved successfully",
+          "saveError": "Error saving infrastructure",
+          "createNew": "Create New Infrastructure",
+          "deleteConfirm": "Are you sure you want to delete the infrastructure? This action cannot be undone.",
+          "deleteSuccess": "Infrastructure deleted successfully",
+          "deleteError": "Failed to delete infrastructure",
+          "deleteDialogTitle": "Delete Infrastructure",
+          "deleteWarning": "This action cannot be undone and will permanently remove all associated connections and security settings.",
+          "cancel": "Cancel",
+          "delete": "Delete",
+          "connectionTypes": "Connection Interface Types",
+          "connectionTypesRequired": "At least one connection interface type must be selected",
+          "save": "Save",
+          "nameAlreadyExists": "An infrastructure with this name already exists",
+          "defaultInfrastructureReadonly": "The default infrastructure can only be changed in the deployment via the environment variables. Please contact your administrator to make changes.",
+          "headerKeyDangerous": "The header key is considered dangerous.",
+          "headerKeyInvalidFormat": "The header key is not in a valid format.",
+          "headerKeyCrLfNotAllowed": "The header key must not contain CRLF sequences.",
+          "headerValueTooLong": "The header value is too long.",
+          "headerValueCrLfNotAllowed": "The header value must not contain CRLF sequences.",
+          "headerValueIllegalChars": "The header value must not contain illegal characters."
+        },
+        "healthCheck": {
+          "checking": "Checking...",
+          "unreachable": "Mnestix AAS Generator not reachable (Note: Mnestix Generator V1 does not support health checks and will always show as offline. Please update to version 2 to use health checks)",
+          "offline": "Offline",
+          "version": "API Version: ",
+          "buildDate": "Build date",
+          "aasGeneratorLabel": "Mnestix AAS Generator",
+          "applicationVersion": "Application Version",
+          "refresh": "Refresh health status"
+        },
+        "subtitle": "Define which infrastructures should be used.",
+        "title": "Infrastructures",
+        "urlFieldNoTrailingSlash": "The URL must not end with a slash (/).",
+        "noInfrastructuresFound": "No infrastructures found"
+      },
+      "header": "Settings",
+      "idStructure": {
+        "assetIdDocumentation": {
+          "assetId": "Asset ID",
+          "dnsHeading": "Access via DNS",
+          "dnsText": "Especially for the brownfield approach and the distributor of a product, it makes sense to additionally set up DNS access through the asset ID and thus enable data retrieval from conventional browser applications.",
+          "endResult": "End result",
+          "exampleHeading": "Example case",
+          "industry40Heading": "Industry 4.0 context",
+          "industry40Text": "Products have a globally unique ID which can be assigned to one or more asset administration shells. In the Industry 4.0 context, the connection between asset and AAS is established via the I4.0 infrastructure.",
+          "redirectsTo": "Redirects to",
+          "title": "How to connect your Asset ID with your AAS repository"
+        },
+        "errors": {
+          "idStructureError": "Error while saving ''{name}'' ({reason}).",
+          "invalidIri": "Has to be a valid IRI, e.g. https://example.com/",
+          "invalidIriPart": "Has to work as part of an IRI (no slashes, spaces or special characters)"
+        },
+        "labels": {
+          "dynamicPart": "dynamic part",
+          "idStructureExplanation": "Define, how your IDs are represented. This is a standard setting that can be adjusted for individual imports.",
+          "staticPrefix": "static prefix"
+        },
+        "messages": {
+          "successfullyUpdated": "Updated successfully"
+        },
+        "title": "ID structure"
+      },
+      "messages": {
+        "changesSavedSuccessfully": "Changes saved successfully."
+      },
+      "rules": {
+        "buttons": {
+          "add": "Add",
+          "back": "Back",
+          "cancel": "Cancel",
+          "create": "Add permission",
+          "delete": "Delete",
+          "edit": "Edit",
+          "save": "Save"
+        },
+        "createRule": {
+          "placeholderText": "New or existing role name",
+          "saveSuccess": "New rule saved successfully.",
+          "subtitle": "Add a permission to a new or existing role.",
+          "subtitle2": "Add a permission to the role ''{role}''.",
+          "title": "Add new permission"
+        },
+        "deleteRole": {
+          "delete": "Delete role",
+          "description": "You are about to delete the ''{roleName}'' role with {count} permissions. Are you sure you want to delete entire role?",
+          "header": "Delete entire role",
+          "partiallySuccess": "{count} out of {total} permissions have been deleted. The role still exists with the remaining permissions!",
+          "success": "Role ''{roleName}'' has been deleted successfully."
+        },
+        "deleteRule": {
+          "question": "Permanently delete this rule?",
+          "ruleInfo": "Users with the assigned role ''{role}'' will not have permissions to {action} the following data!",
+          "success": "Rule deleted successfully."
+        },
+        "editRule": {
+          "saveSuccess": "Rule edit successful.",
+          "title": "Edit rule"
+        },
+        "errors": {
+          "uniqueIdShort": "The combination of role name, action and type already exists in another rule.\nPlease edit the existing rule."
+        },
+        "keycloakHint": {
+          "acknowledge": "Acknowledge",
+          "create": "This role has not been used yet. Don''t forget to configure it in Keycloak!",
+          "delete": "Do not forget to delete this role in Keycloak as well!",
+          "title": "Update Keycloak"
+        },
+        "roleNameMaxLength": "Role name cannot be longer than {maxLength} characters.",
+        "roleNameNoTrailSpace": "Role name cannot end with a space.",
+        "roleRequired": "Role is required",
+        "subtitle": "Manage roles and permissions.",
+        "tableHeader": {
+          "aasIds": "AAS IDs",
+          "action": "Action",
+          "name": "Role",
+          "permissions": "Permissions",
+          "submodelIds": "Submodel IDs",
+          "type": "Type"
+        },
+        "title": "Role management",
+        "wildcardLabel": "Allow all"
+      },
+      "subHeader": "Add, remove, or modify settings and configurations to various features within your AAS environment.",
       "connections": {
         "aasRepository": {
           "connectionType": "AAS_REPOSITORY",
@@ -422,391 +570,258 @@
           "repositories": "Submodel repositories",
           "repositoryDefaultLabel": "Default submodel repository",
           "repositoryLabel": "Submodel repository",
-          "repositoryUrlLabel": "Submodel repository URL""infrastructure": {
-            "form": {
-              "name": "Name",
-              "logoUrl": "Logo URL",
-              "endpoints": "Endpoints",
-              "endpointUrl": "Endpoint URL",
-              "addEndpoint": "Add endpoint",
-              "security": "Infrastructure Security",
-              "securityType": "Security type",
-              "headerName": "Header name",
-              "headerValue": "Header value",
-              "nameRequired": "Name is required",
-              "urlFieldRequired": "URL field is required",
-              "urlFieldInvalid": "Must be a valid URL",
-              "securityTypeRequired": "Security type is required",
-              "headerNameRequired": "Header name is required",
-              "headerValueRequired": "Header value is required",
-              "securityTypeNone": "None",
-              "securityTypeMnestixProxy": "Mnestix API Key",
-              "securityTypeHeaderSecurity": "Custom Header",
-              "proxyHeaderValue": "Mnestix API Key Header Value",
-              "proxyHeaderValueRequired": "Mnestix API Key Header Value is required",
-              "saveSuccess": "Infrastructure saved successfully",
-              "saveError": "Error saving infrastructure",
-              "createNew": "Create New Infrastructure",
-              "deleteConfirm": "Are you sure you want to delete the infrastructure? This action cannot be undone.",
-              "deleteSuccess": "Infrastructure deleted successfully",
-              "deleteError": "Failed to delete infrastructure",
-              "deleteDialogTitle": "Delete Infrastructure",
-              "deleteWarning": "This action cannot be undone and will permanently remove all associated connections and security settings.",
-              "cancel": "Cancel",
-              "delete": "Delete",
-              "connectionTypes": "Connection Interface Types",
-              "connectionTypesRequired": "At least one connection interface type must be selected",
-              "save": "Save",
-              "nameAlreadyExists": "An infrastructure with this name already exists",
-              "defaultInfrastructureReadonly": "The default infrastructure can only be changed in the deployment via the environment variables. Please contact your administrator to make changes.",
-              "headerKeyDangerous": "The header key is considered dangerous.",
-              "headerKeyInvalidFormat": "The header key is not in a valid format.",
-              "headerKeyCrLfNotAllowed": "The header key must not contain CRLF sequences.",
-              "headerValueTooLong": "The header value is too long.",
-              "headerValueCrLfNotAllowed": "The header value must not contain CRLF sequences.",
-              "headerValueIllegalChars": "The header value must not contain illegal characters."
-            },
-            "healthCheck": {
-              "checking": "Checking...",
-              "unreachable": "Mnestix AAS Generator not reachable (Note: Mnestix Generator V1 does not support health checks and will always show as offline. Please update to version 2 to use health checks)",
-              "offline": "Offline",
-              "version": "API Version: ",
-              "buildDate": "Build date",
-              "aasGeneratorLabel": "Mnestix AAS Generator",
-              "applicationVersion": "Application Version",
-              "refresh": "Refresh health status"
-            },
-            "subtitle": "Define which infrastructures should be used.",
-            "title": "Infrastructures",
-            "urlFieldNoTrailingSlash": "The URL must not end with a slash (/).",
-            "urlFieldRequired": "URL field is required",
-            "defaultUrlInfo": "Default URLs can only be set via environment variables.""noInfrastructuresFound": "No infrastructures found"
-          },
-          "header": "Settings",
-          "idStructure": {
-            "assetIdDocumentation": {
-              "assetId": "Asset ID",
-              "dnsHeading": "Access via DNS",
-              "dnsText": "Especially for the brownfield approach and the distributor of a product, it makes sense to additionally set up DNS access through the asset ID and thus enable data retrieval from conventional browser applications.",
-              "endResult": "End result",
-              "exampleHeading": "Example case",
-              "industry40Heading": "Industry 4.0 context",
-              "industry40Text": "Products have a globally unique ID which can be assigned to one or more asset administration shells. In the Industry 4.0 context, the connection between asset and AAS is established via the I4.0 infrastructure.",
-              "redirectsTo": "Redirects to",
-              "title": "How to connect your Asset ID with your AAS repository"
-            },
-            "errors": {
-              "idStructureError": "Error while saving ''{name}'' ({reason}).",
-              "invalidIri": "Has to be a valid IRI, e.g. https://example.com/",
-              "invalidIriPart": "Has to work as part of an IRI (no slashes, spaces or special characters)"
-            },
-            "labels": {
-              "dynamicPart": "dynamic part",
-              "idStructureExplanation": "Define, how your IDs are represented. This is a standard setting that can be adjusted for individual imports.",
-              "staticPrefix": "static prefix"
-            },
-            "messages": {
-              "successfullyUpdated": "Updated successfully"
-            },
-            "title": "ID structure"
-          },
-          "messages": {
-            "changesSavedSuccessfully": "Changes saved successfully."
-          },
-          "rules": {
-            "buttons": {
-              "add": "Add",
-              "back": "Back",
-              "cancel": "Cancel",
-              "create": "Add permission",
-              "delete": "Delete",
-              "edit": "Edit",
-              "save": "Save"
-            },
-            "createRule": {
-              "placeholderText": "New or existing role name",
-              "saveSuccess": "New rule saved successfully.",
-              "subtitle": "Add a permission to a new or existing role.",
-              "subtitle2": "Add a permission to the role ''{role}''.",
-              "title": "Add new permission"
-            },
-            "deleteRole": {
-              "delete": "Delete role",
-              "description": "You are about to delete the ''{roleName}'' role with {count} permissions. Are you sure you want to delete entire role?",
-              "header": "Delete entire role",
-              "partiallySuccess": "{count} out of {total} permissions have been deleted. The role still exists with the remaining permissions!",
-              "success": "Role ''{roleName}'' has been deleted successfully."
-            },
-            "deleteRule": {
-              "question": "Permanently delete this rule?",
-              "ruleInfo": "Users with the assigned role ''{role}'' will not have permissions to {action} the following data!",
-              "success": "Rule deleted successfully."
-            },
-            "editRule": {
-              "saveSuccess": "Rule edit successful.",
-              "title": "Edit rule"
-            },
-            "errors": {
-              "uniqueIdShort": "The combination of role name, action and type already exists in another rule.\nPlease edit the existing rule."
-            },
-            "keycloakHint": {
-              "acknowledge": "Acknowledge",
-              "create": "This role has not been used yet. Don''t forget to configure it in Keycloak!",
-              "delete": "Do not forget to delete this role in Keycloak as well!",
-              "title": "Update Keycloak"
-            },
-            "roleNameMaxLength": "Role name cannot be longer than {maxLength} characters.",
-            "roleNameNoTrailSpace": "Role name cannot end with a space.",
-            "roleRequired": "Role is required",
-            "subtitle": "Manage roles and permissions.",
-            "tableHeader": {
-              "aasIds": "AAS IDs",
-              "action": "Action",
-              "name": "Role",
-              "permissions": "Permissions",
-              "submodelIds": "Submodel IDs",
-              "type": "Type"
-            },
-            "title": "Role management",
-            "wildcardLabel": "Allow all"
-          },
-          "subHeader": "Add, remove, or modify settings and configurations to various features within your AAS environment."
+          "repositoryUrlLabel": "Submodel repository URL"
         },
-        "templates": {
-          "actions": {
-            "add": "Add",
-            "cancel": "Cancel",
-            "delete": "Delete",
-            "duplicate": "Duplicate",
-            "edit": "Edit",
-            "remove": "Remove",
-            "restore": "Restore",
-            "revertChanges": "Revert changes",
-            "saveChanges": "Save changes"
-          },
-          "all": "All",
-          "boolean": {
-            "false": "false",
-            "true": "true"
-          },
-          "healthCheck": {
-            "label": "Mnestix AAS Generator Status: ",
-            "refresh": "Refresh health status"
-          },
-          "docsLink": "Click here to get to the documentation for using and creating templates and blueprints.",
-          "chooseAStartingPoint": "Choose a template as starting point",
-          "copyBlueprintId": "Copy blueprint ID",
-          "createNew": "New blueprint",
-          "custom": "Custom",
-          "defaultValue": "Default value",
-          "deleteBlueprintQuestion": "Delete blueprint ''{name}'' irretrievably?",
-          "displayName": "Display name",
-          "emptyTemplate": "Empty (Custom)",
-          "emptyTemplateDescription": "Is not based upon a standardized template",
-          "errors": {
-            "unknownModelType": "Mnestix doesn't support this model type yet ({type})."
-          },
-          "labels": {
-            "language": "Language",
-            "notAvailable": "-",
-            "semanticId": "semanticId",
-            "text": "Text",
-            "value": "Value",
-            "modelType": "Model Type",
-            "valueType": "Value Type"
-          },
-          "mappingInfo": "Mapping Info",
-          "mappingInfoDescription": "Jsonata expression that can be used for mapping values during data imports. Note that the result of the expression has to be the same data type as this SubmodelElement.",
-          "collectionMappingInfo": "Collection Mapping Info",
-          "collectionMappingInfoDescription": "Json-Expression that can be used for duplicating SubmodelElements during data imports. Note that the specified path has to lead to an array, therefore end with [*].",
-          "filterMappingInfo": "Filter Mapping Info",
-          "filterMappingInfoDescription": "Jsonata expression that can be used for omiting SubmodelElements during data imports. Note that the result of the expression has to be a boolean.",
-          "messages": {
-            "changesSavedSuccessfully": "Changes saved successfully",
-            "deleted": "deleted"
-          },
-          "multiplicity": "Multiplicity",
-          "multiplicityDescription": "Options to select wheter a SubmodelElement is mandatory or optional, and if it can have multiple instances. This is used for data validation during imports.",
-          "noBlueprintsFound": "No blueprints found",
-          "blueprintDeletedSuccessfully": "Blueprint deleted successfully",
-          "noTemplatesWarning": "No templates available. Showing only blueprints.",
-          "blueprintIdCopied": "Blueprint ID copied to clipboard: {id}",
-          "blueprintUseExplanation": "Blueprints allow you to create a reusable submodel structure, adjusted to your requirements.",
-          "title": "Templates & Blueprints",
-          "validation": {
-            "errors": {
-              "invalidDate": "Has to be a valid date in format ''yyyy-mm-dd''",
-              "invalidLong": "Has to be a valid long"
-            }
-          },
-          "noBlueprintsWarning": "No blueprints available."
-        },
-        "uploadData": {
-          "title": "Generate DPP",
-          "backToHome": "Back to Home",
-          "explanation": {
-            "title": "About generating DPPs",
-            "step1Intro": "Here you can upload a KBL or VEC file to generate a corresponding DPP type model in AAS format. The following submodels are generated:",
-            "step1PcfSuffix": "with",
-            "step2Intro": "Certain information contents from the KBL or VEC file formats are translated into a corresponding Asset Administration Shell representation.",
-            "step2KblPrefix": "With KBL, the contents of",
-            "step2KblSuffix": "such as '<'Company_name'>', '<'Part_number'>', '<'Description'>' and '<'Abbreviation'>' are used to identify the wire harness product and its components modeled in KBL.",
-            "step2VecPrefix": "With VEC, the contents of",
-            "step2VecSuffix": "are used likewise.",
-            "step2Closing": "Based on this information, an internet-capable identification address for the respective AAS of the harness component is also created.",
-            "step3": "A product image must then be uploaded and stored in the Asset Administration Shell.",
-            "step4": "As an optional final step, you can add additional attachments to the HandoverDocumentation submodel."
-          },
-          "actions": {
-            "copyDetailedLogs": "Copy detailed logs",
-            "deleteFile": "Delete file",
-            "next": "Next",
-            "removeFile": "Remove file",
-            "seeLess": "See less",
-            "seeMore": "See more",
-            "uploadMore": "Generate another DPP",
-            "viewCreatedAas": "View created DPP",
-            "resetWorkflow": "Reset",
-            "logsCopied": "Logs copied to clipboard"
-          },
-          "ariaLabel": "Upload data VEC file",
-          "cta": {
-            "clickToUpload": "Click to upload",
-            "orDragAndDrop": "or drag and drop",
-            "supportedFiles": "Supported files: {formats} (max. {maxSize} MB)"
-          },
-          "descriptions": {
-            "supportedFormats": "Supported format: .vec, .kbl (max. 10 MB)"
-          },
-          "fileTooLarge": "File is too large. Maximum size is {maxSize}.",
-          "fileTypeNotSupported": "Only files with the format {formats} are supported.",
-          "apiErrors": {
-            "processingError": "Processing failed. Check the file and try again.",
-            "missingFieldsError": "Missing required fields in uploaded file",
-            "missingFieldsDetail": "The following fields are missing or empty: {fields}. Please ensure your VEC or KBL file contains these values.",
-            "uploadError": "Upload failed. Please try again.",
-            "unsupportedFileType": "Unsupported file type",
-            "unsupportedFileTypeDetail": "The uploaded file is neither a valid VEC nor a KBL file. Please only upload .vec or .kbl files.",
-            "parseError": "Failed to parse file. Please ensure the file is a valid XML format."
-          },
-          "handoverDocs": {
-            "uploadError": "Failed to upload file to submodel. Please try again.",
-            "infrastructureNotFound": "No infrastructure found for repository URL"
-          },
-          "status": {
-            "error": "Failed",
-            "loading": "Processing",
-            "success": "Completed"
-          },
-          "steps": {
-            "generateAas": "Generating AAS",
-            "processData": "Processing data",
-            "uploadFile": "Uploading file"
-          },
-          "form": {
-            "userNameLabel": "Your name",
-            "organizationNameLabel": "Organization",
-            "submitLabel": "Submit",
-            "errors": {
-              "userNameRequired": "Please enter your name.",
-              "organizationRequired": "Please enter your organization.",
-              "fileRequired": "Please select a file before submitting."
-            }
-          },
-          "uploadSuccess": "DPP created successfully.",
-          "warningsEncountered": "Warnings:",
-          "uploadSection": {
-            "title": "Upload VEC or KBL File"
-          },
-          "thumbnail": {
-            "sectionTitle": "Add product image to DPP",
-            "title": "Add Product Image",
-            "description": "Upload a product image for your Digital Product Passport.",
-            "selectFile": "Select Image",
-            "changeFile": "Change Image",
-            "upload": "Upload product image",
-            "uploading": "Uploading product image...",
-            "uploadSuccess": "Product image uploaded successfully.",
-            "uploadError": "Failed to upload product image. Please try again.",
-            "invalidFileType": "Please select a valid image file (JPEG, PNG, GIF, WebP, or PDF).",
-            "fileTooLarge": "Product image file is too large. Maximum size is {maxSize}.",
-            "pdfConversionError": "Failed to convert PDF to image. Please try a different file.",
-            "required": "A product image is required to continue."
-          },
-          "stepper": {
-            "vecKbl": "Upload VEC/KBL File",
-            "processing": "Generate DPP",
-            "thumbnail": "Add Product Image",
-            "additionalDocs": "Add Files",
-            "complete": "Complete"
-          },
-          "additionalDocs": {
-            "title": "Add Additional Files (Optional)",
-            "description": "Upload multiple files to the Digital Product Passport as documentation. They will be shown in the HandoverDocumentation-Submodel, which is the documentation tab in the DPP.",
-            "dropzone": "Drop files here or click to browse",
-            "supportedFiles": "Any file type (max. 10 MB per file)",
-            "addMore": "Add more files",
-            "uploadAll": "Upload All Files",
-            "skip": "Skip this step",
-            "continue": "Continue",
-            "titleLabel": "Document Title",
-            "descriptionLabel": "Description",
-            "classLabel": "Document Type (VDI 2770)",
-            "selectClass": "Select document type",
-            "uploading": "Uploading...",
-            "uploadSuccess": "Uploaded successfully",
-            "uploadError": "Upload failed",
-            "noFiles": "No files selected",
-            "pendingUploads": "{count} file(s) ready to upload",
-            "allUploaded": "All files uploaded successfully",
-            "removeFile": "Remove file"
-          },
-          "vdi2770": {
-            "01-01": "Identification",
-            "02-01": "Technical specification",
-            "02-02": "Drawings, plans",
-            "02-03": "Assemblies",
-            "02-04": "Certificates, declarations",
-            "03-01": "Commissioning, de-commissioning",
-            "03-02": "Operation",
-            "03-03": "General safety",
-            "03-04": "Inspection, maintenance, testing",
-            "03-05": "Repair",
-            "03-06": "Spare parts",
-            "04-01": "Contract documents"
-          },
-          "complete": {
-            "title": "DPP Created Successfully!",
-            "message": "Your Digital Product Passport has been generated and all documents have been uploaded.",
-            "viewDpp": "View Created DPP",
-            "createAnother": "Generate Another DPP"
-          }
-        },
-        "transfer": {
-          "aasRepository": "AAS repository",
-          "chooseRepository": "Choose AAS repository to transfer into:",
-          "chooseSubmodelRepository": "Choose submodel repository (optional)",
-          "errorToast": "Transfer of AAS not successful",
-          "partiallyFailedToast": "Failed to transfer element",
-          "repositoryApiKey": "AAS repository APIKey",
-          "repositoryLabel": "List of AAS repositories",
-          "repositoryRequired": "AAS repository is required",
-          "submodelRepository": "Submodel repository",
-          "submodelRepositoryApiKey": "Submodel repository APIKey",
-          "submodelRepositoryLabel": "List of submodel repositories",
-          "subtitle": "Transfer \"{aasId}\" from \"{repoUrl}\" to:",
-          "successfulToast": "Transfer of AAS successful",
-          "title": "Transfer",
-          "useAasRepository": "Use AAS repository",
-          "warningToast": "AAS was only partially transferred.",
-          "aasIdentifier": {
-            "display": "\"{aasId}\"",
-            "default": "Unknown AAS ID"
-          },
-          "aasOriginUrl": {
-            "display": "\"{repoUrl}\"",
-            "default": "Unknown AAS Origin URL"
-          }
+        "subtitle": "Define which data connections should be used.",
+        "title": "Data sources",
+        "urlFieldNoTrailingSlash": "The URL must not end with a slash (/).",
+        "urlFieldRequired": "URL field is required",
+        "defaultUrlInfo": "Default URLs can only be set via environment variables."
+      }
+    },
+    "templates": {
+      "actions": {
+        "add": "Add",
+        "cancel": "Cancel",
+        "delete": "Delete",
+        "duplicate": "Duplicate",
+        "edit": "Edit",
+        "remove": "Remove",
+        "restore": "Restore",
+        "revertChanges": "Revert changes",
+        "saveChanges": "Save changes"
+      },
+      "all": "All",
+      "boolean": {
+        "false": "false",
+        "true": "true"
+      },
+      "healthCheck": {
+        "label": "Mnestix AAS Generator Status: ",
+        "refresh": "Refresh health status"
+      },
+      "docsLink": "Click here to get to the documentation for using and creating templates and blueprints.",
+      "chooseAStartingPoint": "Choose a template as starting point",
+      "copyBlueprintId": "Copy blueprint ID",
+      "createNew": "New blueprint",
+      "custom": "Custom",
+      "defaultValue": "Default value",
+      "deleteBlueprintQuestion": "Delete blueprint ''{name}'' irretrievably?",
+      "displayName": "Display name",
+      "emptyTemplate": "Empty (Custom)",
+      "emptyTemplateDescription": "Is not based upon a standardized template",
+      "errors": {
+        "unknownModelType": "Mnestix doesn't support this model type yet ({type})."
+      },
+      "labels": {
+        "language": "Language",
+        "notAvailable": "-",
+        "semanticId": "semanticId",
+        "text": "Text",
+        "value": "Value",
+        "modelType": "Model Type",
+        "valueType": "Value Type"
+      },
+      "mappingInfo": "Mapping Info",
+      "mappingInfoDescription": "Jsonata expression that can be used for mapping values during data imports. Note that the result of the expression has to be the same data type as this SubmodelElement.",
+      "collectionMappingInfo": "Collection Mapping Info",
+      "collectionMappingInfoDescription": "Json-Expression that can be used for duplicating SubmodelElements during data imports. Note that the specified path has to lead to an array, therefore end with [*].",
+      "filterMappingInfo": "Filter Mapping Info",
+      "filterMappingInfoDescription": "Jsonata expression that can be used for omiting SubmodelElements during data imports. Note that the result of the expression has to be a boolean.",
+      "messages": {
+        "changesSavedSuccessfully": "Changes saved successfully",
+        "deleted": "deleted"
+      },
+      "multiplicity": "Multiplicity",
+      "multiplicityDescription": "Options to select wheter a SubmodelElement is mandatory or optional, and if it can have multiple instances. This is used for data validation during imports.",
+      "noBlueprintsFound": "No blueprints found",
+      "blueprintDeletedSuccessfully": "Blueprint deleted successfully",
+      "noTemplatesWarning": "No templates available. Showing only blueprints.",
+      "blueprintIdCopied": "Blueprint ID copied to clipboard: {id}",
+      "blueprintUseExplanation": "Blueprints allow you to create a reusable submodel structure, adjusted to your requirements.",
+      "title": "Templates & Blueprints",
+      "validation": {
+        "errors": {
+          "invalidDate": "Has to be a valid date in format ''yyyy-mm-dd''",
+          "invalidLong": "Has to be a valid long"
         }
+      },
+      "noBlueprintsWarning": "No blueprints available.",
+      "copyTemplateId": "Copy template ID",
+      "deleteTemplateQuestion": "Delete template \"{name}\" irretrievably?",
+      "emptyCustom": "Empty (Custom)",
+      "emptyCustomDescription": "Is not based upon a standardized template",
+      "noTemplatesFound": "No templates found",
+      "templateDeletedSuccessfully": "Template deleted successfully",
+      "templateIdCopied": "Template ID copied to clipboard: {id}",
+      "templatesUseExplanation": "Templates allow you to create a reusable submodel structure, adjusted to your requirements."
+    },
+    "uploadData": {
+      "title": "Generate DPP",
+      "backToHome": "Back to Home",
+      "explanation": {
+        "title": "About generating DPPs",
+        "step1Intro": "Here you can upload a KBL or VEC file to generate a corresponding DPP type model in AAS format. The following submodels are generated:",
+        "step1PcfSuffix": "with",
+        "step2Intro": "Certain information contents from the KBL or VEC file formats are translated into a corresponding Asset Administration Shell representation.",
+        "step2KblPrefix": "With KBL, the contents of",
+        "step2KblSuffix": "such as '<'Company_name'>', '<'Part_number'>', '<'Description'>' and '<'Abbreviation'>' are used to identify the wire harness product and its components modeled in KBL.",
+        "step2VecPrefix": "With VEC, the contents of",
+        "step2VecSuffix": "are used likewise.",
+        "step2Closing": "Based on this information, an internet-capable identification address for the respective AAS of the harness component is also created.",
+        "step3": "A product image must then be uploaded and stored in the Asset Administration Shell.",
+        "step4": "As an optional final step, you can add additional attachments to the HandoverDocumentation submodel."
+      },
+      "actions": {
+        "copyDetailedLogs": "Copy detailed logs",
+        "deleteFile": "Delete file",
+        "next": "Next",
+        "removeFile": "Remove file",
+        "seeLess": "See less",
+        "seeMore": "See more",
+        "uploadMore": "Generate another DPP",
+        "viewCreatedAas": "View created DPP",
+        "resetWorkflow": "Reset",
+        "logsCopied": "Logs copied to clipboard"
+      },
+      "ariaLabel": "Upload data VEC file",
+      "cta": {
+        "clickToUpload": "Click to upload",
+        "orDragAndDrop": "or drag and drop",
+        "supportedFiles": "Supported files: {formats} (max. {maxSize} MB)"
+      },
+      "descriptions": {
+        "supportedFormats": "Supported format: .vec, .kbl (max. 10 MB)"
+      },
+      "fileTooLarge": "File is too large. Maximum size is {maxSize}.",
+      "fileTypeNotSupported": "Only files with the format {formats} are supported.",
+      "apiErrors": {
+        "processingError": "Processing failed. Check the file and try again.",
+        "missingFieldsError": "Missing required fields in uploaded file",
+        "missingFieldsDetail": "The following fields are missing or empty: {fields}. Please ensure your VEC or KBL file contains these values.",
+        "uploadError": "Upload failed. Please try again.",
+        "unsupportedFileType": "Unsupported file type",
+        "unsupportedFileTypeDetail": "The uploaded file is neither a valid VEC nor a KBL file. Please only upload .vec or .kbl files.",
+        "parseError": "Failed to parse file. Please ensure the file is a valid XML format."
+      },
+      "handoverDocs": {
+        "uploadError": "Failed to upload file to submodel. Please try again.",
+        "infrastructureNotFound": "No infrastructure found for repository URL"
+      },
+      "status": {
+        "error": "Failed",
+        "loading": "Processing",
+        "success": "Completed"
+      },
+      "steps": {
+        "generateAas": "Generating AAS",
+        "processData": "Processing data",
+        "uploadFile": "Uploading file"
+      },
+      "form": {
+        "userNameLabel": "Your name",
+        "organizationNameLabel": "Organization",
+        "submitLabel": "Submit",
+        "errors": {
+          "userNameRequired": "Please enter your name.",
+          "organizationRequired": "Please enter your organization.",
+          "fileRequired": "Please select a file before submitting."
+        }
+      },
+      "uploadSuccess": "DPP created successfully.",
+      "warningsEncountered": "Warnings:",
+      "uploadSection": {
+        "title": "Upload VEC or KBL File"
+      },
+      "thumbnail": {
+        "sectionTitle": "Add product image to DPP",
+        "title": "Add Product Image",
+        "description": "Upload a product image for your Digital Product Passport.",
+        "selectFile": "Select Image",
+        "changeFile": "Change Image",
+        "upload": "Upload product image",
+        "uploading": "Uploading product image...",
+        "uploadSuccess": "Product image uploaded successfully.",
+        "uploadError": "Failed to upload product image. Please try again.",
+        "invalidFileType": "Please select a valid image file (JPEG, PNG, GIF, WebP, or PDF).",
+        "fileTooLarge": "Product image file is too large. Maximum size is {maxSize}.",
+        "pdfConversionError": "Failed to convert PDF to image. Please try a different file.",
+        "required": "A product image is required to continue."
+      },
+      "stepper": {
+        "vecKbl": "Upload VEC/KBL File",
+        "processing": "Generate DPP",
+        "thumbnail": "Add Product Image",
+        "additionalDocs": "Add Files",
+        "complete": "Complete"
+      },
+      "additionalDocs": {
+        "title": "Add Additional Files (Optional)",
+        "description": "Upload multiple files to the Digital Product Passport as documentation. They will be shown in the HandoverDocumentation-Submodel, which is the documentation tab in the DPP.",
+        "dropzone": "Drop files here or click to browse",
+        "supportedFiles": "Any file type (max. 10 MB per file)",
+        "addMore": "Add more files",
+        "uploadAll": "Upload All Files",
+        "skip": "Skip this step",
+        "continue": "Continue",
+        "titleLabel": "Document Title",
+        "descriptionLabel": "Description",
+        "classLabel": "Document Type (VDI 2770)",
+        "selectClass": "Select document type",
+        "uploading": "Uploading...",
+        "uploadSuccess": "Uploaded successfully",
+        "uploadError": "Upload failed",
+        "noFiles": "No files selected",
+        "pendingUploads": "{count} file(s) ready to upload",
+        "allUploaded": "All files uploaded successfully",
+        "removeFile": "Remove file"
+      },
+      "vdi2770": {
+        "01-01": "Identification",
+        "02-01": "Technical specification",
+        "02-02": "Drawings, plans",
+        "02-03": "Assemblies",
+        "02-04": "Certificates, declarations",
+        "03-01": "Commissioning, de-commissioning",
+        "03-02": "Operation",
+        "03-03": "General safety",
+        "03-04": "Inspection, maintenance, testing",
+        "03-05": "Repair",
+        "03-06": "Spare parts",
+        "04-01": "Contract documents"
+      },
+      "complete": {
+        "title": "DPP Created Successfully!",
+        "message": "Your Digital Product Passport has been generated and all documents have been uploaded.",
+        "viewDpp": "View Created DPP",
+        "createAnother": "Generate Another DPP"
+      }
+    },
+    "transfer": {
+      "aasRepository": "AAS repository",
+      "chooseRepository": "Choose AAS repository to transfer into:",
+      "chooseSubmodelRepository": "Choose submodel repository (optional)",
+      "errorToast": "Transfer of AAS not successful",
+      "partiallyFailedToast": "Failed to transfer element",
+      "repositoryApiKey": "AAS repository APIKey",
+      "repositoryLabel": "List of AAS repositories",
+      "repositoryRequired": "AAS repository is required",
+      "submodelRepository": "Submodel repository",
+      "submodelRepositoryApiKey": "Submodel repository APIKey",
+      "submodelRepositoryLabel": "List of submodel repositories",
+      "subtitle": "Transfer \"{aasId}\" from \"{repoUrl}\" to:",
+      "successfulToast": "Transfer of AAS successful",
+      "title": "Transfer",
+      "useAasRepository": "Use AAS repository",
+      "warningToast": "AAS was only partially transferred.",
+      "aasIdentifier": {
+        "display": "\"{aasId}\"",
+        "default": "Unknown AAS ID"
+      },
+      "aasOriginUrl": {
+        "display": "\"{repoUrl}\"",
+        "default": "Unknown AAS Origin URL"
       }
     }
+  }
+}

@@ -1,6 +1,7 @@
-import { ConnectionType } from '../../../../prisma/generated/client';
+import { ConnectionType, MnestixConnection } from '../../../../prisma/generated/client';
 import type { InfrastructureFormData } from 'app/[locale]/settings/_components/mnestix-infrastructure/InfrastructureTypes';
 import { IPrismaConnector } from 'lib/services/database/PrismaConnectorInterface';
+import { DataSourceFormData, MnestixConnectionWithTypes } from 'lib/services/database/PrismaConnector';
 import { isEqual } from 'lodash';
 import { InfrastructureWithRelations } from 'lib/services/database/InfrastructureMappedTypes';
 
@@ -38,6 +39,22 @@ export class PrismaConnectorInMemory implements IPrismaConnector {
     }
 
     getRepositoryConfigurationByRepositoryUrl(_repositoryUrl: string): Promise<MnestixConnection | null> {
+        throw new Error('Method not implemented.');
+    }
+
+    getConnectionData(): Promise<MnestixConnectionWithTypes[]> {
+        throw new Error('Method not implemented.');
+    }
+
+    upsertConnectionDataAction(_formDataInput: DataSourceFormData[]): Promise<void> {
+        throw new Error('Method not implemented.');
+    }
+
+    getRepositoryConfigurationGroups(): Promise<MnestixConnection[]> {
+        throw new Error('Method not implemented.');
+    }
+
+    getRepositoryConfigurationGroupByName(_name: string): Promise<MnestixConnection | null> {
         throw new Error('Method not implemented.');
     }
 }

@@ -7,7 +7,7 @@ import { TabSelectorItem, VerticalTabSelector } from 'components/basics/Vertical
 import { useState } from 'react';
 import { IdSettingsCard } from './_components/id-settings/IdSettingsCard';
 import { useIsMobile } from 'lib/hooks/UseBreakpoints';
-import MnestixInfrastructureCard from 'app/[locale]/settings/_components/mnestix-infrastructure/MnestixInfrastructureCard';
+import { MnestixConnectionsCard } from 'app/[locale]/settings/_components/mnestix-connections/MnestixConnectionsCard';
 import { useEnv } from 'app/EnvProvider';
 import { RuleSettings } from 'app/[locale]/settings/_components/role-settings/RuleSettings';
 import { useTranslations } from 'next-intl';
@@ -53,7 +53,7 @@ export default function Page() {
             case settingsPageTypes[settingsPageTypes.ID_STRUCTURE]:
                 return <IdSettingsCard />;
             case settingsPageTypes[settingsPageTypes.MNESTIX_INFRASTRUCTURE]:
-                return <MnestixInfrastructureCard />;
+                return <MnestixConnectionsCard />;
             case settingsPageTypes[settingsPageTypes.ROLES]:
                 return <RuleSettings />;
             default:
