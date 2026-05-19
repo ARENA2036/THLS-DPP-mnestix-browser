@@ -151,7 +151,7 @@ describe('AASListDataWrapper', () => {
             await waitFor(async () => nextButton.click());
 
             expect(screen.getByText('assetId10', { exact: false })).toBeInTheDocument();
-            expect(screen.getByText('Page 2', { exact: false })).toBeInTheDocument();
+            expect(screen.getByText('Page: 2', { exact: false })).toBeInTheDocument();
             expect(screen.getByTestId('list-next-button')).toBeDisabled();
             expect(mockActionSecondPage).toHaveBeenCalledWith(
                 REPOSITORY_CONNECTION_TYPE,

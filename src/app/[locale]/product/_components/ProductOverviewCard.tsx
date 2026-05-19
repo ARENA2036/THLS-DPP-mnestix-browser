@@ -1,6 +1,12 @@
-import { Box, Card, CardContent, Skeleton, Typography, Tooltip, Divider } from '@mui/material';
+import { Box, Card, CardContent, Skeleton, Typography, Tooltip, Divider, Tooltip } from '@mui/material';
 import React, { useMemo, useCallback } from 'react';
 import { DataRow } from 'components/basics/DataRow';
+import {
+    AssetAdministrationShell,
+    ISubmodelElement,
+    Property,
+    SubmodelElementCollection,
+} from '@aas-core-works/aas-core3.0-typescript/types';
 import { IconCircleWrapper } from 'components/basics/IconCircleWrapper';
 import { AssetIcon } from 'components/custom-icons/AssetIcon';
 import { encodeBase64 } from 'lib/util/Base64Util';
@@ -25,6 +31,9 @@ import {
     SubmodelElementCollection,
 } from 'lib/api/aas/models';
 import { useAasStore } from 'stores/AasStore';
+import LinkIcon from '@mui/icons-material/Link';
+import { CommercialDataBox } from 'app/[locale]/product/_components/CommercialDataBox';
+import { MnestixConnection } from '@prisma/client';
 
 type ProductOverviewCardProps = {
     readonly aas: AssetAdministrationShell | null;
@@ -37,6 +46,7 @@ type ProductOverviewCardProps = {
     readonly displayName: string | null;
     readonly catalogConfig?: MnestixConnection;
     readonly infrastructureName?: string;
+    readonly catalogConfig?: MnestixConnection;
 };
 
 type ProductClassification = {
@@ -55,6 +65,9 @@ type OverviewData = {
     readonly manufacturerLogo: SubmodelElementChoice | null;
     readonly companyLogo: SubmodelElementChoice | null;
     readonly markings: string[] | null;
+    readonly manufacturerLogo: ISubmodelElement | null;
+    readonly companyLogo: ISubmodelElement | null;
+    readonly markings: string[] | null;
     readonly productClassifications?: ProductClassification[];
     readonly URIOfTheProduct?: string | null;
 };
@@ -64,236 +77,132 @@ export function ProductOverviewCard(props: ProductOverviewCardProps) {
     const navigate = useRouter();
     const t = useTranslations('pages.productViewer');
     const findValue = useFindValueByIdShort();
-    const productImageUrl = useProductImageUrl(props.aas, props.repositoryURL ?? undefined, props.productImage);
-    const { addAasData } = useAasStore();
+    const productImageUrl = useProductImageUrl(props.aas, props.repositoryURL, props.productImage);
+    const [nameplateSubmodel, setNameplateSubmodel] = useState<Submodel | undefined>(undefined);
 
-    const prepareTechnicalDataSubmodel = useCallback(
-        (technicalDataSubmodelElements: Array<SubmodelElementChoice>): Partial<OverviewData> => {
-            const manufacturerName = findValue(
-                technicalDataSubmodelElements,
-                'ManufacturerName',
-                SubmodelElementSemanticIdEnum.ManufacturerName,
+    useEffect(() => {
+        if (props.submodels && props.submodels.length > 0) {
+            const technicalData = findSubmodelByIdOrSemanticId(
+                props.submodels,
+                SubmodelSemanticIdEnum.TechnicalDataV11,
+                'TechnicalData',
             );
-            const manufacturerProductDesignation = findValue(
-                technicalDataSubmodelElements,
-                'ManufacturerProductDesignation',
-                SubmodelElementSemanticIdEnum.ManufacturerProductDesignation,
-            );
-            const manufacturerArticleNumber = findValue(
-                technicalDataSubmodelElements,
-                'ManufacturerArticleNumber',
-                SubmodelElementSemanticIdEnum.ManufacturerArticleNumber,
-            );
-            const manufacturerOrderCode = findValue(
-                technicalDataSubmodelElements,
-                'ManufacturerOrderCode',
-                SubmodelElementSemanticIdEnum.ManufacturerOrderCode,
-            );
-            const manufacturerLogo = findSubmodelElementByIdShort(
-                technicalDataSubmodelElements,
-                'ManufacturerLogo',
-                SubmodelElementSemanticIdEnum.ManufacturerLogo,
-            );
-            const productClassifications = findSubmodelElementByIdShort(
-                technicalDataSubmodelElements,
-                'ProductClassifications',
-                SubmodelElementSemanticIdEnum.ProductClassifications,
-            ) as SubmodelElementCollection;
-            const classifications: ProductClassification[] = [];
+            if (technicalData?.submodelElements) {
+                prepareTechnicalDataSubmodel(technicalData.submodelElements);
+            }
 
-            // If ProductClassifications is a flat list, we can directly use it
-            // This is not standard conform but we support it for now.
-            if (
-                productClassifications?.value &&
-                productClassifications.value.find((element) => element.idShort === 'ProductClassificationSystem')
-            ) {
+            const nameplate = findSubmodelByIdOrSemanticId(
+                props.submodels,
+                SubmodelSemanticIdEnum.NameplateV2,
+                'Nameplate',
+            );
+            setNameplateSubmodel(nameplate);
+            if (nameplate?.submodelElements) {
+                prepareNameplateData(nameplate.submodelElements);
+            }
+        }
+    }, [props.submodels]);
+
+    const prepareTechnicalDataSubmodel = (technicalDataSubmodelElements: Array<ISubmodelElement>) => {
+        const manufacturerName = findValue(
+            technicalDataSubmodelElements,
+            'ManufacturerName',
+            SubmodelElementSemanticIdEnum.ManufacturerName,
+        );
+        const manufacturerProductDesignation = findValue(
+            technicalDataSubmodelElements,
+            'ManufacturerProductDesignation',
+            SubmodelElementSemanticIdEnum.ManufacturerProductDesignation,
+        );
+        const manufacturerArticleNumber = findValue(
+            technicalDataSubmodelElements,
+            'ManufacturerArticleNumber',
+            SubmodelElementSemanticIdEnum.ManufacturerArticleNumber,
+        );
+
+        const manufacturerOrderCode = findValue(
+            technicalDataSubmodelElements,
+            'ManufacturerOrderCode',
+            SubmodelElementSemanticIdEnum.ManufacturerOrderCode,
+        );
+        const manufacturerLogo = findSubmodelElementByIdShort(
+            technicalDataSubmodelElements,
+            'ManufacturerLogo',
+            SubmodelElementSemanticIdEnum.ManufacturerLogo,
+        );
+
+        const productClassifications = findSubmodelElementByIdShort(
+            technicalDataSubmodelElements,
+            'ProductClassifications',
+            SubmodelElementSemanticIdEnum.ProductClassifications,
+        ) as SubmodelElementCollection;
+        const classifications: ProductClassification[] = [];
+        productClassifications?.value?.forEach((productClassification) => {
+            const submodelClassification = productClassification as SubmodelElementCollection;
+            if (submodelClassification?.value) {
                 const classification = {
                     ProductClassificationSystem:
                         findValue(
-                            productClassifications.value,
+                            submodelClassification.value,
                             'ProductClassificationSystem',
                             SubmodelElementSemanticIdEnum.ProductClassificationSystem,
                         ) || undefined,
                     ProductClassId:
                         findValue(
-                            productClassifications.value,
+                            submodelClassification.value,
                             'ProductClassId',
                             SubmodelElementSemanticIdEnum.ProductClassId,
                         ) || undefined,
                 };
                 classifications.push(classification);
-            } else {
-                productClassifications?.value?.forEach((productClassification) => {
-                    const submodelClassification = productClassification as SubmodelElementCollection;
-                    if (submodelClassification?.value) {
-                        const classification = {
-                            ProductClassificationSystem:
-                                findValue(
-                                    submodelClassification.value,
-                                    'ProductClassificationSystem',
-                                    SubmodelElementSemanticIdEnum.ProductClassificationSystem,
-                                ) || undefined,
-                            ProductClassId:
-                                findValue(
-                                    submodelClassification.value,
-                                    'ProductClassId',
-                                    SubmodelElementSemanticIdEnum.ProductClassId,
-                                ) || undefined,
-                        };
-                        // Filter out classifications without a ProductClassId
-                        if (!classification.ProductClassId) {
-                            return;
-                        }
-                        classifications.push(classification);
-                    }
-                });
             }
-            return {
-                manufacturerName: !manufacturerName || manufacturerName.trim() === '' ? undefined : manufacturerName,
-                manufacturerProductDesignation:
-                    !manufacturerProductDesignation || manufacturerProductDesignation.trim() === ''
-                        ? undefined
-                        : manufacturerProductDesignation,
-                productClassifications: classifications,
-                manufacturerArticleNumber:
-                    !manufacturerArticleNumber || manufacturerArticleNumber.trim() === ''
-                        ? undefined
-                        : manufacturerArticleNumber,
-                manufacturerOrderCode:
-                    !manufacturerOrderCode || manufacturerOrderCode.trim() === '' ? undefined : manufacturerOrderCode,
-                companyLogo: null,
-                markings: null,
-                manufacturerLogo: manufacturerLogo,
-            };
-        },
-        [findValue],
-    );
-
-    /**
-     * Prepare marking texts from the SubmodelElementCollection by extracting the 'MarkingName' properties.
-     * @param markings
-     */
-    const prepareMarkingTexts = (markings: SubmodelElementCollection | null): string[] => {
-        if (!markings?.value) return [];
-
-        const result: string[] = [];
-        markings.value.forEach((el) => {
-            Object.values(el || {}).forEach((marking) => {
-                Object.values(marking || {}).forEach((markingProperty: SubmodelElementChoice) => {
-                    if (markingProperty?.idShort === 'MarkingName' && (markingProperty as Property).value) {
-                        result.push((markingProperty as Property).value || '');
-                    }
-                });
-            });
         });
-        return result;
+        setOverviewData({
+            manufacturerName: manufacturerName ?? '-',
+            manufacturerProductDesignation: manufacturerProductDesignation ?? '-',
+            productClassifications: classifications,
+            manufacturerArticleNumber: manufacturerArticleNumber ?? '-',
+            manufacturerOrderCode: manufacturerOrderCode ?? '-',
+            companyLogo: null,
+            manufacturerLogo: manufacturerLogo,
+        });
     };
-
-    const prepareNameplateData = useCallback(
-        (
-            nameplateSubmodelElements: Array<SubmodelElementChoice>,
-            prevData?: Partial<OverviewData>,
-        ): Partial<OverviewData> => {
-            const manufacturerProductRoot = findValue(
-                nameplateSubmodelElements,
-                'ManufacturerProductRoot',
-                SubmodelElementSemanticIdEnum.ManufacturerProductRoot,
-            );
-            const manufacturerProductFamily = findValue(
-                nameplateSubmodelElements,
-                'ManufacturerProductFamily',
-                SubmodelElementSemanticIdEnum.ManufacturerProductFamily,
-            );
-            const manufacturerProductType = findValue(
-                nameplateSubmodelElements,
-                'ManufacturerProductType',
-                SubmodelElementSemanticIdEnum.ManufacturerProductType,
-            );
-            const markingsElement = findSubmodelElementByIdShort(
-                nameplateSubmodelElements,
-                'Markings',
-                SubmodelElementSemanticIdEnum.MarkingsV3,
-            ) as SubmodelElementCollection;
-
-            const markings = prepareMarkingTexts(markingsElement || null);
-
-            const companyLogo = findSubmodelElementByIdShort(
-                nameplateSubmodelElements,
-                'CompanyLogo',
-                SubmodelElementSemanticIdEnum.CompanyLogo,
-            );
-            const URIOfTheProduct = findValue(nameplateSubmodelElements, 'URIOfTheProducts', [
-                SubmodelElementSemanticIdEnum.URIOfTheProductV2,
-                SubmodelElementSemanticIdEnum.URIOfTheProductV3,
-            ]);
-            const manufacturerName = findValue(
-                nameplateSubmodelElements,
-                'ManufacturerName',
-                SubmodelElementSemanticIdEnum.ManufacturerName,
-            );
-            const manufacturerProductDesignation = findValue(
-                nameplateSubmodelElements,
-                'ManufacturerProductDesignation',
-                SubmodelElementSemanticIdEnum.ManufacturerProductDesignation,
-            );
-            const manufacturerArticleNumber = findValue(
-                nameplateSubmodelElements,
-                'ProductArticleNumberOfManufacturer',
-                SubmodelElementSemanticIdEnum.ManufacturerArticleNumber,
-            );
-            const manufacturerOrderCode = findValue(
-                nameplateSubmodelElements,
-                'OrderCodeOfManufacturer',
-                SubmodelElementSemanticIdEnum.ManufacturerOrderCode,
-            );
-            return {
-                ...prevData,
-                manufacturerName: prevData?.manufacturerName ? prevData.manufacturerName : (manufacturerName ?? '-'),
-                manufacturerProductDesignation: prevData?.manufacturerProductDesignation
-                    ? prevData.manufacturerProductDesignation
-                    : (manufacturerProductDesignation ?? '-'),
-                manufacturerArticleNumber: prevData?.manufacturerArticleNumber
-                    ? prevData.manufacturerArticleNumber
-                    : (manufacturerArticleNumber ?? '-'),
-                manufacturerOrderCode: prevData?.manufacturerOrderCode
-                    ? prevData.manufacturerOrderCode
-                    : (manufacturerOrderCode ?? '-'),
-                manufacturerProductRoot: manufacturerProductRoot ?? '-',
-                manufacturerProductFamily: manufacturerProductFamily ?? '-',
-                manufacturerProductType: manufacturerProductType ?? '-',
-                markings: markings,
-                manufacturerLogo: prevData?.manufacturerLogo || null,
-                companyLogo: companyLogo || null,
-                URIOfTheProduct: URIOfTheProduct || null,
-            };
-        },
-        [findValue, prepareMarkingTexts],
-    );
-
-    const overviewData = useMemo((): OverviewData | undefined => {
-        if (!props.submodels || props.submodels.length === 0) return undefined;
-
-        const technicalData = findSubmodelByIdOrSemanticId(
-            props.submodels,
-            SubmodelSemanticIdEnum.TechnicalDataV11,
-            'TechnicalData',
+    const prepareNameplateData = (nameplateSubmodelElements: Array<ISubmodelElement>) => {
+        const manufacturerProductRoot = findValue(
+            nameplateSubmodelElements,
+            'ManufacturerProductRoot',
+            SubmodelElementSemanticIdEnum.ManufacturerProductRoot,
         );
-        let data: Partial<OverviewData> | undefined;
-        if (technicalData?.submodelElements) {
-            data = prepareTechnicalDataSubmodel(technicalData.submodelElements);
-        }
-
-        const nameplate = findSubmodelByIdOrSemanticId(
-            props.submodels,
-            SubmodelSemanticIdEnum.NameplateV2,
-            'Nameplate',
+        const manufacturerProductFamily = findValue(
+            nameplateSubmodelElements,
+            'ManufacturerProductFamily',
+            SubmodelElementSemanticIdEnum.ManufacturerProductFamily,
         );
-        if (nameplate?.submodelElements) {
-            data = prepareNameplateData(nameplate.submodelElements, data);
-        }
-
-        return data as OverviewData | undefined;
-    }, [props.submodels, prepareTechnicalDataSubmodel, prepareNameplateData]);
+        const manufacturerProductType = findValue(
+            nameplateSubmodelElements,
+            'ManufacturerProductType',
+            SubmodelElementSemanticIdEnum.ManufacturerProductType,
+        );
+        const markings = findSubmodelElementByIdShort(
+            nameplateSubmodelElements,
+            'Markings',
+            SubmodelElementSemanticIdEnum.MarkingsV3,
+        );
+        const companyLogo = findSubmodelElementByIdShort(
+            nameplateSubmodelElements,
+            'CompanyLogo',
+            SubmodelElementSemanticIdEnum.CompanyLogo,
+        );
+        setOverviewData((prevData) => ({
+            ...prevData,
+            manufacturerProductRoot: manufacturerProductRoot ?? '-',
+            manufacturerProductFamily: manufacturerProductFamily ?? '-',
+            manufacturerProductType: manufacturerProductType ?? '-',
+            markings: markings as SubmodelElementCollection,
+            manufacturerLogo: prevData?.manufacturerLogo || null,
+            companyLogo: companyLogo || null,
+        }));
+    };
 
     const infoBoxStyle = {
         display: 'flex',
@@ -508,6 +417,15 @@ export function ProductOverviewCard(props: ProductOverviewCardProps) {
                                     </Box>
                                     <Divider sx={{ mb: 2 }} />
                                     <Box sx={{ display: 'flex', flexDirection: 'row', gap: '40px' }}>{productInfo}</Box>
+                                    <Box sx={{ display: 'flex', flexDirection: 'row', gap: '40px' }}>
+                                        {productInfo}
+                                        <CommercialDataBox
+                                            productURI={overviewData?.URIOfTheProduct ?? undefined}
+                                            commercialDataUrl={props.catalogConfig?.commercialData ?? undefined}
+                                            assetId={props.aas?.assetInformation.globalAssetId ?? undefined}
+                                            onProductUriRedirect={navigateToProduct}
+                                        />
+                                    </Box>
                                 </Box>
                             </>
                         )}

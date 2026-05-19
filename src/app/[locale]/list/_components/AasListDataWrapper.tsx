@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { CenteredLoadingSpinner } from 'components/basics/CenteredLoadingSpinner';
 import { useEnv } from 'app/EnvProvider';
 import { AasListComparisonHeader } from './AasListComparisonHeader';
-import { Box, Card, CardContent, IconButton, Typography } from '@mui/material';
+import { Box, Card, CardContent, IconButton, MenuItem, Select, Typography } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { SelectListSource } from './filter/SelectListSource';
@@ -36,6 +36,7 @@ export default function AasListDataWrapper({ hideRepoSelection }: AasListDataWra
     const [currentCursor, setCurrentCursor] = useState<string>();
     const [cursorHistory, setCursorHistory] = useState<(string | undefined)[]>([]);
     const [currentPage, setCurrentPage] = useState(0);
+    const [limit, setLimit] = useState(10);
 
     //Authentication
     const [needAuthentication, setNeedAuthentication] = useState<boolean>(false);
@@ -119,8 +120,22 @@ export default function AasListDataWrapper({ hideRepoSelection }: AasListDataWra
 
     const pagination = (
         <Box display="flex" justifyContent="flex-end" alignItems="center" marginTop={0}>
-            <Typography paddingRight="1.625rem" fontSize="0.75rem">
-                {t('page') + ' ' + (currentPage + 1)}
+            <Typography fontSize="0.75rem" paddingRight={0.5}>
+                Rows per page:
+            </Typography>
+            <Select
+                disableUnderline
+                variant="standard"
+                value={limit}
+                onChange={(e) => setLimit(Number(e.target.value))}
+                sx={{ fontSize: '0.75rem' }}
+            >
+                {[10, 20, 50].map((value) => (
+                    <MenuItem value={value}>{value}</MenuItem>
+                ))}
+            </Select>
+            <Typography paddingX="1.625rem" fontSize="0.75rem">
+                {t('page') + ': ' + (currentPage + 1)}
             </Typography>
             <IconButton onClick={handleGoBack} disabled={currentPage === 0} data-testid="list-back-button">
                 <ArrowBackIosNewIcon fontSize="small" />

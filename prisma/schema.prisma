@@ -68,4 +68,8 @@ model SecuritySettingsProxy {
     authTag String
     infrastructure MnestixInfrastructure @relation(fields: [infrastructureId], references: [id], onDelete: Cascade)
     infrastructureId String @unique
+  aasSearcher String?
+  image String?
+  name String? @unique
+  commercialData String?
 }

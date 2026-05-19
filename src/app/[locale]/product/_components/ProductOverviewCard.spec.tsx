@@ -88,18 +88,12 @@ jest.mock('./../../../../lib/util/SubmodelResolverUtil', () => ({
                 modelType: { name: 'SubmodelElementCollection' },
                 value: [
                     {
-                        idShort: 'Marking',
-                        modelType: { name: 'SubmodelElementCollection' },
-                        value: [
-                            {
-                                idShort: 'MarkingName',
-                                modelType: { name: 'Property' },
-                                value: 'CE',
-                            },
-                        ],
+                        idShort: 'CEMarking',
+                        modelType: { name: 'Property' },
+                        value: 'CE',
                     },
                 ],
-            };
+            } as unknown as SubmodelElementCollection;
         }
         if (idShort === 'CompanyLogo' || idShort === 'ManufacturerLogo') {
             return {

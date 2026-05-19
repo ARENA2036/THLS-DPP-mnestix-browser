@@ -11,6 +11,10 @@ export type DataSourceFormData = {
     id: string;
     url: string;
     type: string;
+    aasSearcher?: string;
+    image?: string;
+    name?: string;
+    commercialData?: string;
 };
 
 type PrismaTransaction = Prisma.TransactionClient;

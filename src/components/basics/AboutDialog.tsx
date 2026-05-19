@@ -22,7 +22,7 @@ export function AboutDialog(props: AboutDialogProps) {
                     <Box display="flex" flexDirection="row" justifyContent="space-between">
                         <Box>
                             <Typography variant="h2" color={'primary'}>
-                                {t('about')}
+                                {t('aboutHeader')}
                             </Typography>
                             <Typography color={'primary'}>MIT License</Typography>
                             <Typography color={'primary'}>Copyright (c) 2024 XITASO GmbH</Typography>

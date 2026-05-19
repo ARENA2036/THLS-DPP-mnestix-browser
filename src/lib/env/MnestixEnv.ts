@@ -18,6 +18,8 @@ const process_env: Record<string, string | undefined> = typeof process !== 'unde
 
 const privateEnvs = mapEnvVariables(['MNESTIX_BACKEND_API_KEY', 'BASYX_RBAC_SEC_SM_API_URL'] as const);
 
+const cfgBuildEnvs = mapEnvVariables(['BUILD_DATETIME'] as const);
+
 const privateAzure = mapEnvVariables([
     'AD_CLIENT_ID',
     'AD_TENANT_ID',

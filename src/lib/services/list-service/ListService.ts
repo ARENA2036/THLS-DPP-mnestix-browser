@@ -136,9 +136,13 @@ export class ListService {
                 let hrefValue = descriptor.endpoints[0].protocolInformation.href;
                 if (hrefValue.startsWith('/')) {
                     const host = new URL(this.repositoryWithInfrastructure.url).origin;
-                    logWarn(this.log, 'getAasListEntities', `Descriptor with id "${descriptor.id}" does not contain a standardconform URL, trying a workaround. Please update your data.`);
+                    logWarn(
+                        this.log,
+                        'getAasListEntities',
+                        `Descriptor with id "${descriptor.id}" does not contain a standardconform URL, trying a workaround. Please update your data.`,
+                    );
                     hrefValue = host.concat(hrefValue);
-                }   
+                }
 
                 const endpoint = new URL(hrefValue);
                 const aasResponse = await targetAasRegistryClient.getAssetAdministrationShellFromEndpoint(endpoint);
@@ -160,21 +164,39 @@ export class ListService {
             assetAdministrationShells = shells;
             nextCursor = paging_metadata?.cursor;
         }
+        try {
+            const { result: assetAdministrationShells, paging_metadata } = response.result;
+            const nextCursor = paging_metadata.cursor;
 
-        const aasListDtos = assetAdministrationShells
-            .filter((aas) => {
-                const aasToRemove = aas.assetInformation?.specificAssetIds?.find(
-                    (specificAssetId) => specificAssetId.name === 'aasListFilterId',
-                );
-                return !aasToRemove;
-            })
-            .map((aas) => ({
-                aasId: aas.id,
-                assetId: aas.assetInformation?.globalAssetId ?? '',
-                thumbnail: aas.assetInformation?.defaultThumbnail?.path ?? '',
-            }));
+            const aasListDtos = assetAdministrationShells
+                .filter((aas) => {
+                    const aasToRemove = aas.assetInformation?.specificAssetIds?.find(
+                        (specificAssetId) => specificAssetId.name === 'aasListFilterId',
+                    );
+                    return !aasToRemove;
+                })
+                .map((aas) => ({
+                    aasId: aas.id,
+                    assetId: aas.assetInformation?.globalAssetId ?? '',
+                    thumbnail: aas.assetInformation?.defaultThumbnail?.path ?? '',
+                }));
+            const aasListDtos = assetAdministrationShells
+                .filter((aas) => {
+                    const aasToRemove = aas.assetInformation.specificAssetIds?.find(
+                        (specificAssetId) => specificAssetId.name === 'aasListFilterId',
+                    );
+                    return !aasToRemove;
+                })
+                .map((aas) => ({
+                    aasId: aas.id,
+                    assetId: aas.assetInformation?.globalAssetId ?? '',
+                    thumbnail: aas.assetInformation?.defaultThumbnail?.path ?? '',
+                }));
 
-        return { success: true, entities: aasListDtos, cursor: nextCursor };
+            return { success: true, entities: aasListDtos, cursor: nextCursor };
+        } catch (error) {
+            return { success: false, error: { message: 'Error while processing AAS list', details: error } };
+        }
     }
 
     async getNameplateValuesForAAS(aasId: string): Promise<NameplateValuesDto> {
@@ -195,6 +217,7 @@ export class ListService {
             const submodelId = reference.keys[0].value;
             const submodelRepositoryClient = this.getTargetSubmodelRepositoryClient();
             const submodelResponse = await submodelRepositoryClient.getSubmodelMetaData(submodelId);
+            const submodelResponse = await this.submodelRepositoryClient.getSubmodelById(submodelId);
             if (submodelResponse.isSuccess) {
                 const semanticId = submodelResponse.result?.semanticId?.keys[0]?.value;
                 const nameplateKeys = [
@@ -230,6 +253,14 @@ export class ListService {
                         success: true,
                         manufacturerName: extractValue(manufacturerName.result),
                         manufacturerProductDesignation: extractValue(manufacturerProduct.result),
+                        manufacturerName:
+                            typeof manufacturerName.result === 'string'
+                                ? [{ en: manufacturerName.result }]
+                                : manufacturerName.result,
+                        manufacturerProductDesignation:
+                            typeof manufacturerProduct.result === 'string'
+                                ? [{ en: manufacturerProduct.result }]
+                                : manufacturerProduct.result,
                     };
                 }
             }

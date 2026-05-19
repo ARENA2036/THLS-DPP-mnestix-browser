@@ -11,9 +11,7 @@ import { isValidUrl } from 'lib/util/UrlUtil';
 import { useState, useEffect } from 'react';
 import { mapFileDtoToBlob } from 'lib/util/apiResponseWrapper/apiResponseWrapper';
 import { ListEntityDto } from 'lib/services/list-service/ListService';
-import { getNameplateValuesForAAS } from 'lib/services/list-service/aasListApiActions';
-import { MultiLanguageValueOnly } from 'lib/api/basyx-v3/types';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { encodeBase64 } from 'lib/util/Base64Util';
 import useSWR from 'swr';
 import { useEnv } from 'app/EnvProvider';
@@ -23,6 +21,11 @@ type AasTableRowProps = {
     repository: RepositoryWithInfrastructure;
     connectionType?: 'repository' | 'registry';
     aasListEntry: ListEntityDto;
+    enrichedData?: {
+        manufacturerName?: string;
+        productDesignation?: string;
+    };
+    enrichedDataLoading?: boolean;
     comparisonFeatureFlag: boolean | undefined;
     checkBoxDisabled: (aasId: string | undefined) => boolean | undefined;
     selectedAasList: string[] | undefined;
@@ -40,6 +43,8 @@ export const AasListTableRow = (props: AasTableRowProps) => {
         repository,
         connectionType,
         aasListEntry,
+        enrichedData,
+        enrichedDataLoading,
         comparisonFeatureFlag,
         checkBoxDisabled,
         selectedAasList,
@@ -161,18 +166,17 @@ export const AasListTableRow = (props: AasTableRowProps) => {
                 />
             </PictureTableCell>
             <TableCell data-testid="list-manufacturer-name" align="left" sx={tableBodyText}>
-                {!isNameplateValueLoading ? (
-                    nameplateValues?.manufacturerName && translateListText(nameplateValues.manufacturerName)
-                ) : (
+                {enrichedDataLoading ? (
                     <Skeleton variant="text" width="80%" height={26} />
+                ) : (
+                    enrichedData?.manufacturerName && enrichedData.manufacturerName
                 )}
             </TableCell>
             <TableCell data-testid="list-product-designation" align="left" sx={tableBodyText}>
-                {!isNameplateValueLoading ? (
-                    nameplateValues &&
-                    tooltipText(translateListText(nameplateValues.manufacturerProductDesignation), 80)
-                ) : (
+                {enrichedDataLoading ? (
                     <Skeleton variant="text" width="80%" height={26} />
+                ) : (
+                    enrichedData?.productDesignation && tooltipText(enrichedData.productDesignation, 80)
                 )}
             </TableCell>
             <TableCell data-testid="list-assetId" align="left" sx={tableBodyText}>

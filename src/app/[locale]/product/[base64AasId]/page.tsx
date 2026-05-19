@@ -1,17 +1,51 @@
 'use client';
 
-import { Box } from '@mui/material';
+import { Box, Skeleton } from '@mui/material';
 import { safeBase64Decode } from 'lib/util/Base64Util';
 import { useParams, useSearchParams } from 'next/navigation';
 import { NoSearchResult } from 'components/basics/detailViewBasics/NoSearchResult';
 import { CurrentAasContextProvider } from 'components/contexts/CurrentAasContext';
 import { useShowError } from 'lib/hooks/UseShowError';
-import { ProductViewer } from '../_components/ProductViewer';
+import { BreadcrumbLink, ProductViewer } from '../_components/ProductViewer';
+import { getRepositoryConfigurationByRepositoryUrlAction } from 'lib/services/database/connectionServerActions';
+import { useTranslations } from 'next-intl';
+import { MnestixConnection } from '@prisma/client';
+
+const pageStyles = {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '30px',
+    alignItems: 'center',
+    marginBottom: '50px',
+    marginTop: '20px',
+};
+
+const viewerStyles = {
+    maxWidth: '1125px',
+    width: '90%',
+    margin: '0 auto',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '20px',
+};
+
+function BreadcrumbsSkeleton() {
+    return (
+        <Box display="flex" alignItems="center">
+            <Skeleton variant="circular" width={20} height={20} />
+            <Skeleton variant="text" width={16} height={20} sx={{ mx: 1 }} />
+            <Skeleton variant="text" width={120} height={20} />
+            <Skeleton variant="text" width={16} height={20} sx={{ mx: 1 }} />
+            <Skeleton variant="text" width={100} height={20} />
+        </Box>
+    );
+}
 
 export default function Page() {
     const { showError } = useShowError();
     const params = useParams<{ base64AasId: string }>();
     const base64AasId = decodeURIComponent(params.base64AasId).replace(/=+$|[%3D]+$/, '');
+    const t = useTranslations('pages.catalog');
     const encodedRepoUrl = useSearchParams().get('repoUrl');
     const repoUrl = encodedRepoUrl ? decodeURI(encodedRepoUrl) : undefined;
     const infrastructureName = useSearchParams().get('infrastructure') || undefined;
@@ -40,10 +74,146 @@ export default function Page() {
             </Box>
         );
     }
+    const [filteredSubmodels, setFilteredSubmodels] = useState<SubmodelOrIdReference[]>([]);
+    const [breadcrumbLinks, setBreadcrumbLinks] = useState<BreadcrumbLink[]>([]);
+    const [isBreadcrumbsLoading, setIsBreadcrumbsLoading] = useState(true);
+    const [manufacturerInfo, setManufacturerInfo] = useState<MnestixConnection>();
+
+    const { aasFromContext, isLoadingAas, aasOriginUrl, submodels, isSubmodelsLoading } = useAasLoader(
+        base64AasId,
+        repoUrl,
+    );
+
+    useEffect(() => {
+        if (submodels) {
+            const filtered = submodels.filter(
+                (submodel) =>
+                    !(
+                        checkIfSubmodelHasIdShortOrSemanticId(submodel, undefined, 'AasDesignerChangelog') ||
+                        checkIfSubmodelHasIdShortOrSemanticId(
+                            submodel,
+                            SubmodelSemanticIdEnum.NameplateV1,
+                            'Nameplate',
+                        ) ||
+                        checkIfSubmodelHasIdShortOrSemanticId(
+                            submodel,
+                            SubmodelSemanticIdEnum.NameplateV2,
+                            'Nameplate',
+                        ) ||
+                        checkIfSubmodelHasIdShortOrSemanticId(
+                            submodel,
+                            SubmodelSemanticIdEnum.NameplateV3,
+                            'Nameplate',
+                        ) ||
+                        checkIfSubmodelHasIdShortOrSemanticId(
+                            submodel,
+                            SubmodelSemanticIdEnum.NameplateV4,
+                            'Nameplate',
+                        ) ||
+                        checkIfSubmodelHasIdShortOrSemanticId(submodel, undefined, 'VEC_SML')
+                    ),
+            );
+            setFilteredSubmodels(filtered);
+        }
+    }, [submodels]);
+
+    useEffect(() => {
+        const fetchManufacturerData = async () => {
+            setIsBreadcrumbsLoading(true);
+            const newBreadcrumbLinks: Array<{ label: string; path: string }> = [];
+            if (aasOriginUrl) {
+                try {
+                    // Get manufacturer information from Prisma database
+                    const manufacturerInfo = await getRepositoryConfigurationByRepositoryUrlAction(aasOriginUrl);
+
+                    if (manufacturerInfo && manufacturerInfo.name) {
+                        const manufacturerName = manufacturerInfo.name;
+                        newBreadcrumbLinks.push({
+                            label: manufacturerName.charAt(0).toUpperCase() + manufacturerName.slice(1),
+                            path: `/marketplace/catalog?manufacturer=${encodeURIComponent(manufacturerName)}`,
+                        });
+                        setManufacturerInfo(manufacturerInfo);
+                    } else {
+                        newBreadcrumbLinks.push({
+                            label: t('manufacturerCatalog'),
+                            path: `/marketplace/catalog?repoUrl=${encodeURIComponent(aasOriginUrl)}`,
+                        });
+                    }
+                } catch (error) {
+                    console.error('Error fetching manufacturer info:', error);
+                    // Fallback on error
+                    newBreadcrumbLinks.push({
+                        label: t('manufacturerCatalog'),
+                        path: `/marketplace/catalog?repoUrl=${encodeURIComponent(aasOriginUrl)}`,
+                    });
+                }
+            }
+
+            const nameplate = findSubmodelByIdOrSemanticId(submodels, SubmodelSemanticIdEnum.NameplateV2, 'Nameplate');
+
+            if (nameplate) {
+                const productBreadcrumbProperties = [
+                    {
+                        idShort: 'ManufacturerProductRoot',
+                        semanticId: SubmodelElementSemanticIdEnum.ManufacturerProductRoot,
+                    },
+                    {
+                        idShort: 'ManufacturerProductFamily',
+                        semanticId: SubmodelElementSemanticIdEnum.ManufacturerProductFamily,
+                    },
+                    {
+                        idShort: 'ManufacturerProductType',
+                        semanticId: SubmodelElementSemanticIdEnum.ManufacturerProductType,
+                    },
+                ];
+
+                productBreadcrumbProperties.forEach((prop) => {
+                    const value = findValueByIdShort(nameplate.submodelElements, prop.idShort, prop.semanticId, locale);
+                    if (value && !newBreadcrumbLinks.some((link) => link.label === value)) {
+                        newBreadcrumbLinks.push({
+                            label: value,
+                            path: '',
+                        });
+                    }
+                });
+            }
+
+            setBreadcrumbLinks(newBreadcrumbLinks);
+            setIsBreadcrumbsLoading(false);
+        };
+
+        fetchManufacturerData();
+    }, [submodels, aasOriginUrl]);
 
     return (
-        <CurrentAasContextProvider aasId={aasIdDecoded} repoUrl={repoUrl} infrastructureName={infrastructureName}>
-            <ProductViewer />
-        </CurrentAasContextProvider>
+        <Box sx={pageStyles}>
+            {aasFromContext || isLoadingAas ? (
+                <Box sx={viewerStyles}>
+                    <Box>
+                        {isBreadcrumbsLoading ? <BreadcrumbsSkeleton /> : <Breadcrumbs links={breadcrumbLinks} />}
+                    </Box>
+                    <ProductOverviewCard
+                        aas={aasFromContext}
+                        submodels={submodels}
+                        productImage={aasFromContext?.assetInformation?.defaultThumbnail?.path}
+                        isLoading={isLoadingAas || isSubmodelsLoading || isBreadcrumbsLoading}
+                        isAccordion={isMobile}
+                        repositoryURL={aasOriginUrl}
+                        displayName={
+                            aasFromContext?.displayName ? getTranslationText(aasFromContext.displayName, locale) : null
+                        }
+                        catalogConfig={manufacturerInfo}
+                    />
+                    <SubmodelsOverviewCard
+                        submodelIds={filteredSubmodels}
+                        submodelsLoading={isSubmodelsLoading}
+                        firstSubmodelIdShort="TechnicalData"
+                        disableHeadline={true}
+                    />
+                </Box>
+            ) : (
+                <NoSearchResult base64AasId={safeBase64Decode(base64AasId)} />
+            )}
+        </Box>
     );
 }
