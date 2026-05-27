@@ -115,7 +115,8 @@ export default function MainMenu() {
         basicMenu.push(templateItemToAdd);
     }
 
-    if (checkIfRouteIsAllowed('/settings')) {
+    // HACK: Temporary workaround to hide the settings page until auth is implemented correctly.
+    if (checkIfRouteIsAllowed('/settings') && !env.DISABLE_SETTINGS) {
         const settingsMenu = {
             label: t('settings'),
             to: '/settings',

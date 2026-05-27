@@ -86,6 +86,7 @@ const otherVariables = {
             'SERIALIZATION_API_URL',
             'IMPRINT_URL',
             'DATA_PRIVACY_URL',
+            'DISABLE_SETTINGS',
         ] as const,
         removeTrailingSlash,
     ),
@@ -94,6 +95,8 @@ const otherVariables = {
     SUBMODEL_WHITELIST: process_env.SUBMODEL_WHITELIST,
     FILE_UPLOAD_BLUEPRINTS_KBL: process_env.FILE_UPLOAD_BLUEPRINTS_KBL,
     FILE_UPLOAD_BLUEPRINTS_VEC: process_env.FILE_UPLOAD_BLUEPRINTS_VEC,
+    // Disables the settings page until auth is implemented correctly. This is a temporary workaround and should be removed once auth is in place.
+    DISABLE_SETTINGS: process_env.DISABLE_SETTINGS === 'true',
     // Used to override the URL matching in getInfrastructureBySubmodelRepositoryUrl for local dev environments
     OVERRIDE_RC_ATTACHMENT_REPO: removeTrailingSlash(process_env.OVERRIDE_RC_ATTACHMENT_REPO),
 };
