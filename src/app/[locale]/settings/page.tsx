@@ -11,6 +11,7 @@ import MnestixInfrastructureCard from 'app/[locale]/settings/_components/mnestix
 import { useEnv } from 'app/EnvProvider';
 import { RuleSettings } from 'app/[locale]/settings/_components/role-settings/RuleSettings';
 import { useTranslations } from 'next-intl';
+import { redirect } from 'next/navigation';
 
 enum settingsPageTypes {
     ID_STRUCTURE,
@@ -22,6 +23,11 @@ export default function Page() {
     const isMobile = useIsMobile();
     const env = useEnv();
     const t = useTranslations('pages.settings');
+
+    // HACK: Temporary workaround to hide the settings page until auth is implemented correctly
+    if (env.DISABLE_SETTINGS) {
+        redirect('/');
+    }
 
     const settingsTabItems: TabSelectorItem[] = [
         {
