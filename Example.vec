@@ -41,18 +41,22 @@
     </Specification>
     <Specification id="Na504fba199e67b6e122f3f1XNa504fba199e67b6e122f3ea00_Spec" xsi:type="vec:EEComponentSpecification">
       <Identification>Stecker Modul_EEComponentSpec</Identification>
+      <DescribedPart>EEComponent_SteckerModul</DescribedPart>
       <SpecialPartType>sensor</SpecialPartType>
     </Specification>
     <Specification id="Na504fba199e67b6e122f76bXNa504fba199e67b6e122f76400_Spec" xsi:type="vec:EEComponentSpecification">
       <Identification>Stecker 10pol_EEComponentSpec</Identification>
+      <DescribedPart>EEComponent_Stecker10pol</DescribedPart>
       <SpecialPartType>sensor</SpecialPartType>
     </Specification>
     <Specification id="Na504fba199e67b6e122f537XNa504fba199e67b6e122f53000_Spec" xsi:type="vec:EEComponentSpecification">
       <Identification>Stecker 1pol_EEComponentSpec</Identification>
+      <DescribedPart>EEComponent_Stecker1pol</DescribedPart>
       <SpecialPartType>sensor</SpecialPartType>
     </Specification>
     <Specification id="Na504fba199e67b6e122f4a3XNa504fba199e67b6e122f49c00_Spec" xsi:type="vec:EEComponentSpecification">
       <Identification>Stecker 2pol_EEComponentSpec</Identification>
+      <DescribedPart>EEComponent_Stecker2pol</DescribedPart>
       <SpecialPartType>sensor</SpecialPartType>
     </Specification>
     <Specification id="ConnectionSpecification" xsi:type="vec:ConnectionSpecification">
@@ -216,6 +220,7 @@
       <Identification>RC_Test</Identification>
       <Component id="Na504fba199e67b6e122f3f1XNa504fba199e67b6e122f3ea00_PartOccurance" xsi:type="vec:PartOccurrence">
         <Identification>Stecker Modul_PartOcccurrence</Identification>
+        <Part>EEComponent_SteckerModul</Part>
         <RealizedUsageNode>Na504fba199e67b6e122f3f1XNa504fba199e67b6e122f3ea00_UsageNode</RealizedUsageNode>
         <Role id="Na504fba199e67b6e122f3f1XNa504fba199e67b6e122f3ea00" xsi:type="vec:EEComponentRole">
           <Identification>Stecker Modul</Identification>
@@ -226,6 +231,7 @@
       </Component>
       <Component id="Na504fba199e67b6e122f76bXNa504fba199e67b6e122f76400_PartOccurance" xsi:type="vec:PartOccurrence">
         <Identification>Stecker 10pol_PartOcccurrence</Identification>
+        <Part>EEComponent_Stecker10pol</Part>
         <RealizedUsageNode>Na504fba199e67b6e122f76bXNa504fba199e67b6e122f76400_UsageNode</RealizedUsageNode>
         <Role id="Na504fba199e67b6e122f76bXNa504fba199e67b6e122f76400" xsi:type="vec:EEComponentRole">
           <Identification>Stecker 10pol</Identification>
@@ -236,6 +242,7 @@
       </Component>
       <Component id="Na504fba199e67b6e122f537XNa504fba199e67b6e122f53000_PartOccurance" xsi:type="vec:PartOccurrence">
         <Identification>Stecker 1pol_PartOcccurrence</Identification>
+        <Part>EEComponent_Stecker1pol</Part>
         <RealizedUsageNode>Na504fba199e67b6e122f537XNa504fba199e67b6e122f53000_UsageNode</RealizedUsageNode>
         <Role id="Na504fba199e67b6e122f537XNa504fba199e67b6e122f53000" xsi:type="vec:EEComponentRole">
           <Identification>Stecker 1pol</Identification>
@@ -246,6 +253,7 @@
       </Component>
       <Component id="Na504fba199e67b6e122f4a3XNa504fba199e67b6e122f49c00_PartOccurance" xsi:type="vec:PartOccurrence">
         <Identification>Stecker 2pol_PartOcccurrence</Identification>
+        <Part>EEComponent_Stecker2pol</Part>
         <RealizedUsageNode>Na504fba199e67b6e122f4a3XNa504fba199e67b6e122f49c00_UsageNode</RealizedUsageNode>
         <Role id="Na504fba199e67b6e122f4a3XNa504fba199e67b6e122f49c00" xsi:type="vec:EEComponentRole">
           <Identification>Stecker 2pol</Identification>
@@ -257,6 +265,7 @@
     </Specification>
     <Specification id="Na504fba199eb9ff9892f259XNa504fba199eb9ff9892f25200" xsi:type="vec:WireSpecification">
       <Identification>Koax-301</Identification>
+      <DescribedPart>helukabel_400189</DescribedPart>
       <WireElementSpecification>Na504fba199eb9ff9892f1f9XNa504fba199eb9ff9892f1f200</WireElementSpecification>
       <WireElement id="Na504fba199eb9ff9892f259XNa504fba199eb9ff9892f25200_WireElement">
         <Identification>Koax-301_WireElement</Identification>
@@ -265,6 +274,7 @@
     </Specification>
     <Specification id="Ma66122518a82ccafb1840eXMa66122518a82ccafb1840d00" xsi:type="vec:WireSpecification">
       <Identification>ETHERNET 2x0.35 UTP</Identification>
+      <DescribedPart>bedia-kabel_flry-a-2x035</DescribedPart>
       <WireElementSpecification>Na5206e3187e73b9ff44c823XNa5206e3187e73b9ff44c82200</WireElementSpecification>
       <WireElement id="Ma66122518a82ccafb1840eXMa66122518a82ccafb1840d00_WireElement">
         <Identification>ETHERNET 2x0.35 UTP_WireElement</Identification>
@@ -301,6 +311,7 @@
     <Specification id="Na504fba199eb9ff9892e06cXNa504fba199eb9ff9892e06500_CoreSpecification" xsi:type="vec:CoreSpecification"/>
     <Specification id="Na504fba199eb9ff9892e3d8XNa504fba199eb9ff9892e3d100_WireSpecification" xsi:type="vec:WireSpecification">
       <Identification>FLRY_1.5_WireSpecification</Identification>
+      <DescribedPart>helukabel_28529</DescribedPart>
       <WireElementSpecification>Na504fba199eb9ff9892e3d8XNa504fba199eb9ff9892e3d100</WireElementSpecification>
       <WireElement id="Na504fba199eb9ff9892e3d8XNa504fba199eb9ff9892e3d100_WireElement">
         <Identification>FLRY_1.5_WireElement</Identification>
@@ -309,6 +320,7 @@
     </Specification>
     <Specification id="Na504fba199eb9ff9892e06cXNa504fba199eb9ff9892e06500_WireSpecification" xsi:type="vec:WireSpecification">
       <Identification>FLRY_0.13_WireSpecification</Identification>
+      <DescribedPart>leonicables_FLCUAG01RY-013A</DescribedPart>
       <WireElementSpecification>Na504fba199eb9ff9892e06cXNa504fba199eb9ff9892e06500</WireElementSpecification>
       <WireElement id="Na504fba199eb9ff9892e06cXNa504fba199eb9ff9892e06500_WireElement">
         <Identification>FLRY_0.13_WireElement</Identification>
@@ -741,6 +753,7 @@
       <Identification>RC_Test</Identification>
       <Component id="Na504fba199e67b6e127663bXNa504fba199e67b6e127663410Na504fba199e67b6e1276634_PartOccurrence" xsi:type="vec:PartOccurrence">
         <Identification>TE_1418796-3_2.8(AMPMCP)_2WAY_1ROW_FEMALE_PartOccurrence</Identification>
+        <Part>Na504fba199e67b6e1276416XNa504fba199e67b6e127640f00_14187963_NULL_ConnectorHousing</Part>
         <Role id="Na504fba199e67b6e127663bXNa504fba199e67b6e127663400" xsi:type="vec:ConnectorHousingRole">
           <Identification>TE_1418796-3_2.8(AMPMCP)_2WAY_1ROW_FEMALE</Identification>
           <ConnectorHousingSpecification>Na504fba199e67b6e1276416XNa504fba199e67b6e127640f00</ConnectorHousingSpecification>
@@ -761,6 +774,7 @@
       </Component>
       <Component id="Na504fba199e67b6e1231320XNa504fba199e67b6e123131910Na504fba199e67b6e1231319_PartOccurrence" xsi:type="vec:PartOccurrence">
         <Identification>TE_2470646-9_MQS_18WAY_2ROW_FEMALE_UNSEALED_PartOccurrence</Identification>
+        <Part>Na52040318fa3ea7b667f910XNa52040318fa3ea7b667f90900_MQS_18POS_NULL_ConnectorHousing</Part>
         <Role id="Na504fba199e67b6e1231320XNa504fba199e67b6e123131900" xsi:type="vec:ConnectorHousingRole">
           <Identification>TE_2470646-9_MQS_18WAY_2ROW_FEMALE_UNSEALED</Identification>
           <ConnectorHousingSpecification>Na52040318fa3ea7b667f910XNa52040318fa3ea7b667f90900</ConnectorHousingSpecification>
@@ -845,6 +859,7 @@
       </Component>
       <Component id="Na504fba199e67b6e1240fe2XNa504fba199e67b6e1240fdb10Na504fba199e67b6e1240fdb_PartOccurrence" xsi:type="vec:PartOccurrence">
         <Identification>TE-2470649-9_2.8(MCP)_4WAY_1ROW_FEMALE_UNSEALED_PartOccurrence</Identification>
+        <Part>Na660fb818f283ad76244f46XNa660fb818f283ad76244f3f00_AMP MCP28_4Pos_NULL_ConnectorHousing</Part>
         <Role id="Na504fba199e67b6e1240fe2XNa504fba199e67b6e1240fdb00" xsi:type="vec:ConnectorHousingRole">
           <Identification>TE-2470649-9_2.8(MCP)_4WAY_1ROW_FEMALE_UNSEALED</Identification>
           <ConnectorHousingSpecification>Na660fb818f283ad76244f46XNa660fb818f283ad76244f3f00</ConnectorHousingSpecification>
@@ -873,6 +888,7 @@
       </Component>
       <Component id="Na504fba199e67b6e12a5ec1XNa504fba199e67b6e12a5eba10Na504fba199e67b6e12a5eba_PartOccurrence" xsi:type="vec:PartOccurrence">
         <Identification>TE_2302475-1_NANOMQS_COD A_0.5mm_10 WAY_2 ROW_FEMALE_UNSEALED_PartOccurrence</Identification>
+        <Part>Oa504fba199e17c50476fc467XOa504fba199e17c50476fc46100_23024751_NULL_ConnectorHousing</Part>
         <Role id="Na504fba199e67b6e12a5ec1XNa504fba199e67b6e12a5eba00" xsi:type="vec:ConnectorHousingRole">
           <Identification>TE_2302475-1_NANOMQS_COD A_0.5mm_10 WAY_2 ROW_FEMALE_UNSEALED</Identification>
           <ConnectorHousingSpecification>Oa504fba199e17c50476fc467XOa504fba199e17c50476fc46100</ConnectorHousingSpecification>
@@ -925,6 +941,7 @@
       </Component>
       <Component id="Na504fba199e67b6e1265ef3XNa504fba199e67b6e1265eec10Na504fba199e67b6e1265eec_PartOccurrence" xsi:type="vec:PartOccurrence">
         <Identification>Minicoax_4Pos_PartOccurrence</Identification>
+        <Part>Na660fb818f283ad762310aaXNa660fb818f283ad762310a300_Minicoax_4Pos_NULL_ConnectorHousing</Part>
         <Role id="Na504fba199e67b6e1265ef3XNa504fba199e67b6e1265eec00" xsi:type="vec:ConnectorHousingRole">
           <Identification>Minicoax_4Pos</Identification>
           <ConnectorHousingSpecification>Na660fb818f283ad762310aaXNa660fb818f283ad762310a300</ConnectorHousingSpecification>
@@ -969,6 +986,7 @@
       </Component>
       <Component id="Na504fba199e67b6e12563f9XNa504fba199e67b6e12563f210Na504fba199e67b6e12563f2_PartOccurrence" xsi:type="vec:PartOccurrence">
         <Identification>TE_2-2310137-1_Minicoax_1Pol_PartOccurrence</Identification>
+        <Part>Na504fba199e67b6e1255ef4XNa504fba199e67b6e1255eed00_223101371_NULL_ConnectorHousing</Part>
         <Role id="Na504fba199e67b6e12563f9XNa504fba199e67b6e12563f200" xsi:type="vec:ConnectorHousingRole">
           <Identification>TE_2-2310137-1_Minicoax_1Pol</Identification>
           <ConnectorHousingSpecification>Na504fba199e67b6e1255ef4XNa504fba199e67b6e1255eed00</ConnectorHousingSpecification>
@@ -985,6 +1003,7 @@
       </Component>
       <Component id="Na504fba199eb9ff9892df6aXNa504fba199eb9ff9892df6400_PartOccurrence" xsi:type="vec:PartOccurrence">
         <Identification>20085_PartOccurrence</Identification>
+        <Part>leonicables_FLCUAG01RY-013A</Part>
         <Role id="Na504fba199eb9ff9892df6aXNa504fba199eb9ff9892df6400" xsi:type="vec:WireRole">
           <Identification>20085</Identification>
           <WireSpecification>Na504fba199eb9ff9892e06cXNa504fba199eb9ff9892e06500_WireSpecification</WireSpecification>
@@ -997,6 +1016,7 @@
       </Component>
       <Component id="Na504fba199eb9ff9892e1b7XNa504fba199eb9ff9892e1b100_PartOccurrence" xsi:type="vec:PartOccurrence">
         <Identification>20086_PartOccurrence</Identification>
+        <Part>helukabel_28529</Part>
         <Role id="Na504fba199eb9ff9892e1b7XNa504fba199eb9ff9892e1b100" xsi:type="vec:WireRole">
           <Identification>20086</Identification>
           <WireSpecification>Na504fba199eb9ff9892e3d8XNa504fba199eb9ff9892e3d100_WireSpecification</WireSpecification>
@@ -1009,6 +1029,7 @@
       </Component>
       <Component id="Na504fba199eb9ff9892e2c2XNa504fba199eb9ff9892e2bc00_PartOccurrence" xsi:type="vec:PartOccurrence">
         <Identification>20087_PartOccurrence</Identification>
+        <Part>helukabel_28529</Part>
         <Role id="Na504fba199eb9ff9892e2c2XNa504fba199eb9ff9892e2bc00" xsi:type="vec:WireRole">
           <Identification>20087</Identification>
           <WireSpecification>Na504fba199eb9ff9892e3d8XNa504fba199eb9ff9892e3d100_WireSpecification</WireSpecification>
@@ -1021,6 +1042,7 @@
       </Component>
       <Component id="Na504fba199eb9ff9892d2f1XNa504fba199eb9ff9892d2e300_PartOccurrence" xsi:type="vec:PartOccurrence">
         <Identification>ETHERNET 2x0.35 UTP_PartOccurrence</Identification>
+        <Part>bedia-kabel_flry-a-2x035</Part>
         <Role id="Na504fba199eb9ff9892d2f1XNa504fba199eb9ff9892d2e300" xsi:type="vec:WireRole">
           <Identification>ETHERNET 2x0.35 UTP</Identification>
           <WireSpecification>Ma66122518a82ccafb1840eXMa66122518a82ccafb1840d00</WireSpecification>
@@ -1241,5 +1263,29 @@
     <PartNumber>products/electrical-tapes/htape-protect180/712-10002</PartNumber>
     <PartVersion>1</PartVersion>
     <PrimaryPartType>Tape</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="EEComponent_SteckerModul">
+    <CompanyName>example.com</CompanyName>
+    <PartNumber>Module_Connector_System</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>EEComponent</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="EEComponent_Stecker10pol">
+    <CompanyName>example.com</CompanyName>
+    <PartNumber>Connector_10pin</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>EEComponent</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="EEComponent_Stecker1pol">
+    <CompanyName>example.com</CompanyName>
+    <PartNumber>Connector_1pin</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>EEComponent</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="EEComponent_Stecker2pol">
+    <CompanyName>example.com</CompanyName>
+    <PartNumber>Connector_2pin</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>EEComponent</PrimaryPartType>
   </PartVersion>
 </vec:VecContent>

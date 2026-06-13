@@ -114,6 +114,31 @@
             "statements": [
                 {
                     "idShort": "Part",
+                    "statements": [
+                        {
+                            "idShort": "BulkCount",
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/HierarchicalStructures/BulkCount/1/0"
+                                    }
+                                ]
+                            },
+                            "qualifiers": [
+                                {
+                                    "kind": "TemplateQualifier",
+                                    "type": "SMT/MappingInfo",
+                                    "valueType": "xs:string",
+                                    "value": "($pvId := PartVersion[*]._id; $count(DocumentVersion.Specification[$lookup($, '_xsi:type') = 'vec:CompositionSpecification'].Component[$lookup($, '_xsi:type') = 'vec:PartOccurrence' and Part = $pvId]))"
+                                }
+                            ],
+                            "valueType": "xs:int",
+                            "value": "0",
+                            "modelType": "Property"
+                        }
+                    ],
                     "entityType": "SelfManagedEntity",
                     "globalAssetId": "",
                     "modelType": "Entity",
